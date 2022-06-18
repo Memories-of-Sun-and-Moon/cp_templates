@@ -28,7 +28,3 @@ struct INIT{
         cout << fixed << setprecision(20);
     }
 }INIT;
-
-int main(){
-    
-}
