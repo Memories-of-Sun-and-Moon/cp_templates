@@ -33,6 +33,3 @@ struct INIT{
     }
 }INIT;
 
-int main(){
-
-}
