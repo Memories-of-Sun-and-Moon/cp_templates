@@ -3,13 +3,15 @@
 using namespace std;
 
 struct UnionFind {
-	UnionFind(size_t size){
+	vector<int> par, rnk;
+
+    UnionFind(size_t size){
+        par.resize(size);
+        rnk.resize(size, 0);
         for(int i = 0;i < (int)size;i++){
-            par.emplace_back(i);
-            rnk.emplace_back(0);
+            par[i] = i;
         }
     }
-	vector<int> par, rnk;
 
     int root(int x){
         if(par[x] == x)return x;
