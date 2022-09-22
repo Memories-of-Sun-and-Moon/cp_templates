@@ -13,7 +13,7 @@ template<typename T>struct segment_tree {
     T identify; // 単位元
 
     //扱う配列がすでにできている場合
-    segment_tree(vector<T> v, F _combine, T _identity) : combine(_combine),  identify(_identity) {
+    segment_tree(vector<T> v, F _combine, T _identity) : combine(_combine), identify(_identity) {
         int sz = (int)v.size();
         n = 1;
         while(n < sz)n *= 2;
