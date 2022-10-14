@@ -4,7 +4,6 @@ using LL = long long;
 # define ALL(qpqpq)           (qpqpq).begin(),(qpqpq).end()
 # define UNIQUE(wpwpw)        sort(ALL((wpwpw)));(wpwpw).erase(unique(ALL((wpwpw))),(wpwpw).end())
 # define REP(i,upupu)         for(int i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)
-# define INIT                 std::ios::sync_with_stdio(false);std::cin.tie(0)
 
 #pragma GCC target("avx2")
 #pragma GCC optimize("O3")
