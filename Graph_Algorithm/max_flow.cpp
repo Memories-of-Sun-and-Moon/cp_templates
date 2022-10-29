@@ -2,7 +2,7 @@
 # include <bits/stdc++.h>
 using namespace std;
 
-//Ford-Fulkerson algorithm O(V|E|)
+//Ford-Fulkerson algorithm O((max_flow)|E|)
 template<typename T>struct max_flow {
 
     struct edge{
