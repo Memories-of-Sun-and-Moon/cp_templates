@@ -9,7 +9,7 @@ template <typename T_char>T_char TL(T_char cX) { return tolower(cX); }
 template <typename T_char>T_char TU(T_char cX) { return toupper(cX); }
 template<class T> bool chmin(T& a,T b) { if(a > b){a = b; return true;} return false; }
 template<class T> bool chmax(T& a,T b) { if(a < b){a = b; return true;} return false; }
-template<class T> bool is_sqare(T a) { if(floor(sqrt(n)) * floor(sqrt(n)) == n){ return true; }return false; }
+template<class T> bool is_sqare(T a) { if(floor(sqrt(a)) * floor(sqrt(a)) == a){ return true; }return false; }
 int popcnt(unsigned long long n) { int cnt = 0; for (int i = 0; i < 64; i++)if ((n >> i) & 1)cnt++; return cnt; }
 int d_sum(LL n) { int ret = 0; while (n > 0) { ret += n % 10; n /= 10; }return ret; }
 int d_cnt(LL n) { int ret = 0; while (n > 0) { ret++; n /= 10; }return ret; }
