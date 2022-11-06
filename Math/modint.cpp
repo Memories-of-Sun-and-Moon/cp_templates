@@ -52,3 +52,6 @@ public:
     	return *this;
 	}
 };
+
+//using modi = modint<998244353>;
+//using modi = modint<1000000007>;
