@@ -24,6 +24,13 @@ LL lcm(LL a, LL b) { LL g = gcd(a, b); return a / g*b; };
 # define SZ(x)                ((int)(x).size())
 # define BIT(n)               (1LL << (n))
 
+#ifdef LOCAL
+#  include "_debug_print.hpp"
+#  define debug(...) debug_print::multi_print(#__VA_ARGS__, __VA_ARGS__)
+#else
+#  define debug(...) (static_cast<void>(0))
+#endif
+
 struct INIT{
     INIT(){
         std::ios::sync_with_stdio(false);
