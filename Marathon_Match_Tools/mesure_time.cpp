@@ -15,4 +15,4 @@ public:
         timer_point lap = chrono::high_resolution_clock::now();
         return chrono::duration_cast<chrono::milliseconds>(lap - clock_start).count();
     }
-};
+}timer;
