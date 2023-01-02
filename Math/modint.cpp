@@ -53,5 +53,5 @@ public:
 	}
 };
 
-//using modi = modint<998244353>;
-//using modi = modint<1000000007>;
+//using mint = modint<998244353>;
+//using mint = modint<1000000007>;
