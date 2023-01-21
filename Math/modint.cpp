@@ -57,5 +57,5 @@ public:
 //using mint = modint<1000000007>;
 
 
-// ---- 依存するライブラリ
+// ---- 依存しているライブラリ
 // nCr%mod(combination).cpp
