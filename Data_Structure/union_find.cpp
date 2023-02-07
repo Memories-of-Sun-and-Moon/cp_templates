@@ -2,10 +2,10 @@
 # include "bits/stdc++.h"
 using namespace std;
 
-struct UnionFind {
+struct union_find {
 	vector<int> par, rnk;
 
-    UnionFind(size_t size){
+    union_find(size_t size){
         par.resize(size);
         rnk.resize(size, 0);
         for(int i = 0;i < (int)size;i++){
@@ -43,7 +43,7 @@ int com, x, y;
 
 int main(){
     cin >> n >> q;
-    UnionFind uf(n);
+    union_find uf(n);
     while(q--){
         cin >> com >> x >> y;
         if(com == 0)uf.unite(x, y);
