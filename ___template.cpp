@@ -38,3 +38,13 @@ struct INIT{
         cout << fixed << setprecision(20);
     }
 }INIT;
+
+void solve(){
+
+}
+
+int main(){
+    int t = 1;
+    // cin >> t;
+    while(t--)solve();
+}
