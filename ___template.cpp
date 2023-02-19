@@ -19,8 +19,8 @@ LL lcm(LL a, LL b) { LL g = gcd(a, b); return a / g*b; };
 # define UNIQUE(wpwpw)        sort(ALL((wpwpw)));(wpwpw).erase(unique(ALL((wpwpw))),(wpwpw).end())
 # define LOWER(epepe)         transform(ALL((epepe)),(epepe).begin(),TL<char>)
 # define UPPER(rprpr)         transform(ALL((rprpr)),(rprpr).begin(),TU<char>)
-# define REP(i,upupu)         for(int i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)
-# define REPS(i,opopo)        for(int i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)
+# define REP(i,upupu)         for(LL i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)
+# define REPS(i,opopo)        for(LL i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)
 # define len(x)                ((int)(x).size())
 # define BIT(n)               (1LL << (n))
 
