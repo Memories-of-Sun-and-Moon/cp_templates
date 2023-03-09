@@ -13,7 +13,7 @@ template<class T> bool is_sqare(T a) { if(floor(sqrt(a)) * floor(sqrt(a)) == a){
 int popcnt(unsigned long long n) { int cnt = 0; for (int i = 0; i < 64; i++)if ((n >> i) & 1)cnt++; return cnt; }
 int d_sum(LL n) { int ret = 0; while (n > 0) { ret += n % 10; n /= 10; }return ret; }
 int d_cnt(LL n) { int ret = 0; while (n > 0) { ret++; n /= 10; }return ret; }
-template<class T> using dijk = priority_queue<T, vector<T>, greater<T>>
+template<class T> using dijk = priority_queue<T, vector<T>, greater<T>>;
 # define ALL(qpqpq)           (qpqpq).begin(),(qpqpq).end()
 # define UNIQUE(wpwpw)        sort(ALL((wpwpw)));(wpwpw).erase(unique(ALL((wpwpw))),(wpwpw).end())
 # define LOWER(epepe)         transform(ALL((epepe)),(epepe).begin(),TL<char>)
