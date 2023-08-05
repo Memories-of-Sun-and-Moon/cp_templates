@@ -51,7 +51,13 @@ public:
 		}
     	return *this;
 	}
+
+    friend std::ostream& operator<<(std::ostream& os, const modint& rhs) {
+        os << rhs.a;
+        return os;
+    }
 };
+
 
 //using mint = modint<998244353>;
 //using mint = modint<1000000007>;
