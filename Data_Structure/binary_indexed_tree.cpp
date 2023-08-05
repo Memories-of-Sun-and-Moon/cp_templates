@@ -6,12 +6,12 @@ using namespace std;
 //1-indexed に注意
 template<typename T>struct binary_indexed_tree {
     int n;
-    vector<T> bit;
-    binary_indexed_tree(int n_) : n(n_ + 1), bit(n, 0) {}
+    vector<T> BIT;
+    binary_indexed_tree(int n_) : n(n_ + 1), BIT(n, 0) {}
 
     void add(int i, T x){
         for(int idx = i;idx < n;idx += (idx & -idx)){
-            bit[idx] += x;
+            BIT[idx] += x;
         }
     }
 
@@ -19,7 +19,7 @@ template<typename T>struct binary_indexed_tree {
     T sum(int i) {
         T ret = 0;
         for(int idx = i;idx > 0;idx -= (idx & -idx)){
-            ret += bit[idx];
+            ret += BIT[idx];
         }
         return ret;
     }
