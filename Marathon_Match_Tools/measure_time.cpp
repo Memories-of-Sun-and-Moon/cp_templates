@@ -7,27 +7,33 @@ struct measure_time{
 private:
     timer_point clock_start;
     timer_duration time_length;
+    bool is_stopping;
 public:
 
-    measure_time() : time_length(std::chrono::high_resolution_clock::duration()) {}
+    measure_time() : time_length(std::chrono::high_resolution_clock::duration()), is_stopping(false) {}
 
     inline void start(){
         clock_start = chrono::high_resolution_clock::now();
     }
 
     inline void stop(){
+        assert(is_stopping == false);
         timer_point lap = chrono::high_resolution_clock::now();
 
         timer_duration d = lap - clock_start;
 
         time_length += d;
+        is_stopping = true;
     }
 
     inline void resume(){
+        assert(is_stopping == true);
         clock_start = chrono::high_resolution_clock::now();
+        is_stopping = false;
     }
 
     inline int elapsed(){
+        assert(is_stopping == false);
         timer_point lap = chrono::high_resolution_clock::now();
 
         timer_duration d = lap - clock_start;
