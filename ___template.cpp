@@ -20,8 +20,8 @@ template<class T> using dijk = priority_queue<T, vector<T>, greater<T>>;
 # define UNIQUE(wpwpw)        sort(all((wpwpw)));(wpwpw).erase(unique(all((wpwpw))),(wpwpw).end())
 # define LOWER(epepe)         transform(all((epepe)),(epepe).begin(),TL<char>)
 # define UPPER(rprpr)         transform(all((rprpr)),(rprpr).begin(),TU<char>)
-# define rep(i,upupu)         for(LL i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)
-# define reps(i,opopo)        for(LL i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)
+# define rep(i,upupu)         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)
+# define reps(i,opopo)        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)
 # define len(x)                ((int)(x).size())
 # define bit(n)               (1LL << (n))
 # define pb push_back
