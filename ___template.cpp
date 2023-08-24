@@ -4,7 +4,7 @@ using ll = long long;
 using ull = unsigned long long;
 const double pi = acos(-1);
 template<class T>constexpr T inf() { return ::std::numeric_limits<T>::max(); }
-template<class T>constexpr T hinf() { return INF<T>() / 2; }
+template<class T>constexpr T hinf() { return inf<T>() / 2; }
 template <typename T_char>T_char TL(T_char cX) { return tolower(cX); }
 template <typename T_char>T_char TU(T_char cX) { return toupper(cX); }
 template<class T> bool chmin(T& a,T b) { if(a > b){a = b; return true;} return false; }
