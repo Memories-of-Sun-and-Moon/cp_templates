@@ -11,15 +11,15 @@ template<typename T>struct max_flow {
         T rev;
     };
     
-    int v;
+    int n;
     vector<vector<edge>> G;
     vector<int> level; // sからの距離
     vector<int> iter; // どこまで調べ終わったか
 
-    max_flow(int _v) : v(_v) {
-        G.resize(v);
-        level.resize(v);
-        iter.resize(v);
+    max_flow(int _v) : n(_v) {
+        G.resize(n);
+        level.resize(n);
+        iter.resize(n);
     }
 
     void add_edge(int from, int to, T cap){
@@ -29,7 +29,7 @@ template<typename T>struct max_flow {
 
     // s 空の最短距離を計算
     void bfs(int s){
-        for(int i = 0;i < v;i++)level[i] = -1;
+        for(int i = 0;i < n;i++)level[i] = -1;
         queue<int> que;
         level[s] = 0;
         que.push(s);
@@ -68,9 +68,9 @@ template<typename T>struct max_flow {
         for(;;){
             bfs(s);
             if(level[t] < 0)return flow;
-            for(int i = 0;i < v;i++)iter[i] = 0;
+            for(int i = 0;i < n;i++)iter[i] = 0;
             int f;
-            while((f = dfs(s, t, INF<T>())) > 0) {
+            while((f = dfs(s, t, inf<T>())) > 0) {
                 flow += f;
             }
         }
