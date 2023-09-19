@@ -11,13 +11,13 @@ template<typename T>struct max_flow {
         T rev;
     };
 
-    int v;
+    int n;
     vector<vector<edge>> G;
     vector<bool> used;
 
-    max_flow(int _v) : v(_v) {
-        G.resize(v);
-        used.resize(v, false);
+    max_flow(int _v) : n(_v) {
+        G.resize(n);
+        used.resize(n, false);
     }
 
     void add_edge(int from, int to, T cap){
@@ -45,8 +45,8 @@ template<typename T>struct max_flow {
     T calc(int s, int t){
         T flow = 0;
         for(;;){
-            for(int i = 0;i < v;i++)used[i] = false;
-            int f = dfs(s, t, INF<T>());
+            for(int i = 0;i < n;i++)used[i] = false;
+            int f = dfs(s, t, inf<T>());
             if(f == 0)return flow;
             flow += f;
         }
