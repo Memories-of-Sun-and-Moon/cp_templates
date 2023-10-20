@@ -15,10 +15,10 @@
 
 digraph G {
     graph [
-        layout = dot
+        layout = fdp;
     ];
 
-    問題 [shape=doublecircle,fontsize=60];
+    問題 [shape=doublecircle,fontsize=20];
     
     問題 -> 問題文を読み直す;
     問題文を読み直す -> 問題;
@@ -75,7 +75,7 @@ digraph G {
 
     状態をまとめる[color = blue];
     
-    数え上げ -> 状態をまとめる;
+    数え上げ -> 状態をまとめる [label="単純な全探索アルゴリズムで終端状態まで到達した場合の数が数えたい"];
 
     探索順の変更[color = blue];
         大きい順に並べる[color = blue];
