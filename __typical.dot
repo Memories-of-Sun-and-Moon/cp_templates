@@ -1,0 +1,74 @@
+// https://qiita.com/rubytomato@github/items/51779135bc4b77c8c20d#%E3%82%B0%E3%83%A9%E3%83%95%E3%81%AE%E5%AE%9A%E7%BE%A9
+// https://graphviz.org/doc/info/shapes.html
+
+// https://github.com/hamko/procon/blob/master/typical.dot
+
+// cluster から始まる subgraph はハイライトができる
+
+// 新しく追加するノードに関しては問題も添えること
+
+// 問題は record
+// で囲む
+
+// red : kazoeage40 で見たけど細分化も例示もできていない
+
+digraph G {
+    graph [
+        layout = dot
+    ];
+
+    問題 [shape=doublecircle,fontsize=60];
+    
+    問題 -> 問題文を読み直す;
+    問題文を読み直す -> 問題;
+    subgraph cluster_technics {
+        label="問題に取り組む前に";
+        style=filled;
+        color=lightgrey;
+        fontcolor=orchid;
+        
+        問題文を読み直す;
+
+    };
+
+    問題 -> 数え上げ;
+    問題 -> 構築;
+
+    //数え上げ 
+    数え上げ -> 全探索;
+
+    全探索;
+    全探索 -> 何かを固定して考える;
+    全探索 -> 何かを固定して数え上げる;
+    全探索 -> 半分全列挙;
+    全探索 -> 定数倍の削減;
+        定数倍の削減 -> 同じことを何回も計算しない;
+            y2509[shape = "record", label = "{yukicoder 2509 Beam Shateki|(i, j, dir) で計算すると、\n例えば(0, 0, 3)と(1, 1, 3)は\nほぼ同じものを\nシミュレートしている}"];
+            同じことを何回も計算しない -> y2509;
+    
+    積の法則の利用[color = red];
+    二項係数の利用[color = red];
+    経路数との対応[color = red];
+    
+    DP[color = red];
+
+    寄与分の計算[color = red];
+
+    重なりを取り除く[color = red];
+    適切な場合分け[color = red];
+    条件の言い換え[color = red];
+    対称性を用いる[color = red];
+
+    DPの遷移式を変形する[color = red];
+
+    数え上げ -> 積の法則の利用;
+    数え上げ -> 二項係数の利用;
+    数え上げ -> 経路数との対応;
+    数え上げ -> DP;
+    数え上げ -> 寄与分の計算;
+    数え上げ -> 重なりを取り除く;
+    数え上げ -> 適切な場合分け;
+    数え上げ -> 条件の言い換え;
+    数え上げ -> 対称性を用いる;
+    DP -> DPの遷移式を変形する;
+}
