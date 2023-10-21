@@ -1,0 +1,13 @@
+digraph G {
+    graph [
+        layout = fdp;
+    ];
+
+    問題 [shape=doublecircle,fontsize=20];
+
+    問題 -> グラフ;
+
+    グラフ -> 最短経路;
+        最短経路 -> 状態の次元も増やす;
+            状態の次元も増やす -> abc325e;
+}
