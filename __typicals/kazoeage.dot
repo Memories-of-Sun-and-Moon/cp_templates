@@ -18,15 +18,15 @@ digraph G {
         layout = fdp;
     ];
 
-    問題 [shape=doublecircle,fontsize=20];
+    問題 [shape = doublecircle, fontsize = 20];
     
     問題 -> 問題文を読み直す;
     問題文を読み直す -> 問題;
     subgraph cluster_technics {
-        label="問題に取り組む前に";
-        style=filled;
-        color=lightgrey;
-        fontcolor=orchid;
+        label = "問題に取り組む前に";
+        style = filled;
+        color = lightgrey;
+        fontcolor = orchid;
         
         問題文を読み直す;
 
