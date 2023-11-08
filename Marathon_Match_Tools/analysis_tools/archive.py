@@ -14,4 +14,4 @@ def main(name: str):
     
     subprocess.run(['mv', '-v', 'out', f'{name}' + '/out'])
     subprocess.run(['mv', '-v', f'{name}', 'archive/' + f'{name}'])
-    subprocess.run(['cp', 'AHC020.cpp', 'archive/' + f'{name}' + '/source.cpp'])
+    subprocess.run(['cp', 'AHCXXX.cpp', 'archive/' + f'{name}' + '/source.cpp'])

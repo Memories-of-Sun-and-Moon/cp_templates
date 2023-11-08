@@ -23,6 +23,8 @@ def main(testcases: int):
     
     for i in range(testcases):
         input_path = pathlib.Path('in', f'{i:04}.txt')
-        output_path = pathlib.Path('out', f'{i:04}.txt')
+        output_path = pathlib.Path('out', f'{i:04}.out')
 
         score = calc(input_path=input_path, output_path=output_path, seed=i)
+        with open('score.txt', 'a') as f:
+            f.write(f'{score}\n')
