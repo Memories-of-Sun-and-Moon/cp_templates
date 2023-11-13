@@ -18,12 +18,8 @@ digraph G {
         layout = fdp;
     ];
 
-    問題 [shape = doublecircle, fontsize = 20];
+    数え上げ [shape = doublecircle, fontsize = 20];
 
-    問題 -> 数え上げ;
-    問題 -> 構築;
-
-    //数え上げ 
     数え上げ -> 全探索;
 
     全探索;
