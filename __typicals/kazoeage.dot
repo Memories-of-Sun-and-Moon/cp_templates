@@ -136,7 +136,7 @@ digraph G {
     二項係数の利用;
         頻出公式集[color = blue];
         経路数への帰着[color = blue];
-        _45度回転[color = blue];
+        _45度回転;
         カタラン数[color = blue];
 
         二項係数の利用 -> 頻出公式集;
