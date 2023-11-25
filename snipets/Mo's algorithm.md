@@ -1,3 +1,5 @@
+# Mo's Algorithm
+
 ```cpp
 struct mo_query {
     int l, r, i;
