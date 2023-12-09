@@ -34,11 +34,11 @@ template<class T> using dijk = priority_queue<T, vector<T>, greater<T>>;
 #endif
 
 struct INIT{
-    INIT(){
-        std::ios::sync_with_stdio(false);
-        std::cin.tie(0);
-        cout << fixed << setprecision(20);
-    }
+	INIT(){
+		std::ios::sync_with_stdio(false);
+		std::cin.tie(0);
+		cout << fixed << setprecision(20);
+	}
 }INIT;
 
 void solve(){
