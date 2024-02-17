@@ -17,7 +17,7 @@ ll gcd(ll a, ll b) { if (b == 0)return a; return gcd(b, a%b); };
 ll lcm(ll a, ll b) { ll g = gcd(a, b); return a / g*b; };
 template<class T> using dijk = priority_queue<T, vector<T>, greater<T>>;
 # define all(qpqpq)           (qpqpq).begin(),(qpqpq).end()
-# define UNIQUE(wpwpw)        sort(all((wpwpw)));(wpwpw).erase(unique(all((wpwpw))),(wpwpw).end())
+# define UNIQUE(wpwpw)        (wpwpw).erase(unique(all((wpwpw))),(wpwpw).end())
 # define LOWER(epepe)         transform(all((epepe)),(epepe).begin(),TL<char>)
 # define UPPER(rprpr)         transform(all((rprpr)),(rprpr).begin(),TU<char>)
 # define rep(i,upupu)         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)
