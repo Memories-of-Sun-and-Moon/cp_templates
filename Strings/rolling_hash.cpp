@@ -16,7 +16,7 @@ struct rolling_hash {
 
     string s;
     int n;
-    const ull b = 23948798;
+    const ull bs = 23948798;
 
     vector<ull> base_pow;
     vector<ull> prefix_hash;
@@ -27,13 +27,13 @@ struct rolling_hash {
         base_pow.resize(n + 1);
         base_pow[0] = 1;
         for(int i = 0;i < n;i++){
-            base_pow[i + 1] = calcmod(mul(base_pow[i], b));
+            base_pow[i + 1] = calcmod(mul(base_pow[i], bs));
         }
         
 
         prefix_hash.resize(n + 1, 0LL);
         for(int i = 0;i < n;i++){
-            prefix_hash[i + 1] = calcmod(mul(prefix_hash[i], b) + s[i]);
+            prefix_hash[i + 1] = calcmod(mul(prefix_hash[i], bs) + s[i]);
             
         }
     }
