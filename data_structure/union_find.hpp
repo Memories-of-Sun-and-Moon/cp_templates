@@ -1,5 +1,5 @@
-# define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A"
-# include "bits/stdc++.h"
+#pragma once
+#include "bits/stdc++.h"
 using namespace std;
 
 struct union_find {
@@ -34,16 +34,3 @@ struct union_find {
 		return -v[x];
 	}
 };
-
-int n, q;
-int com, x, y;
-
-int main(){
-	cin >> n >> q;
-	union_find uf(n);
-	while(q--){
-		cin >> com >> x >> y;
-		if(com == 0)uf.unite(x, y);
-		else cout << uf.same(x, y) << endl;
-	}
-}
