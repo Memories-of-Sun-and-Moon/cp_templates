@@ -25,7 +25,7 @@ struct union_find {
 		}
 	}
 
-	bool same(int x,int y){
+	bool is_same(int x,int y){
 		return root(x) == root(y);
 	}
 
