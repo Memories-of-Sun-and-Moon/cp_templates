@@ -3,19 +3,12 @@
 using namespace std;
 
 struct union_find {
-	vector<int> par, rnk;
+	vector<int> v;
 
-    union_find(size_t size){
-        par.resize(size);
-        rnk.resize(size, 0);
-        for(int i = 0;i < (int)size;i++){
-            par[i] = i;
-        }
-    }
+    union_find(size_t size) : v(size, -1) {}
 
     int root(int x){
-        if(par[x] == x)return x;
-        else return par[x] = root(par[x]);
+        return (v[x] < 0 ? x : v[x] = root(v[x]));
     }
 
     bool is_root(int x){
@@ -25,16 +18,20 @@ struct union_find {
     void unite(int x, int y){
         x = root(x);
         y = root(y);
-        if(x == y)return;
-        if(rnk[x] < rnk[y]){
-            par[x] = y;
-        }else{
-            par[y] = x;
-            if(rnk[x] == rnk[y])rnk[x]++;
+        if(x != y){
+            if(v[x] > v[y])swap(x, y);
+            v[x] += v[y];
+            v[y] = x;
         }
     }
+
     bool same(int x,int y){
         return root(x) == root(y);
+    }
+
+    int get_size(int x){
+        x = root(x);
+        return -v[x];
     }
 };
 
