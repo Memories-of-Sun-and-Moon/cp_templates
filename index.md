@@ -78,6 +78,9 @@ data:
       title: graph/warshall_floyd.cpp
   - name: template
     pages:
+    - icon: ':warning:'
+      path: template/debug.hpp
+      title: template/debug.hpp
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
