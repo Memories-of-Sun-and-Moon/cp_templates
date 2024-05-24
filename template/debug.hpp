@@ -1,5 +1,5 @@
+#pragma once
 #include <bits/stdc++.h>
-
 #ifndef DEBUG_PRINT_HPP
 #define DEBUG_PRINT_HPP
 

@@ -27,12 +27,6 @@ template<class T> using dijk = priority_queue<T, vector<T>, greater<T>>;
 # define bit(n)               (1LL << (n))
 # define pb push_back
 # define exists(c, e)         ((c).find(e) != (c).end())
-#ifdef LOCAL
-#  include "_debug_print.hpp"
-#  define debug(...) debug_print::multi_print(#__VA_ARGS__, __VA_ARGS__)
-#else
-#  define debug(...) (static_cast<void>(0))
-#endif
 
 struct INIT{
 	INIT(){
