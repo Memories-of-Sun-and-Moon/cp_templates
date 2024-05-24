@@ -7,39 +7,11 @@ data:
       path: LIS.cpp
       title: LIS.cpp
     - icon: ':warning:'
-      path: _STRESS_CHECKER.py
-      title: _STRESS_CHECKER.py
-    - icon: ':warning:'
-      path: _debug_print.hpp
-      title: _debug_print.hpp
-    - icon: ':warning:'
       path: geomet.cpp
       title: geomet.cpp
     - icon: ':warning:'
       path: maximum_rect.cpp
       title: maximum_rect.cpp
-  - name: Marathon_Match_Tools/analysis_tools
-    pages:
-    - icon: ':warning:'
-      path: Marathon_Match_Tools/analysis_tools/archive.py
-      title: Marathon_Match_Tools/analysis_tools/archive.py
-    - icon: ':warning:'
-      path: Marathon_Match_Tools/analysis_tools/concurrent_executor.py
-      title: Marathon_Match_Tools/analysis_tools/concurrent_executor.py
-    - icon: ':warning:'
-      path: Marathon_Match_Tools/analysis_tools/score_calclator.py
-      title: Marathon_Match_Tools/analysis_tools/score_calclator.py
-  - name: Marathon_Match_Tools
-    pages:
-    - icon: ':warning:'
-      path: Marathon_Match_Tools/measure_time.cpp
-      title: Marathon_Match_Tools/measure_time.cpp
-    - icon: ':warning:'
-      path: Marathon_Match_Tools/test_all.py
-      title: Marathon_Match_Tools/test_all.py
-    - icon: ':warning:'
-      path: Marathon_Match_Tools/vis.cpp
-      title: Marathon_Match_Tools/vis.cpp
   - name: Math
     pages:
     - icon: ':warning:'
