@@ -48,9 +48,9 @@ data:
     - icon: ':warning:'
       path: data_structure/segment_tree.cpp
       title: data_structure/segment_tree.cpp
-    - icon: ':warning:'
-      path: data_structure/segment_tree_2d.cpp
-      title: data_structure/segment_tree_2d.cpp
+    - icon: ':heavy_check_mark:'
+      path: data_structure/segment_tree_2d.hpp
+      title: "2D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
       path: data_structure/union_find.hpp
       title: Union-Find
@@ -87,6 +87,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/1_A.test.cpp
       title: verify/aoj/dsl/1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/dsl/5_B.test.cpp
+      title: verify/aoj/dsl/5_B.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/atcoder/M3_cp?logo=true)

@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/1_A.test.cpp
     title: verify/aoj/dsl/1_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/dsl/5_B.test.cpp
+    title: verify/aoj/dsl/5_B.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -56,6 +59,7 @@ data:
   timestamp: '2024-05-23 23:30:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/aoj/dsl/5_B.test.cpp
   - verify/aoj/dsl/1_A.test.cpp
 documentation_of: template/template.hpp
 layout: document
