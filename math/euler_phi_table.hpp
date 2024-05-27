@@ -1,6 +1,3 @@
-#pragma once
-#include <bits/stdc++.h>
-using namespace std;
 
 vector<int> euler_phi_table(int n){
 	vector<int> phi(n + 1);
