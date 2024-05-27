@@ -8,5 +8,5 @@ exclude:
 plugins:
 - jemoji
 - jekyll-redirect-from
-theme: jekyll-theme-midnight
+theme: jekyll-theme-hamilton
 title: mmrz's library
