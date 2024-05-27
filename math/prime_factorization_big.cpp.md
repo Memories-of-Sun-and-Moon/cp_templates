@@ -9,7 +9,7 @@ data:
   attributes:
     links:
     - https://judge.yosupo.jp/submission/124918
-  bundledCode: "#line 1 \"Math/prime_factorization_big.cpp\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"math/prime_factorization_big.cpp\"\n#include<bits/stdc++.h>\n\
     using namespace std;\n\n// https://judge.yosupo.jp/submission/124918\n\n// \u5927\
     \u304D\u306A\u6570\u306B\u5BFE\u3059\u308B\u7D20\u56E0\u6570\u5206\u89E3\u306F\
     \u3053\u3063\u3061\u306E\u65B9\u304C\u306F\u3084\u3044\n// \u305F\u3060\u3001\u30ED\
@@ -74,15 +74,15 @@ data:
     \   while(t--)solve();\n}"
   dependsOn: []
   isVerificationFile: false
-  path: Math/prime_factorization_big.cpp
+  path: math/prime_factorization_big.cpp
   requiredBy: []
-  timestamp: '2023-02-08 19:33:15+09:00'
+  timestamp: '2024-05-28 05:46:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: Math/prime_factorization_big.cpp
+documentation_of: math/prime_factorization_big.cpp
 layout: document
 redirect_from:
-- /library/Math/prime_factorization_big.cpp
-- /library/Math/prime_factorization_big.cpp.html
-title: Math/prime_factorization_big.cpp
+- /library/math/prime_factorization_big.cpp
+- /library/math/prime_factorization_big.cpp.html
+title: math/prime_factorization_big.cpp
 ---

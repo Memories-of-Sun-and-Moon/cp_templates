@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':warning:'
-    path: Math/modint.cpp
-    title: Math/modint.cpp
+    path: math/modint.cpp
+    title: math/modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -11,8 +11,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"Math/nCr%mod(combination).cpp\"\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#line 2 \"Math/modint.cpp\"\nusing namespace std;\n\n\
+  bundledCode: "#line 1 \"math/nCr%mod(combination).cpp\"\n#include <bits/stdc++.h>\n\
+    using namespace std;\n\n#line 2 \"math/modint.cpp\"\nusing namespace std;\n\n\
     //thx https://noshi91.hatenablog.com/entry/2019/03/31/174006\n\ntemplate <std::uint_fast64_t\
     \ Modulus> class modint {\n\tusing u64 = std::uint_fast64_t;\npublic:\n\tu64 a;\n\
     \tconstexpr modint(const u64 x = 0) noexcept : a(x % Modulus) {}\n\tconstexpr\
@@ -34,7 +34,7 @@ data:
     \ operator<<(std::ostream& os, const modint& rhs) {\n        os << rhs.a;\n  \
     \      return os;\n    }\n};\n\n\n//using mint = modint<998244353>;\n//using mint\
     \ = modint<1000000007>;\n\n\n// ---- \u4F9D\u5B58\u3057\u3066\u3044\u308B\u30E9\
-    \u30A4\u30D6\u30E9\u30EA\n// nCr%mod(combination).cpp\n#line 5 \"Math/nCr%mod(combination).cpp\"\
+    \u30A4\u30D6\u30E9\u30EA\n// nCr%mod(combination).cpp\n#line 5 \"math/nCr%mod(combination).cpp\"\
     \n\nusing mint = modint<998244353>;\n//using mint = modint<1000000007>;\n\nconstexpr\
     \ int max_combination = 1010101;\n\nmint fact[max_combination], inv_fact[max_combination];\n\
     \nvoid combination_init(){\n    fact[0] = 1, inv_fact[0] = 1;\n    for(int i =\
@@ -59,17 +59,17 @@ data:
     \nmint sub(int n, int a, int b) {\n    if(a + b > n)return 0;\n    return nCr(n,\
     \ a) * nCr(n - a, b);\n};\n"
   dependsOn:
-  - Math/modint.cpp
+  - math/modint.cpp
   isVerificationFile: false
-  path: Math/nCr%mod(combination).cpp
+  path: math/nCr%mod(combination).cpp
   requiredBy: []
-  timestamp: '2023-12-09 18:47:54+09:00'
+  timestamp: '2024-05-28 05:46:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: Math/nCr%mod(combination).cpp
+documentation_of: math/nCr%mod(combination).cpp
 layout: document
 redirect_from:
-- /library/Math/nCr%mod(combination).cpp
-- /library/Math/nCr%mod(combination).cpp.html
-title: Math/nCr%mod(combination).cpp
+- /library/math/nCr%mod(combination).cpp
+- /library/math/nCr%mod(combination).cpp.html
+title: math/nCr%mod(combination).cpp
 ---

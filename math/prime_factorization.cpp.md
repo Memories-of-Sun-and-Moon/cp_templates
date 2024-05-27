@@ -9,7 +9,7 @@ data:
   attributes:
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/NTL_1_A
-  bundledCode: "#line 1 \"Math/prime_factorization.cpp\"\n# define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/NTL_1_A\"\
+  bundledCode: "#line 1 \"math/prime_factorization.cpp\"\n# define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/NTL_1_A\"\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\nvector<pair<int,int>> prime_factorization(int\
     \ val){\n\tassert(val >= 1);\n\tif(val == 1){\n\t\treturn {};\n\t}\n\tvector<pair<int,int>>\
     \ ans;\n    int idx = 0;\n\tfor(int i = 2;i * i <= val;i++){\n\t\tif(val % i !=\
@@ -31,15 +31,15 @@ data:
     \    }\n    cout << endl;\n}"
   dependsOn: []
   isVerificationFile: false
-  path: Math/prime_factorization.cpp
+  path: math/prime_factorization.cpp
   requiredBy: []
-  timestamp: '2022-10-12 19:14:11+09:00'
+  timestamp: '2024-05-28 05:46:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: Math/prime_factorization.cpp
+documentation_of: math/prime_factorization.cpp
 layout: document
 redirect_from:
-- /library/Math/prime_factorization.cpp
-- /library/Math/prime_factorization.cpp.html
-title: Math/prime_factorization.cpp
+- /library/math/prime_factorization.cpp
+- /library/math/prime_factorization.cpp.html
+title: math/prime_factorization.cpp
 ---

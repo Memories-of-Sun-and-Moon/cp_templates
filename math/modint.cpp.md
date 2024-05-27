@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: Math/nCr%mod(combination).cpp
-    title: Math/nCr%mod(combination).cpp
+    path: math/nCr%mod(combination).cpp
+    title: math/nCr%mod(combination).cpp
   - icon: ':warning:'
-    path: Math/power.cpp
-    title: Math/power.cpp
+    path: math/power.cpp
+    title: math/power.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
@@ -15,7 +15,7 @@ data:
   attributes:
     links:
     - https://noshi91.hatenablog.com/entry/2019/03/31/174006
-  bundledCode: "#line 1 \"Math/modint.cpp\"\n# include <bits/stdc++.h>\nusing namespace\
+  bundledCode: "#line 1 \"math/modint.cpp\"\n# include <bits/stdc++.h>\nusing namespace\
     \ std;\n\n//thx https://noshi91.hatenablog.com/entry/2019/03/31/174006\n\ntemplate\
     \ <std::uint_fast64_t Modulus> class modint {\n\tusing u64 = std::uint_fast64_t;\n\
     public:\n\tu64 a;\n\tconstexpr modint(const u64 x = 0) noexcept : a(x % Modulus)\
@@ -62,17 +62,17 @@ data:
     \u30A4\u30D6\u30E9\u30EA\n// nCr%mod(combination).cpp"
   dependsOn: []
   isVerificationFile: false
-  path: Math/modint.cpp
+  path: math/modint.cpp
   requiredBy:
-  - Math/power.cpp
-  - Math/nCr%mod(combination).cpp
-  timestamp: '2023-08-05 23:44:11+09:00'
+  - math/power.cpp
+  - math/nCr%mod(combination).cpp
+  timestamp: '2024-05-28 05:46:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: Math/modint.cpp
+documentation_of: math/modint.cpp
 layout: document
 redirect_from:
-- /library/Math/modint.cpp
-- /library/Math/modint.cpp.html
-title: Math/modint.cpp
+- /library/math/modint.cpp
+- /library/math/modint.cpp.html
+title: math/modint.cpp
 ---

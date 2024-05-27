@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':warning:'
-    path: Math/modint.cpp
-    title: Math/modint.cpp
+    path: math/modint.cpp
+    title: math/modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -34,17 +34,17 @@ data:
     \ m, n;\nconst long long mod = 1000000000 + 7;\n\nint main(){\n\tcin >> m >> n;\n\
     \tcout << power(m, n, mod) << endl;\n}"
   dependsOn:
-  - Math/modint.cpp
+  - math/modint.cpp
   isVerificationFile: false
-  path: Math/power.cpp
+  path: math/power.cpp
   requiredBy: []
-  timestamp: '2024-03-13 22:31:41+09:00'
+  timestamp: '2024-05-28 05:46:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: Math/power.cpp
+documentation_of: math/power.cpp
 layout: document
 redirect_from:
-- /library/Math/power.cpp
-- /library/Math/power.cpp.html
-title: Math/power.cpp
+- /library/math/power.cpp
+- /library/math/power.cpp.html
+title: math/power.cpp
 ---

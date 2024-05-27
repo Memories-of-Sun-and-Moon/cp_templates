@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"Math/range_sieve.cpp\"\n// \u672A\u691C\u8A3C\n#include\
+  bundledCode: "#line 1 \"math/range_sieve.cpp\"\n// \u672A\u691C\u8A3C\n#include\
     \ <bits/stdc++.h>\nusing ll = long long;\nusing namespace std;\n\nclass range_sieve\
     \ {\n\tll l, r, m;\n\tvector<int> small;\n\tvector<vector<ll>> large;\n\tvector<ll>\
     \ aux;\n\npublic:\n\trange_sieve(ll l, ll r) : l(l), r(r), m(sqrt(r)+1) {\n\t\t\
@@ -40,15 +40,15 @@ data:
     \t\t}\n\t\treturn res;\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: Math/range_sieve.cpp
+  path: math/range_sieve.cpp
   requiredBy: []
-  timestamp: '2024-03-08 22:36:13+09:00'
+  timestamp: '2024-05-28 05:46:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: Math/range_sieve.cpp
+documentation_of: math/range_sieve.cpp
 layout: document
 redirect_from:
-- /library/Math/range_sieve.cpp
-- /library/Math/range_sieve.cpp.html
-title: Math/range_sieve.cpp
+- /library/math/range_sieve.cpp
+- /library/math/range_sieve.cpp.html
+title: math/range_sieve.cpp
 ---

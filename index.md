@@ -12,29 +12,6 @@ data:
     - icon: ':warning:'
       path: maximum_rect.cpp
       title: maximum_rect.cpp
-  - name: Math
-    pages:
-    - icon: ':warning:'
-      path: Math/euler_phi_table.cpp
-      title: Math/euler_phi_table.cpp
-    - icon: ':warning:'
-      path: Math/modint.cpp
-      title: Math/modint.cpp
-    - icon: ':warning:'
-      path: Math/nCr%mod(combination).cpp
-      title: Math/nCr%mod(combination).cpp
-    - icon: ':warning:'
-      path: Math/power.cpp
-      title: Math/power.cpp
-    - icon: ':warning:'
-      path: Math/prime_factorization.cpp
-      title: Math/prime_factorization.cpp
-    - icon: ':warning:'
-      path: Math/prime_factorization_big.cpp
-      title: Math/prime_factorization_big.cpp
-    - icon: ':warning:'
-      path: Math/range_sieve.cpp
-      title: Math/range_sieve.cpp
   - name: Strings
     pages:
     - icon: ':warning:'
@@ -76,6 +53,31 @@ data:
     - icon: ':warning:'
       path: graph/warshall_floyd.cpp
       title: graph/warshall_floyd.cpp
+  - name: math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: math/euler_phi_table.hpp
+      title: "\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\uFF08\u30AA\u30A4\u30E9\
+        \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09\u30C6\u30FC\
+        \u30D6\u30EB"
+    - icon: ':warning:'
+      path: math/modint.cpp
+      title: math/modint.cpp
+    - icon: ':warning:'
+      path: math/nCr%mod(combination).cpp
+      title: math/nCr%mod(combination).cpp
+    - icon: ':warning:'
+      path: math/power.cpp
+      title: math/power.cpp
+    - icon: ':warning:'
+      path: math/prime_factorization.cpp
+      title: math/prime_factorization.cpp
+    - icon: ':warning:'
+      path: math/prime_factorization_big.cpp
+      title: math/prime_factorization_big.cpp
+    - icon: ':warning:'
+      path: math/range_sieve.cpp
+      title: math/range_sieve.cpp
   - name: template
     pages:
     - icon: ':warning:'
@@ -93,6 +95,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/5_B.test.cpp
       title: verify/aoj/dsl/5_B.test.cpp
+  - name: verify/aoj/id
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/id/2286.test.cpp
+      title: verify/aoj/id/2286.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/atcoder/M3_cp?logo=true)
