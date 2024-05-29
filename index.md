@@ -12,11 +12,6 @@ data:
     - icon: ':warning:'
       path: maximum_rect.cpp
       title: maximum_rect.cpp
-  - name: Strings
-    pages:
-    - icon: ':warning:'
-      path: Strings/rolling_hash.cpp
-      title: Strings/rolling_hash.cpp
   - name: data_structure
     pages:
     - icon: ':warning:'
@@ -78,6 +73,11 @@ data:
     - icon: ':warning:'
       path: math/range_sieve.cpp
       title: math/range_sieve.cpp
+  - name: string
+    pages:
+    - icon: ':warning:'
+      path: string/rolling_hash.cpp
+      title: string/rolling_hash.cpp
   - name: template
     pages:
     - icon: ':warning:'

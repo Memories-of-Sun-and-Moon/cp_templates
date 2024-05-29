@@ -10,7 +10,7 @@ data:
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_14_B
     - https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
-  bundledCode: "#line 1 \"Strings/rolling_hash.cpp\"\n# define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_14_B\"\
+  bundledCode: "#line 1 \"string/rolling_hash.cpp\"\n# define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_14_B\"\
     \n# include <bits/stdc++.h>\nusing namespace std;\n\n//https://qiita.com/keymoon/items/11fac5627672a6d6a9f6\n\
     \n// char \u304C 0-127 \u3067\u3042\u308B\u3053\u3068\u3092\u5229\u7528\u3057\u3066\
     \u3044\u308B\u3053\u3068\u306B\u6CE8\u610F\nstruct rolling_hash {\n    using ull\
@@ -66,15 +66,15 @@ data:
     \            cout << i << endl;\n        }\n    }\n}"
   dependsOn: []
   isVerificationFile: false
-  path: Strings/rolling_hash.cpp
+  path: string/rolling_hash.cpp
   requiredBy: []
-  timestamp: '2024-03-05 16:59:38+09:00'
+  timestamp: '2024-05-29 12:47:29+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: Strings/rolling_hash.cpp
+documentation_of: string/rolling_hash.cpp
 layout: document
 redirect_from:
-- /library/Strings/rolling_hash.cpp
-- /library/Strings/rolling_hash.cpp.html
-title: Strings/rolling_hash.cpp
+- /library/string/rolling_hash.cpp
+- /library/string/rolling_hash.cpp.html
+title: string/rolling_hash.cpp
 ---
