@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/alds1/14_B.test.cpp
+    title: verify/aoj/alds1/14_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/1_A.test.cpp
     title: verify/aoj/dsl/1_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -77,6 +80,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/id/2286.test.cpp
+  - verify/aoj/alds1/14_B.test.cpp
   - verify/aoj/dsl/5_B.test.cpp
   - verify/aoj/dsl/1_A.test.cpp
 documentation_of: template/template.hpp

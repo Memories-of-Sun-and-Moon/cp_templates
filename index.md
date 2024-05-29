@@ -75,9 +75,9 @@ data:
       title: math/range_sieve.cpp
   - name: string
     pages:
-    - icon: ':warning:'
-      path: string/rolling_hash.cpp
-      title: string/rolling_hash.cpp
+    - icon: ':heavy_check_mark:'
+      path: string/rolling_hash.hpp
+      title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
   - name: template
     pages:
     - icon: ':warning:'
@@ -87,6 +87,11 @@ data:
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
+  - name: verify/aoj/alds1
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/alds1/14_B.test.cpp
+      title: verify/aoj/alds1/14_B.test.cpp
   - name: verify/aoj/dsl
     pages:
     - icon: ':heavy_check_mark:'
