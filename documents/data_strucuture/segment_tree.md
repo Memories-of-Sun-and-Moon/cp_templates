@@ -3,7 +3,7 @@ title: セグメント木
 documentation_of: ./../../data_structure/segment_tree.hpp
 ---
 
-# 0-indexedのセグメント木
+# セグメント木
 
 ## 使い方
 
