@@ -1,8 +1,3 @@
-#include "bits/stdc++.h"
-using namespace std;
-
-// Verified
-// https://onlinejudge.u-aizu.ac.jp/status/users/M3_cp/submissions/2/DSL_2_A/judge/6708968/C++17
 
 template<typename T>struct segment_tree {
     using F = function<T(T, T)>;
