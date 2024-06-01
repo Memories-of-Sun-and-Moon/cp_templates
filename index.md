@@ -17,9 +17,12 @@ data:
     - icon: ':warning:'
       path: data_structure/binary_indexed_tree.cpp
       title: data_structure/binary_indexed_tree.cpp
-    - icon: ':warning:'
-      path: data_structure/segment_tree.cpp
-      title: data_structure/segment_tree.cpp
+    - icon: ':heavy_check_mark:'
+      path: data_structure/segment_tree.hpp
+      title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':heavy_check_mark:'
+      path: data_structure/segment_tree_0-indexed.hpp
+      title: "0-indexed\u306E\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree_2d.hpp
       title: "2D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -97,6 +100,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/1_A.test.cpp
       title: verify/aoj/dsl/1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/dsl/2_A___segment_tree.test.cpp
+      title: verify/aoj/dsl/2_A___segment_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
+      title: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/dsl/2_B___segment_tree.test.cpp
+      title: verify/aoj/dsl/2_B___segment_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
+      title: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/5_B.test.cpp
       title: verify/aoj/dsl/5_B.test.cpp
