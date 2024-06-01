@@ -5,14 +5,14 @@
 
 void mmrz::solve(){
 	int n, q;
-    cin >> n >> q;
-    auto combine = [](ll a, ll b){return a+b; };
-    segment_tree<ll> seg(n, combine, 0);
-    while(q--){
-        int com, x, y;
-        cin >> com >> x >> y;
-        x--;
-        if(com)cout << seg.fold(x, y) << endl;
-        else seg.set(x, seg[x]+y);
-    }
+	cin >> n >> q;
+	auto combine = [](ll a, ll b){return a+b; };
+	segment_tree<ll> seg(n, combine, 0);
+	while(q--){
+		int com, x, y;
+		cin >> com >> x >> y;
+		x--;
+		if(com)cout << seg.fold(x, y) << endl;
+		else seg.set(x, seg[x]+y);
+	}
 }

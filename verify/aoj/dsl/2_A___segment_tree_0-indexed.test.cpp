@@ -5,13 +5,13 @@
 
 void mmrz::solve(){
 	int n, q;
-    cin >> n >> q;
-    auto combine = [](int a, int b){return min(a, b); };
-    segment_tree<int> seg(n, combine, inf<int>());
-    while(q--){
-        int com, x, y;
-        cin >> com >> x >> y;
-        if(com)cout << seg.fold(x, y + 1) << endl;
-        else seg.set(x, y);
-    }
+	cin >> n >> q;
+	auto combine = [](int a, int b){return min(a, b); };
+	segment_tree<int> seg(n, combine, inf<int>());
+	while(q--){
+		int com, x, y;
+		cin >> com >> x >> y;
+		if(com)cout << seg.fold(x, y + 1) << endl;
+		else seg.set(x, y);
+	}
 }
