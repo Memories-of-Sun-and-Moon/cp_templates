@@ -20,7 +20,7 @@ documentation_of: ./../../data_structure/segment_tree.hpp
 - ``seg[x]`` : $x$ 番目の値を返す。$O(1)$
 - ``max_right(f<bool(T)>, l)`` : $l \leq i < N$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最大（ $N-1$ 寄り）のものを返す $O(\log(N))$
 
-## !!!UNVERIFYED!!!
+## !!!UNVERIFIED!!!
 
 - ``min_left(f<bool(T)>, r)`` : $0 \leq i \leq r$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最小（ $0$ 寄り）のものを返す $O(\log(N))$
 
