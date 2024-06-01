@@ -76,11 +76,6 @@ title: "0-indexed\u306E\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
 - ``void set(int x, T val)`` : $x$ 番目の要素を $val$ に変更する  $O(\log(N))$
 - ``T fold(int l, int r)`` : $[l, r)$ を満たす区間内に対する区間演算クエリの結果を返す $O(\log(N))$
 - ``seg[x]`` : $x$ 番目の値を返す。$O(1)$
-- ``max_right(f<bool(T)>, l)`` : $l \leq i < N$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最大（ $N-1$ 寄り）のものを返す $O(\log(N))$
-
-## !!!UNVERIFYED!!!
-
-- ``min_left(f<bool(T)>, r)`` : $0 \leq i \leq r$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最小（ $0$ 寄り）のものを返す $O(\log(N))$
 
 ## 概要
 

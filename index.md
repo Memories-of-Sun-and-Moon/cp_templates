@@ -120,6 +120,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/id/2286.test.cpp
       title: verify/aoj/id/2286.test.cpp
+  - name: verify/yukicoder
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yukicoder/1435.test.cpp
+      title: verify/yukicoder/1435.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/atcoder/M3_cp?logo=true)
