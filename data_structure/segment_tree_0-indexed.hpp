@@ -59,27 +59,3 @@ template<typename T>struct segment_tree {
         return combine(vl, vr);
     }
 };
-
-//Usage
-
-int n;
-
-int main(){
-    auto combine_sum = [](int a, int b){return a + b; };
-    segment_tree<int> Range_Sum_Query(n, combine_sum, 0);
-}
-
-/*転倒数
-int main() {
-    auto combine_sum = [](int a, int b){return a + b; };
-    segment_tree<int> seg(n, combine_sum, 0);
-
-    LL ans = 0;
-
-    REP(i, n){
-        LL num = i - seg.fold(0, a[i]);
-        seg.set(a[i], 1);
-        ans += num;
-    }
-}
-*/
