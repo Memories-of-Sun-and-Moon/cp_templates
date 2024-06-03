@@ -28,6 +28,12 @@ data:
     path: verify/aoj/id/2286.test.cpp
     title: verify/aoj/id/2286.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/id/2828.test.cpp
+    title: verify/aoj/id/2828.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/lc/assignment.test.cpp
+    title: verify/lc/assignment.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/1435.test.cpp
     title: verify/yukicoder/1435.test.cpp
   _isVerificationFailed: false
@@ -95,6 +101,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/id/2286.test.cpp
+  - verify/aoj/id/2828.test.cpp
   - verify/aoj/alds1/14_B.test.cpp
   - verify/aoj/dsl/5_B.test.cpp
   - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
@@ -103,6 +110,7 @@ data:
   - verify/aoj/dsl/2_B___segment_tree.test.cpp
   - verify/aoj/dsl/1_A.test.cpp
   - verify/yukicoder/1435.test.cpp
+  - verify/lc/assignment.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:
