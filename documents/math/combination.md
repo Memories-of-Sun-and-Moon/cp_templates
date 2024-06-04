@@ -13,6 +13,6 @@ documentation_of: ./../../math/combination.hpp
 
 ## 概要
 
-## 一応Verify出来たサイト
+## Verify
 
 [AtCoder](https://atcoder.jp/contests/abc066/tasks/arc077_b)
