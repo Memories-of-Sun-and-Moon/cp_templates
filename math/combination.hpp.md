@@ -69,6 +69,6 @@ title: "2\u9805\u4FC2\u6570mod"
 
 ## 概要
 
-## 一応Verify出来たサイト
+## Verify
 
 [AtCoder](https://atcoder.jp/contests/abc066/tasks/arc077_b)

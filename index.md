@@ -29,6 +29,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/union_find.hpp
       title: Union-Find
+  - name: dp
+    pages:
+    - icon: ':warning:'
+      path: dp/monotone_minima.hpp
+      title: "Monotone\u306A\u884C\u5217\u306B\u304A\u3051\u308B\u884C\u6700\u5C0F\
+        \u5024\u554F\u984C(monotone-minima)"
   - name: geometry
     pages:
     - icon: ':warning:'
