@@ -36,6 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/1435.test.cpp
     title: verify/yukicoder/1435.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/2219.test.cpp
+    title: verify/yukicoder/2219.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -109,6 +112,7 @@ data:
   - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
   - verify/aoj/dsl/2_B___segment_tree.test.cpp
   - verify/aoj/dsl/1_A.test.cpp
+  - verify/yukicoder/2219.test.cpp
   - verify/yukicoder/1435.test.cpp
   - verify/lc/assignment.test.cpp
 documentation_of: template/template.hpp

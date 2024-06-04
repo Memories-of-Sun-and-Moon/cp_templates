@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: math/modint.cpp
-    title: math/modint.cpp
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -33,12 +30,11 @@ data:
     \ & 1)ret *= n;\n\t\tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\nlong long\
     \ m, n;\nconst long long mod = 1000000000 + 7;\n\nint main(){\n\tcin >> m >> n;\n\
     \tcout << power(m, n, mod) << endl;\n}"
-  dependsOn:
-  - math/modint.cpp
+  dependsOn: []
   isVerificationFile: false
   path: math/power.cpp
   requiredBy: []
-  timestamp: '2024-05-28 05:46:14+09:00'
+  timestamp: '1970-01-01 00:00:00+00:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/power.cpp
