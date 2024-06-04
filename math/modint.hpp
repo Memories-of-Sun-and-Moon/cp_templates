@@ -1,7 +1,3 @@
-# include <bits/stdc++.h>
-using namespace std;
-
-//thx https://noshi91.hatenablog.com/entry/2019/03/31/174006
 
 template <std::uint_fast64_t Modulus> class modint {
 	using u64 = std::uint_fast64_t;
@@ -57,11 +53,3 @@ public:
         return os;
     }
 };
-
-
-//using mint = modint<998244353>;
-//using mint = modint<1000000007>;
-
-
-// ---- 依存しているライブラリ
-// nCr%mod(combination).cpp
