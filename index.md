@@ -57,6 +57,9 @@ data:
       title: graph/warshall_floyd.cpp
   - name: math
     pages:
+    - icon: ':warning:'
+      path: math/combination.hpp
+      title: "2\u9805\u4FC2\u6570mod"
     - icon: ':heavy_check_mark:'
       path: math/euler_phi_table.hpp
       title: "\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\uFF08\u30AA\u30A4\u30E9\
@@ -65,9 +68,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/modint.hpp
       title: modint
-    - icon: ':warning:'
-      path: math/nCr%mod(combination).cpp
-      title: math/nCr%mod(combination).cpp
     - icon: ':warning:'
       path: math/power.cpp
       title: math/power.cpp

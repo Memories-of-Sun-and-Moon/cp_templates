@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: math/combination.hpp
+    title: "2\u9805\u4FC2\u6570mod"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2219.test.cpp
@@ -53,7 +56,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: math/modint.hpp
-  requiredBy: []
+  requiredBy:
+  - math/combination.hpp
   timestamp: '2024-06-04 18:16:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
