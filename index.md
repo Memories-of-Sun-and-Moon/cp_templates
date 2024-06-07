@@ -58,6 +58,9 @@ data:
     - icon: ':warning:'
       path: graph/strongly_connected_components.cpp
       title: graph/strongly_connected_components.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph/strongly_connected_components.hpp
+      title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
     - icon: ':warning:'
       path: graph/warshall_floyd.cpp
       title: graph/warshall_floyd.cpp
@@ -125,6 +128,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/5_B.test.cpp
       title: verify/aoj/dsl/5_B.test.cpp
+  - name: verify/aoj/grl
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/grl/3_C.test.cpp
+      title: verify/aoj/grl/3_C.test.cpp
   - name: verify/aoj/id
     pages:
     - icon: ':heavy_check_mark:'

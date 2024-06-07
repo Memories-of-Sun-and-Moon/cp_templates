@@ -25,6 +25,9 @@ data:
     path: verify/aoj/dsl/5_B.test.cpp
     title: verify/aoj/dsl/5_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/grl/3_C.test.cpp
+    title: verify/aoj/grl/3_C.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/id/2286.test.cpp
     title: verify/aoj/id/2286.test.cpp
   - icon: ':heavy_check_mark:'
@@ -112,6 +115,7 @@ data:
   - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
   - verify/aoj/dsl/2_B___segment_tree.test.cpp
   - verify/aoj/dsl/1_A.test.cpp
+  - verify/aoj/grl/3_C.test.cpp
   - verify/yukicoder/2219.test.cpp
   - verify/yukicoder/1435.test.cpp
   - verify/lc/assignment.test.cpp
