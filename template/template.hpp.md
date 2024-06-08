@@ -42,6 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2219.test.cpp
     title: verify/yukicoder/2219.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/2780.test.cpp
+    title: verify/yukicoder/2780.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -118,6 +121,7 @@ data:
   - verify/aoj/grl/3_C.test.cpp
   - verify/yukicoder/2219.test.cpp
   - verify/yukicoder/1435.test.cpp
+  - verify/yukicoder/2780.test.cpp
   - verify/lc/assignment.test.cpp
 documentation_of: template/template.hpp
 layout: document

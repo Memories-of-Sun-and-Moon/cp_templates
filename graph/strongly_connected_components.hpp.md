@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/3_C.test.cpp
     title: verify/aoj/grl/3_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/2780.test.cpp
+    title: verify/yukicoder/2780.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -47,6 +50,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/grl/3_C.test.cpp
+  - verify/yukicoder/2780.test.cpp
 documentation_of: graph/strongly_connected_components.hpp
 layout: document
 title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
