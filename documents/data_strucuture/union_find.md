@@ -10,9 +10,11 @@ documentation_of: ./../../data_structure/union_find.hpp
 $n$ を Union-Find のサイズとする
 
 - ``union_find(int size)`` : サイズ $size$ の Union-Find を生成する
-- ``void unite(int x, int y)`` : x と y をマージする $O(\alpha(n))$
-- ``bool is_same(int x, int y)`` : x と y が同じグループかを返す
-- ``int get_size(int x)`` : x が属する集合のサイズを返す
+- ``bool unite(int x, int y)`` : x と y をマージする。マージが成功したときに ``true`` を返す $O(\alpha(n))$
+- ``bool is_same(int x, int y)`` : x と y が同じグループかを返す $O(\alpha(n))$
+- ``int get_size(int x)`` : x が属する集合のサイズを返す $O(1)$
+- ``int groups_size()`` : Union-Find の集合の数を返す $O(1)$
+
 
 ## 概要
 
