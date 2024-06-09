@@ -14,8 +14,10 @@
 "verify/yosupo/assignment.test.cpp": "2024-06-09 16:27:06 +0900",
 "verify/yosupo/number_of_substrings.test.cpp": "2024-06-09 16:46:17 +0900",
 "verify/yosupo/suffixarray.test.cpp": "2024-06-09 16:46:17 +0900",
+"verify/yosupo/two_sat.test.cpp": "2024-06-09 18:43:02 +0900",
 "verify/yosupo/unionfind.test.cpp": "2024-06-09 17:30:08 +0900",
 "verify/yukicoder/1435.test.cpp": "2024-06-02 01:15:36 +0900",
 "verify/yukicoder/2219.test.cpp": "2024-06-04 18:16:03 +0900",
+"verify/yukicoder/274.test.cpp": "2024-06-09 18:43:02 +0900",
 "verify/yukicoder/2780.test.cpp": "2024-06-08 20:28:02 +0900"
 }
