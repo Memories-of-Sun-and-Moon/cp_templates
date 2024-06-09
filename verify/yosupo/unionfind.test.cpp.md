@@ -14,10 +14,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A
+    PROBLEM: https://judge.yosupo.jp/problem/unionfind
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A
-  bundledCode: "#line 1 \"verify/aoj/dsl/1_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A\"\
+    - https://judge.yosupo.jp/problem/unionfind
+  bundledCode: "#line 1 \"verify/yosupo/unionfind.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
     \n\n#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ull = unsigned long long;\nconst double pi\
     \ = acos(-1);\ntemplate<class T>constexpr T inf() { return ::std::numeric_limits<T>::max();\
@@ -52,28 +52,31 @@ data:
     v[y] = x;\n\t\t\tg_size--;\n\t\t\treturn true;\n\t\t}\n\t\treturn false;\n\t}\n\
     \n\tbool is_same(int x,int y){\n\t\treturn root(x) == root(y);\n\t}\n\n\tint get_size(int\
     \ x){\n\t\tx = root(x);\n\t\treturn -v[x];\n\t}\n\n\tint groups_size(){\n\t\t\
-    return g_size;\n\t}\n};\n#line 5 \"verify/aoj/dsl/1_A.test.cpp\"\n\nvoid mmrz::solve(){\n\
-    \tint n, q;\n\tint com, x, y;\n\tcin >> n >> q;\n\tunion_find uf(n);\n\twhile(q--){\n\
-    \t\tcin >> com >> x >> y;\n\t\tif(com == 0)uf.unite(x, y);\n\t\telse cout << uf.is_same(x,\
-    \ y) << endl;\n\t}\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A\"\
-    \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../data_structure/union_find.hpp\"\
-    \n\nvoid mmrz::solve(){\n\tint n, q;\n\tint com, x, y;\n\tcin >> n >> q;\n\tunion_find\
-    \ uf(n);\n\twhile(q--){\n\t\tcin >> com >> x >> y;\n\t\tif(com == 0)uf.unite(x,\
-    \ y);\n\t\telse cout << uf.is_same(x, y) << endl;\n\t}\n}\n"
+    return g_size;\n\t}\n};\n#line 5 \"verify/yosupo/unionfind.test.cpp\"\n\nvoid\
+    \ mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tunion_find uf(n);\n\twhile(q--){\n\
+    \t\tint t;\n\t\tcin >> t;\n\t\tif(t == 0){\n\t\t\tint u, v;\n\t\t\tcin >> u >>\
+    \ v;\n\t\t\tuf.unite(u, v);\n\t\t}else{\n\t\t\tint u, v;\n\t\t\tcin >> u >> v;\n\
+    \t\t\tcout << (uf.is_same(u, v) ? 1 : 0) << endl;\n\t\t}\n\t}\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
+    \ \"./../../template/template.hpp\"\n#include \"./../../data_structure/union_find.hpp\"\
+    \n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tunion_find uf(n);\n\t\
+    while(q--){\n\t\tint t;\n\t\tcin >> t;\n\t\tif(t == 0){\n\t\t\tint u, v;\n\t\t\
+    \tcin >> u >> v;\n\t\t\tuf.unite(u, v);\n\t\t}else{\n\t\t\tint u, v;\n\t\t\tcin\
+    \ >> u >> v;\n\t\t\tcout << (uf.is_same(u, v) ? 1 : 0) << endl;\n\t\t}\n\t}\n\
+    }\n"
   dependsOn:
   - template/template.hpp
   - data_structure/union_find.hpp
   isVerificationFile: true
-  path: verify/aoj/dsl/1_A.test.cpp
+  path: verify/yosupo/unionfind.test.cpp
   requiredBy: []
   timestamp: '2024-06-09 17:30:08+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/aoj/dsl/1_A.test.cpp
+documentation_of: verify/yosupo/unionfind.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/aoj/dsl/1_A.test.cpp
-- /verify/verify/aoj/dsl/1_A.test.cpp.html
-title: verify/aoj/dsl/1_A.test.cpp
+- /verify/verify/yosupo/unionfind.test.cpp
+- /verify/verify/yosupo/unionfind.test.cpp.html
+title: verify/yosupo/unionfind.test.cpp
 ---

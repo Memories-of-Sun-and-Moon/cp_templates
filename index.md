@@ -134,6 +134,9 @@ data:
   - name: verify/aoj/grl
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/aoj/grl/2_A.test.cpp
+      title: verify/aoj/grl/2_A.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/3_C.test.cpp
       title: verify/aoj/grl/3_C.test.cpp
   - name: verify/aoj/id
@@ -160,6 +163,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/suffixarray.test.cpp
       title: verify/yosupo/suffixarray.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/unionfind.test.cpp
+      title: verify/yosupo/unionfind.test.cpp
   - name: verify/yukicoder
     pages:
     - icon: ':heavy_check_mark:'
