@@ -37,6 +37,15 @@ data:
     path: verify/lc/assignment.test.cpp
     title: verify/lc/assignment.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/assignment.test.cpp
+    title: verify/yosupo/assignment.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/number_of_substrings.test.cpp
+    title: verify/yosupo/number_of_substrings.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/suffixarray.test.cpp
+    title: verify/yosupo/suffixarray.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/1435.test.cpp
     title: verify/yukicoder/1435.test.cpp
   - icon: ':heavy_check_mark:'
@@ -122,6 +131,9 @@ data:
   - verify/yukicoder/2219.test.cpp
   - verify/yukicoder/1435.test.cpp
   - verify/yukicoder/2780.test.cpp
+  - verify/yosupo/number_of_substrings.test.cpp
+  - verify/yosupo/assignment.test.cpp
+  - verify/yosupo/suffixarray.test.cpp
   - verify/lc/assignment.test.cpp
 documentation_of: template/template.hpp
 layout: document

@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/lc/assignment.test.cpp
     title: verify/lc/assignment.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/assignment.test.cpp
+    title: verify/yosupo/assignment.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -54,6 +57,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/id/2828.test.cpp
+  - verify/yosupo/assignment.test.cpp
   - verify/lc/assignment.test.cpp
 documentation_of: graph/hungarian.hpp
 layout: document

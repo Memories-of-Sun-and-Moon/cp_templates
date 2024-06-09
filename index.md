@@ -94,6 +94,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/rolling_hash.hpp
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
+    - icon: ':heavy_check_mark:'
+      path: string/suffix_array.hpp
+      title: Suffix Array
   - name: template
     pages:
     - icon: ':warning:'
@@ -146,6 +149,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/lc/assignment.test.cpp
       title: verify/lc/assignment.test.cpp
+  - name: verify/yosupo
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/assignment.test.cpp
+      title: verify/yosupo/assignment.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/number_of_substrings.test.cpp
+      title: verify/yosupo/number_of_substrings.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/suffixarray.test.cpp
+      title: verify/yosupo/suffixarray.test.cpp
   - name: verify/yukicoder
     pages:
     - icon: ':heavy_check_mark:'
