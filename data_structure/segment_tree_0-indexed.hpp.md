@@ -15,43 +15,44 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"data_structure/segment_tree_0-indexed.hpp\"\n\ntemplate<typename\
-    \ T>struct segment_tree {\n\tusing F = function<T(T, T)>;\n\n\tint n;\n\tvector<T>\
-    \ node;\n\tF combine;\n\tT identify;\n\n\tsegment_tree(vector<T> v, F _combine,\
-    \ T _identity) : combine(_combine), identify(_identity) {\n\t\tint sz = (int)v.size();\n\
-    \t\tn = 1;\n\t\twhile(n < sz)n *= 2;\n\t\tnode.resize(2 * n - 1, identify);\n\n\
-    \t\tfor(int i = 0;i < sz;i++)node[i + n - 1] = v[i];\n\t\tfor(int i = n - 2;i\
-    \ >= 0;i--)node[i] = combine(node[2 * i + 1], node[2 * i + 2]);\n\t}\n\n\tsegment_tree(int\
-    \ _n, F _combine, T _identify) : combine(_combine), identify(_identify){\n\t\t\
-    int sz = _n;\n\t\tn = 1;\n\t\twhile(n < sz)n *= 2;\n\t\tnode.resize(2 * n - 1,\
-    \ identify);\n\t}\n\n\tT operator[](int x) {return node[x + n - 1]; }\n\n\tvoid\
-    \ set(int x, T val){\n\t\tx += (n - 1);\n\n\t\tnode[x] = val;\n\t\twhile(x > 0){\n\
-    \t\t\tx = (x - 1) / 2;\n\t\t\tnode[x] = combine(node[2 * x + 1], node[2 * x +\
-    \ 2]);\n\t\t}\n\t}\n\n\tT fold(int a, int b, int k = 0, int l = 0, int r = -1){\n\
-    \t\tif(r < 0) r = n;\n\n\t\tif(r <= a || b <= l)return identify;\n\t\t\n\t\tif(a\
-    \ <= l && r <= b)return node[k];\n\n\t\tT vl = fold(a, b, 2 * k + 1, l, (l + r)\
-    \ / 2);\n\t\tT vr = fold(a, b, 2 * k + 2, (l + r) / 2, r);\n\t\treturn combine(vl,\
-    \ vr);\n\t}\n};\n"
-  code: "\ntemplate<typename T>struct segment_tree {\n\tusing F = function<T(T, T)>;\n\
-    \n\tint n;\n\tvector<T> node;\n\tF combine;\n\tT identify;\n\n\tsegment_tree(vector<T>\
-    \ v, F _combine, T _identity) : combine(_combine), identify(_identity) {\n\t\t\
-    int sz = (int)v.size();\n\t\tn = 1;\n\t\twhile(n < sz)n *= 2;\n\t\tnode.resize(2\
-    \ * n - 1, identify);\n\n\t\tfor(int i = 0;i < sz;i++)node[i + n - 1] = v[i];\n\
-    \t\tfor(int i = n - 2;i >= 0;i--)node[i] = combine(node[2 * i + 1], node[2 * i\
-    \ + 2]);\n\t}\n\n\tsegment_tree(int _n, F _combine, T _identify) : combine(_combine),\
-    \ identify(_identify){\n\t\tint sz = _n;\n\t\tn = 1;\n\t\twhile(n < sz)n *= 2;\n\
-    \t\tnode.resize(2 * n - 1, identify);\n\t}\n\n\tT operator[](int x) {return node[x\
-    \ + n - 1]; }\n\n\tvoid set(int x, T val){\n\t\tx += (n - 1);\n\n\t\tnode[x] =\
-    \ val;\n\t\twhile(x > 0){\n\t\t\tx = (x - 1) / 2;\n\t\t\tnode[x] = combine(node[2\
-    \ * x + 1], node[2 * x + 2]);\n\t\t}\n\t}\n\n\tT fold(int a, int b, int k = 0,\
-    \ int l = 0, int r = -1){\n\t\tif(r < 0) r = n;\n\n\t\tif(r <= a || b <= l)return\
-    \ identify;\n\t\t\n\t\tif(a <= l && r <= b)return node[k];\n\n\t\tT vl = fold(a,\
-    \ b, 2 * k + 1, l, (l + r) / 2);\n\t\tT vr = fold(a, b, 2 * k + 2, (l + r) / 2,\
-    \ r);\n\t\treturn combine(vl, vr);\n\t}\n};\n"
+    \ T>struct [[deprecated(\"use 1-indexed segment tree (segment_tree.hpp)\")]] segment_tree\
+    \ {\n\tusing F = function<T(T, T)>;\n\n\tint n;\n\tvector<T> node;\n\tF combine;\n\
+    \tT identify;\n\n\tsegment_tree(vector<T> v, F _combine, T _identity) : combine(_combine),\
+    \ identify(_identity) {\n\t\tint sz = (int)v.size();\n\t\tn = 1;\n\t\twhile(n\
+    \ < sz)n *= 2;\n\t\tnode.resize(2 * n - 1, identify);\n\n\t\tfor(int i = 0;i <\
+    \ sz;i++)node[i + n - 1] = v[i];\n\t\tfor(int i = n - 2;i >= 0;i--)node[i] = combine(node[2\
+    \ * i + 1], node[2 * i + 2]);\n\t}\n\n\tsegment_tree(int _n, F _combine, T _identify)\
+    \ : combine(_combine), identify(_identify){\n\t\tint sz = _n;\n\t\tn = 1;\n\t\t\
+    while(n < sz)n *= 2;\n\t\tnode.resize(2 * n - 1, identify);\n\t}\n\n\tT operator[](int\
+    \ x) {return node[x + n - 1]; }\n\n\tvoid set(int x, T val){\n\t\tx += (n - 1);\n\
+    \n\t\tnode[x] = val;\n\t\twhile(x > 0){\n\t\t\tx = (x - 1) / 2;\n\t\t\tnode[x]\
+    \ = combine(node[2 * x + 1], node[2 * x + 2]);\n\t\t}\n\t}\n\n\tT fold(int a,\
+    \ int b, int k = 0, int l = 0, int r = -1){\n\t\tif(r < 0) r = n;\n\n\t\tif(r\
+    \ <= a || b <= l)return identify;\n\t\t\n\t\tif(a <= l && r <= b)return node[k];\n\
+    \n\t\tT vl = fold(a, b, 2 * k + 1, l, (l + r) / 2);\n\t\tT vr = fold(a, b, 2 *\
+    \ k + 2, (l + r) / 2, r);\n\t\treturn combine(vl, vr);\n\t}\n};\n"
+  code: "\ntemplate<typename T>struct [[deprecated(\"use 1-indexed segment tree (segment_tree.hpp)\"\
+    )]] segment_tree {\n\tusing F = function<T(T, T)>;\n\n\tint n;\n\tvector<T> node;\n\
+    \tF combine;\n\tT identify;\n\n\tsegment_tree(vector<T> v, F _combine, T _identity)\
+    \ : combine(_combine), identify(_identity) {\n\t\tint sz = (int)v.size();\n\t\t\
+    n = 1;\n\t\twhile(n < sz)n *= 2;\n\t\tnode.resize(2 * n - 1, identify);\n\n\t\t\
+    for(int i = 0;i < sz;i++)node[i + n - 1] = v[i];\n\t\tfor(int i = n - 2;i >= 0;i--)node[i]\
+    \ = combine(node[2 * i + 1], node[2 * i + 2]);\n\t}\n\n\tsegment_tree(int _n,\
+    \ F _combine, T _identify) : combine(_combine), identify(_identify){\n\t\tint\
+    \ sz = _n;\n\t\tn = 1;\n\t\twhile(n < sz)n *= 2;\n\t\tnode.resize(2 * n - 1, identify);\n\
+    \t}\n\n\tT operator[](int x) {return node[x + n - 1]; }\n\n\tvoid set(int x, T\
+    \ val){\n\t\tx += (n - 1);\n\n\t\tnode[x] = val;\n\t\twhile(x > 0){\n\t\t\tx =\
+    \ (x - 1) / 2;\n\t\t\tnode[x] = combine(node[2 * x + 1], node[2 * x + 2]);\n\t\
+    \t}\n\t}\n\n\tT fold(int a, int b, int k = 0, int l = 0, int r = -1){\n\t\tif(r\
+    \ < 0) r = n;\n\n\t\tif(r <= a || b <= l)return identify;\n\t\t\n\t\tif(a <= l\
+    \ && r <= b)return node[k];\n\n\t\tT vl = fold(a, b, 2 * k + 1, l, (l + r) / 2);\n\
+    \t\tT vr = fold(a, b, 2 * k + 2, (l + r) / 2, r);\n\t\treturn combine(vl, vr);\n\
+    \t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data_structure/segment_tree_0-indexed.hpp
   requiredBy: []
-  timestamp: '2024-06-02 00:55:57+09:00'
+  timestamp: '2024-06-09 16:05:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
