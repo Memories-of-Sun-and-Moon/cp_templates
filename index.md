@@ -55,12 +55,12 @@ data:
     - icon: ':warning:'
       path: graph/max_flow_ford_fulkerson O(max_flow x E).cpp
       title: graph/max_flow_ford_fulkerson O(max_flow x E).cpp
-    - icon: ':warning:'
-      path: graph/strongly_connected_components.cpp
-      title: graph/strongly_connected_components.cpp
     - icon: ':heavy_check_mark:'
       path: graph/strongly_connected_components.hpp
       title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
+    - icon: ':heavy_check_mark:'
+      path: graph/two_sat.hpp
+      title: 2-SAT
     - icon: ':warning:'
       path: graph/warshall_floyd.cpp
       title: graph/warshall_floyd.cpp
@@ -164,6 +164,9 @@ data:
       path: verify/yosupo/suffixarray.test.cpp
       title: verify/yosupo/suffixarray.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/two_sat.test.cpp
+      title: verify/yosupo/two_sat.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/unionfind.test.cpp
       title: verify/yosupo/unionfind.test.cpp
   - name: verify/yukicoder
@@ -174,6 +177,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/2219.test.cpp
       title: verify/yukicoder/2219.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yukicoder/274.test.cpp
+      title: verify/yukicoder/274.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/2780.test.cpp
       title: verify/yukicoder/2780.test.cpp

@@ -49,6 +49,9 @@ data:
     path: verify/yosupo/suffixarray.test.cpp
     title: verify/yosupo/suffixarray.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/two_sat.test.cpp
+    title: verify/yosupo/two_sat.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/unionfind.test.cpp
     title: verify/yosupo/unionfind.test.cpp
   - icon: ':heavy_check_mark:'
@@ -57,6 +60,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2219.test.cpp
     title: verify/yukicoder/2219.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/274.test.cpp
+    title: verify/yukicoder/274.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
@@ -135,12 +141,14 @@ data:
   - verify/aoj/dsl/1_A.test.cpp
   - verify/aoj/grl/2_A.test.cpp
   - verify/aoj/grl/3_C.test.cpp
+  - verify/yukicoder/274.test.cpp
   - verify/yukicoder/2219.test.cpp
   - verify/yukicoder/1435.test.cpp
   - verify/yukicoder/2780.test.cpp
   - verify/yosupo/number_of_substrings.test.cpp
   - verify/yosupo/unionfind.test.cpp
   - verify/yosupo/assignment.test.cpp
+  - verify/yosupo/two_sat.test.cpp
   - verify/yosupo/suffixarray.test.cpp
   - verify/lc/assignment.test.cpp
 documentation_of: template/template.hpp
