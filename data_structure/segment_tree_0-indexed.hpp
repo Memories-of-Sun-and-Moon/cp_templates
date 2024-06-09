@@ -1,5 +1,5 @@
 
-template<typename T>struct segment_tree {
+template<typename T>struct [[deprecated("use 1-indexed segment tree (segment_tree.hpp)")]] segment_tree {
 	using F = function<T(T, T)>;
 
 	int n;
