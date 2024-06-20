@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: verify/yosupo/zalgorithm.cpp
+    title: verify/yosupo/zalgorithm.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/alds1/14_B.test.cpp
@@ -126,31 +129,32 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
-  requiredBy: []
+  requiredBy:
+  - verify/yosupo/zalgorithm.cpp
   timestamp: '2024-05-24 13:30:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/id/2286.test.cpp
-  - verify/aoj/id/2828.test.cpp
+  - verify/yukicoder/1435.test.cpp
+  - verify/yukicoder/2219.test.cpp
+  - verify/yukicoder/274.test.cpp
+  - verify/yukicoder/2780.test.cpp
+  - verify/lc/assignment.test.cpp
   - verify/aoj/alds1/14_B.test.cpp
-  - verify/aoj/dsl/5_B.test.cpp
-  - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
-  - verify/aoj/dsl/2_A___segment_tree.test.cpp
+  - verify/aoj/grl/3_C.test.cpp
+  - verify/aoj/grl/2_A.test.cpp
   - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
+  - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
   - verify/aoj/dsl/2_B___segment_tree.test.cpp
   - verify/aoj/dsl/1_A.test.cpp
-  - verify/aoj/grl/2_A.test.cpp
-  - verify/aoj/grl/3_C.test.cpp
-  - verify/yukicoder/274.test.cpp
-  - verify/yukicoder/2219.test.cpp
-  - verify/yukicoder/1435.test.cpp
-  - verify/yukicoder/2780.test.cpp
-  - verify/yosupo/number_of_substrings.test.cpp
-  - verify/yosupo/unionfind.test.cpp
-  - verify/yosupo/assignment.test.cpp
+  - verify/aoj/dsl/2_A___segment_tree.test.cpp
+  - verify/aoj/dsl/5_B.test.cpp
+  - verify/aoj/id/2286.test.cpp
+  - verify/aoj/id/2828.test.cpp
   - verify/yosupo/two_sat.test.cpp
+  - verify/yosupo/unionfind.test.cpp
   - verify/yosupo/suffixarray.test.cpp
-  - verify/lc/assignment.test.cpp
+  - verify/yosupo/number_of_substrings.test.cpp
+  - verify/yosupo/assignment.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:

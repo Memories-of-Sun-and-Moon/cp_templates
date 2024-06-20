@@ -59,9 +59,9 @@ data:
   timestamp: '2024-06-08 00:30:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/grl/3_C.test.cpp
   - verify/yukicoder/274.test.cpp
   - verify/yukicoder/2780.test.cpp
+  - verify/aoj/grl/3_C.test.cpp
   - verify/yosupo/two_sat.test.cpp
 documentation_of: graph/strongly_connected_components.hpp
 layout: document

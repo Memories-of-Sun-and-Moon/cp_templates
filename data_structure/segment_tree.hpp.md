@@ -81,9 +81,9 @@ data:
   timestamp: '2024-06-02 01:02:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/dsl/2_A___segment_tree.test.cpp
-  - verify/aoj/dsl/2_B___segment_tree.test.cpp
   - verify/yukicoder/1435.test.cpp
+  - verify/aoj/dsl/2_B___segment_tree.test.cpp
+  - verify/aoj/dsl/2_A___segment_tree.test.cpp
 documentation_of: data_structure/segment_tree.hpp
 layout: document
 title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"

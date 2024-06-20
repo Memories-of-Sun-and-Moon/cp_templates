@@ -97,6 +97,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/suffix_array.hpp
       title: Suffix Array
+    - icon: ':warning:'
+      path: string/z_algorithm.hpp
+      title: Z Algorithm
   - name: template
     pages:
     - icon: ':warning:'
@@ -105,6 +108,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
+  - name: verify/yosupo
+    pages:
+    - icon: ':warning:'
+      path: verify/yosupo/zalgorithm.cpp
+      title: verify/yosupo/zalgorithm.cpp
   verificationCategories:
   - name: verify/aoj/alds1
     pages:

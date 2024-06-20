@@ -42,8 +42,8 @@ data:
   timestamp: '2024-06-09 17:30:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/dsl/1_A.test.cpp
   - verify/aoj/grl/2_A.test.cpp
+  - verify/aoj/dsl/1_A.test.cpp
   - verify/yosupo/unionfind.test.cpp
 documentation_of: data_structure/union_find.hpp
 layout: document

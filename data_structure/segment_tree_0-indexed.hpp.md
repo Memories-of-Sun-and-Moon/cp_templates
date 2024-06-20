@@ -55,8 +55,8 @@ data:
   timestamp: '2024-06-09 16:05:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
   - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
+  - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
 documentation_of: data_structure/segment_tree_0-indexed.hpp
 layout: document
 title: "0-indexed\u306E\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
