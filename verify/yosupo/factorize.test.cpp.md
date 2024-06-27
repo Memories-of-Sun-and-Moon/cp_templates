@@ -68,15 +68,15 @@ data:
     \        long long x = step, y = f(x);\n        while (true) {\n            long\
     \ long p = gcd(y - x + n, n);\n            if (p == 0 || p == n) break;\n    \
     \        if (p != 1) return p;\n            x = f(x);\n            y = f(f(y));\n\
-    \        }\n    }\n\n}\n\nvector<long long> factor(long long x){\n    if(x ==\
-    \ 1)return {};\n    long long p = rho(x);\n    if(p == x) return {p};\n    \n\
-    \    vector<long long> l = factor(p);\n    vector<long long> r = factor(x / p);\n\
-    \n    l.insert(l.end(), r.begin(), r.end());\n    sort(l.begin(), l.end());\n\n\
-    \    return l;\n}\n#line 5 \"verify/yosupo/factorize.test.cpp\"\n\nusing namespace\
-    \ mmrz;\n\nvoid mmrz::solve(){\n    int t;\n    cin >> t;\n    while(t--){\n \
-    \       ll a;\n        cin >> a;\n        vector<ll> ret = factor(a);\n      \
-    \  int k = len(ret);\n        cout << k;\n        rep(i, k){\n            cout\
-    \ << \" \" << ret[i];\n        }\n        cout << endl;\n    }\n}\n"
+    \        }\n    }\n}\n\nvector<long long> factor(long long x){\n    if(x == 1)return\
+    \ {};\n    long long p = rho(x);\n    if(p == x) return {p};\n    \n    vector<long\
+    \ long> l = factor(p);\n    vector<long long> r = factor(x / p);\n\n    l.insert(l.end(),\
+    \ r.begin(), r.end());\n    sort(l.begin(), l.end());\n\n    return l;\n}\n#line\
+    \ 5 \"verify/yosupo/factorize.test.cpp\"\n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\
+    \    int t;\n    cin >> t;\n    while(t--){\n        ll a;\n        cin >> a;\n\
+    \        vector<ll> ret = factor(a);\n        int k = len(ret);\n        cout\
+    \ << k;\n        rep(i, k){\n            cout << \" \" << ret[i];\n        }\n\
+    \        cout << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../math/factor.hpp\"\n\n\
     using namespace mmrz;\n\nvoid mmrz::solve(){\n    int t;\n    cin >> t;\n    while(t--){\n\
@@ -90,7 +90,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-06-27 22:04:31+09:00'
+  timestamp: '2024-06-27 23:33:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/factorize.test.cpp
