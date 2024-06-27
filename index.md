@@ -89,11 +89,8 @@ data:
       path: math/modint.hpp
       title: modint
     - icon: ':warning:'
-      path: math/power.cpp
-      title: math/power.cpp
-    - icon: ':warning:'
-      path: math/prime_factorization.cpp
-      title: math/prime_factorization.cpp
+      path: math/power.hpp
+      title: math/power.hpp
     - icon: ':warning:'
       path: math/range_sieve.cpp
       title: math/range_sieve.cpp
