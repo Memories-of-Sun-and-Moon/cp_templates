@@ -20,7 +20,6 @@ long long rho(long long n){
             y = f(f(y));
         }
     }
-
 }
 
 vector<long long> factor(long long x){
