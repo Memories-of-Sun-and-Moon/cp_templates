@@ -56,6 +56,9 @@ data:
       path: graph/max_flow_ford_fulkerson O(max_flow x E).cpp
       title: graph/max_flow_ford_fulkerson O(max_flow x E).cpp
     - icon: ':heavy_check_mark:'
+      path: graph/primal_dual.hpp
+      title: "\u6700\u5C0F\u8CBB\u7528\u6D41\uFF08primal-dual\u6CD5\uFF09"
+    - icon: ':heavy_check_mark:'
       path: graph/strongly_connected_components.hpp
       title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
     - icon: ':heavy_check_mark:'
@@ -75,6 +78,14 @@ data:
         \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09\u30C6\u30FC\
         \u30D6\u30EB"
     - icon: ':heavy_check_mark:'
+      path: math/factor.hpp
+      title: "\u7D20\u56E0\u6570\u5206\u89E3\uFF08\u30DD\u30E9\u30FC\u30C9\u30FB\u30ED\
+        \u30FC\u6CD5\uFF09"
+    - icon: ':heavy_check_mark:'
+      path: math/is_prime.hpp
+      title: "\u7D20\u6570\u5224\u5B9A\uFF08\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\
+        \u7D20\u6570\u5224\u5B9A\u6CD5\uFF09"
+    - icon: ':heavy_check_mark:'
       path: math/modint.hpp
       title: modint
     - icon: ':warning:'
@@ -83,9 +94,6 @@ data:
     - icon: ':warning:'
       path: math/prime_factorization.cpp
       title: math/prime_factorization.cpp
-    - icon: ':warning:'
-      path: math/prime_factorization_big.cpp
-      title: math/prime_factorization_big.cpp
     - icon: ':warning:'
       path: math/range_sieve.cpp
       title: math/range_sieve.cpp
@@ -102,9 +110,6 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':warning:'
-      path: template/debug.hpp
-      title: template/debug.hpp
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
@@ -147,6 +152,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/3_C.test.cpp
       title: verify/aoj/grl/3_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/grl/6_B.test.cpp
+      title: verify/aoj/grl/6_B.test.cpp
   - name: verify/aoj/id
     pages:
     - icon: ':heavy_check_mark:'
@@ -165,6 +173,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/assignment.test.cpp
       title: verify/yosupo/assignment.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/factorize.test.cpp
+      title: verify/yosupo/factorize.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/number_of_substrings.test.cpp
       title: verify/yosupo/number_of_substrings.test.cpp

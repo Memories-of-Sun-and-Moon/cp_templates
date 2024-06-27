@@ -34,6 +34,9 @@ data:
     path: verify/aoj/grl/3_C.test.cpp
     title: verify/aoj/grl/3_C.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/grl/6_B.test.cpp
+    title: verify/aoj/grl/6_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/id/2286.test.cpp
     title: verify/aoj/id/2286.test.cpp
   - icon: ':heavy_check_mark:'
@@ -45,6 +48,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/assignment.test.cpp
     title: verify/yosupo/assignment.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/factorize.test.cpp
+    title: verify/yosupo/factorize.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/number_of_substrings.test.cpp
     title: verify/yosupo/number_of_substrings.test.cpp
@@ -142,6 +148,7 @@ data:
   - verify/aoj/alds1/14_B.test.cpp
   - verify/aoj/grl/3_C.test.cpp
   - verify/aoj/grl/2_A.test.cpp
+  - verify/aoj/grl/6_B.test.cpp
   - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
   - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
   - verify/aoj/dsl/2_B___segment_tree.test.cpp
@@ -151,6 +158,7 @@ data:
   - verify/aoj/id/2286.test.cpp
   - verify/aoj/id/2828.test.cpp
   - verify/yosupo/two_sat.test.cpp
+  - verify/yosupo/factorize.test.cpp
   - verify/yosupo/unionfind.test.cpp
   - verify/yosupo/suffixarray.test.cpp
   - verify/yosupo/number_of_substrings.test.cpp
