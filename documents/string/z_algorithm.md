@@ -7,7 +7,7 @@ documentation_of: ./../../string/z_algorithm.hpp
 
 ## 使い方
 
-- ``vector<int> z_algorithm(string s)`` : 文字列 $S$ のと、 $S$ の $i$ 文字目以降の部分文字列との高さ配列を構築する $(O|S|)$
+- ``vector<int> z_algorithm(string s)`` : 文字列 $S$ のと、 $S$ の $i$ 文字目以降の部分文字列との高さ配列を構築する $(O\lvert S\rvert)$
 
 ## 概要
 
