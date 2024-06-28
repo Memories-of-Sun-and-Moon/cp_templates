@@ -1,4 +1,4 @@
-# define PROBLEM https://judge.yosupo.jp/problem/convolution_mod
+#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
 
 #include "./../../template/template.hpp"
 #include "./../../math/modint.hpp"
