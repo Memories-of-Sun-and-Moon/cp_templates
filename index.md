@@ -81,14 +81,17 @@ data:
       path: math/factor.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3\uFF08\u30DD\u30E9\u30FC\u30C9\u30FB\u30ED\
         \u30FC\u6CD5\uFF09"
+    - icon: ':x:'
+      path: math/formal_power_series.hpp
+      title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\u30E9\u30A4\u30D6\u30E9\u30EA"
     - icon: ':heavy_check_mark:'
       path: math/is_prime.hpp
       title: "\u7D20\u6570\u5224\u5B9A\uFF08\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\
         \u7D20\u6570\u5224\u5B9A\u6CD5\uFF09"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/modint.hpp
       title: modint
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/power.hpp
       title: math/power.hpp
     - icon: ':warning:'
@@ -107,7 +110,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/yosupo
@@ -170,6 +173,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/assignment.test.cpp
       title: verify/yosupo/assignment.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/convolution_mod.test.cpp
+      title: verify/yosupo/convolution_mod.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/factorize.test.cpp
       title: verify/yosupo/factorize.test.cpp

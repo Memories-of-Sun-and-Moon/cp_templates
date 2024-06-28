@@ -6,12 +6,15 @@ data:
     path: math/combination.hpp
     title: "2\u9805\u4FC2\u6570mod"
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/yosupo/convolution_mod.test.cpp
+    title: verify/yosupo/convolution_mod.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2219.test.cpp
     title: verify/yukicoder/2219.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/modint.hpp\"\n\ntemplate <std::uint_fast64_t Modulus>\
@@ -59,9 +62,10 @@ data:
   requiredBy:
   - math/combination.hpp
   timestamp: '2024-06-04 18:16:03+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yukicoder/2219.test.cpp
+  - verify/yosupo/convolution_mod.test.cpp
 documentation_of: math/modint.hpp
 layout: document
 title: modint

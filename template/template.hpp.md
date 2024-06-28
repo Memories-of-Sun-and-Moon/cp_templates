@@ -48,6 +48,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/assignment.test.cpp
     title: verify/yosupo/assignment.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/convolution_mod.test.cpp
+    title: verify/yosupo/convolution_mod.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/factorize.test.cpp
     title: verify/yosupo/factorize.test.cpp
@@ -75,9 +78,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing\
@@ -138,7 +141,7 @@ data:
   requiredBy:
   - verify/yosupo/zalgorithm.cpp
   timestamp: '2024-05-24 13:30:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yukicoder/1435.test.cpp
   - verify/yukicoder/2219.test.cpp
@@ -159,6 +162,7 @@ data:
   - verify/aoj/id/2828.test.cpp
   - verify/yosupo/two_sat.test.cpp
   - verify/yosupo/factorize.test.cpp
+  - verify/yosupo/convolution_mod.test.cpp
   - verify/yosupo/unionfind.test.cpp
   - verify/yosupo/suffixarray.test.cpp
   - verify/yosupo/number_of_substrings.test.cpp

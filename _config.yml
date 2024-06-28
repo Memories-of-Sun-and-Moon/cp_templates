@@ -6,6 +6,7 @@ exclude:
 - _debug_print.hpp
 - _STRESS_CHECKER.py
 - template/debug.hpp
+- bundle.py
 plugins:
 - jemoji
 - jekyll-redirect-from
