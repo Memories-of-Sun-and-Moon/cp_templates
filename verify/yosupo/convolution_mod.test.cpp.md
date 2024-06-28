@@ -1,30 +1,30 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/formal_power_series.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\u30E9\u30A4\u30D6\u30E9\u30EA"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/modint.hpp
     title: modint
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/power.hpp
     title: math/power.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: 'https:'
+    PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
     links:
     - https://judge.yosupo.jp/problem/convolution_mod
-  bundledCode: "#line 1 \"verify/yosupo/convolution_mod.test.cpp\"\n# define PROBLEM\
-    \ https://judge.yosupo.jp/problem/convolution_mod\n\n#line 1 \"template/template.hpp\"\
+  bundledCode: "#line 1 \"verify/yosupo/convolution_mod.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#line 1 \"template/template.hpp\"\
     \n# include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nusing\
     \ ull = unsigned long long;\nconst double pi = acos(-1);\ntemplate<class T>constexpr\
     \ T inf() { return ::std::numeric_limits<T>::max(); }\ntemplate<class T>constexpr\
@@ -124,7 +124,7 @@ data:
     \tcin >> _a;\n\t\ta[i] = _a;\n\t}\n\trep(i, m){\n\t\tint _b;\n\t\tcin >> _b;\n\
     \t\tb[i] = _b;\n\t}\n\tfps f{1};\n\tf *= a;\n\tf *= b;\n\trep(i, n+m-1){\n\t\t\
     cout << f[i] << \" \\n\"[i == n+m-1];\n\t}\n}\n"
-  code: "# define PROBLEM https://judge.yosupo.jp/problem/convolution_mod\n\n#include\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../math/modint.hpp\"\nusing\
     \ mint998 = modint<998244353>;\n#include \"./../../math/formal_power_series.hpp\"\
     \nusing fps = formal_power_series<mint998>;\n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\
@@ -140,8 +140,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution_mod.test.cpp
   requiredBy: []
-  timestamp: '2024-06-29 00:45:01+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-06-29 01:00:20+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution_mod.test.cpp
 layout: document
