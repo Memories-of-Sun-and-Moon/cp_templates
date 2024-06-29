@@ -7,9 +7,6 @@ data:
       path: LIS.cpp
       title: LIS.cpp
     - icon: ':warning:'
-      path: geomet.cpp
-      title: geomet.cpp
-    - icon: ':warning:'
       path: maximum_rect.cpp
       title: maximum_rect.cpp
   - name: data_structure
@@ -40,6 +37,9 @@ data:
     - icon: ':warning:'
       path: geometry/point.hpp
       title: geometry/point.hpp
+    - icon: ':warning:'
+      path: geometry/util.hpp
+      title: geometry/util.hpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
