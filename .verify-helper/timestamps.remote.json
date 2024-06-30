@@ -16,6 +16,7 @@
 "verify/yosupo/convolution_mod.test.cpp": "2024-06-29 01:00:20 +0900",
 "verify/yosupo/factorize.test.cpp": "2024-06-27 23:33:17 +0900",
 "verify/yosupo/number_of_substrings.test.cpp": "2024-06-09 16:46:17 +0900",
+"verify/yosupo/primality_test.test.cpp": "2024-07-01 00:39:11 +0900",
 "verify/yosupo/suffixarray.test.cpp": "2024-06-09 16:46:17 +0900",
 "verify/yosupo/two_sat.test.cpp": "2024-06-09 18:43:02 +0900",
 "verify/yosupo/unionfind.test.cpp": "2024-06-09 17:30:08 +0900",
