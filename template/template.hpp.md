@@ -58,6 +58,9 @@ data:
     path: verify/yosupo/number_of_substrings.test.cpp
     title: verify/yosupo/number_of_substrings.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/primality_test.test.cpp
+    title: verify/yosupo/primality_test.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/suffixarray.test.cpp
     title: verify/yosupo/suffixarray.test.cpp
   - icon: ':heavy_check_mark:'
@@ -165,6 +168,7 @@ data:
   - verify/yosupo/convolution_mod.test.cpp
   - verify/yosupo/unionfind.test.cpp
   - verify/yosupo/suffixarray.test.cpp
+  - verify/yosupo/primality_test.test.cpp
   - verify/yosupo/number_of_substrings.test.cpp
   - verify/yosupo/assignment.test.cpp
 documentation_of: template/template.hpp
