@@ -10,6 +10,9 @@ data:
     path: verify/aoj/alds1/14_B.test.cpp
     title: verify/aoj/alds1/14_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/dpl/1_D.test.cpp
+    title: verify/aoj/dpl/1_D.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/1_A.test.cpp
     title: verify/aoj/dsl/1_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -161,6 +164,7 @@ data:
   - verify/aoj/dsl/1_A.test.cpp
   - verify/aoj/dsl/2_A___segment_tree.test.cpp
   - verify/aoj/dsl/5_B.test.cpp
+  - verify/aoj/dpl/1_D.test.cpp
   - verify/aoj/id/2286.test.cpp
   - verify/aoj/id/2828.test.cpp
   - verify/yosupo/two_sat.test.cpp

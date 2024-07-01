@@ -1,14 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: .
-    pages:
-    - icon: ':warning:'
-      path: LIS.cpp
-      title: LIS.cpp
-    - icon: ':warning:'
-      path: maximum_rect.cpp
-      title: maximum_rect.cpp
   - name: data_structure
     pages:
     - icon: ':warning:'
@@ -97,6 +89,11 @@ data:
     - icon: ':warning:'
       path: math/range_sieve.cpp
       title: math/range_sieve.cpp
+  - name: .
+    pages:
+    - icon: ':warning:'
+      path: maximum_rect.cpp
+      title: maximum_rect.cpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
@@ -118,12 +115,22 @@ data:
     - icon: ':warning:'
       path: verify/yosupo/zalgorithm.cpp
       title: verify/yosupo/zalgorithm.cpp
+  - name: z_other
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: z_other/longest_increasing_subsequences.hpp
+      title: LIS
   verificationCategories:
   - name: verify/aoj/alds1
     pages:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/alds1/14_B.test.cpp
       title: verify/aoj/alds1/14_B.test.cpp
+  - name: verify/aoj/dpl
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/dpl/1_D.test.cpp
+      title: verify/aoj/dpl/1_D.test.cpp
   - name: verify/aoj/dsl
     pages:
     - icon: ':heavy_check_mark:'
