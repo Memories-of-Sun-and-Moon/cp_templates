@@ -1,19 +1,14 @@
 
 struct scc_graph {
+	int n;
+	int k;
 	vector<vector<int>> g;
 	vector<vector<int>> rg;
 	vector<bool> used;
 	vector<int> cmp;
 	vector<int> vs;
-	int n;
-	int k;
 
-	scc_graph(int _n) : n(_n), k(0) {
-		g.resize(n);
-		rg.resize(n);
-		used.resize(n);
-		cmp.resize(n);
-	}
+	scc_graph(int _n) : n(_n), k(0), g(n), rg(n), used(n), cmp(n) {}
 
 	void add_edge(int a, int b) {
 		g[a].push_back(b);
