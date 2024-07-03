@@ -18,6 +18,7 @@
 "verify/yosupo/factorize.test.cpp": "2024-06-27 23:33:17 +0900",
 "verify/yosupo/number_of_substrings.test.cpp": "2024-06-09 16:46:17 +0900",
 "verify/yosupo/primality_test.test.cpp": "2024-07-01 00:39:11 +0900",
+"verify/yosupo/static_range_frequency.test.cpp": "2024-07-03 18:57:49 +0900",
 "verify/yosupo/suffixarray.test.cpp": "2024-06-09 16:46:17 +0900",
 "verify/yosupo/two_sat.test.cpp": "2024-07-03 15:50:00 +0900",
 "verify/yosupo/unionfind.test.cpp": "2024-06-09 17:30:08 +0900",
