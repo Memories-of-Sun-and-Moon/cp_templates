@@ -64,6 +64,9 @@ data:
     path: verify/yosupo/primality_test.test.cpp
     title: verify/yosupo/primality_test.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/static_range_frequency.test.cpp
+    title: verify/yosupo/static_range_frequency.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/suffixarray.test.cpp
     title: verify/yosupo/suffixarray.test.cpp
   - icon: ':heavy_check_mark:'
@@ -174,6 +177,7 @@ data:
   - verify/yosupo/suffixarray.test.cpp
   - verify/yosupo/primality_test.test.cpp
   - verify/yosupo/number_of_substrings.test.cpp
+  - verify/yosupo/static_range_frequency.test.cpp
   - verify/yosupo/assignment.test.cpp
 documentation_of: template/template.hpp
 layout: document

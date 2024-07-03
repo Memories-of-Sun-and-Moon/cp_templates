@@ -7,6 +7,9 @@ data:
       path: data_structure/binary_indexed_tree.cpp
       title: data_structure/binary_indexed_tree.cpp
     - icon: ':heavy_check_mark:'
+      path: data_structure/mo.hpp
+      title: Mo's Algorithm
+    - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree.hpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
@@ -192,6 +195,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/primality_test.test.cpp
       title: verify/yosupo/primality_test.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/static_range_frequency.test.cpp
+      title: verify/yosupo/static_range_frequency.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/suffixarray.test.cpp
       title: verify/yosupo/suffixarray.test.cpp
