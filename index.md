@@ -100,6 +100,9 @@ data:
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
+      path: string/manachar.hpp
+      title: manachar
+    - icon: ':heavy_check_mark:'
       path: string/rolling_hash.hpp
       title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
     - icon: ':heavy_check_mark:'
@@ -186,6 +189,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/convolution_mod.test.cpp
       title: verify/yosupo/convolution_mod.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/enumerate_palindromes.test.cpp
+      title: verify/yosupo/enumerate_palindromes.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/factorize.test.cpp
       title: verify/yosupo/factorize.test.cpp
