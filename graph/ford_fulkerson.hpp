@@ -1,9 +1,6 @@
-# define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A"
-# include <bits/stdc++.h>
-using namespace std;
 
-//Ford-Fulkerson algorithm O(max_flow|E|)
-template<typename T>struct max_flow {
+template<typename T>
+struct ford_fulkerson {
 
     struct edge{
         int to;
@@ -15,10 +12,7 @@ template<typename T>struct max_flow {
     vector<vector<edge>> G;
     vector<bool> used;
 
-    max_flow(int _v) : n(_v) {
-        G.resize(n);
-        used.resize(n, false);
-    }
+    ford_fulkerson(int _v) : n(_v), G(n), used(n) {}
 
     void add_edge(int from, int to, T cap){
         G[from].push_back((edge){to, cap, (T)G[to].size()});
@@ -52,17 +46,3 @@ template<typename T>struct max_flow {
         }
     }
 };
-
-int v, e;
-
-int main(){
-    cin >> v >> e;
-    max_flow<int> mf(v);
-
-    for(int i = 0;i < e;i++){
-        int a, b, c;
-        cin >> a >> b >> c;
-        mf.add_edge(a, b, c);
-    }
-    cout << mf.calc(0, v - 1) << endl;
-}
