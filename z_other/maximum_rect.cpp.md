@@ -31,15 +31,15 @@ data:
     return ans;\n}"
   dependsOn: []
   isVerificationFile: false
-  path: maximum_rect.cpp
+  path: z_other/maximum_rect.cpp
   requiredBy: []
-  timestamp: '2023-12-19 19:49:02+09:00'
+  timestamp: '2024-07-04 21:12:28+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: maximum_rect.cpp
+documentation_of: z_other/maximum_rect.cpp
 layout: document
 redirect_from:
-- /library/maximum_rect.cpp
-- /library/maximum_rect.cpp.html
-title: maximum_rect.cpp
+- /library/z_other/maximum_rect.cpp
+- /library/z_other/maximum_rect.cpp.html
+title: z_other/maximum_rect.cpp
 ---

@@ -92,11 +92,6 @@ data:
     - icon: ':warning:'
       path: math/range_sieve.cpp
       title: math/range_sieve.cpp
-  - name: .
-    pages:
-    - icon: ':warning:'
-      path: maximum_rect.cpp
-      title: maximum_rect.cpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
@@ -126,6 +121,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: z_other/longest_increasing_subsequences.hpp
       title: LIS
+    - icon: ':warning:'
+      path: z_other/maximum_rect.cpp
+      title: z_other/maximum_rect.cpp
   verificationCategories:
   - name: verify/aoj/alds1
     pages:
