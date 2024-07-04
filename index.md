@@ -38,18 +38,18 @@ data:
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
+      path: graph/dinic.hpp
+      title: "\u6700\u5927\u6D41(Dinic)"
+    - icon: ':heavy_check_mark:'
+      path: graph/ford_fulkerson.hpp
+      title: "\u6700\u5927\u6D41(Ford-Fulkerson)"
+    - icon: ':heavy_check_mark:'
       path: graph/hungarian.hpp
       title: "\u5272\u5F53\u554F\u984C\uFF08\u30CF\u30F3\u30AC\u30EA\u30A2\u30F3\u6CD5\
         \uFF09"
     - icon: ':warning:'
       path: graph/lowest_common_ancestor.cpp
       title: graph/lowest_common_ancestor.cpp
-    - icon: ':warning:'
-      path: graph/max_flow_dinic O(E V^2).cpp
-      title: graph/max_flow_dinic O(E V^2).cpp
-    - icon: ':warning:'
-      path: graph/max_flow_ford_fulkerson O(max_flow x E).cpp
-      title: graph/max_flow_ford_fulkerson O(max_flow x E).cpp
     - icon: ':heavy_check_mark:'
       path: graph/primal_dual.hpp
       title: "\u6700\u5C0F\u8CBB\u7528\u6D41\uFF08primal-dual\u6CD5\uFF09"
@@ -165,6 +165,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/3_C.test.cpp
       title: verify/aoj/grl/3_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/grl/6_A___dinic.test.cpp
+      title: verify/aoj/grl/6_A___dinic.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
+      title: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/6_B.test.cpp
       title: verify/aoj/grl/6_B.test.cpp

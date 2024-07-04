@@ -37,6 +37,12 @@ data:
     path: verify/aoj/grl/3_C.test.cpp
     title: verify/aoj/grl/3_C.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/grl/6_A___dinic.test.cpp
+    title: verify/aoj/grl/6_A___dinic.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
+    title: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/6_B.test.cpp
     title: verify/aoj/grl/6_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -162,6 +168,8 @@ data:
   - verify/lc/assignment.test.cpp
   - verify/aoj/alds1/14_B.test.cpp
   - verify/aoj/grl/3_C.test.cpp
+  - verify/aoj/grl/6_A___ford_fulkerson.test.cpp
+  - verify/aoj/grl/6_A___dinic.test.cpp
   - verify/aoj/grl/2_A.test.cpp
   - verify/aoj/grl/6_B.test.cpp
   - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
