@@ -37,45 +37,46 @@ data:
     \ cnt; }\nint d_sum(ll n) { int ret = 0; while (n > 0) { ret += n % 10; n /= 10;\
     \ }return ret; }\nint d_cnt(ll n) { int ret = 0; while (n > 0) { ret++; n /= 10;\
     \ }return ret; }\nll gcd(ll a, ll b) { if (b == 0)return a; return gcd(b, a%b);\
-    \ };\nll lcm(ll a, ll b) { ll g = gcd(a, b); return a / g*b; };\nll MOD(ll x,\
-    \ ll m){return (x%m+m)%m; }\nll FLOOR(ll x, ll m) {ll r = (x%m+m)%m; return (x-r)/m;\
-    \ }\ntemplate<class T> using dijk = priority_queue<T, vector<T>, greater<T>>;\n\
-    # define all(qpqpq)           (qpqpq).begin(),(qpqpq).end()\n# define UNIQUE(wpwpw)\
-    \        (wpwpw).erase(unique(all((wpwpw))),(wpwpw).end())\n# define LOWER(epepe)\
-    \         transform(all((epepe)),(epepe).begin(),TL<char>)\n# define UPPER(rprpr)\
-    \         transform(all((rprpr)),(rprpr).begin(),TU<char>)\n# define rep(i,upupu)\
-    \         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n# define reps(i,opopo)\
-    \        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n# define len(x)\
-    \                ((ll)(x).size())\n# define bit(n)               (1LL << (n))\n\
-    # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
-    \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
-    \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
-    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"math/modint.hpp\"\
-    \n\ntemplate <std::uint_fast64_t Modulus> class modint {\n\tusing u64 = std::uint_fast64_t;\n\
-    public:\n\tu64 a;\n\tconstexpr modint(const u64 x = 0) noexcept : a(x % Modulus)\
-    \ {}\n\tconstexpr u64 &value() noexcept { return a; }\n\tconstexpr const u64 &value()\
-    \ const noexcept { return a; }\n\tconstexpr modint operator+(const modint rhs)\
-    \ const noexcept {\n\t\treturn modint(*this) += rhs;\n\t}\n\tconstexpr modint\
-    \ operator-(const modint rhs) const noexcept {\n\t\treturn modint(*this) -= rhs;\n\
-    \t}\n\tconstexpr modint operator*(const modint rhs) const noexcept {\n    \treturn\
-    \ modint(*this) *= rhs;\n\t}\n\tconstexpr modint operator/(const modint rhs) const\
-    \ noexcept {\n\t\treturn modint(*this) /= rhs;\n\t}\n\tconstexpr modint &operator+=(const\
-    \ modint rhs) noexcept {\n\t\ta += rhs.a;\n\t\tif (a >= Modulus) {\n\t\t\ta -=\
-    \ Modulus;\n\t\t}\n    \treturn *this;\n\t}\n\tconstexpr modint &operator-=(const\
-    \ modint rhs) noexcept {\n\t\tif (a < rhs.a) {\n\t\t\ta += Modulus;\n\t\t}\n\t\
-    \ta -= rhs.a;\n\t\treturn *this;\n\t}\n\tconstexpr modint &operator*=(const modint\
-    \ rhs) noexcept {\n    \ta = a * rhs.a % Modulus;\n    \treturn *this;\n\t}\n\t\
-    constexpr modint &operator/=(modint rhs) noexcept {\n\t\tu64 exp = Modulus - 2;\n\
-    \t\twhile (exp) {\n\t\t\tif (exp % 2) {\n\t\t\t\t*this *= rhs;\n\t\t\t}\n\t\t\t\
-    rhs *= rhs;\n\t\t\texp /= 2;\n\t\t}\n    \treturn *this;\n\t}\n\n    friend std::ostream&\
-    \ operator<<(std::ostream& os, const modint& rhs) {\n        os << rhs.a;\n  \
-    \      return os;\n    }\n};\n#line 5 \"verify/yosupo/convolution_mod.test.cpp\"\
-    \nusing mint998 = modint<998244353>;\n#line 1 \"math/formal_power_series.hpp\"\
-    \n\ntemplate<typename mint998>\nstruct formal_power_series : vector<mint998> {\n\
-    \tusing vector<mint998>::vector;\n\tusing FPS = formal_power_series;\n\n\tFPS\
-    \ &operator+=(const FPS &r){\n\t\tif(r.size() > this->size()){\n\t\t\tthis->resize(r.size());\n\
-    \t\t}\n\t\tfor(size_t i = 0;i < r.size();i++){\n\t\t\t(*this)[i] += r[i];\n\t\t\
-    }\n\t\treturn *this;\n\t}\n\n\tFPS &operator+=(const mint998 &v){\n\t\tif(this->empty())this->resize(1);\n\
+    \ };\nll lcm(ll a, ll b) { ll g = gcd(a, b); return a / g*b; };\nll iroot(ll x)\
+    \ {return sqrtl(x); }\nll MOD(ll x, ll m){return (x%m+m)%m; }\nll FLOOR(ll x,\
+    \ ll m) {ll r = (x%m+m)%m; return (x-r)/m; }\ntemplate<class T> using dijk = priority_queue<T,\
+    \ vector<T>, greater<T>>;\n# define all(qpqpq)           (qpqpq).begin(),(qpqpq).end()\n\
+    # define UNIQUE(wpwpw)        (wpwpw).erase(unique(all((wpwpw))),(wpwpw).end())\n\
+    # define LOWER(epepe)         transform(all((epepe)),(epepe).begin(),TL<char>)\n\
+    # define UPPER(rprpr)         transform(all((rprpr)),(rprpr).begin(),TU<char>)\n\
+    # define rep(i,upupu)         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n\
+    # define reps(i,opopo)        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n\
+    # define len(x)                ((ll)(x).size())\n# define bit(n)             \
+    \  (1LL << (n))\n# define pb push_back\n# define exists(c, e)         ((c).find(e)\
+    \ != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
+    \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
+    namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
+    \ 1 \"math/modint.hpp\"\n\ntemplate <std::uint_fast64_t Modulus> class modint\
+    \ {\n\tusing u64 = std::uint_fast64_t;\npublic:\n\tu64 a;\n\tconstexpr modint(const\
+    \ u64 x = 0) noexcept : a(x % Modulus) {}\n\tconstexpr u64 &value() noexcept {\
+    \ return a; }\n\tconstexpr const u64 &value() const noexcept { return a; }\n\t\
+    constexpr modint operator+(const modint rhs) const noexcept {\n\t\treturn modint(*this)\
+    \ += rhs;\n\t}\n\tconstexpr modint operator-(const modint rhs) const noexcept\
+    \ {\n\t\treturn modint(*this) -= rhs;\n\t}\n\tconstexpr modint operator*(const\
+    \ modint rhs) const noexcept {\n    \treturn modint(*this) *= rhs;\n\t}\n\tconstexpr\
+    \ modint operator/(const modint rhs) const noexcept {\n\t\treturn modint(*this)\
+    \ /= rhs;\n\t}\n\tconstexpr modint &operator+=(const modint rhs) noexcept {\n\t\
+    \ta += rhs.a;\n\t\tif (a >= Modulus) {\n\t\t\ta -= Modulus;\n\t\t}\n    \treturn\
+    \ *this;\n\t}\n\tconstexpr modint &operator-=(const modint rhs) noexcept {\n\t\
+    \tif (a < rhs.a) {\n\t\t\ta += Modulus;\n\t\t}\n\t\ta -= rhs.a;\n\t\treturn *this;\n\
+    \t}\n\tconstexpr modint &operator*=(const modint rhs) noexcept {\n    \ta = a\
+    \ * rhs.a % Modulus;\n    \treturn *this;\n\t}\n\tconstexpr modint &operator/=(modint\
+    \ rhs) noexcept {\n\t\tu64 exp = Modulus - 2;\n\t\twhile (exp) {\n\t\t\tif (exp\
+    \ % 2) {\n\t\t\t\t*this *= rhs;\n\t\t\t}\n\t\t\trhs *= rhs;\n\t\t\texp /= 2;\n\
+    \t\t}\n    \treturn *this;\n\t}\n\n    friend std::ostream& operator<<(std::ostream&\
+    \ os, const modint& rhs) {\n        os << rhs.a;\n        return os;\n    }\n\
+    };\n#line 5 \"verify/yosupo/convolution_mod.test.cpp\"\nusing mint998 = modint<998244353>;\n\
+    #line 1 \"math/formal_power_series.hpp\"\n\ntemplate<typename mint998>\nstruct\
+    \ formal_power_series : vector<mint998> {\n\tusing vector<mint998>::vector;\n\t\
+    using FPS = formal_power_series;\n\n\tFPS &operator+=(const FPS &r){\n\t\tif(r.size()\
+    \ > this->size()){\n\t\t\tthis->resize(r.size());\n\t\t}\n\t\tfor(size_t i = 0;i\
+    \ < r.size();i++){\n\t\t\t(*this)[i] += r[i];\n\t\t}\n\t\treturn *this;\n\t}\n\
+    \n\tFPS &operator+=(const mint998 &v){\n\t\tif(this->empty())this->resize(1);\n\
     \t\t(*this)[0] += v;\n\t\treturn *this;\n\t}\n\n\tFPS &operator-=(const FPS &r){\n\
     \t\tif(r.size() > this->size()){\n\t\t\tthis->resize(r.size());\n\t\t}\n\t\tfor(size_t\
     \ i = 0;i < r.size();i++){\n\t\t\t(*this)[i] -= r[i];\n\t\t}\n\t\treturn *this;\n\
@@ -140,7 +141,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution_mod.test.cpp
   requiredBy: []
-  timestamp: '2024-06-29 01:00:20+09:00'
+  timestamp: '2024-07-06 23:08:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution_mod.test.cpp
