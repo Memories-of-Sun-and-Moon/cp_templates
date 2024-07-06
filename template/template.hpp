@@ -14,6 +14,7 @@ int d_sum(ll n) { int ret = 0; while (n > 0) { ret += n % 10; n /= 10; }return r
 int d_cnt(ll n) { int ret = 0; while (n > 0) { ret++; n /= 10; }return ret; }
 ll gcd(ll a, ll b) { if (b == 0)return a; return gcd(b, a%b); };
 ll lcm(ll a, ll b) { ll g = gcd(a, b); return a / g*b; };
+ll iroot(ll x) {return sqrtl(x); }
 ll MOD(ll x, ll m){return (x%m+m)%m; }
 ll FLOOR(ll x, ll m) {ll r = (x%m+m)%m; return (x-r)/m; }
 template<class T> using dijk = priority_queue<T, vector<T>, greater<T>>;
