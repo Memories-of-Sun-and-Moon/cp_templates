@@ -28,27 +28,27 @@ data:
     \ return cnt; }\nint d_sum(ll n) { int ret = 0; while (n > 0) { ret += n % 10;\
     \ n /= 10; }return ret; }\nint d_cnt(ll n) { int ret = 0; while (n > 0) { ret++;\
     \ n /= 10; }return ret; }\nll gcd(ll a, ll b) { if (b == 0)return a; return gcd(b,\
-    \ a%b); };\nll lcm(ll a, ll b) { ll g = gcd(a, b); return a / g*b; };\nll iroot(ll\
-    \ x) {return sqrtl(x); }\nll MOD(ll x, ll m){return (x%m+m)%m; }\nll FLOOR(ll\
-    \ x, ll m) {ll r = (x%m+m)%m; return (x-r)/m; }\ntemplate<class T> using dijk\
-    \ = priority_queue<T, vector<T>, greater<T>>;\n# define all(qpqpq)           (qpqpq).begin(),(qpqpq).end()\n\
-    # define UNIQUE(wpwpw)        (wpwpw).erase(unique(all((wpwpw))),(wpwpw).end())\n\
-    # define LOWER(epepe)         transform(all((epepe)),(epepe).begin(),TL<char>)\n\
-    # define UPPER(rprpr)         transform(all((rprpr)),(rprpr).begin(),TU<char>)\n\
-    # define rep(i,upupu)         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n\
-    # define reps(i,opopo)        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n\
-    # define len(x)                ((ll)(x).size())\n# define bit(n)             \
-    \  (1LL << (n))\n# define pb push_back\n# define exists(c, e)         ((c).find(e)\
-    \ != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
-    \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
-    namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"string/z_algorithm.hpp\"\n\nvector<int> z_algorithm(const string &s){\n\
-    \    vector<int> z(s.size());\n    z[0] = (int)z.size();\n    int i = 1, j = 0;\n\
-    \    while(i < (int)z.size()){\n        while(i+j < (int)s.size() && s[j] == s[i+j])j++;\n\
-    \        z[i] = j;\n        \n        if(j == 0){\n            i++;\n        \
-    \    continue;\n        }\n        \n        int k = 1;\n        while(k < j &&\
-    \ k + z[k] < j){\n            z[i+k] = z[k];\n            k++;\n        }\n  \
-    \      i += k;\n        j -= k;\n    }\n    return z;\n}\n#line 5 \"verify/yosupo/zalgorithm.cpp\"\
+    \ a%b); };\nll lcm(ll a, ll b) { ll g = gcd(a, b); return a / g*b; };\nll MOD(ll\
+    \ x, ll m){return (x%m+m)%m; }\nll FLOOR(ll x, ll m) {ll r = (x%m+m)%m; return\
+    \ (x-r)/m; }\ntemplate<class T> using dijk = priority_queue<T, vector<T>, greater<T>>;\n\
+    # define all(qpqpq)           (qpqpq).begin(),(qpqpq).end()\n# define UNIQUE(wpwpw)\
+    \        (wpwpw).erase(unique(all((wpwpw))),(wpwpw).end())\n# define LOWER(epepe)\
+    \         transform(all((epepe)),(epepe).begin(),TL<char>)\n# define UPPER(rprpr)\
+    \         transform(all((rprpr)),(rprpr).begin(),TU<char>)\n# define rep(i,upupu)\
+    \         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n# define reps(i,opopo)\
+    \        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n# define len(x)\
+    \                ((ll)(x).size())\n# define bit(n)               (1LL << (n))\n\
+    # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
+    \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
+    \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
+    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"string/z_algorithm.hpp\"\
+    \n\nvector<int> z_algorithm(const string &s){\n    vector<int> z(s.size());\n\
+    \    z[0] = (int)z.size();\n    int i = 1, j = 0;\n    while(i < (int)z.size()){\n\
+    \        while(i+j < (int)s.size() && s[j] == s[i+j])j++;\n        z[i] = j;\n\
+    \        \n        if(j == 0){\n            i++;\n            continue;\n    \
+    \    }\n        \n        int k = 1;\n        while(k < j && k + z[k] < j){\n\
+    \            z[i+k] = z[k];\n            k++;\n        }\n        i += k;\n  \
+    \      j -= k;\n    }\n    return z;\n}\n#line 5 \"verify/yosupo/zalgorithm.cpp\"\
     \n\nvoid mmrz::solve(){\n\tstring s;\n\tcin >> s;\n\tvector<int> z = z_algorithm(s);\n\
     \trep(i, len(s)){\n\t\tcout << z[i] << \" \\n\"[i == len(s)-1];\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\n\n#include\
@@ -61,7 +61,7 @@ data:
   isVerificationFile: false
   path: verify/yosupo/zalgorithm.cpp
   requiredBy: []
-  timestamp: '2024-07-06 23:08:41+09:00'
+  timestamp: '2024-07-07 01:02:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: verify/yosupo/zalgorithm.cpp

@@ -80,6 +80,9 @@ data:
       path: math/formal_power_series.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\u30E9\u30A4\u30D6\u30E9\u30EA"
     - icon: ':heavy_check_mark:'
+      path: math/iroot.hpp
+      title: "floor K \u4E57\u6839"
+    - icon: ':heavy_check_mark:'
       path: math/is_prime.hpp
       title: "\u7D20\u6570\u5224\u5B9A\uFF08\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\
         \u7D20\u6570\u5224\u5B9A\u6CD5\uFF09"
@@ -199,6 +202,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/factorize.test.cpp
       title: verify/yosupo/factorize.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/kth_root_integer.test.cpp
+      title: verify/yosupo/kth_root_integer.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/number_of_substrings.test.cpp
       title: verify/yosupo/number_of_substrings.test.cpp

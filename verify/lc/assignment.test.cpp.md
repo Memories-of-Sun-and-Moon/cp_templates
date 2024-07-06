@@ -31,40 +31,40 @@ data:
     \ return cnt; }\nint d_sum(ll n) { int ret = 0; while (n > 0) { ret += n % 10;\
     \ n /= 10; }return ret; }\nint d_cnt(ll n) { int ret = 0; while (n > 0) { ret++;\
     \ n /= 10; }return ret; }\nll gcd(ll a, ll b) { if (b == 0)return a; return gcd(b,\
-    \ a%b); };\nll lcm(ll a, ll b) { ll g = gcd(a, b); return a / g*b; };\nll iroot(ll\
-    \ x) {return sqrtl(x); }\nll MOD(ll x, ll m){return (x%m+m)%m; }\nll FLOOR(ll\
-    \ x, ll m) {ll r = (x%m+m)%m; return (x-r)/m; }\ntemplate<class T> using dijk\
-    \ = priority_queue<T, vector<T>, greater<T>>;\n# define all(qpqpq)           (qpqpq).begin(),(qpqpq).end()\n\
-    # define UNIQUE(wpwpw)        (wpwpw).erase(unique(all((wpwpw))),(wpwpw).end())\n\
-    # define LOWER(epepe)         transform(all((epepe)),(epepe).begin(),TL<char>)\n\
-    # define UPPER(rprpr)         transform(all((rprpr)),(rprpr).begin(),TU<char>)\n\
-    # define rep(i,upupu)         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n\
-    # define reps(i,opopo)        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n\
-    # define len(x)                ((ll)(x).size())\n# define bit(n)             \
-    \  (1LL << (n))\n# define pb push_back\n# define exists(c, e)         ((c).find(e)\
-    \ != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
-    \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
-    namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"graph/hungarian.hpp\"\n\ntemplate<bool is_min, typename T>\nvector<int>\
-    \ hungarian(vector<vector<T>> a) {\n\tconstexpr T infty = numeric_limits<T>::max()/2;\n\
-    \tint n = (int)a.size();\n\t\n\tif(not is_min){\n\t\tfor(int i = 0;i < n;i++){\n\
-    \t\t\tfor(int j = 0; j < n;j++){\n\t\t\t\ta[i][j] *= -1;\n\t\t\t}\n\t\t}\n\t}\n\
-    \n\tvector<int> p(n);\n\tiota(p.begin(), p.end(), 0);\n\n\tvector<T> h = {0};\n\
-    \th.reserve(n);\n\tfor(int i = 1;i < n;i++){\n\t\th.push_back(0);\n\t\tvector<T>\
-    \ d(i+1, infty);\n\t\tvector<int> pre(i+1, -1);\n\t\tvector<bool> used(i+1, false);\n\
-    \n\t\td[i] = 0;\n\t\tpre[i] = i;\n\n\t\tfor(int _ = 0;_ <= i;_++){\n\t\t\tT min_d\
-    \ = infty;\n\t\t\tint v = -1;\n\t\t\tfor(int j = 0;j <= i;j++){\n\t\t\t\tif(not\
-    \ used[j] && min_d > d[j]-h[j]){\n\t\t\t\t\tmin_d = d[j]-h[j];\n\t\t\t\t\tv =\
-    \ j;\n\t\t\t\t}\n\t\t\t}\n\t\t\t\t\n\t\t\tused[v] = true;\n\n\t\t\tfor(int j =\
-    \ 0;j <= i;j++){\n\t\t\t\tif(not used[j] || j == i){\n\t\t\t\t\tT nd = d[v] -\
-    \ a[v][p[v]] + a[j][p[v]];\n\t\t\t\t\tif(d[j] > nd){\n\t\t\t\t\t\td[j] = nd;\n\
-    \t\t\t\t\t\tpre[j] = v;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tint cur\
-    \ = i;\n\t\twhile(pre[cur] != i){\n\t\t\tswap(p[cur], p[pre[cur]]);\n\t\t\tcur\
-    \ = pre[cur];\n\t\t}\n\t\th = d;\n\t}\n\treturn p;\n}\n#line 5 \"verify/lc/assignment.test.cpp\"\
-    \n\nusing namespace mmrz;\n\n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\t\
-    vector a(n, vector(n, 0LL));\n\trep(i, n)rep(j, n)cin >> a[i][j];\n\n\tvector<int>\
-    \ h = hungarian<true, ll>(a);\n\tll x = 0;\n\trep(i, n)x += a[i][h[i]];\n\tcout\
-    \ << x << endl;\n\trep(i, n)cout << h[i] << \" \\n\"[i == n-1];\n}\n"
+    \ a%b); };\nll lcm(ll a, ll b) { ll g = gcd(a, b); return a / g*b; };\nll MOD(ll\
+    \ x, ll m){return (x%m+m)%m; }\nll FLOOR(ll x, ll m) {ll r = (x%m+m)%m; return\
+    \ (x-r)/m; }\ntemplate<class T> using dijk = priority_queue<T, vector<T>, greater<T>>;\n\
+    # define all(qpqpq)           (qpqpq).begin(),(qpqpq).end()\n# define UNIQUE(wpwpw)\
+    \        (wpwpw).erase(unique(all((wpwpw))),(wpwpw).end())\n# define LOWER(epepe)\
+    \         transform(all((epepe)),(epepe).begin(),TL<char>)\n# define UPPER(rprpr)\
+    \         transform(all((rprpr)),(rprpr).begin(),TU<char>)\n# define rep(i,upupu)\
+    \         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n# define reps(i,opopo)\
+    \        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n# define len(x)\
+    \                ((ll)(x).size())\n# define bit(n)               (1LL << (n))\n\
+    # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
+    \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
+    \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
+    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"graph/hungarian.hpp\"\
+    \n\ntemplate<bool is_min, typename T>\nvector<int> hungarian(vector<vector<T>>\
+    \ a) {\n\tconstexpr T infty = numeric_limits<T>::max()/2;\n\tint n = (int)a.size();\n\
+    \t\n\tif(not is_min){\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tfor(int j = 0; j <\
+    \ n;j++){\n\t\t\t\ta[i][j] *= -1;\n\t\t\t}\n\t\t}\n\t}\n\n\tvector<int> p(n);\n\
+    \tiota(p.begin(), p.end(), 0);\n\n\tvector<T> h = {0};\n\th.reserve(n);\n\tfor(int\
+    \ i = 1;i < n;i++){\n\t\th.push_back(0);\n\t\tvector<T> d(i+1, infty);\n\t\tvector<int>\
+    \ pre(i+1, -1);\n\t\tvector<bool> used(i+1, false);\n\n\t\td[i] = 0;\n\t\tpre[i]\
+    \ = i;\n\n\t\tfor(int _ = 0;_ <= i;_++){\n\t\t\tT min_d = infty;\n\t\t\tint v\
+    \ = -1;\n\t\t\tfor(int j = 0;j <= i;j++){\n\t\t\t\tif(not used[j] && min_d > d[j]-h[j]){\n\
+    \t\t\t\t\tmin_d = d[j]-h[j];\n\t\t\t\t\tv = j;\n\t\t\t\t}\n\t\t\t}\n\t\t\t\t\n\
+    \t\t\tused[v] = true;\n\n\t\t\tfor(int j = 0;j <= i;j++){\n\t\t\t\tif(not used[j]\
+    \ || j == i){\n\t\t\t\t\tT nd = d[v] - a[v][p[v]] + a[j][p[v]];\n\t\t\t\t\tif(d[j]\
+    \ > nd){\n\t\t\t\t\t\td[j] = nd;\n\t\t\t\t\t\tpre[j] = v;\n\t\t\t\t\t}\n\t\t\t\
+    \t}\n\t\t\t}\n\t\t}\n\n\t\tint cur = i;\n\t\twhile(pre[cur] != i){\n\t\t\tswap(p[cur],\
+    \ p[pre[cur]]);\n\t\t\tcur = pre[cur];\n\t\t}\n\t\th = d;\n\t}\n\treturn p;\n\
+    }\n#line 5 \"verify/lc/assignment.test.cpp\"\n\nusing namespace mmrz;\n\n\nvoid\
+    \ mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector a(n, vector(n, 0LL));\n\trep(i,\
+    \ n)rep(j, n)cin >> a[i][j];\n\n\tvector<int> h = hungarian<true, ll>(a);\n\t\
+    ll x = 0;\n\trep(i, n)x += a[i][h[i]];\n\tcout << x << endl;\n\trep(i, n)cout\
+    \ << h[i] << \" \\n\"[i == n-1];\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/assignment\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../graph/hungarian.hpp\"\n\
     \nusing namespace mmrz;\n\n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: verify/lc/assignment.test.cpp
   requiredBy: []
-  timestamp: '2024-07-06 23:08:41+09:00'
+  timestamp: '2024-07-07 01:02:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lc/assignment.test.cpp
