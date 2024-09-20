@@ -18,21 +18,21 @@ data:
     \ const noexcept { return a; }\n\tconstexpr modint operator+(const modint rhs)\
     \ const noexcept {\n\t\treturn modint(*this) += rhs;\n\t}\n\tconstexpr modint\
     \ operator-(const modint rhs) const noexcept {\n\t\treturn modint(*this) -= rhs;\n\
-    \t}\n\tconstexpr modint operator*(const modint rhs) const noexcept {\n    \treturn\
+    \t}\n\tconstexpr modint operator*(const modint rhs) const noexcept {\n\t\treturn\
     \ modint(*this) *= rhs;\n\t}\n\tconstexpr modint operator/(const modint rhs) const\
     \ noexcept {\n\t\treturn modint(*this) /= rhs;\n\t}\n\tconstexpr modint &operator+=(const\
     \ modint rhs) noexcept {\n\t\ta += rhs.a;\n\t\tif (a >= Modulus) {\n\t\t\ta -=\
-    \ Modulus;\n\t\t}\n    \treturn *this;\n\t}\n\tconstexpr modint &operator-=(const\
+    \ Modulus;\n\t\t}\n\t\treturn *this;\n\t}\n\tconstexpr modint &operator-=(const\
     \ modint rhs) noexcept {\n\t\tif (a < rhs.a) {\n\t\t\ta += Modulus;\n\t\t}\n\t\
     \ta -= rhs.a;\n\t\treturn *this;\n\t}\n\tconstexpr modint &operator*=(const modint\
-    \ rhs) noexcept {\n    \ta = a * rhs.a % Modulus;\n    \treturn *this;\n\t}\n\t\
-    constexpr modint &operator/=(modint rhs) noexcept {\n\t\tu64 exp = Modulus - 2;\n\
-    \t\twhile (exp) {\n\t\t\tif (exp % 2) {\n\t\t\t\t*this *= rhs;\n\t\t\t}\n\t\t\t\
-    rhs *= rhs;\n\t\t\texp /= 2;\n\t\t}\n    \treturn *this;\n\t}\n\n    friend std::ostream&\
-    \ operator<<(std::ostream& os, const modint& rhs) {\n        os << rhs.a;\n  \
-    \      return os;\n    }\n};\n#line 3 \"math/combination.hpp\"\n\nconstexpr int\
-    \ max_combination = 1010101;\ntemplate<typename T>\nstruct binomial {\n\n\tvector<T>\
-    \ fact, inv_fact;\n\n\tbinomial(){\n\t\tfact.resize(max_combination);\n\t\tinv_fact.resize(max_combination);\n\
+    \ rhs) noexcept {\n\t\ta = a * rhs.a % Modulus;\n\t\treturn *this;\n\t}\n\tconstexpr\
+    \ modint &operator/=(modint rhs) noexcept {\n\t\tu64 exp = Modulus - 2;\n\t\t\
+    while (exp) {\n\t\t\tif (exp % 2) {\n\t\t\t\t*this *= rhs;\n\t\t\t}\n\t\t\trhs\
+    \ *= rhs;\n\t\t\texp /= 2;\n\t\t}\n\t\treturn *this;\n\t}\n\n\tfriend std::ostream&\
+    \ operator<<(std::ostream& os, const modint& rhs) {\n\t\tos << rhs.a;\n\t\treturn\
+    \ os;\n\t}\n};\n#line 3 \"math/combination.hpp\"\n\nconstexpr int max_combination\
+    \ = 1010101;\ntemplate<typename T>\nstruct binomial {\n\n\tvector<T> fact, inv_fact;\n\
+    \n\tbinomial(){\n\t\tfact.resize(max_combination);\n\t\tinv_fact.resize(max_combination);\n\
     \t\tfact[0] = 1, inv_fact[0] = 1;\n\t\tfor(int i = 1;i < max_combination;i++){\n\
     \t\t\tfact[i] = fact[i - 1];\n\t\t\tfact[i] *= i;\n\t\t\tinv_fact[i] = inv_fact[i\
     \ - 1];\n\t\t\tinv_fact[i] /= i;\n\t\t}\n\t}\n\n\tT nCr(int n, int r){\n\t\tif(r\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: false
   path: math/combination.hpp
   requiredBy: []
-  timestamp: '2024-06-04 23:47:14+09:00'
+  timestamp: '2024-09-21 01:01:28+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/combination.hpp

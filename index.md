@@ -86,6 +86,9 @@ data:
       path: math/is_prime.hpp
       title: "\u7D20\u6570\u5224\u5B9A\uFF08\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\
         \u7D20\u6570\u5224\u5B9A\u6CD5\uFF09"
+    - icon: ':warning:'
+      path: math/matrix.hpp
+      title: "\u884C\u5217\u30E9\u30A4\u30D6\u30E9\u30EA"
     - icon: ':heavy_check_mark:'
       path: math/modint.hpp
       title: modint

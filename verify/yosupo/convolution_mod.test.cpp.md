@@ -57,25 +57,25 @@ data:
     \ const noexcept { return a; }\n\tconstexpr modint operator+(const modint rhs)\
     \ const noexcept {\n\t\treturn modint(*this) += rhs;\n\t}\n\tconstexpr modint\
     \ operator-(const modint rhs) const noexcept {\n\t\treturn modint(*this) -= rhs;\n\
-    \t}\n\tconstexpr modint operator*(const modint rhs) const noexcept {\n    \treturn\
+    \t}\n\tconstexpr modint operator*(const modint rhs) const noexcept {\n\t\treturn\
     \ modint(*this) *= rhs;\n\t}\n\tconstexpr modint operator/(const modint rhs) const\
     \ noexcept {\n\t\treturn modint(*this) /= rhs;\n\t}\n\tconstexpr modint &operator+=(const\
     \ modint rhs) noexcept {\n\t\ta += rhs.a;\n\t\tif (a >= Modulus) {\n\t\t\ta -=\
-    \ Modulus;\n\t\t}\n    \treturn *this;\n\t}\n\tconstexpr modint &operator-=(const\
+    \ Modulus;\n\t\t}\n\t\treturn *this;\n\t}\n\tconstexpr modint &operator-=(const\
     \ modint rhs) noexcept {\n\t\tif (a < rhs.a) {\n\t\t\ta += Modulus;\n\t\t}\n\t\
     \ta -= rhs.a;\n\t\treturn *this;\n\t}\n\tconstexpr modint &operator*=(const modint\
-    \ rhs) noexcept {\n    \ta = a * rhs.a % Modulus;\n    \treturn *this;\n\t}\n\t\
-    constexpr modint &operator/=(modint rhs) noexcept {\n\t\tu64 exp = Modulus - 2;\n\
-    \t\twhile (exp) {\n\t\t\tif (exp % 2) {\n\t\t\t\t*this *= rhs;\n\t\t\t}\n\t\t\t\
-    rhs *= rhs;\n\t\t\texp /= 2;\n\t\t}\n    \treturn *this;\n\t}\n\n    friend std::ostream&\
-    \ operator<<(std::ostream& os, const modint& rhs) {\n        os << rhs.a;\n  \
-    \      return os;\n    }\n};\n#line 5 \"verify/yosupo/convolution_mod.test.cpp\"\
-    \nusing mint998 = modint<998244353>;\n#line 1 \"math/formal_power_series.hpp\"\
-    \n\ntemplate<typename mint998>\nstruct formal_power_series : vector<mint998> {\n\
-    \tusing vector<mint998>::vector;\n\tusing FPS = formal_power_series;\n\n\tFPS\
-    \ &operator+=(const FPS &r){\n\t\tif(r.size() > this->size()){\n\t\t\tthis->resize(r.size());\n\
-    \t\t}\n\t\tfor(size_t i = 0;i < r.size();i++){\n\t\t\t(*this)[i] += r[i];\n\t\t\
-    }\n\t\treturn *this;\n\t}\n\n\tFPS &operator+=(const mint998 &v){\n\t\tif(this->empty())this->resize(1);\n\
+    \ rhs) noexcept {\n\t\ta = a * rhs.a % Modulus;\n\t\treturn *this;\n\t}\n\tconstexpr\
+    \ modint &operator/=(modint rhs) noexcept {\n\t\tu64 exp = Modulus - 2;\n\t\t\
+    while (exp) {\n\t\t\tif (exp % 2) {\n\t\t\t\t*this *= rhs;\n\t\t\t}\n\t\t\trhs\
+    \ *= rhs;\n\t\t\texp /= 2;\n\t\t}\n\t\treturn *this;\n\t}\n\n\tfriend std::ostream&\
+    \ operator<<(std::ostream& os, const modint& rhs) {\n\t\tos << rhs.a;\n\t\treturn\
+    \ os;\n\t}\n};\n#line 5 \"verify/yosupo/convolution_mod.test.cpp\"\nusing mint998\
+    \ = modint<998244353>;\n#line 1 \"math/formal_power_series.hpp\"\n\ntemplate<typename\
+    \ mint998>\nstruct formal_power_series : vector<mint998> {\n\tusing vector<mint998>::vector;\n\
+    \tusing FPS = formal_power_series;\n\n\tFPS &operator+=(const FPS &r){\n\t\tif(r.size()\
+    \ > this->size()){\n\t\t\tthis->resize(r.size());\n\t\t}\n\t\tfor(size_t i = 0;i\
+    \ < r.size();i++){\n\t\t\t(*this)[i] += r[i];\n\t\t}\n\t\treturn *this;\n\t}\n\
+    \n\tFPS &operator+=(const mint998 &v){\n\t\tif(this->empty())this->resize(1);\n\
     \t\t(*this)[0] += v;\n\t\treturn *this;\n\t}\n\n\tFPS &operator-=(const FPS &r){\n\
     \t\tif(r.size() > this->size()){\n\t\t\tthis->resize(r.size());\n\t\t}\n\t\tfor(size_t\
     \ i = 0;i < r.size();i++){\n\t\t\t(*this)[i] -= r[i];\n\t\t}\n\t\treturn *this;\n\
@@ -140,7 +140,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution_mod.test.cpp
   requiredBy: []
-  timestamp: '2024-07-07 01:02:07+09:00'
+  timestamp: '2024-09-21 01:01:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution_mod.test.cpp
