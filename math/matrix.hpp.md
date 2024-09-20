@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/itp1/7_d.test.cpp
+    title: verify/aoj/itp1/7_d.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/matrix.hpp\"\n\ntemplate<typename T>\nstruct matrix\
@@ -69,8 +72,9 @@ data:
   path: math/matrix.hpp
   requiredBy: []
   timestamp: '2024-09-21 01:18:05+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/aoj/itp1/7_d.test.cpp
 documentation_of: math/matrix.hpp
 layout: document
 title: "\u884C\u5217\u30E9\u30A4\u30D6\u30E9\u30EA"

@@ -86,7 +86,7 @@ data:
       path: math/is_prime.hpp
       title: "\u7D20\u6570\u5224\u5B9A\uFF08\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\
         \u7D20\u6570\u5224\u5B9A\u6CD5\uFF09"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/matrix.hpp
       title: "\u884C\u5217\u30E9\u30A4\u30D6\u30E9\u30EA"
     - icon: ':heavy_check_mark:'
@@ -186,6 +186,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/id/2828.test.cpp
       title: verify/aoj/id/2828.test.cpp
+  - name: verify/aoj/itp1
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/itp1/7_d.test.cpp
+      title: verify/aoj/itp1/7_d.test.cpp
   - name: verify/lc
     pages:
     - icon: ':heavy_check_mark:'
