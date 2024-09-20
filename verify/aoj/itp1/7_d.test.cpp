@@ -6,7 +6,7 @@
 void mmrz::solve(){
 	int n, m, l;
 	cin >> n >> m >> l;
-	matrix<int> a(n, m), b(m, l);
+	matrix<ll> a(n, m), b(m, l);
 	rep(i, n)rep(j, m)cin >> a[i][j];
 	rep(i, m)rep(j, l)cin >> b[i][j];
 	auto c = a*b;
