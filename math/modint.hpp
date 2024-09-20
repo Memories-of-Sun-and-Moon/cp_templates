@@ -13,7 +13,7 @@ public:
 		return modint(*this) -= rhs;
 	}
 	constexpr modint operator*(const modint rhs) const noexcept {
-    	return modint(*this) *= rhs;
+		return modint(*this) *= rhs;
 	}
 	constexpr modint operator/(const modint rhs) const noexcept {
 		return modint(*this) /= rhs;
@@ -23,7 +23,7 @@ public:
 		if (a >= Modulus) {
 			a -= Modulus;
 		}
-    	return *this;
+		return *this;
 	}
 	constexpr modint &operator-=(const modint rhs) noexcept {
 		if (a < rhs.a) {
@@ -33,8 +33,8 @@ public:
 		return *this;
 	}
 	constexpr modint &operator*=(const modint rhs) noexcept {
-    	a = a * rhs.a % Modulus;
-    	return *this;
+		a = a * rhs.a % Modulus;
+		return *this;
 	}
 	constexpr modint &operator/=(modint rhs) noexcept {
 		u64 exp = Modulus - 2;
@@ -45,11 +45,11 @@ public:
 			rhs *= rhs;
 			exp /= 2;
 		}
-    	return *this;
+		return *this;
 	}
 
-    friend std::ostream& operator<<(std::ostream& os, const modint& rhs) {
-        os << rhs.a;
-        return os;
-    }
+	friend std::ostream& operator<<(std::ostream& os, const modint& rhs) {
+		os << rhs.a;
+		return os;
+	}
 };
