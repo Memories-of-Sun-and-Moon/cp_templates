@@ -8,6 +8,8 @@ template<typename T>struct segment_tree {
 	F combine;
 	T identify;
 
+	segment_tree(int _n, F _combine, T _identify) : segment_tree(vector<T>(_n, _identify), _combine, _identify) {}
+
 	segment_tree(vector<T> v, F _combine, T _identify) : combine(_combine), identify(_identify) {
 		n = (int)v.size();
 		offset = 1;
@@ -17,13 +19,6 @@ template<typename T>struct segment_tree {
 
 		for(int i = 0;i < n;i++)node[i + offset] = v[i];
 		for(int i = offset - 1;i >= 1;i--)node[i] = combine(node[2 * i + 0], node[2 * i + 1]);
-	}
-
-	segment_tree(int _n, F _combine, T _identify) : n(_n), combine(_combine), identify(_identify){
-		
-		offset = 1;
-		while(offset < _n)offset <<= 1;
-		node.assign(2*offset, identify);
 	}
 
 	T operator[](int x) {return node[x + offset]; }
