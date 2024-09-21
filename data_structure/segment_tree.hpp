@@ -24,6 +24,7 @@ template<typename T>struct segment_tree {
 	T operator[](int x) {return node[x + offset]; }
 
 	void set(int x, T val){
+		assert(0 <= x && x < n);
 		x += offset;
 
 		node[x] = val;
