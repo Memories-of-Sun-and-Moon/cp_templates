@@ -32,4 +32,4 @@ documentation_of: ./../../data_structure/segment_tree.hpp
 
 ## 概要
 
-内部で完全二分木を **1-indexed** で構築している。こちらの方が定数倍がよく、また ``max_right()`` なども実装しやすい
+内部で完全二分木を **1-indexed** で構築している。こちらの方が定数倍がよく、また ``max_right()`` なども実装しやすい。
