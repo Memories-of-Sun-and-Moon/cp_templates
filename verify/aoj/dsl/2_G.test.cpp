@@ -32,10 +32,10 @@ void mmrz::solve(){
 			s--;
 			seg.apply(s, t, x);
 		}else{
-			int i;
-			cin >> i;
-			i--;
-			cout << seg[i].val << endl;
+			int l, r;
+			cin >> l >> r;
+			l--;
+			cout << seg.fold(l, r).val << endl;
 		}
 	}
 }
