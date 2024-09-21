@@ -19,18 +19,17 @@ data:
     links: []
   bundledCode: "#line 1 \"data_structure/segment_tree.hpp\"\n\ntemplate<typename T>struct\
     \ segment_tree {\n\tusing F = function<T(T, T)>;\n\n\tint offset;\n\tint n;\n\t\
-    vector<T> node;\n\tF combine;\n\tT identify;\n\n\tsegment_tree(vector<T> v, F\
-    \ _combine, T _identify) : combine(_combine), identify(_identify) {\n\t\tn = (int)v.size();\n\
-    \t\toffset = 1;\n\t\twhile(offset < n)offset <<= 1;\n\n\t\tnode.resize(2*offset,\
-    \ identify);\n\n\t\tfor(int i = 0;i < n;i++)node[i + offset] = v[i];\n\t\tfor(int\
-    \ i = offset - 1;i >= 1;i--)node[i] = combine(node[2 * i + 0], node[2 * i + 1]);\n\
-    \t}\n\n\tsegment_tree(int _n, F _combine, T _identify) : n(_n), combine(_combine),\
-    \ identify(_identify){\n\t\t\n\t\toffset = 1;\n\t\twhile(offset < _n)offset <<=\
-    \ 1;\n\t\tnode.assign(2*offset, identify);\n\t}\n\n\tT operator[](int x) {return\
-    \ node[x + offset]; }\n\n\tvoid set(int x, T val){\n\t\tx += offset;\n\n\t\tnode[x]\
-    \ = val;\n\t\twhile(x >>= 1){;\n\t\t\tnode[x] = combine(node[2 * x + 0], node[2\
-    \ * x + 1]);\n\t\t}\n\t}\n\n\tT fold(int a, int b){\n\t\tT L = identify, R = identify;\n\
-    \t\tfor(a += offset, b += offset; a < b;a >>= 1, b >>= 1){\n\t\t\tif(a&1)L = combine(L,\
+    vector<T> node;\n\tF combine;\n\tT identify;\n\n\tsegment_tree(int _n, F _combine,\
+    \ T _identify) : segment_tree(vector<T>(_n, _identify), _combine, _identify) {}\n\
+    \n\tsegment_tree(vector<T> v, F _combine, T _identify) : combine(_combine), identify(_identify)\
+    \ {\n\t\tn = (int)v.size();\n\t\toffset = 1;\n\t\twhile(offset < n)offset <<=\
+    \ 1;\n\n\t\tnode.resize(2*offset, identify);\n\n\t\tfor(int i = 0;i < n;i++)node[i\
+    \ + offset] = v[i];\n\t\tfor(int i = offset - 1;i >= 1;i--)node[i] = combine(node[2\
+    \ * i + 0], node[2 * i + 1]);\n\t}\n\n\tT operator[](int x) {return node[x + offset];\
+    \ }\n\n\tvoid set(int x, T val){\n\t\tx += offset;\n\n\t\tnode[x] = val;\n\t\t\
+    while(x >>= 1){;\n\t\t\tnode[x] = combine(node[2 * x + 0], node[2 * x + 1]);\n\
+    \t\t}\n\t}\n\n\tT fold(int a, int b){\n\t\tT L = identify, R = identify;\n\t\t\
+    for(a += offset, b += offset; a < b;a >>= 1, b >>= 1){\n\t\t\tif(a&1)L = combine(L,\
     \ node[a++]);\n\t\t\tif(b&1)R = combine(node[--b], R);\n\t\t}\n\t\treturn combine(L,\
     \ R);\n\t}\n\n\tint max_right(const function<bool(T)> f, int l = 0){\n\t\tif(l\
     \ == n)return n;\n\t\tl += offset;\n\t\tT sum = identify;\n\t\tdo{\n\t\t\twhile(l%2\
@@ -48,13 +47,12 @@ data:
     \ != r);\n\t\treturn 0;\n\t}\n};\n"
   code: "\ntemplate<typename T>struct segment_tree {\n\tusing F = function<T(T, T)>;\n\
     \n\tint offset;\n\tint n;\n\tvector<T> node;\n\tF combine;\n\tT identify;\n\n\t\
-    segment_tree(vector<T> v, F _combine, T _identify) : combine(_combine), identify(_identify)\
-    \ {\n\t\tn = (int)v.size();\n\t\toffset = 1;\n\t\twhile(offset < n)offset <<=\
-    \ 1;\n\n\t\tnode.resize(2*offset, identify);\n\n\t\tfor(int i = 0;i < n;i++)node[i\
-    \ + offset] = v[i];\n\t\tfor(int i = offset - 1;i >= 1;i--)node[i] = combine(node[2\
-    \ * i + 0], node[2 * i + 1]);\n\t}\n\n\tsegment_tree(int _n, F _combine, T _identify)\
-    \ : n(_n), combine(_combine), identify(_identify){\n\t\t\n\t\toffset = 1;\n\t\t\
-    while(offset < _n)offset <<= 1;\n\t\tnode.assign(2*offset, identify);\n\t}\n\n\
+    segment_tree(int _n, F _combine, T _identify) : segment_tree(vector<T>(_n, _identify),\
+    \ _combine, _identify) {}\n\n\tsegment_tree(vector<T> v, F _combine, T _identify)\
+    \ : combine(_combine), identify(_identify) {\n\t\tn = (int)v.size();\n\t\toffset\
+    \ = 1;\n\t\twhile(offset < n)offset <<= 1;\n\n\t\tnode.resize(2*offset, identify);\n\
+    \n\t\tfor(int i = 0;i < n;i++)node[i + offset] = v[i];\n\t\tfor(int i = offset\
+    \ - 1;i >= 1;i--)node[i] = combine(node[2 * i + 0], node[2 * i + 1]);\n\t}\n\n\
     \tT operator[](int x) {return node[x + offset]; }\n\n\tvoid set(int x, T val){\n\
     \t\tx += offset;\n\n\t\tnode[x] = val;\n\t\twhile(x >>= 1){;\n\t\t\tnode[x] =\
     \ combine(node[2 * x + 0], node[2 * x + 1]);\n\t\t}\n\t}\n\n\tT fold(int a, int\
@@ -78,7 +76,7 @@ data:
   isVerificationFile: false
   path: data_structure/segment_tree.hpp
   requiredBy: []
-  timestamp: '2024-06-02 01:02:03+09:00'
+  timestamp: '2024-09-21 12:51:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dsl/2_B___segment_tree.test.cpp
