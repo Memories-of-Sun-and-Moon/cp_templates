@@ -18,15 +18,15 @@ documentation_of: ./../../data_structure/segment_tree.hpp
 - ``void set(int x, T val)`` : $x$ 番目の要素を $val$ に変更する  $O(\log(N))$
 - ``T fold(int l, int r)`` : $[l, r)$ を満たす区間内に対する区間演算クエリの結果を返す $O(\log(N))$
 - ``seg[x]`` : $x$ 番目の値を返す。$O(1)$
-- ``max_right(f<bool(T)>, l)`` : $l \leq i < N$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最大（ $N-1$ 寄り）のものを返す $O(\log(N))$
+- ``max_right(f<bool(T)>, int l)`` : $l \leq i < N$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最大（ $N-1$ 寄り）のものを返す $O(\log(N))$
 
 ## !!CAUTION!!
 
-``max_right(f<bool(T)>, l)`` の検証は atcoder の問題上に手動で提出しており、自動では verify されない
+``max_right(f<bool(T)>, int l)`` の検証は atcoder の問題上に手動で提出しており、自動では verify されない
 
 ## !!!UNVERIFIED!!!
 
-- ``min_left(f<bool(T)>, r)`` : $0 \leq i \leq r$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最小（ $0$ 寄り）のものを返す $O(\log(N))$
+- ``min_left(f<bool(T)>, int r)`` : $0 \leq i \leq r$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最小（ $0$ 寄り）のものを返す $O(\log(N))$
 - ``T all_fold()`` : $[0, n)$ を満たす区間内に対する区間演算クエリの結果を返す $O(1)$
 
 
