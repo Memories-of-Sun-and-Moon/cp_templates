@@ -8,7 +8,7 @@ data:
       title: data_structure/binary_indexed_tree.cpp
     - icon: ':heavy_check_mark:'
       path: data_structure/lazy_segment_tree.hpp
-      title: data_structure/lazy_segment_tree.hpp
+      title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
       path: data_structure/mo.hpp
       title: Mo's Algorithm
@@ -162,8 +162,14 @@ data:
       path: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
       title: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/aoj/dsl/2_E.test.cpp
+      title: verify/aoj/dsl/2_E.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/2_F.test.cpp
       title: verify/aoj/dsl/2_F.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/dsl/2_H.test.cpp
+      title: verify/aoj/dsl/2_H.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/5_B.test.cpp
       title: verify/aoj/dsl/5_B.test.cpp

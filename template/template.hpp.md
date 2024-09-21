@@ -28,8 +28,14 @@ data:
     path: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
     title: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/dsl/2_E.test.cpp
+    title: verify/aoj/dsl/2_E.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_F.test.cpp
     title: verify/aoj/dsl/2_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/dsl/2_H.test.cpp
+    title: verify/aoj/dsl/2_H.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/5_B.test.cpp
     title: verify/aoj/dsl/5_B.test.cpp
@@ -184,8 +190,10 @@ data:
   - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
   - verify/aoj/dsl/5_B.test.cpp
   - verify/aoj/dsl/2_F.test.cpp
+  - verify/aoj/dsl/2_H.test.cpp
   - verify/aoj/dsl/2_B___segment_tree.test.cpp
   - verify/aoj/dsl/2_A___segment_tree.test.cpp
+  - verify/aoj/dsl/2_E.test.cpp
   - verify/aoj/dsl/1_A.test.cpp
   - verify/aoj/dpl/1_D.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
