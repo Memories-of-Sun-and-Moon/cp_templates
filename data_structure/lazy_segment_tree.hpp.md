@@ -9,15 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_F.test.cpp
     title: verify/aoj/dsl/2_F.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_G.test.cpp
     title: verify/aoj/dsl/2_G.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_H.test.cpp
     title: verify/aoj/dsl/2_H.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data_structure/lazy_segment_tree.hpp\"\n\ntemplate<class\
@@ -132,7 +132,7 @@ data:
   path: data_structure/lazy_segment_tree.hpp
   requiredBy: []
   timestamp: '2024-09-21 17:14:06+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dsl/2_F.test.cpp
   - verify/aoj/dsl/2_H.test.cpp
