@@ -34,7 +34,7 @@ template<typename T>struct segment_tree {
 	}
 
 	T fold(int l, int r){
-		
+		assert(0 <= l && l <= r && r <= n);
 		if(l == r)return identify;
 
 		T L = identify, R = identify;
