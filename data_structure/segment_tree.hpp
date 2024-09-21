@@ -10,7 +10,7 @@ template<typename T>struct segment_tree {
 
 	segment_tree(int _n, F _combine, T _identify) : segment_tree(vector<T>(_n, _identify), _combine, _identify) {}
 
-	segment_tree(vector<T> v, F _combine, T _identify) : combine(_combine), identify(_identify) {
+	segment_tree(const vector<T> &v, F _combine, T _identify) : n((int)v.size()), combine(_combine), identify(_identify) {
 		n = (int)v.size();
 		offset = 1;
 		while(offset < n)offset <<= 1;
