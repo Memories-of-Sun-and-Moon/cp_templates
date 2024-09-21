@@ -9,12 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_F.test.cpp
     title: verify/aoj/dsl/2_F.test.cpp
+  - icon: ':x:'
+    path: verify/aoj/dsl/2_G.test.cpp
+    title: verify/aoj/dsl/2_G.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_H.test.cpp
     title: verify/aoj/dsl/2_H.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data_structure/lazy_segment_tree.hpp\"\n\ntemplate<class\
@@ -129,10 +132,11 @@ data:
   path: data_structure/lazy_segment_tree.hpp
   requiredBy: []
   timestamp: '2024-09-21 17:14:06+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/aoj/dsl/2_F.test.cpp
   - verify/aoj/dsl/2_H.test.cpp
+  - verify/aoj/dsl/2_G.test.cpp
   - verify/aoj/dsl/2_E.test.cpp
 documentation_of: data_structure/lazy_segment_tree.hpp
 layout: document
