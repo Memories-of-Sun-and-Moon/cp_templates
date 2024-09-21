@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/segment_tree.hpp
     title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
@@ -59,7 +59,7 @@ data:
     \ + 0], node[2 * x + 1]);\n\t\t}\n\t}\n\n\tT fold(int l, int r){\n\t\tassert(0\
     \ <= l && l <= r && r <= n);\n\t\tif(l == r)return identify;\n\n\t\tT L = identify,\
     \ R = identify;\n\t\tfor(l += offset, r += offset; l < r;l >>= 1, r >>= 1){\n\t\
-    \t\tif(l&1)L = combine(L, node[l++]);\n\t\t\tif(r&1)R = combine(node[r--], R);\n\
+    \t\tif(l&1)L = combine(L, node[l++]);\n\t\t\tif(r&1)R = combine(node[--r], R);\n\
     \t\t}\n\t\treturn combine(L, R);\n\t}\n\n\tT all_fold() { return node[1]; };\n\
     \n\tint max_right(const function<bool(T)> f, int l = 0){\n\t\tassert(0 <= l &&\
     \ l <= n);\n\t\tassert(f(identify));\n\n\t\tif(l == n)return n;\n\t\t\n\t\tl +=\
@@ -70,10 +70,10 @@ data:
     \t\t\t}\n\t\t\tsum = combine(sum, node[l]);\n\t\t\tl++;\n\t\t}while((l&-l) !=\
     \ l);\n\t\treturn n;\n\t}\n\n\tint min_left(const function<bool(T)> f, int r =\
     \ -1){\n\t\tif(r == 0)return 0;\n\t\tif(r == -1)r = n;\n\t\tr += offset;\n\t\t\
-    T sum = identify;\n\t\tdo{\n\t\t\tr--;\n\t\t\twhile(r > 1 && (r % 2))r >>= 1;\n\
+    T sum = identify;\n\t\tdo{\n\t\t\t--r;\n\t\t\twhile(r > 1 && (r % 2))r >>= 1;\n\
     \t\t\tif(not f(combine(node[r], sum))){\n\t\t\t\twhile(r < offset){\n\t\t\t\t\t\
     r = r*2 + 1;\n\t\t\t\t\tif(f(combine(node[r], sum))){\n\t\t\t\t\t\tsum = combine(node[r],\
-    \ sum);\n\t\t\t\t\t\tr--;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn r+1 - offset;\n\
+    \ sum);\n\t\t\t\t\t\t--r;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn r+1 - offset;\n\
     \t\t\t}\n\t\t\tsum = combine(node[r], sum);\n\t\t}while((r&-r) != r);\n\t\treturn\
     \ 0;\n\t}\n};\n#line 5 \"verify/aoj/dsl/2_A___segment_tree.test.cpp\"\n\nvoid\
     \ mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tauto combine = [](int a, int\
@@ -92,8 +92,8 @@ data:
   isVerificationFile: true
   path: verify/aoj/dsl/2_A___segment_tree.test.cpp
   requiredBy: []
-  timestamp: '2024-09-21 16:04:29+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-21 16:14:13+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_A___segment_tree.test.cpp
 layout: document
