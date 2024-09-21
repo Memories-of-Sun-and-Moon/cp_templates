@@ -40,7 +40,7 @@ template<typename T>struct segment_tree {
 		T L = identify, R = identify;
 		for(l += offset, r += offset; l < r;l >>= 1, r >>= 1){
 			if(l&1)L = combine(L, node[l++]);
-			if(r&1)R = combine(node[--r], R);
+			if(r&1)R = combine(node[r--], R);
 		}
 		return combine(L, R);
 	}
@@ -48,7 +48,11 @@ template<typename T>struct segment_tree {
 	T all_fold() { return node[1]; };
 
 	int max_right(const function<bool(T)> f, int l = 0){
+		assert(0 <= l && l <= n);
+		assert(f(identify));
+
 		if(l == n)return n;
+		
 		l += offset;
 		T sum = identify;
 		do{
@@ -58,13 +62,13 @@ template<typename T>struct segment_tree {
 					l <<= 1;
 					if(f(combine(sum, node[l]))){
 						sum = combine(sum, node[l]);
-						++l;
+						l++;
 					}
 				}
 				return l - offset;
 			}
 			sum = combine(sum, node[l]);
-			++l;
+			l++;
 		}while((l&-l) != l);
 		return n;
 	}
@@ -75,14 +79,14 @@ template<typename T>struct segment_tree {
 		r += offset;
 		T sum = identify;
 		do{
-			--r;
+			r--;
 			while(r > 1 && (r % 2))r >>= 1;
 			if(not f(combine(node[r], sum))){
 				while(r < offset){
 					r = r*2 + 1;
 					if(f(combine(node[r], sum))){
 						sum = combine(node[r], sum);
-						--r;
+						r--;
 					}
 				}
 				return r+1 - offset;
