@@ -23,6 +23,7 @@ documentation_of: ./../../data_structure/segment_tree.hpp
 ## !!!UNVERIFIED!!!
 
 - ``min_left(f<bool(T)>, r)`` : $0 \leq i \leq r$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最小（ $0$ 寄り）のものを返す $O(\log(N))$
+- ``T all_fold()`` : $[0, n)$ を満たす区間内に対する区間演算クエリの結果を返す $O(1)$
 
 
 ## 概要

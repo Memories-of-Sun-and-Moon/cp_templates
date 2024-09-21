@@ -45,6 +45,8 @@ template<typename T>struct segment_tree {
 		return combine(L, R);
 	}
 
+	T all_fold() { return node[1]; };
+
 	int max_right(const function<bool(T)> f, int l = 0){
 		if(l == n)return n;
 		l += offset;
