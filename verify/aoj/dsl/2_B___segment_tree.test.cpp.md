@@ -50,35 +50,34 @@ data:
     segment_tree(int _n, F _combine, T _identify) : segment_tree(vector<T>(_n, _identify),\
     \ _combine, _identify) {}\n\n\tsegment_tree(const vector<T> &v, F _combine, T\
     \ _identify) : n((int)v.size()), combine(_combine), identify(_identify) {\n\t\t\
-    n = (int)v.size();\n\t\toffset = 1;\n\t\twhile(offset < n)offset <<= 1;\n\n\t\t\
-    node.resize(2*offset, identify);\n\n\t\tfor(int i = 0;i < n;i++)node[i + offset]\
-    \ = v[i];\n\t\tfor(int i = offset - 1;i >= 1;i--)node[i] = combine(node[2 * i\
-    \ + 0], node[2 * i + 1]);\n\t}\n\n\tT operator[](int x) {return node[x + offset];\
-    \ }\n\n\tvoid set(int x, T val){\n\t\tassert(0 <= x && x < n);\n\t\tx += offset;\n\
-    \n\t\tnode[x] = val;\n\t\twhile(x >>= 1){;\n\t\t\tnode[x] = combine(node[2 * x\
-    \ + 0], node[2 * x + 1]);\n\t\t}\n\t}\n\n\tT fold(int l, int r){\n\t\tassert(0\
-    \ <= l && l <= r && r <= n);\n\t\tif(l == r)return identify;\n\n\t\tT L = identify,\
-    \ R = identify;\n\t\tfor(l += offset, r += offset; l < r;l >>= 1, r >>= 1){\n\t\
-    \t\tif(l&1)L = combine(L, node[l++]);\n\t\t\tif(r&1)R = combine(node[--r], R);\n\
-    \t\t}\n\t\treturn combine(L, R);\n\t}\n\n\tT all_fold() { return node[1]; };\n\
-    \n\tint max_right(const function<bool(T)> f, int l = 0){\n\t\tassert(0 <= l &&\
-    \ l <= n);\n\t\tassert(f(identify));\n\n\t\tif(l == n)return n;\n\t\t\n\t\tl +=\
-    \ offset;\n\t\tT sum = identify;\n\t\tdo{\n\t\t\twhile(l%2 == 0)l >>= 1;\n\t\t\
-    \tif(not f(combine(sum, node[l]))){\n\t\t\t\twhile(l < offset){\n\t\t\t\t\tl <<=\
-    \ 1;\n\t\t\t\t\tif(f(combine(sum, node[l]))){\n\t\t\t\t\t\tsum = combine(sum,\
-    \ node[l]);\n\t\t\t\t\t\tl++;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn l - offset;\n\
-    \t\t\t}\n\t\t\tsum = combine(sum, node[l]);\n\t\t\tl++;\n\t\t}while((l&-l) !=\
-    \ l);\n\t\treturn n;\n\t}\n\n\tint min_left(const function<bool(T)> f, int r =\
-    \ -1){\n\t\tif(r == 0)return 0;\n\t\tif(r == -1)r = n;\n\t\tr += offset;\n\t\t\
-    T sum = identify;\n\t\tdo{\n\t\t\t--r;\n\t\t\twhile(r > 1 && (r % 2))r >>= 1;\n\
-    \t\t\tif(not f(combine(node[r], sum))){\n\t\t\t\twhile(r < offset){\n\t\t\t\t\t\
-    r = r*2 + 1;\n\t\t\t\t\tif(f(combine(node[r], sum))){\n\t\t\t\t\t\tsum = combine(node[r],\
-    \ sum);\n\t\t\t\t\t\t--r;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn r+1 - offset;\n\
-    \t\t\t}\n\t\t\tsum = combine(node[r], sum);\n\t\t}while((r&-r) != r);\n\t\treturn\
-    \ 0;\n\t}\n};\n#line 5 \"verify/aoj/dsl/2_B___segment_tree.test.cpp\"\n\nvoid\
-    \ mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tauto combine = [](ll a, ll\
-    \ b){return a+b; };\n\tsegment_tree<ll> seg(n, combine, 0);\n\twhile(q--){\n\t\
-    \tint com, x, y;\n\t\tcin >> com >> x >> y;\n\t\tx--;\n\t\tif(com)cout << seg.fold(x,\
+    offset = 1;\n\t\twhile(offset < n)offset <<= 1;\n\n\t\tnode.resize(2*offset, identify);\n\
+    \n\t\tfor(int i = 0;i < n;i++)node[i + offset] = v[i];\n\t\tfor(int i = offset\
+    \ - 1;i >= 1;i--)node[i] = combine(node[2 * i + 0], node[2 * i + 1]);\n\t}\n\n\
+    \tT operator[](int x) {return node[x + offset]; }\n\n\tvoid set(int x, T val){\n\
+    \t\tassert(0 <= x && x < n);\n\t\tx += offset;\n\n\t\tnode[x] = val;\n\t\twhile(x\
+    \ >>= 1){;\n\t\t\tnode[x] = combine(node[2 * x + 0], node[2 * x + 1]);\n\t\t}\n\
+    \t}\n\n\tT fold(int l, int r){\n\t\tassert(0 <= l && l <= r && r <= n);\n\t\t\
+    if(l == r)return identify;\n\n\t\tT L = identify, R = identify;\n\t\tfor(l +=\
+    \ offset, r += offset; l < r;l >>= 1, r >>= 1){\n\t\t\tif(l&1)L = combine(L, node[l++]);\n\
+    \t\t\tif(r&1)R = combine(node[--r], R);\n\t\t}\n\t\treturn combine(L, R);\n\t\
+    }\n\n\tT all_fold() { return node[1]; };\n\n\tint max_right(const function<bool(T)>\
+    \ f, int l = 0){\n\t\tassert(0 <= l && l <= n);\n\t\tassert(f(identify));\n\n\t\
+    \tif(l == n)return n;\n\t\t\n\t\tl += offset;\n\t\tT sum = identify;\n\t\tdo{\n\
+    \t\t\twhile(l%2 == 0)l >>= 1;\n\t\t\tif(not f(combine(sum, node[l]))){\n\t\t\t\
+    \twhile(l < offset){\n\t\t\t\t\tl <<= 1;\n\t\t\t\t\tif(f(combine(sum, node[l]))){\n\
+    \t\t\t\t\t\tsum = combine(sum, node[l]);\n\t\t\t\t\t\tl++;\n\t\t\t\t\t}\n\t\t\t\
+    \t}\n\t\t\t\treturn l - offset;\n\t\t\t}\n\t\t\tsum = combine(sum, node[l]);\n\
+    \t\t\tl++;\n\t\t}while((l&-l) != l);\n\t\treturn n;\n\t}\n\n\tint min_left(const\
+    \ function<bool(T)> f, int r = -1){\n\t\tif(r == 0)return 0;\n\t\tif(r == -1)r\
+    \ = n;\n\t\tr += offset;\n\t\tT sum = identify;\n\t\tdo{\n\t\t\t--r;\n\t\t\twhile(r\
+    \ > 1 && (r % 2))r >>= 1;\n\t\t\tif(not f(combine(node[r], sum))){\n\t\t\t\twhile(r\
+    \ < offset){\n\t\t\t\t\tr = r*2 + 1;\n\t\t\t\t\tif(f(combine(node[r], sum))){\n\
+    \t\t\t\t\t\tsum = combine(node[r], sum);\n\t\t\t\t\t\t--r;\n\t\t\t\t\t}\n\t\t\t\
+    \t}\n\t\t\t\treturn r+1 - offset;\n\t\t\t}\n\t\t\tsum = combine(node[r], sum);\n\
+    \t\t}while((r&-r) != r);\n\t\treturn 0;\n\t}\n};\n#line 5 \"verify/aoj/dsl/2_B___segment_tree.test.cpp\"\
+    \n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tauto combine = [](ll\
+    \ a, ll b){return a+b; };\n\tsegment_tree<ll> seg(n, combine, 0);\n\twhile(q--){\n\
+    \t\tint com, x, y;\n\t\tcin >> com >> x >> y;\n\t\tx--;\n\t\tif(com)cout << seg.fold(x,\
     \ y) << endl;\n\t\telse seg.set(x, seg[x]+y);\n\t}\n}\n"
   code: "# define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../data_structure/segment_tree.hpp\"\
@@ -92,7 +91,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/dsl/2_B___segment_tree.test.cpp
   requiredBy: []
-  timestamp: '2024-09-21 16:14:13+09:00'
+  timestamp: '2024-09-21 16:31:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_B___segment_tree.test.cpp

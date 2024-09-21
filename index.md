@@ -7,6 +7,9 @@ data:
       path: data_structure/binary_indexed_tree.cpp
       title: data_structure/binary_indexed_tree.cpp
     - icon: ':heavy_check_mark:'
+      path: data_structure/lazy_segment_tree.hpp
+      title: data_structure/lazy_segment_tree.hpp
+    - icon: ':heavy_check_mark:'
       path: data_structure/mo.hpp
       title: Mo's Algorithm
     - icon: ':heavy_check_mark:'
@@ -158,6 +161,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
       title: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/dsl/2_F.test.cpp
+      title: verify/aoj/dsl/2_F.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/5_B.test.cpp
       title: verify/aoj/dsl/5_B.test.cpp
