@@ -15,13 +15,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/1_A.test.cpp
     title: verify/aoj/dsl/1_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aoj/dsl/2_A___segment_tree.test.cpp
     title: verify/aoj/dsl/2_A___segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
     title: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aoj/dsl/2_B___segment_tree.test.cpp
     title: verify/aoj/dsl/2_B___segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -102,9 +102,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing\
@@ -165,7 +165,7 @@ data:
   requiredBy:
   - verify/yosupo/zalgorithm.cpp
   timestamp: '2024-07-07 01:02:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/lc/assignment.test.cpp
   - verify/aoj/itp1/7_d.test.cpp

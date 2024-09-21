@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/mo.hpp
       title: Mo's Algorithm
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data_structure/segment_tree.hpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
@@ -114,7 +114,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/yosupo
@@ -146,13 +146,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/1_A.test.cpp
       title: verify/aoj/dsl/1_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aoj/dsl/2_A___segment_tree.test.cpp
       title: verify/aoj/dsl/2_A___segment_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
       title: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aoj/dsl/2_B___segment_tree.test.cpp
       title: verify/aoj/dsl/2_B___segment_tree.test.cpp
     - icon: ':heavy_check_mark:'
