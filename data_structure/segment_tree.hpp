@@ -40,7 +40,7 @@ template<typename T>struct segment_tree {
 		T L = identify, R = identify;
 		for(l += offset, r += offset; l < r;l >>= 1, r >>= 1){
 			if(l&1)L = combine(L, node[l++]);
-			if(r&1)R = combine(node[r--], R);
+			if(r&1)R = combine(node[--r], R);
 		}
 		return combine(L, R);
 	}
@@ -79,14 +79,14 @@ template<typename T>struct segment_tree {
 		r += offset;
 		T sum = identify;
 		do{
-			r--;
+			--r;
 			while(r > 1 && (r % 2))r >>= 1;
 			if(not f(combine(node[r], sum))){
 				while(r < offset){
 					r = r*2 + 1;
 					if(f(combine(node[r], sum))){
 						sum = combine(node[r], sum);
-						r--;
+						--r;
 					}
 				}
 				return r+1 - offset;
