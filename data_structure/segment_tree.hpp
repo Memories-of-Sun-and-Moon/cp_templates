@@ -34,6 +34,10 @@ template<typename T>struct segment_tree {
 	}
 
 	T fold(int a, int b){
+		assert(0 <= x && x < n);
+
+		if(a == b)return identify;
+
 		T L = identify, R = identify;
 		for(a += offset, b += offset; a < b;a >>= 1, b >>= 1){
 			if(a&1)L = combine(L, node[a++]);
