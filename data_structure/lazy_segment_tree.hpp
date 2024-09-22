@@ -176,6 +176,6 @@ public:
 			}
 			sum = op(node[r], sum);
 		}while((r&-r) != r);
-		return n;
+		return 0;
 	}
 };
