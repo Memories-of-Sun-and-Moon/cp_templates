@@ -73,7 +73,7 @@ data:
     \t\twhile(r < size) {\n\t\t\t\t\tpush(r);\n\t\t\t\t\tr = r*2 + 1;\n\t\t\t\t\t\
     if(g(op(node[r], sum))) {\n\t\t\t\t\t\tsum = op(node[r], sum);\n\t\t\t\t\t\tr--;\n\
     \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn r+1-size;\n\t\t\t}\n\t\t\tsum = op(node[r],\
-    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn n;\n\t}\n};\n"
+    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn 0;\n\t}\n};\n"
   code: "\ntemplate<class S, auto op, auto e, class F, auto mapping, auto composition,\
     \ auto id>\nstruct lazy_segment_tree {\nprivate:\n\tint n;\n\tint log;\n\tint\
     \ size;\n\tvector<S> node;\n\tvector<F> lazy;\n\n\tvoid update(int k) { node[k]\
@@ -126,12 +126,12 @@ data:
     \t\twhile(r < size) {\n\t\t\t\t\tpush(r);\n\t\t\t\t\tr = r*2 + 1;\n\t\t\t\t\t\
     if(g(op(node[r], sum))) {\n\t\t\t\t\t\tsum = op(node[r], sum);\n\t\t\t\t\t\tr--;\n\
     \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn r+1-size;\n\t\t\t}\n\t\t\tsum = op(node[r],\
-    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn n;\n\t}\n};\n"
+    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn 0;\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data_structure/lazy_segment_tree.hpp
   requiredBy: []
-  timestamp: '2024-09-21 17:14:06+09:00'
+  timestamp: '2024-09-22 19:00:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dsl/2_F.test.cpp
