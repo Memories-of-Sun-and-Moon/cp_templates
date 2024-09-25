@@ -21,14 +21,15 @@ documentation_of: ./../../data_structure/lazy_segment_tree.hpp
 - ``apply(int x, F f)`` : $seg_x$ について $seg_x = f(seg_x)$ とする。 $O(\log(N))$
 - ``apply(int l, int r, F f)`` : $l \leq i < r$ を満たす部分 $seg_i$ について $seg_i = f(seg_i)$ とする。 $O(\log(N))$
 - ``max_right(g<bool(S)>, int l)`` : $l \leq i < N$ のうち、各要素に対する条件 $g$ を満たすもののなかで最も最大（ $N-1$ 寄り）のものを返す $O(\log(N))$
+- ``min_left(g<bool(S)>, int r)`` : $0 \leq i \leq r$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最小（ $0$ 寄り）のものを返す $O(\log(N))$
 
 ## !!CAUTION!!
 
 ``max_right(g<bool(S)>, int l)`` の検証は atcoder の問題上に手動で提出しており、自動では verify されない
 
-## !!!UNVERIFIED!!!
+``min_left(g<bool(S)>, int r)`` の検証は atcoder の問題上に手動で提出しており、自動では verify されない
 
-- ``min_left(g<bool(S)>, int r)`` : $0 \leq i \leq r$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最小（ $0$ 寄り）のものを返す $O(\log(N))$
+[検証](https://atcoder.jp/contests/abc371/submissions/58020164)
 
 ## 概要
 
