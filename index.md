@@ -3,10 +3,10 @@ data:
   libraryCategories:
   - name: data_structure
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/binary_indexed_tree.hpp
       title: BIT(Binary Indexed Tree)
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/lazy_segment_tree.hpp
       title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
@@ -117,7 +117,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/yosupo
@@ -164,7 +164,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
       title: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/2_E___BIT.test.cpp
       title: verify/aoj/dsl/2_E___BIT.test.cpp
     - icon: ':heavy_check_mark:'
@@ -179,7 +179,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/2_H.test.cpp
       title: verify/aoj/dsl/2_H.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/2_I.test.cpp
       title: verify/aoj/dsl/2_I.test.cpp
     - icon: ':heavy_check_mark:'

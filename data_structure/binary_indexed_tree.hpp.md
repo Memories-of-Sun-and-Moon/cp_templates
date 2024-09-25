@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_B___BIT.test.cpp
     title: verify/aoj/dsl/2_B___BIT.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_E___BIT.test.cpp
     title: verify/aoj/dsl/2_E___BIT.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data_structure/binary_indexed_tree.hpp\"\n\ntemplate<typename\
@@ -31,7 +31,7 @@ data:
   path: data_structure/binary_indexed_tree.hpp
   requiredBy: []
   timestamp: '2024-09-26 01:20:41+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dsl/2_E___BIT.test.cpp
   - verify/aoj/dsl/2_B___BIT.test.cpp

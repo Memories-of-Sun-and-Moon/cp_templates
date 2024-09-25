@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/binary_indexed_tree.hpp
     title: BIT(Binary Indexed Tree)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_E
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_E
   bundledCode: "#line 1 \"verify/aoj/dsl/2_E___BIT.test.cpp\"\n# define PROBLEM \"\
-    https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B\"\n\n#line\
+    https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_E\"\n\n#line\
     \ 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing namespace std;\n\
     using ll = long long;\nusing ull = unsigned long long;\nconst double pi = acos(-1);\n\
     template<class T>constexpr T inf() { return ::std::numeric_limits<T>::max(); }\n\
@@ -56,7 +56,7 @@ data:
     \ s >> t >> x;\n\t\t\tBIT.add(s, x);\n\t\t\tif(t+1 <= n)BIT.add(t+1, -x);\n\t\t\
     }else{\n\t\t\tint t;\n\t\t\tcin >> t;\n\t\t\tcout << BIT.sum(t) << endl;\n\t\t\
     }\n\t}\n}\n"
-  code: "# define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B\"\
+  code: "# define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_E\"\
     \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../data_structure/binary_indexed_tree.hpp\"\
     \n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tbinary_indexed_tree<int>\
     \ BIT(n);\n\twhile(q--){\n\t\tint com;\n\t\tcin >> com;\n\t\tif(com == 0){\n\t\
@@ -69,8 +69,8 @@ data:
   isVerificationFile: true
   path: verify/aoj/dsl/2_E___BIT.test.cpp
   requiredBy: []
-  timestamp: '2024-09-26 01:20:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-26 01:24:08+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_E___BIT.test.cpp
 layout: document
