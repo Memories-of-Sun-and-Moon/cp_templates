@@ -16,7 +16,14 @@ public:
 			const auto &[l_i, r_i] = lr[i];
 			const auto &[l_j, r_j] = lr[j];
 			const int B_i = l_i / B, B_j = l_j / B;
-			return (B_i != B_j ? (B_i < B_j) : (r_i < r_j));
+			if(B_i != B_j){
+				return B_i < B_j;
+			}
+			if(B_i & 1){
+				return r_j < r_i;
+			}else{
+				return r_i < r_j;
+			}
 		});
 
 		int l = 0, r = 0;
@@ -24,9 +31,9 @@ public:
 			const auto &[L, R] = lr[idx];
 
 			while(L < l)add_left(--l);
-			while(l < L)erase_left(l++);
-			
 			while(r < R)add_right(r++);
+			
+			while(l < L)erase_left(l++);
 			while(R < r)erase_right(--r);
 
 			f(idx);
