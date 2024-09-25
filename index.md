@@ -3,10 +3,10 @@ data:
   libraryCategories:
   - name: data_structure
     pages:
-    - icon: ':warning:'
-      path: data_structure/binary_indexed_tree.cpp
-      title: data_structure/binary_indexed_tree.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
+      path: data_structure/binary_indexed_tree.hpp
+      title: BIT(Binary Indexed Tree)
+    - icon: ':question:'
       path: data_structure/lazy_segment_tree.hpp
       title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
@@ -117,7 +117,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/yosupo
@@ -156,14 +156,20 @@ data:
       path: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
       title: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/aoj/dsl/2_B___BIT.test.cpp
+      title: verify/aoj/dsl/2_B___BIT.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/2_B___segment_tree.test.cpp
       title: verify/aoj/dsl/2_B___segment_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
       title: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
+    - icon: ':x:'
+      path: verify/aoj/dsl/2_E___BIT.test.cpp
+      title: verify/aoj/dsl/2_E___BIT.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/aoj/dsl/2_E.test.cpp
-      title: verify/aoj/dsl/2_E.test.cpp
+      path: verify/aoj/dsl/2_E___segment_tree.test.cpp
+      title: verify/aoj/dsl/2_E___segment_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/2_F.test.cpp
       title: verify/aoj/dsl/2_F.test.cpp
@@ -173,6 +179,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/2_H.test.cpp
       title: verify/aoj/dsl/2_H.test.cpp
+    - icon: ':x:'
+      path: verify/aoj/dsl/2_I.test.cpp
+      title: verify/aoj/dsl/2_I.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/5_B.test.cpp
       title: verify/aoj/dsl/5_B.test.cpp

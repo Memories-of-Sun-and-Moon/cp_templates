@@ -1,0 +1,50 @@
+---
+data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/dsl/2_B___BIT.test.cpp
+    title: verify/aoj/dsl/2_B___BIT.test.cpp
+  - icon: ':x:'
+    path: verify/aoj/dsl/2_E___BIT.test.cpp
+    title: verify/aoj/dsl/2_E___BIT.test.cpp
+  _isVerificationFailed: true
+  _pathExtension: hpp
+  _verificationStatusIcon: ':question:'
+  attributes:
+    links: []
+  bundledCode: "#line 1 \"data_structure/binary_indexed_tree.hpp\"\n\ntemplate<typename\
+    \ T>struct binary_indexed_tree {\n\tint n;\n\tvector<T> BIT;\n\tbinary_indexed_tree(int\
+    \ n_) : n(n_ + 1), BIT(n, 0) {}\n\n\tvoid add(int i, T x){\n\t\tfor(int idx =\
+    \ i;idx < n;idx += (idx & -idx)){\n\t\t\tBIT[idx] += x;\n\t\t}\n\t}\n\n\tT sum(int\
+    \ i) {\n\t\tT ret = 0;\n\t\tfor(int idx = i;idx > 0;idx -= (idx & -idx)){\n\t\t\
+    \tret += BIT[idx];\n\t\t}\n\t\treturn ret;\n\t}\n};\n"
+  code: "\ntemplate<typename T>struct binary_indexed_tree {\n\tint n;\n\tvector<T>\
+    \ BIT;\n\tbinary_indexed_tree(int n_) : n(n_ + 1), BIT(n, 0) {}\n\n\tvoid add(int\
+    \ i, T x){\n\t\tfor(int idx = i;idx < n;idx += (idx & -idx)){\n\t\t\tBIT[idx]\
+    \ += x;\n\t\t}\n\t}\n\n\tT sum(int i) {\n\t\tT ret = 0;\n\t\tfor(int idx = i;idx\
+    \ > 0;idx -= (idx & -idx)){\n\t\t\tret += BIT[idx];\n\t\t}\n\t\treturn ret;\n\t\
+    }\n};\n"
+  dependsOn: []
+  isVerificationFile: false
+  path: data_structure/binary_indexed_tree.hpp
+  requiredBy: []
+  timestamp: '2024-09-26 01:20:41+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - verify/aoj/dsl/2_E___BIT.test.cpp
+  - verify/aoj/dsl/2_B___BIT.test.cpp
+documentation_of: data_structure/binary_indexed_tree.hpp
+layout: document
+title: BIT(Binary Indexed Tree)
+---
+
+# BIT(Binary Indexed Tree)
+
+## 使い方
+
+- 要素数を $N$ とする
+- ``binary_indexed_tree<T>(int n)`` : 要素数 $N$ の BIT を構築する
+- ``add(int i, T x)`` : $i$ 番目に $x$ を加算する $O(\log(N))$
+- ``sum(int i)`` : $[1, i]$ の総和を求める $O(\log(N))$

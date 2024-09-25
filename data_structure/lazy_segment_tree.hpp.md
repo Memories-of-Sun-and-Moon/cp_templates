@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/aoj/dsl/2_E.test.cpp
-    title: verify/aoj/dsl/2_E.test.cpp
+    path: verify/aoj/dsl/2_E___segment_tree.test.cpp
+    title: verify/aoj/dsl/2_E___segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_F.test.cpp
     title: verify/aoj/dsl/2_F.test.cpp
@@ -15,9 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_H.test.cpp
     title: verify/aoj/dsl/2_H.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/aoj/dsl/2_I.test.cpp
+    title: verify/aoj/dsl/2_I.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data_structure/lazy_segment_tree.hpp\"\n\ntemplate<class\
@@ -132,12 +135,13 @@ data:
   path: data_structure/lazy_segment_tree.hpp
   requiredBy: []
   timestamp: '2024-09-22 19:00:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/aoj/dsl/2_I.test.cpp
   - verify/aoj/dsl/2_F.test.cpp
+  - verify/aoj/dsl/2_E___segment_tree.test.cpp
   - verify/aoj/dsl/2_H.test.cpp
   - verify/aoj/dsl/2_G.test.cpp
-  - verify/aoj/dsl/2_E.test.cpp
 documentation_of: data_structure/lazy_segment_tree.hpp
 layout: document
 title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"

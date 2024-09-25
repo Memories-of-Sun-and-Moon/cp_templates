@@ -22,14 +22,20 @@ data:
     path: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
     title: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/dsl/2_B___BIT.test.cpp
+    title: verify/aoj/dsl/2_B___BIT.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_B___segment_tree.test.cpp
     title: verify/aoj/dsl/2_B___segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
     title: verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
+  - icon: ':x:'
+    path: verify/aoj/dsl/2_E___BIT.test.cpp
+    title: verify/aoj/dsl/2_E___BIT.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/aoj/dsl/2_E.test.cpp
-    title: verify/aoj/dsl/2_E.test.cpp
+    path: verify/aoj/dsl/2_E___segment_tree.test.cpp
+    title: verify/aoj/dsl/2_E___segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_F.test.cpp
     title: verify/aoj/dsl/2_F.test.cpp
@@ -39,6 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_H.test.cpp
     title: verify/aoj/dsl/2_H.test.cpp
+  - icon: ':x:'
+    path: verify/aoj/dsl/2_I.test.cpp
+    title: verify/aoj/dsl/2_I.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/5_B.test.cpp
     title: verify/aoj/dsl/5_B.test.cpp
@@ -114,9 +123,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing\
@@ -177,7 +186,7 @@ data:
   requiredBy:
   - verify/yosupo/zalgorithm.cpp
   timestamp: '2024-07-07 01:02:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/lc/assignment.test.cpp
   - verify/aoj/itp1/7_d.test.cpp
@@ -191,13 +200,16 @@ data:
   - verify/aoj/id/2286.test.cpp
   - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
   - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
+  - verify/aoj/dsl/2_E___BIT.test.cpp
   - verify/aoj/dsl/5_B.test.cpp
+  - verify/aoj/dsl/2_B___BIT.test.cpp
+  - verify/aoj/dsl/2_I.test.cpp
   - verify/aoj/dsl/2_F.test.cpp
+  - verify/aoj/dsl/2_E___segment_tree.test.cpp
   - verify/aoj/dsl/2_H.test.cpp
   - verify/aoj/dsl/2_B___segment_tree.test.cpp
   - verify/aoj/dsl/2_G.test.cpp
   - verify/aoj/dsl/2_A___segment_tree.test.cpp
-  - verify/aoj/dsl/2_E.test.cpp
   - verify/aoj/dsl/1_A.test.cpp
   - verify/aoj/dpl/1_D.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
