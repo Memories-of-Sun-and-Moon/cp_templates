@@ -50,9 +50,9 @@ data:
       path: graph/hungarian.hpp
       title: "\u5272\u5F53\u554F\u984C\uFF08\u30CF\u30F3\u30AC\u30EA\u30A2\u30F3\u6CD5\
         \uFF09"
-    - icon: ':warning:'
-      path: graph/lowest_common_ancestor.cpp
-      title: graph/lowest_common_ancestor.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph/lowest_common_ancestor.hpp
+      title: Lowest Common Ancestor
     - icon: ':heavy_check_mark:'
       path: graph/primal_dual.hpp
       title: "\u6700\u5C0F\u8CBB\u7528\u6D41\uFF08primal-dual\u6CD5\uFF09"
@@ -193,6 +193,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/3_C.test.cpp
       title: verify/aoj/grl/3_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/grl/5_C.test.cpp
+      title: verify/aoj/grl/5_C.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/6_A___dinic.test.cpp
       title: verify/aoj/grl/6_A___dinic.test.cpp

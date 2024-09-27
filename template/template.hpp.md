@@ -58,6 +58,9 @@ data:
     path: verify/aoj/grl/3_C.test.cpp
     title: verify/aoj/grl/3_C.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/grl/5_C.test.cpp
+    title: verify/aoj/grl/5_C.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/6_A___dinic.test.cpp
     title: verify/aoj/grl/6_A___dinic.test.cpp
   - icon: ':heavy_check_mark:'
@@ -191,6 +194,7 @@ data:
   - verify/lc/assignment.test.cpp
   - verify/aoj/itp1/7_d.test.cpp
   - verify/aoj/alds1/14_B.test.cpp
+  - verify/aoj/grl/5_C.test.cpp
   - verify/aoj/grl/6_B.test.cpp
   - verify/aoj/grl/6_A___dinic.test.cpp
   - verify/aoj/grl/3_C.test.cpp
