@@ -133,6 +133,9 @@ data:
     - icon: ':warning:'
       path: z_other/maximum_rect.cpp
       title: z_other/maximum_rect.cpp
+    - icon: ':warning:'
+      path: z_other/next_combination.hpp
+      title: next_combination
   verificationCategories:
   - name: verify/aoj/alds1
     pages:
