@@ -1,13 +1,13 @@
 
 template<bool is_min, typename T>
 vector<int> hungarian(vector<vector<T>> a) {
-	constexpr T infty = numeric_limits<T>::max()/2;
+	T infty = numeric_limits<T>::max()/T(2);
 	int n = (int)a.size();
 	
 	if(not is_min){
 		for(int i = 0;i < n;i++){
 			for(int j = 0; j < n;j++){
-				a[i][j] *= -1;
+				a[i][j] = -a[i][j];
 			}
 		}
 	}
