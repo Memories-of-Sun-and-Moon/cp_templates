@@ -12,31 +12,34 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/assignment.test.cpp
     title: verify/yosupo/assignment.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/assignment_negative.test.cpp
+    title: verify/yosupo/assignment_negative.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/hungarian.hpp\"\n\ntemplate<bool is_min, typename\
-    \ T>\nvector<int> hungarian(vector<vector<T>> a) {\n\tconstexpr T infty = numeric_limits<T>::max()/2;\n\
+    \ T>\nvector<int> hungarian(vector<vector<T>> a) {\n\tT infty = numeric_limits<T>::max()/T(2);\n\
     \tint n = (int)a.size();\n\t\n\tif(not is_min){\n\t\tfor(int i = 0;i < n;i++){\n\
-    \t\t\tfor(int j = 0; j < n;j++){\n\t\t\t\ta[i][j] *= -1;\n\t\t\t}\n\t\t}\n\t}\n\
-    \n\tvector<int> p(n);\n\tiota(p.begin(), p.end(), 0);\n\n\tvector<T> h = {0};\n\
-    \th.reserve(n);\n\tfor(int i = 1;i < n;i++){\n\t\th.push_back(0);\n\t\tvector<T>\
-    \ d(i+1, infty);\n\t\tvector<int> pre(i+1, -1);\n\t\tvector<bool> used(i+1, false);\n\
-    \n\t\td[i] = 0;\n\t\tpre[i] = i;\n\n\t\tfor(int _ = 0;_ <= i;_++){\n\t\t\tT min_d\
-    \ = infty;\n\t\t\tint v = -1;\n\t\t\tfor(int j = 0;j <= i;j++){\n\t\t\t\tif(not\
-    \ used[j] && min_d > d[j]-h[j]){\n\t\t\t\t\tmin_d = d[j]-h[j];\n\t\t\t\t\tv =\
-    \ j;\n\t\t\t\t}\n\t\t\t}\n\t\t\t\t\n\t\t\tused[v] = true;\n\n\t\t\tfor(int j =\
-    \ 0;j <= i;j++){\n\t\t\t\tif(not used[j] || j == i){\n\t\t\t\t\tT nd = d[v] -\
-    \ a[v][p[v]] + a[j][p[v]];\n\t\t\t\t\tif(d[j] > nd){\n\t\t\t\t\t\td[j] = nd;\n\
+    \t\t\tfor(int j = 0; j < n;j++){\n\t\t\t\ta[i][j] = -a[i][j];\n\t\t\t}\n\t\t}\n\
+    \t}\n\n\tvector<int> p(n);\n\tiota(p.begin(), p.end(), 0);\n\n\tvector<T> h =\
+    \ {0};\n\th.reserve(n);\n\tfor(int i = 1;i < n;i++){\n\t\th.push_back(0);\n\t\t\
+    vector<T> d(i+1, infty);\n\t\tvector<int> pre(i+1, -1);\n\t\tvector<bool> used(i+1,\
+    \ false);\n\n\t\td[i] = 0;\n\t\tpre[i] = i;\n\n\t\tfor(int _ = 0;_ <= i;_++){\n\
+    \t\t\tT min_d = infty;\n\t\t\tint v = -1;\n\t\t\tfor(int j = 0;j <= i;j++){\n\t\
+    \t\t\tif(not used[j] && min_d > d[j]-h[j]){\n\t\t\t\t\tmin_d = d[j]-h[j];\n\t\t\
+    \t\t\tv = j;\n\t\t\t\t}\n\t\t\t}\n\t\t\t\t\n\t\t\tused[v] = true;\n\n\t\t\tfor(int\
+    \ j = 0;j <= i;j++){\n\t\t\t\tif(not used[j] || j == i){\n\t\t\t\t\tT nd = d[v]\
+    \ - a[v][p[v]] + a[j][p[v]];\n\t\t\t\t\tif(d[j] > nd){\n\t\t\t\t\t\td[j] = nd;\n\
     \t\t\t\t\t\tpre[j] = v;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tint cur\
     \ = i;\n\t\twhile(pre[cur] != i){\n\t\t\tswap(p[cur], p[pre[cur]]);\n\t\t\tcur\
     \ = pre[cur];\n\t\t}\n\t\th = d;\n\t}\n\treturn p;\n}\n"
   code: "\ntemplate<bool is_min, typename T>\nvector<int> hungarian(vector<vector<T>>\
-    \ a) {\n\tconstexpr T infty = numeric_limits<T>::max()/2;\n\tint n = (int)a.size();\n\
+    \ a) {\n\tT infty = numeric_limits<T>::max()/T(2);\n\tint n = (int)a.size();\n\
     \t\n\tif(not is_min){\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tfor(int j = 0; j <\
-    \ n;j++){\n\t\t\t\ta[i][j] *= -1;\n\t\t\t}\n\t\t}\n\t}\n\n\tvector<int> p(n);\n\
+    \ n;j++){\n\t\t\t\ta[i][j] = -a[i][j];\n\t\t\t}\n\t\t}\n\t}\n\n\tvector<int> p(n);\n\
     \tiota(p.begin(), p.end(), 0);\n\n\tvector<T> h = {0};\n\th.reserve(n);\n\tfor(int\
     \ i = 1;i < n;i++){\n\t\th.push_back(0);\n\t\tvector<T> d(i+1, infty);\n\t\tvector<int>\
     \ pre(i+1, -1);\n\t\tvector<bool> used(i+1, false);\n\n\t\td[i] = 0;\n\t\tpre[i]\
@@ -53,11 +56,12 @@ data:
   isVerificationFile: false
   path: graph/hungarian.hpp
   requiredBy: []
-  timestamp: '2024-06-04 08:02:00+09:00'
+  timestamp: '2024-10-05 05:52:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/lc/assignment.test.cpp
   - verify/aoj/id/2828.test.cpp
+  - verify/yosupo/assignment_negative.test.cpp
   - verify/yosupo/assignment.test.cpp
 documentation_of: graph/hungarian.hpp
 layout: document

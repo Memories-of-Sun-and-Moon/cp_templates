@@ -85,6 +85,9 @@ data:
     path: verify/yosupo/assignment.test.cpp
     title: verify/yosupo/assignment.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/assignment_negative.test.cpp
+    title: verify/yosupo/assignment_negative.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution_mod.test.cpp
     title: verify/yosupo/convolution_mod.test.cpp
   - icon: ':heavy_check_mark:'
@@ -226,6 +229,7 @@ data:
   - verify/yosupo/unionfind.test.cpp
   - verify/yosupo/factorize.test.cpp
   - verify/yosupo/suffixarray.test.cpp
+  - verify/yosupo/assignment_negative.test.cpp
   - verify/yosupo/assignment.test.cpp
   - verify/yukicoder/274.test.cpp
   - verify/yukicoder/2780.test.cpp

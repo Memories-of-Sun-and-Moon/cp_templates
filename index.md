@@ -232,6 +232,9 @@ data:
       path: verify/yosupo/assignment.test.cpp
       title: verify/yosupo/assignment.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/assignment_negative.test.cpp
+      title: verify/yosupo/assignment_negative.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/convolution_mod.test.cpp
       title: verify/yosupo/convolution_mod.test.cpp
     - icon: ':heavy_check_mark:'

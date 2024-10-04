@@ -18,8 +18,8 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/assignment
     links:
     - https://judge.yosupo.jp/problem/assignment
-  bundledCode: "#line 1 \"verify/yosupo/assignment.test.cpp\"\n#define PROBLEM \"\
-    https://judge.yosupo.jp/problem/assignment\"\n\n#line 1 \"template/template.hpp\"\
+  bundledCode: "#line 1 \"verify/yosupo/assignment_negative.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/assignment\"\n\n#line 1 \"template/template.hpp\"\
     \n# include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nusing\
     \ ull = unsigned long long;\nconst double pi = acos(-1);\ntemplate<class T>constexpr\
     \ T inf() { return ::std::numeric_limits<T>::max(); }\ntemplate<class T>constexpr\
@@ -61,30 +61,31 @@ data:
     \ > nd){\n\t\t\t\t\t\td[j] = nd;\n\t\t\t\t\t\tpre[j] = v;\n\t\t\t\t\t}\n\t\t\t\
     \t}\n\t\t\t}\n\t\t}\n\n\t\tint cur = i;\n\t\twhile(pre[cur] != i){\n\t\t\tswap(p[cur],\
     \ p[pre[cur]]);\n\t\t\tcur = pre[cur];\n\t\t}\n\t\th = d;\n\t}\n\treturn p;\n\
-    }\n#line 5 \"verify/yosupo/assignment.test.cpp\"\n\nusing namespace mmrz;\n\n\
-    void mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector a(n, vector(n, 0LL));\n\t\
-    rep(i, n)rep(j, n)cin >> a[i][j];\n\n\tvector<int> h = hungarian<true, ll>(a);\n\
-    \tll x = 0;\n\trep(i, n)x += a[i][h[i]];\n\tcout << x << endl;\n\trep(i, n)cout\
-    \ << h[i] << \" \\n\"[i == n-1];\n}\n"
+    }\n#line 5 \"verify/yosupo/assignment_negative.test.cpp\"\n\nusing namespace mmrz;\n\
+    \nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector a(n, vector(n, 0LL));\n\
+    \trep(i, n)rep(j, n)cin >> a[i][j];\n\trep(i, n)rep(j, n)a[i][j] = -a[i][j];\n\
+    \n\tvector<int> h = hungarian<false, ll>(a);\n\tll x = 0;\n\trep(i, n)x -= a[i][h[i]];\n\
+    \tcout << x << endl;\n\trep(i, n)cout << h[i] << \" \\n\"[i == n-1];\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/assignment\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../graph/hungarian.hpp\"\n\
     \nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector\
-    \ a(n, vector(n, 0LL));\n\trep(i, n)rep(j, n)cin >> a[i][j];\n\n\tvector<int>\
-    \ h = hungarian<true, ll>(a);\n\tll x = 0;\n\trep(i, n)x += a[i][h[i]];\n\tcout\
-    \ << x << endl;\n\trep(i, n)cout << h[i] << \" \\n\"[i == n-1];\n}\n"
+    \ a(n, vector(n, 0LL));\n\trep(i, n)rep(j, n)cin >> a[i][j];\n\trep(i, n)rep(j,\
+    \ n)a[i][j] = -a[i][j];\n\n\tvector<int> h = hungarian<false, ll>(a);\n\tll x\
+    \ = 0;\n\trep(i, n)x -= a[i][h[i]];\n\tcout << x << endl;\n\trep(i, n)cout <<\
+    \ h[i] << \" \\n\"[i == n-1];\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/hungarian.hpp
   isVerificationFile: true
-  path: verify/yosupo/assignment.test.cpp
+  path: verify/yosupo/assignment_negative.test.cpp
   requiredBy: []
   timestamp: '2024-10-05 05:52:08+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yosupo/assignment.test.cpp
+documentation_of: verify/yosupo/assignment_negative.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo/assignment.test.cpp
-- /verify/verify/yosupo/assignment.test.cpp.html
-title: verify/yosupo/assignment.test.cpp
+- /verify/verify/yosupo/assignment_negative.test.cpp
+- /verify/verify/yosupo/assignment_negative.test.cpp.html
+title: verify/yosupo/assignment_negative.test.cpp
 ---
