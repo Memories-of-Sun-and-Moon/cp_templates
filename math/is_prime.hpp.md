@@ -52,8 +52,8 @@ data:
   timestamp: '2024-06-27 22:04:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/primality_test.test.cpp
   - verify/yosupo/factorize.test.cpp
+  - verify/yosupo/primality_test.test.cpp
 documentation_of: math/is_prime.hpp
 layout: document
 title: "\u7D20\u6570\u5224\u5B9A\uFF08\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\u7D20\

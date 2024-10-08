@@ -194,47 +194,47 @@ data:
   timestamp: '2024-07-07 01:02:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/lc/assignment.test.cpp
-  - verify/aoj/itp1/7_d.test.cpp
+  - verify/yosupo/unionfind.test.cpp
+  - verify/yosupo/two_sat.test.cpp
+  - verify/yosupo/static_range_frequency.test.cpp
+  - verify/yosupo/number_of_substrings.test.cpp
+  - verify/yosupo/factorize.test.cpp
+  - verify/yosupo/assignment.test.cpp
+  - verify/yosupo/assignment_negative.test.cpp
+  - verify/yosupo/primality_test.test.cpp
+  - verify/yosupo/kth_root_integer.test.cpp
+  - verify/yosupo/suffixarray.test.cpp
+  - verify/yosupo/convolution_mod.test.cpp
+  - verify/yosupo/enumerate_palindromes.test.cpp
   - verify/aoj/alds1/14_B.test.cpp
-  - verify/aoj/grl/5_C.test.cpp
-  - verify/aoj/grl/6_B.test.cpp
-  - verify/aoj/grl/6_A___dinic.test.cpp
-  - verify/aoj/grl/3_C.test.cpp
-  - verify/aoj/grl/2_A.test.cpp
-  - verify/aoj/grl/6_A___ford_fulkerson.test.cpp
-  - verify/aoj/id/2828.test.cpp
+  - verify/aoj/itp1/7_d.test.cpp
   - verify/aoj/id/2286.test.cpp
-  - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
+  - verify/aoj/id/2828.test.cpp
+  - verify/aoj/dpl/1_D.test.cpp
   - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
-  - verify/aoj/dsl/2_E___BIT.test.cpp
-  - verify/aoj/dsl/5_B.test.cpp
-  - verify/aoj/dsl/2_B___BIT.test.cpp
+  - verify/aoj/dsl/1_A.test.cpp
   - verify/aoj/dsl/2_I.test.cpp
-  - verify/aoj/dsl/2_F.test.cpp
   - verify/aoj/dsl/2_E___segment_tree.test.cpp
-  - verify/aoj/dsl/2_H.test.cpp
+  - verify/aoj/dsl/2_A___segment_tree.test.cpp
   - verify/aoj/dsl/2_B___segment_tree.test.cpp
   - verify/aoj/dsl/2_G.test.cpp
-  - verify/aoj/dsl/2_A___segment_tree.test.cpp
-  - verify/aoj/dsl/1_A.test.cpp
-  - verify/aoj/dpl/1_D.test.cpp
-  - verify/yosupo/convolution_mod.test.cpp
-  - verify/yosupo/kth_root_integer.test.cpp
-  - verify/yosupo/two_sat.test.cpp
-  - verify/yosupo/enumerate_palindromes.test.cpp
-  - verify/yosupo/static_range_frequency.test.cpp
-  - verify/yosupo/primality_test.test.cpp
-  - verify/yosupo/number_of_substrings.test.cpp
-  - verify/yosupo/unionfind.test.cpp
-  - verify/yosupo/factorize.test.cpp
-  - verify/yosupo/suffixarray.test.cpp
-  - verify/yosupo/assignment_negative.test.cpp
-  - verify/yosupo/assignment.test.cpp
+  - verify/aoj/dsl/2_E___BIT.test.cpp
+  - verify/aoj/dsl/2_F.test.cpp
+  - verify/aoj/dsl/5_B.test.cpp
+  - verify/aoj/dsl/2_B___BIT.test.cpp
+  - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
+  - verify/aoj/dsl/2_H.test.cpp
+  - verify/aoj/grl/6_A___dinic.test.cpp
+  - verify/aoj/grl/6_A___ford_fulkerson.test.cpp
+  - verify/aoj/grl/3_C.test.cpp
+  - verify/aoj/grl/6_B.test.cpp
+  - verify/aoj/grl/2_A.test.cpp
+  - verify/aoj/grl/5_C.test.cpp
   - verify/yukicoder/274.test.cpp
   - verify/yukicoder/2780.test.cpp
-  - verify/yukicoder/1435.test.cpp
   - verify/yukicoder/2219.test.cpp
+  - verify/yukicoder/1435.test.cpp
+  - verify/lc/assignment.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:

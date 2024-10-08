@@ -138,10 +138,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dsl/2_I.test.cpp
-  - verify/aoj/dsl/2_F.test.cpp
   - verify/aoj/dsl/2_E___segment_tree.test.cpp
-  - verify/aoj/dsl/2_H.test.cpp
   - verify/aoj/dsl/2_G.test.cpp
+  - verify/aoj/dsl/2_F.test.cpp
+  - verify/aoj/dsl/2_H.test.cpp
 documentation_of: data_structure/lazy_segment_tree.hpp
 layout: document
 title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
