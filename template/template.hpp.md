@@ -54,6 +54,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/2_A.test.cpp
     title: verify/aoj/grl/2_A.test.cpp
+  - icon: ':x:'
+    path: verify/aoj/grl/3_B.test.cpp
+    title: verify/aoj/grl/3_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/3_C.test.cpp
     title: verify/aoj/grl/3_C.test.cpp
@@ -129,9 +132,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing\
@@ -192,7 +195,7 @@ data:
   requiredBy:
   - verify/yosupo/zalgorithm.cpp
   timestamp: '2024-07-07 01:02:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/unionfind.test.cpp
   - verify/yosupo/two_sat.test.cpp
@@ -230,6 +233,7 @@ data:
   - verify/aoj/grl/6_B.test.cpp
   - verify/aoj/grl/2_A.test.cpp
   - verify/aoj/grl/5_C.test.cpp
+  - verify/aoj/grl/3_B.test.cpp
   - verify/yukicoder/274.test.cpp
   - verify/yukicoder/2780.test.cpp
   - verify/yukicoder/2219.test.cpp

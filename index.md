@@ -53,6 +53,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/lowest_common_ancestor.hpp
       title: Lowest Common Ancestor
+    - icon: ':x:'
+      path: graph/lowlink.hpp
+      title: graph/lowlink.hpp
     - icon: ':heavy_check_mark:'
       path: graph/primal_dual.hpp
       title: "\u6700\u5C0F\u8CBB\u7528\u6D41\uFF08primal-dual\u6CD5\uFF09"
@@ -117,7 +120,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/yosupo
@@ -193,6 +196,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/2_A.test.cpp
       title: verify/aoj/grl/2_A.test.cpp
+    - icon: ':x:'
+      path: verify/aoj/grl/3_B.test.cpp
+      title: verify/aoj/grl/3_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/3_C.test.cpp
       title: verify/aoj/grl/3_C.test.cpp
