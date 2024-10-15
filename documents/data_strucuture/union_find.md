@@ -14,6 +14,7 @@ $n$ を Union-Find のサイズとする
 - ``bool is_same(int x, int y)`` : x と y が同じグループかを返す $O(\alpha(n))$
 - ``int get_size(int x)`` : x が属する集合のサイズを返す $O(1)$
 - ``int groups_size()`` : Union-Find の集合の数を返す $O(1)$
+- ``vector<vector<int>> groups()`` : 集合の状態を表した二次元配列を返す。 $O(N)$
 
 
 ## 概要
