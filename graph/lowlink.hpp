@@ -26,7 +26,6 @@ public:
 				dfs(v, -1, time);
 			}
 		}
-		debug(order, low);
 	}
 
 	bool is_bridge(int u, int v) const {
