@@ -197,6 +197,9 @@ data:
       path: verify/aoj/grl/2_A.test.cpp
       title: verify/aoj/grl/2_A.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/aoj/grl/3_A.test.cpp
+      title: verify/aoj/grl/3_A.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/3_B.test.cpp
       title: verify/aoj/grl/3_B.test.cpp
     - icon: ':heavy_check_mark:'
