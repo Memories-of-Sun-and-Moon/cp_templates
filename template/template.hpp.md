@@ -118,6 +118,9 @@ data:
     path: verify/yosupo/suffixarray.test.cpp
     title: verify/yosupo/suffixarray.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/two_edge_connected_components.test.cpp
+    title: verify/yosupo/two_edge_connected_components.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/two_sat.test.cpp
     title: verify/yosupo/two_sat.test.cpp
   - icon: ':heavy_check_mark:'
@@ -210,6 +213,7 @@ data:
   - verify/yosupo/primality_test.test.cpp
   - verify/yosupo/kth_root_integer.test.cpp
   - verify/yosupo/suffixarray.test.cpp
+  - verify/yosupo/two_edge_connected_components.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
   - verify/yosupo/enumerate_palindromes.test.cpp
   - verify/aoj/alds1/14_B.test.cpp

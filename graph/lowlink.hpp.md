@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: graph/two_edge_connected_components.hpp
+    title: "\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\u5206\u89E3"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/3_A.test.cpp
@@ -9,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/3_B.test.cpp
     title: verify/aoj/grl/3_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/two_edge_connected_components.test.cpp
+    title: verify/yosupo/two_edge_connected_components.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -17,9 +23,10 @@ data:
   bundledCode: "#line 1 \"graph/lowlink.hpp\"\n\nclass lowlink{\n\tvector<vector<int>>\
     \ g;\n\tvector<int> order, low;\n\tvector<bool> __is_articulation;\n\n\tvoid dfs(int\
     \ cur, int pre, int &time){\n\t\tint count_child = 0;\n\t\tlow[cur] = order[cur]\
-    \ = time++;\n\t\tfor(int to : g[cur]){\n\t\t\tif(to == pre)continue;\n\t\t\tif(order[to]\
-    \ == -1){\n\t\t\t\tdfs(to, cur, time);\n\t\t\t\tcount_child++;\n\t\t\t\tif(pre\
-    \ != -1){\n\t\t\t\t\tif(not __is_articulation[cur]) __is_articulation[cur] = (low[to]\
+    \ = time++;\n\t\tbool first_parent = true;\n\t\tfor(int to : g[cur]){\n\t\t\t\
+    if(to == pre && exchange(first_parent, false))continue;\n\t\t\tif(order[to] ==\
+    \ -1){\n\t\t\t\tdfs(to, cur, time);\n\t\t\t\tcount_child++;\n\t\t\t\tif(pre !=\
+    \ -1){\n\t\t\t\t\tif(not __is_articulation[cur]) __is_articulation[cur] = (low[to]\
     \ >= order[cur]);\n\t\t\t\t}\n\t\t\t\tlow[cur] = min(low[cur], low[to]);\n\t\t\
     \t}else{\n\t\t\t\tlow[cur] = min(low[cur], order[to]);\n\t\t\t}\n\t\t}\n\t\tif(pre\
     \ == -1){\n\t\t\t__is_articulation[cur] = (count_child >= 2);\n\t\t}\n\t}\n\n\
@@ -32,26 +39,29 @@ data:
     \t}\n};\n"
   code: "\nclass lowlink{\n\tvector<vector<int>> g;\n\tvector<int> order, low;\n\t\
     vector<bool> __is_articulation;\n\n\tvoid dfs(int cur, int pre, int &time){\n\t\
-    \tint count_child = 0;\n\t\tlow[cur] = order[cur] = time++;\n\t\tfor(int to :\
-    \ g[cur]){\n\t\t\tif(to == pre)continue;\n\t\t\tif(order[to] == -1){\n\t\t\t\t\
-    dfs(to, cur, time);\n\t\t\t\tcount_child++;\n\t\t\t\tif(pre != -1){\n\t\t\t\t\t\
-    if(not __is_articulation[cur]) __is_articulation[cur] = (low[to] >= order[cur]);\n\
-    \t\t\t\t}\n\t\t\t\tlow[cur] = min(low[cur], low[to]);\n\t\t\t}else{\n\t\t\t\t\
-    low[cur] = min(low[cur], order[to]);\n\t\t\t}\n\t\t}\n\t\tif(pre == -1){\n\t\t\
-    \t__is_articulation[cur] = (count_child >= 2);\n\t\t}\n\t}\n\npublic:\n\n\tlowlink(const\
-    \ vector<vector<int>> &_g) : g(_g), order(g.size(), -1), low(g.size()), __is_articulation(g.size(),\
-    \ false){\n\t\tint time = 0;\n\t\tfor(int v = 0;v < (int)g.size();v++){\n\t\t\t\
-    if(order[v] == -1){\n\t\t\t\tdfs(v, -1, time);\n\t\t\t}\n\t\t}\n\t}\n\n\tbool\
-    \ is_bridge(int u, int v) const {\n\t\tif(order[u] > order[v]){\n\t\t\tswap(u,\
-    \ v);\n\t\t}\n\t\treturn order[u] < low[v];\n\t}\n\n\tbool is_articulation(int\
-    \ v) const {\n\t\treturn __is_articulation[v];\n\t}\n};\n"
+    \tint count_child = 0;\n\t\tlow[cur] = order[cur] = time++;\n\t\tbool first_parent\
+    \ = true;\n\t\tfor(int to : g[cur]){\n\t\t\tif(to == pre && exchange(first_parent,\
+    \ false))continue;\n\t\t\tif(order[to] == -1){\n\t\t\t\tdfs(to, cur, time);\n\t\
+    \t\t\tcount_child++;\n\t\t\t\tif(pre != -1){\n\t\t\t\t\tif(not __is_articulation[cur])\
+    \ __is_articulation[cur] = (low[to] >= order[cur]);\n\t\t\t\t}\n\t\t\t\tlow[cur]\
+    \ = min(low[cur], low[to]);\n\t\t\t}else{\n\t\t\t\tlow[cur] = min(low[cur], order[to]);\n\
+    \t\t\t}\n\t\t}\n\t\tif(pre == -1){\n\t\t\t__is_articulation[cur] = (count_child\
+    \ >= 2);\n\t\t}\n\t}\n\npublic:\n\n\tlowlink(const vector<vector<int>> &_g) :\
+    \ g(_g), order(g.size(), -1), low(g.size()), __is_articulation(g.size(), false){\n\
+    \t\tint time = 0;\n\t\tfor(int v = 0;v < (int)g.size();v++){\n\t\t\tif(order[v]\
+    \ == -1){\n\t\t\t\tdfs(v, -1, time);\n\t\t\t}\n\t\t}\n\t}\n\n\tbool is_bridge(int\
+    \ u, int v) const {\n\t\tif(order[u] > order[v]){\n\t\t\tswap(u, v);\n\t\t}\n\t\
+    \treturn order[u] < low[v];\n\t}\n\n\tbool is_articulation(int v) const {\n\t\t\
+    return __is_articulation[v];\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/lowlink.hpp
-  requiredBy: []
-  timestamp: '2024-10-15 13:22:52+09:00'
+  requiredBy:
+  - graph/two_edge_connected_components.hpp
+  timestamp: '2024-10-15 14:47:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo/two_edge_connected_components.test.cpp
   - verify/aoj/grl/3_A.test.cpp
   - verify/aoj/grl/3_B.test.cpp
 documentation_of: graph/lowlink.hpp

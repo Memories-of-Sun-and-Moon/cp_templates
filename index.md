@@ -64,6 +64,9 @@ data:
       path: graph/strongly_connected_components.hpp
       title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
     - icon: ':heavy_check_mark:'
+      path: graph/two_edge_connected_components.hpp
+      title: "\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\u5206\u89E3"
+    - icon: ':heavy_check_mark:'
       path: graph/two_sat.hpp
       title: 2-SAT
     - icon: ':warning:'
@@ -268,6 +271,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/suffixarray.test.cpp
       title: verify/yosupo/suffixarray.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/two_edge_connected_components.test.cpp
+      title: verify/yosupo/two_edge_connected_components.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/two_sat.test.cpp
       title: verify/yosupo/two_sat.test.cpp
