@@ -7,8 +7,9 @@ class lowlink{
 	void dfs(int cur, int pre, int &time){
 		int count_child = 0;
 		low[cur] = order[cur] = time++;
+		bool first_parent = true;
 		for(int to : g[cur]){
-			if(to == pre)continue;
+			if(to == pre && exchange(first_parent, false))continue;
 			if(order[to] == -1){
 				dfs(to, cur, time);
 				count_child++;
