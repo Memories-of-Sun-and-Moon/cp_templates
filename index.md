@@ -53,7 +53,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/lowest_common_ancestor.hpp
       title: Lowest Common Ancestor
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/lowlink.hpp
       title: graph/lowlink.hpp
     - icon: ':heavy_check_mark:'
@@ -120,7 +120,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/yosupo
@@ -196,7 +196,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/2_A.test.cpp
       title: verify/aoj/grl/2_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/3_B.test.cpp
       title: verify/aoj/grl/3_B.test.cpp
     - icon: ':heavy_check_mark:'
