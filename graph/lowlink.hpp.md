@@ -56,8 +56,13 @@ data:
   - verify/aoj/grl/3_B.test.cpp
 documentation_of: graph/lowlink.hpp
 layout: document
-redirect_from:
-- /library/graph/lowlink.hpp
-- /library/graph/lowlink.hpp.html
-title: graph/lowlink.hpp
+title: "lowlink\u3092\u7528\u3044\u305F\u6A4B\u30FB\u95A2\u7BC0\u70B9\u306E\u691C\u51FA"
 ---
+
+# lowlinkを用いた橋・関節点の検出
+
+## 使い方
+
+- ``lowlink(vector<vector<int>> g)`` : グラフ $G$ に関する lowlink を求めるコンストラクタ。 $O(N)$
+- ``is_bridge(int u, int v)`` : 辺 $(u, v)$ が橋かどうかを返す。 $O(1)$
+- ``is_articulation(int v)`` : 頂点 $v$ が関節点かどうかを返す。 $O(1)$

@@ -55,7 +55,8 @@ data:
       title: Lowest Common Ancestor
     - icon: ':heavy_check_mark:'
       path: graph/lowlink.hpp
-      title: graph/lowlink.hpp
+      title: "lowlink\u3092\u7528\u3044\u305F\u6A4B\u30FB\u95A2\u7BC0\u70B9\u306E\u691C\
+        \u51FA"
     - icon: ':heavy_check_mark:'
       path: graph/primal_dual.hpp
       title: "\u6700\u5C0F\u8CBB\u7528\u6D41\uFF08primal-dual\u6CD5\uFF09"
