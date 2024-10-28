@@ -84,6 +84,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/itp1/7_d.test.cpp
     title: verify/aoj/itp1/7_d.test.cpp
+  - icon: ':x:'
+    path: verify/atcoder/abc/150/f.test.cpp
+    title: verify/atcoder/abc/150/f.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/lc/assignment.test.cpp
     title: verify/lc/assignment.test.cpp
@@ -138,9 +141,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing\
@@ -201,7 +204,7 @@ data:
   requiredBy:
   - verify/yosupo/zalgorithm.cpp
   timestamp: '2024-07-07 01:02:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/unionfind.test.cpp
   - verify/yosupo/two_sat.test.cpp
@@ -216,6 +219,7 @@ data:
   - verify/yosupo/two_edge_connected_components.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
   - verify/yosupo/enumerate_palindromes.test.cpp
+  - verify/atcoder/abc/150/f.test.cpp
   - verify/aoj/alds1/14_B.test.cpp
   - verify/aoj/itp1/7_d.test.cpp
   - verify/aoj/id/2286.test.cpp

@@ -5,10 +5,13 @@ data:
   - icon: ':warning:'
     path: verify/yosupo/zalgorithm.cpp
     title: verify/yosupo/zalgorithm.cpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/atcoder/abc/150/f.test.cpp
+    title: verify/atcoder/abc/150/f.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/z_algorithm.hpp\"\n\ntemplate<typename T>\nvector<int>\
@@ -30,8 +33,9 @@ data:
   requiredBy:
   - verify/yosupo/zalgorithm.cpp
   timestamp: '2024-10-29 03:58:04+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/atcoder/abc/150/f.test.cpp
 documentation_of: string/z_algorithm.hpp
 layout: document
 title: Z Algorithm

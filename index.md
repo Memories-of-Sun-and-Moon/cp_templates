@@ -119,12 +119,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/suffix_array.hpp
       title: Suffix Array
-    - icon: ':warning:'
+    - icon: ':x:'
       path: string/z_algorithm.hpp
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/yosupo
@@ -234,6 +234,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/itp1/7_d.test.cpp
       title: verify/aoj/itp1/7_d.test.cpp
+  - name: verify/atcoder/abc/150
+    pages:
+    - icon: ':x:'
+      path: verify/atcoder/abc/150/f.test.cpp
+      title: verify/atcoder/abc/150/f.test.cpp
   - name: verify/lc
     pages:
     - icon: ':heavy_check_mark:'
