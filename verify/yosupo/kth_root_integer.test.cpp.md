@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/iroot.hpp
     title: "floor K \u4E57\u6839"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []

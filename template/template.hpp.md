@@ -84,7 +84,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/itp1/7_d.test.cpp
     title: verify/aoj/itp1/7_d.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/atcoder/abc/150/f.test.cpp
     title: verify/atcoder/abc/150/f.test.cpp
   - icon: ':heavy_check_mark:'
@@ -141,9 +141,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing\
@@ -204,7 +204,7 @@ data:
   requiredBy:
   - verify/yosupo/zalgorithm.cpp
   timestamp: '2024-07-07 01:02:07+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/unionfind.test.cpp
   - verify/yosupo/two_sat.test.cpp

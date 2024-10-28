@@ -6,12 +6,12 @@ data:
     path: verify/yosupo/zalgorithm.cpp
     title: verify/yosupo/zalgorithm.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/atcoder/abc/150/f.test.cpp
     title: verify/atcoder/abc/150/f.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/z_algorithm.hpp\"\n\ntemplate<typename T>\nvector<int>\
@@ -33,7 +33,7 @@ data:
   requiredBy:
   - verify/yosupo/zalgorithm.cpp
   timestamp: '2024-10-29 03:58:04+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/atcoder/abc/150/f.test.cpp
 documentation_of: string/z_algorithm.hpp
