@@ -11,16 +11,17 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"string/z_algorithm.hpp\"\n\nvector<int> z_algorithm(const\
-    \ string &s){\n\tvector<int> z(s.size());\n\tz[0] = (int)z.size();\n\tint i =\
-    \ 1, j = 0;\n\twhile(i < (int)z.size()){\n\t\twhile(i+j < (int)s.size() && s[j]\
-    \ == s[i+j])j++;\n\t\tz[i] = j;\n\t\t\n\t\tif(j == 0){\n\t\t\ti++;\n\t\t\tcontinue;\n\
-    \t\t}\n\t\t\n\t\tint k = 1;\n\t\twhile(k < j && k + z[k] < j){\n\t\t\tz[i+k] =\
-    \ z[k];\n\t\t\tk++;\n\t\t}\n\t\ti += k;\n\t\tj -= k;\n\t}\n\treturn z;\n}\n"
-  code: "\nvector<int> z_algorithm(const string &s){\n\tvector<int> z(s.size());\n\
-    \tz[0] = (int)z.size();\n\tint i = 1, j = 0;\n\twhile(i < (int)z.size()){\n\t\t\
-    while(i+j < (int)s.size() && s[j] == s[i+j])j++;\n\t\tz[i] = j;\n\t\t\n\t\tif(j\
-    \ == 0){\n\t\t\ti++;\n\t\t\tcontinue;\n\t\t}\n\t\t\n\t\tint k = 1;\n\t\twhile(k\
+  bundledCode: "#line 1 \"string/z_algorithm.hpp\"\n\ntemplate<typename T>\nvector<int>\
+    \ z_algorithm(const T &s){\n\tvector<int> z(s.size());\n\tz[0] = (int)z.size();\n\
+    \tint i = 1, j = 0;\n\twhile(i < (int)z.size()){\n\t\twhile(i+j < (int)s.size()\
+    \ && s[j] == s[i+j])j++;\n\t\tz[i] = j;\n\t\t\n\t\tif(j == 0){\n\t\t\ti++;\n\t\
+    \t\tcontinue;\n\t\t}\n\t\t\n\t\tint k = 1;\n\t\twhile(k < j && k + z[k] < j){\n\
+    \t\t\tz[i+k] = z[k];\n\t\t\tk++;\n\t\t}\n\t\ti += k;\n\t\tj -= k;\n\t}\n\treturn\
+    \ z;\n}\n"
+  code: "\ntemplate<typename T>\nvector<int> z_algorithm(const T &s){\n\tvector<int>\
+    \ z(s.size());\n\tz[0] = (int)z.size();\n\tint i = 1, j = 0;\n\twhile(i < (int)z.size()){\n\
+    \t\twhile(i+j < (int)s.size() && s[j] == s[i+j])j++;\n\t\tz[i] = j;\n\t\t\n\t\t\
+    if(j == 0){\n\t\t\ti++;\n\t\t\tcontinue;\n\t\t}\n\t\t\n\t\tint k = 1;\n\t\twhile(k\
     \ < j && k + z[k] < j){\n\t\t\tz[i+k] = z[k];\n\t\t\tk++;\n\t\t}\n\t\ti += k;\n\
     \t\tj -= k;\n\t}\n\treturn z;\n}\n"
   dependsOn: []
@@ -28,7 +29,7 @@ data:
   path: string/z_algorithm.hpp
   requiredBy:
   - verify/yosupo/zalgorithm.cpp
-  timestamp: '2024-10-29 02:59:59+09:00'
+  timestamp: '2024-10-29 03:58:04+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: string/z_algorithm.hpp
