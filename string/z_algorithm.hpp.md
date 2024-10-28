@@ -12,26 +12,23 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"string/z_algorithm.hpp\"\n\nvector<int> z_algorithm(const\
-    \ string &s){\n    vector<int> z(s.size());\n    z[0] = (int)z.size();\n    int\
-    \ i = 1, j = 0;\n    while(i < (int)z.size()){\n        while(i+j < (int)s.size()\
-    \ && s[j] == s[i+j])j++;\n        z[i] = j;\n        \n        if(j == 0){\n \
-    \           i++;\n            continue;\n        }\n        \n        int k =\
-    \ 1;\n        while(k < j && k + z[k] < j){\n            z[i+k] = z[k];\n    \
-    \        k++;\n        }\n        i += k;\n        j -= k;\n    }\n    return\
-    \ z;\n}\n"
-  code: "\nvector<int> z_algorithm(const string &s){\n    vector<int> z(s.size());\n\
-    \    z[0] = (int)z.size();\n    int i = 1, j = 0;\n    while(i < (int)z.size()){\n\
-    \        while(i+j < (int)s.size() && s[j] == s[i+j])j++;\n        z[i] = j;\n\
-    \        \n        if(j == 0){\n            i++;\n            continue;\n    \
-    \    }\n        \n        int k = 1;\n        while(k < j && k + z[k] < j){\n\
-    \            z[i+k] = z[k];\n            k++;\n        }\n        i += k;\n  \
-    \      j -= k;\n    }\n    return z;\n}\n"
+    \ string &s){\n\tvector<int> z(s.size());\n\tz[0] = (int)z.size();\n\tint i =\
+    \ 1, j = 0;\n\twhile(i < (int)z.size()){\n\t\twhile(i+j < (int)s.size() && s[j]\
+    \ == s[i+j])j++;\n\t\tz[i] = j;\n\t\t\n\t\tif(j == 0){\n\t\t\ti++;\n\t\t\tcontinue;\n\
+    \t\t}\n\t\t\n\t\tint k = 1;\n\t\twhile(k < j && k + z[k] < j){\n\t\t\tz[i+k] =\
+    \ z[k];\n\t\t\tk++;\n\t\t}\n\t\ti += k;\n\t\tj -= k;\n\t}\n\treturn z;\n}\n"
+  code: "\nvector<int> z_algorithm(const string &s){\n\tvector<int> z(s.size());\n\
+    \tz[0] = (int)z.size();\n\tint i = 1, j = 0;\n\twhile(i < (int)z.size()){\n\t\t\
+    while(i+j < (int)s.size() && s[j] == s[i+j])j++;\n\t\tz[i] = j;\n\t\t\n\t\tif(j\
+    \ == 0){\n\t\t\ti++;\n\t\t\tcontinue;\n\t\t}\n\t\t\n\t\tint k = 1;\n\t\twhile(k\
+    \ < j && k + z[k] < j){\n\t\t\tz[i+k] = z[k];\n\t\t\tk++;\n\t\t}\n\t\ti += k;\n\
+    \t\tj -= k;\n\t}\n\treturn z;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: string/z_algorithm.hpp
   requiredBy:
   - verify/yosupo/zalgorithm.cpp
-  timestamp: '2024-06-20 13:02:36+09:00'
+  timestamp: '2024-10-29 02:59:59+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: string/z_algorithm.hpp
