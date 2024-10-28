@@ -1,5 +1,6 @@
 
-vector<int> z_algorithm(const string &s){
+template<typename T>
+vector<int> z_algorithm(const T &s){
 	vector<int> z(s.size());
 	z[0] = (int)z.size();
 	int i = 1, j = 0;
