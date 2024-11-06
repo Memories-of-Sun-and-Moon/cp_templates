@@ -27,27 +27,27 @@ data:
     \ 0;i < n;i++)node[i + offset] = v[i];\n\t\tfor(int i = offset - 1;i >= 1;i--)node[i]\
     \ = combine(node[2 * i + 0], node[2 * i + 1]);\n\t}\n\n\tT operator[](int x) {return\
     \ node[x + offset]; }\n\n\tvoid set(int x, T val){\n\t\tassert(0 <= x && x < n);\n\
-    \t\tx += offset;\n\n\t\tnode[x] = val;\n\t\twhile(x >>= 1){;\n\t\t\tnode[x] =\
-    \ combine(node[2 * x + 0], node[2 * x + 1]);\n\t\t}\n\t}\n\n\tT fold(int l, int\
-    \ r){\n\t\tassert(0 <= l && l <= r && r <= n);\n\t\tif(l == r)return identify;\n\
-    \n\t\tT L = identify, R = identify;\n\t\tfor(l += offset, r += offset; l < r;l\
-    \ >>= 1, r >>= 1){\n\t\t\tif(l&1)L = combine(L, node[l++]);\n\t\t\tif(r&1)R =\
-    \ combine(node[--r], R);\n\t\t}\n\t\treturn combine(L, R);\n\t}\n\n\tT all_fold()\
-    \ { return node[1]; };\n\n\tint max_right(const function<bool(T)> f, int l = 0){\n\
-    \t\tassert(0 <= l && l <= n);\n\t\tassert(f(identify));\n\n\t\tif(l == n)return\
-    \ n;\n\t\t\n\t\tl += offset;\n\t\tT sum = identify;\n\t\tdo{\n\t\t\twhile(l%2\
-    \ == 0)l >>= 1;\n\t\t\tif(not f(combine(sum, node[l]))){\n\t\t\t\twhile(l < offset){\n\
-    \t\t\t\t\tl <<= 1;\n\t\t\t\t\tif(f(combine(sum, node[l]))){\n\t\t\t\t\t\tsum =\
-    \ combine(sum, node[l]);\n\t\t\t\t\t\tl++;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn\
-    \ l - offset;\n\t\t\t}\n\t\t\tsum = combine(sum, node[l]);\n\t\t\tl++;\n\t\t}while((l&-l)\
-    \ != l);\n\t\treturn n;\n\t}\n\n\tint min_left(const function<bool(T)> f, int\
-    \ r = -1){\n\t\tif(r == 0)return 0;\n\t\tif(r == -1)r = n;\n\t\tr += offset;\n\
-    \t\tT sum = identify;\n\t\tdo{\n\t\t\t--r;\n\t\t\twhile(r > 1 && (r % 2))r >>=\
-    \ 1;\n\t\t\tif(not f(combine(node[r], sum))){\n\t\t\t\twhile(r < offset){\n\t\t\
-    \t\t\tr = r*2 + 1;\n\t\t\t\t\tif(f(combine(node[r], sum))){\n\t\t\t\t\t\tsum =\
-    \ combine(node[r], sum);\n\t\t\t\t\t\t--r;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn\
-    \ r+1 - offset;\n\t\t\t}\n\t\t\tsum = combine(node[r], sum);\n\t\t}while((r&-r)\
-    \ != r);\n\t\treturn 0;\n\t}\n};\n"
+    \t\tx += offset;\n\n\t\tnode[x] = val;\n\t\twhile(x >>= 1){\n\t\t\tnode[x] = combine(node[2\
+    \ * x + 0], node[2 * x + 1]);\n\t\t}\n\t}\n\n\tT fold(int l, int r){\n\t\tassert(0\
+    \ <= l && l <= r && r <= n);\n\t\tif(l == r)return identify;\n\n\t\tT L = identify,\
+    \ R = identify;\n\t\tfor(l += offset, r += offset; l < r;l >>= 1, r >>= 1){\n\t\
+    \t\tif(l&1)L = combine(L, node[l++]);\n\t\t\tif(r&1)R = combine(node[--r], R);\n\
+    \t\t}\n\t\treturn combine(L, R);\n\t}\n\n\tT all_fold() { return node[1]; };\n\
+    \n\tint max_right(const function<bool(T)> f, int l = 0){\n\t\tassert(0 <= l &&\
+    \ l <= n);\n\t\tassert(f(identify));\n\n\t\tif(l == n)return n;\n\t\t\n\t\tl +=\
+    \ offset;\n\t\tT sum = identify;\n\t\tdo{\n\t\t\twhile(l%2 == 0)l >>= 1;\n\t\t\
+    \tif(not f(combine(sum, node[l]))){\n\t\t\t\twhile(l < offset){\n\t\t\t\t\tl <<=\
+    \ 1;\n\t\t\t\t\tif(f(combine(sum, node[l]))){\n\t\t\t\t\t\tsum = combine(sum,\
+    \ node[l]);\n\t\t\t\t\t\tl++;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn l - offset;\n\
+    \t\t\t}\n\t\t\tsum = combine(sum, node[l]);\n\t\t\tl++;\n\t\t}while((l&-l) !=\
+    \ l);\n\t\treturn n;\n\t}\n\n\tint min_left(const function<bool(T)> f, int r =\
+    \ -1){\n\t\tif(r == 0)return 0;\n\t\tif(r == -1)r = n;\n\t\tr += offset;\n\t\t\
+    T sum = identify;\n\t\tdo{\n\t\t\t--r;\n\t\t\twhile(r > 1 && (r % 2))r >>= 1;\n\
+    \t\t\tif(not f(combine(node[r], sum))){\n\t\t\t\twhile(r < offset){\n\t\t\t\t\t\
+    r = r*2 + 1;\n\t\t\t\t\tif(f(combine(node[r], sum))){\n\t\t\t\t\t\tsum = combine(node[r],\
+    \ sum);\n\t\t\t\t\t\t--r;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn r+1 - offset;\n\
+    \t\t\t}\n\t\t\tsum = combine(node[r], sum);\n\t\t}while((r&-r) != r);\n\t\treturn\
+    \ 0;\n\t}\n};\n"
   code: "\ntemplate<typename T>struct segment_tree {\n\tusing F = function<T(T, T)>;\n\
     \n\tint offset;\n\tint n;\n\tvector<T> node;\n\tF combine;\n\tT identify;\n\n\t\
     segment_tree(int _n, F _combine, T _identify) : segment_tree(vector<T>(_n, _identify),\
@@ -58,7 +58,7 @@ data:
     \ - 1;i >= 1;i--)node[i] = combine(node[2 * i + 0], node[2 * i + 1]);\n\t}\n\n\
     \tT operator[](int x) {return node[x + offset]; }\n\n\tvoid set(int x, T val){\n\
     \t\tassert(0 <= x && x < n);\n\t\tx += offset;\n\n\t\tnode[x] = val;\n\t\twhile(x\
-    \ >>= 1){;\n\t\t\tnode[x] = combine(node[2 * x + 0], node[2 * x + 1]);\n\t\t}\n\
+    \ >>= 1){\n\t\t\tnode[x] = combine(node[2 * x + 0], node[2 * x + 1]);\n\t\t}\n\
     \t}\n\n\tT fold(int l, int r){\n\t\tassert(0 <= l && l <= r && r <= n);\n\t\t\
     if(l == r)return identify;\n\n\t\tT L = identify, R = identify;\n\t\tfor(l +=\
     \ offset, r += offset; l < r;l >>= 1, r >>= 1){\n\t\t\tif(l&1)L = combine(L, node[l++]);\n\
@@ -82,7 +82,7 @@ data:
   isVerificationFile: false
   path: data_structure/segment_tree.hpp
   requiredBy: []
-  timestamp: '2024-09-21 16:31:40+09:00'
+  timestamp: '2024-11-07 00:12:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dsl/2_A___segment_tree.test.cpp
