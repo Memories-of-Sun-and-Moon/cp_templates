@@ -27,7 +27,7 @@ template<typename T>struct segment_tree {
 		x += offset;
 
 		node[x] = val;
-		while(x >>= 1){;
+		while(x >>= 1){
 			node[x] = combine(node[2 * x + 0], node[2 * x + 1]);
 		}
 	}
