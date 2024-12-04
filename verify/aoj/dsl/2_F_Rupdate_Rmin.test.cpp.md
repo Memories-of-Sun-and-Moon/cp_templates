@@ -14,14 +14,15 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I
-  bundledCode: "#line 1 \"verify/aoj/dsl/2_I.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
-    \n\n#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing namespace\
-    \ std;\nusing ll = long long;\nusing ull = unsigned long long;\nconst double pi\
-    \ = acos(-1);\ntemplate<class T>constexpr T inf() { return ::std::numeric_limits<T>::max();\
-    \ }\ntemplate<class T>constexpr T hinf() { return inf<T>() / 2; }\ntemplate <typename\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
+  bundledCode: "#line 1 \"verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\n\n#line\
+    \ 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing namespace std;\n\
+    using ll = long long;\nusing ull = unsigned long long;\nconst double pi = acos(-1);\n\
+    template<class T>constexpr T inf() { return ::std::numeric_limits<T>::max(); }\n\
+    template<class T>constexpr T hinf() { return inf<T>() / 2; }\ntemplate <typename\
     \ T_char>T_char TL(T_char cX) { return tolower(cX); }\ntemplate <typename T_char>T_char\
     \ TU(T_char cX) { return toupper(cX); }\ntemplate<class T> bool chmin(T& a,T b)\
     \ { if(a > b){a = b; return true;} return false; }\ntemplate<class T> bool chmax(T&\
@@ -96,42 +97,38 @@ data:
     \t\twhile(r < size) {\n\t\t\t\t\tpush(r);\n\t\t\t\t\tr = r*2 + 1;\n\t\t\t\t\t\
     if(g(op(node[r], sum))) {\n\t\t\t\t\t\tsum = op(node[r], sum);\n\t\t\t\t\t\tr--;\n\
     \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn r+1-size;\n\t\t\t}\n\t\t\tsum = op(node[r],\
-    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn 0;\n\t}\n};\n#line 5 \"verify/aoj/dsl/2_I.test.cpp\"\
-    \n\nstruct S{\n\tll val;\n\tint size;\n};\nusing F = ll;\nconstexpr F ID = -10000;\n\
-    \nS op(S a, S b){ return {a.val+b.val, a.size+b.size}; }\nS e(){ return {0, 0};\
-    \ }\nS mapping(F f, S x){\n\tif(f != ID)x.val = f*x.size;\n\treturn x;\n}\nF composition(F\
-    \ f, F g){ return (f == ID ? g : f); }\nF id(){ return ID; }\n\nvoid mmrz::solve(){\n\
-    \tint n, q;\n\tcin >> n >> q;\n\n\tvector<S> _v(n, {0, 1});\n\tlazy_segment_tree<S,\
-    \ op, e, F, mapping, composition, id> seg(_v);\n\n\twhile(q--){\n\t\tint op;\n\
-    \t\tcin >> op;\n\t\tif(op == 0){\n\t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\
-    \t\t\tt++;\n\t\t\tseg.apply(s, t, x);\n\t\t}else{\n\t\t\tint s, t;\n\t\t\tcin\
-    \ >> s >> t;\n\t\t\tt++;\n\t\t\tcout << seg.fold(s, t).val << endl;\n\t\t}\n\t\
-    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
+    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn 0;\n\t}\n};\n#line 5 \"verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp\"\
+    \n\nusing S = int;\nusing F = int;\n\nS op(S a, S b){ return min(a, b); }\nS e(){\
+    \ return inf<int>(); }\nS mapping(F f, S x){ return (f == -1 ? x : f); }\nF composition(F\
+    \ f, F g){ return (f == -1 ? g : f); }\nF id(){ return -1; }\n\nvoid mmrz::solve(){\n\
+    \tint n, q;\n\tcin >> n >> q;\n\n\tlazy_segment_tree<S, op, e, F, mapping, composition,\
+    \ id> seg(n);\n\n\twhile(q--){\n\t\tint op;\n\t\tcin >> op;\n\t\tif(op == 0){\n\
+    \t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\t\t\tt++;\n\t\t\tseg.apply(s,\
+    \ t, x);\n\t\t}else{\n\t\t\tint s, t;\n\t\t\tcin >> s >> t;\n\t\t\tt++;\n\t\t\t\
+    cout << seg.fold(s, t) << endl;\n\t\t}\n\t}\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
     \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../data_structure/lazy_segment_tree.hpp\"\
-    \n\nstruct S{\n\tll val;\n\tint size;\n};\nusing F = ll;\nconstexpr F ID = -10000;\n\
-    \nS op(S a, S b){ return {a.val+b.val, a.size+b.size}; }\nS e(){ return {0, 0};\
-    \ }\nS mapping(F f, S x){\n\tif(f != ID)x.val = f*x.size;\n\treturn x;\n}\nF composition(F\
-    \ f, F g){ return (f == ID ? g : f); }\nF id(){ return ID; }\n\nvoid mmrz::solve(){\n\
-    \tint n, q;\n\tcin >> n >> q;\n\n\tvector<S> _v(n, {0, 1});\n\tlazy_segment_tree<S,\
-    \ op, e, F, mapping, composition, id> seg(_v);\n\n\twhile(q--){\n\t\tint op;\n\
-    \t\tcin >> op;\n\t\tif(op == 0){\n\t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\
-    \t\t\tt++;\n\t\t\tseg.apply(s, t, x);\n\t\t}else{\n\t\t\tint s, t;\n\t\t\tcin\
-    \ >> s >> t;\n\t\t\tt++;\n\t\t\tcout << seg.fold(s, t).val << endl;\n\t\t}\n\t\
-    }\n}\n"
+    \n\nusing S = int;\nusing F = int;\n\nS op(S a, S b){ return min(a, b); }\nS e(){\
+    \ return inf<int>(); }\nS mapping(F f, S x){ return (f == -1 ? x : f); }\nF composition(F\
+    \ f, F g){ return (f == -1 ? g : f); }\nF id(){ return -1; }\n\nvoid mmrz::solve(){\n\
+    \tint n, q;\n\tcin >> n >> q;\n\n\tlazy_segment_tree<S, op, e, F, mapping, composition,\
+    \ id> seg(n);\n\n\twhile(q--){\n\t\tint op;\n\t\tcin >> op;\n\t\tif(op == 0){\n\
+    \t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\t\t\tt++;\n\t\t\tseg.apply(s,\
+    \ t, x);\n\t\t}else{\n\t\t\tint s, t;\n\t\t\tcin >> s >> t;\n\t\t\tt++;\n\t\t\t\
+    cout << seg.fold(s, t) << endl;\n\t\t}\n\t}\n}\n"
   dependsOn:
   - template/template.hpp
   - data_structure/lazy_segment_tree.hpp
   isVerificationFile: true
-  path: verify/aoj/dsl/2_I.test.cpp
+  path: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
   requiredBy: []
-  timestamp: '2024-09-26 01:24:08+09:00'
+  timestamp: '2024-12-05 03:51:32+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/aoj/dsl/2_I.test.cpp
+documentation_of: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/aoj/dsl/2_I.test.cpp
-- /verify/verify/aoj/dsl/2_I.test.cpp.html
-title: verify/aoj/dsl/2_I.test.cpp
+- /verify/verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
+- /verify/verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp.html
+title: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
 ---

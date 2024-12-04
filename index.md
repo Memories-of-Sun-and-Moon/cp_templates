@@ -181,17 +181,17 @@ data:
       path: verify/aoj/dsl/2_E___segment_tree.test.cpp
       title: verify/aoj/dsl/2_E___segment_tree.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/aoj/dsl/2_F.test.cpp
-      title: verify/aoj/dsl/2_F.test.cpp
+      path: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
+      title: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/aoj/dsl/2_G.test.cpp
-      title: verify/aoj/dsl/2_G.test.cpp
+      path: verify/aoj/dsl/2_G_Radd_Rsum.test.cpp
+      title: verify/aoj/dsl/2_G_Radd_Rsum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/aoj/dsl/2_H.test.cpp
-      title: verify/aoj/dsl/2_H.test.cpp
+      path: verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
+      title: verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/aoj/dsl/2_I.test.cpp
-      title: verify/aoj/dsl/2_I.test.cpp
+      path: verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
+      title: verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/dsl/5_B.test.cpp
       title: verify/aoj/dsl/5_B.test.cpp

@@ -17,11 +17,12 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H
-  bundledCode: "#line 1 \"verify/aoj/dsl/2_H.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H\"\
-    \n\n#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing namespace\
-    \ std;\nusing ll = long long;\nusing ull = unsigned long long;\nconst double pi\
-    \ = acos(-1);\ntemplate<class T>constexpr T inf() { return ::std::numeric_limits<T>::max();\
-    \ }\ntemplate<class T>constexpr T hinf() { return inf<T>() / 2; }\ntemplate <typename\
+  bundledCode: "#line 1 \"verify/aoj/dsl/2_H_Radd_Rmin.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H\"\n\n#line\
+    \ 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing namespace std;\n\
+    using ll = long long;\nusing ull = unsigned long long;\nconst double pi = acos(-1);\n\
+    template<class T>constexpr T inf() { return ::std::numeric_limits<T>::max(); }\n\
+    template<class T>constexpr T hinf() { return inf<T>() / 2; }\ntemplate <typename\
     \ T_char>T_char TL(T_char cX) { return tolower(cX); }\ntemplate <typename T_char>T_char\
     \ TU(T_char cX) { return toupper(cX); }\ntemplate<class T> bool chmin(T& a,T b)\
     \ { if(a > b){a = b; return true;} return false; }\ntemplate<class T> bool chmax(T&\
@@ -96,7 +97,7 @@ data:
     \t\twhile(r < size) {\n\t\t\t\t\tpush(r);\n\t\t\t\t\tr = r*2 + 1;\n\t\t\t\t\t\
     if(g(op(node[r], sum))) {\n\t\t\t\t\t\tsum = op(node[r], sum);\n\t\t\t\t\t\tr--;\n\
     \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn r+1-size;\n\t\t\t}\n\t\t\tsum = op(node[r],\
-    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn 0;\n\t}\n};\n#line 5 \"verify/aoj/dsl/2_H.test.cpp\"\
+    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn 0;\n\t}\n};\n#line 5 \"verify/aoj/dsl/2_H_Radd_Rmin.test.cpp\"\
     \n\nusing S = ll;\nusing F = ll;\n\nS op(S a, S b){ return min(a, b); }\nS e(){\
     \ return hinf<ll>(); }\nS mapping(F f, S x){ return f+x; }\nF composition(F f,\
     \ F g){ return f+g; }\nF id(){ return 0; }\n\nvoid mmrz::solve(){\n\tint n, q;\n\
@@ -119,15 +120,15 @@ data:
   - template/template.hpp
   - data_structure/lazy_segment_tree.hpp
   isVerificationFile: true
-  path: verify/aoj/dsl/2_H.test.cpp
+  path: verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
   requiredBy: []
-  timestamp: '2024-09-22 19:00:13+09:00'
+  timestamp: '2024-12-05 03:51:32+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/aoj/dsl/2_H.test.cpp
+documentation_of: verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/aoj/dsl/2_H.test.cpp
-- /verify/verify/aoj/dsl/2_H.test.cpp.html
-title: verify/aoj/dsl/2_H.test.cpp
+- /verify/verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
+- /verify/verify/aoj/dsl/2_H_Radd_Rmin.test.cpp.html
+title: verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
 ---

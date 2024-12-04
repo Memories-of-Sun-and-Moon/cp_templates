@@ -37,17 +37,17 @@ data:
     path: verify/aoj/dsl/2_E___segment_tree.test.cpp
     title: verify/aoj/dsl/2_E___segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/aoj/dsl/2_F.test.cpp
-    title: verify/aoj/dsl/2_F.test.cpp
+    path: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
+    title: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/aoj/dsl/2_G.test.cpp
-    title: verify/aoj/dsl/2_G.test.cpp
+    path: verify/aoj/dsl/2_G_Radd_Rsum.test.cpp
+    title: verify/aoj/dsl/2_G_Radd_Rsum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/aoj/dsl/2_H.test.cpp
-    title: verify/aoj/dsl/2_H.test.cpp
+    path: verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
+    title: verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/aoj/dsl/2_I.test.cpp
-    title: verify/aoj/dsl/2_I.test.cpp
+    path: verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
+    title: verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/5_B.test.cpp
     title: verify/aoj/dsl/5_B.test.cpp
@@ -227,17 +227,17 @@ data:
   - verify/aoj/dpl/1_D.test.cpp
   - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
   - verify/aoj/dsl/1_A.test.cpp
-  - verify/aoj/dsl/2_I.test.cpp
+  - verify/aoj/dsl/2_G_Radd_Rsum.test.cpp
+  - verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
   - verify/aoj/dsl/2_E___segment_tree.test.cpp
+  - verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
   - verify/aoj/dsl/2_A___segment_tree.test.cpp
   - verify/aoj/dsl/2_B___segment_tree.test.cpp
-  - verify/aoj/dsl/2_G.test.cpp
   - verify/aoj/dsl/2_E___BIT.test.cpp
-  - verify/aoj/dsl/2_F.test.cpp
+  - verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
   - verify/aoj/dsl/5_B.test.cpp
   - verify/aoj/dsl/2_B___BIT.test.cpp
   - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
-  - verify/aoj/dsl/2_H.test.cpp
   - verify/aoj/grl/6_A___dinic.test.cpp
   - verify/aoj/grl/6_A___ford_fulkerson.test.cpp
   - verify/aoj/grl/3_C.test.cpp
