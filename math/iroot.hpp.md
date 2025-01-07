@@ -1,11 +1,20 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: math/counting_primes.hpp
+    title: math/counting_primes.hpp
+  - icon: ':warning:'
+    path: verify/yosupo/counting_primes.cpp
+    title: verify/yosupo/counting_primes.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/kth_root_integer.test.cpp
     title: verify/yosupo/kth_root_integer.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/1661.test.cpp
+    title: verify/yukicoder/1661.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -35,11 +44,14 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: math/iroot.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 01:02:07+09:00'
+  requiredBy:
+  - verify/yosupo/counting_primes.cpp
+  - math/counting_primes.hpp
+  timestamp: '2025-01-08 00:07:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/kth_root_integer.test.cpp
+  - verify/yukicoder/1661.test.cpp
 documentation_of: math/iroot.hpp
 layout: document
 title: "floor K \u4E57\u6839"

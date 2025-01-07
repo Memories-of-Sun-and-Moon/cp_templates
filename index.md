@@ -78,6 +78,9 @@ data:
       path: math/combination.hpp
       title: "2\u9805\u4FC2\u6570mod"
     - icon: ':heavy_check_mark:'
+      path: math/counting_primes.hpp
+      title: math/counting_primes.hpp
+    - icon: ':heavy_check_mark:'
       path: math/euler_phi_table.hpp
       title: "\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\uFF08\u30AA\u30A4\u30E9\
         \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09\u30C6\u30FC\
@@ -119,7 +122,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/suffix_array.hpp
       title: Suffix Array
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: string/z_algorithm.hpp
       title: Z Algorithm
   - name: template
@@ -127,8 +130,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
+  - name: verify/atcoder/abc/150
+    pages:
+    - icon: ':warning:'
+      path: verify/atcoder/abc/150/f.___test.cpp
+      title: verify/atcoder/abc/150/f.___test.cpp
   - name: verify/yosupo
     pages:
+    - icon: ':warning:'
+      path: verify/yosupo/counting_primes.cpp
+      title: verify/yosupo/counting_primes.cpp
     - icon: ':warning:'
       path: verify/yosupo/zalgorithm.cpp
       title: verify/yosupo/zalgorithm.cpp
@@ -234,11 +245,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/itp1/7_d.test.cpp
       title: verify/aoj/itp1/7_d.test.cpp
-  - name: verify/atcoder/abc/150
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: verify/atcoder/abc/150/f.test.cpp
-      title: verify/atcoder/abc/150/f.test.cpp
   - name: verify/lc
     pages:
     - icon: ':heavy_check_mark:'
@@ -290,6 +296,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/1435.test.cpp
       title: verify/yukicoder/1435.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yukicoder/1661.test.cpp
+      title: verify/yukicoder/1661.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/2219.test.cpp
       title: verify/yukicoder/2219.test.cpp

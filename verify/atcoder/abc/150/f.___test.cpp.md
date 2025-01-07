@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: string/z_algorithm.hpp
     title: Z Algorithm
   - icon: ':heavy_check_mark:'
@@ -11,14 +11,12 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/abc150/tasks/abc150_f
     links:
     - https://atcoder.jp/contests/abc150/tasks/abc150_f
-  bundledCode: "#line 1 \"verify/atcoder/abc/150/f.test.cpp\"\n#define PROBLEM \"\
-    https://atcoder.jp/contests/abc150/tasks/abc150_f\"\n\n#line 1 \"template/template.hpp\"\
+  bundledCode: "#line 1 \"verify/atcoder/abc/150/f.___test.cpp\"\n#define PROBLEM\
+    \ \"https://atcoder.jp/contests/abc150/tasks/abc150_f\"\n\n#line 1 \"template/template.hpp\"\
     \n# include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nusing\
     \ ull = unsigned long long;\nconst double pi = acos(-1);\ntemplate<class T>constexpr\
     \ T inf() { return ::std::numeric_limits<T>::max(); }\ntemplate<class T>constexpr\
@@ -50,7 +48,7 @@ data:
     \t\twhile(i+j < (int)s.size() && s[j] == s[i+j])j++;\n\t\tz[i] = j;\n\t\t\n\t\t\
     if(j == 0){\n\t\t\ti++;\n\t\t\tcontinue;\n\t\t}\n\t\t\n\t\tint k = 1;\n\t\twhile(k\
     \ < j && k + z[k] < j){\n\t\t\tz[i+k] = z[k];\n\t\t\tk++;\n\t\t}\n\t\ti += k;\n\
-    \t\tj -= k;\n\t}\n\treturn z;\n}\n#line 5 \"verify/atcoder/abc/150/f.test.cpp\"\
+    \t\tj -= k;\n\t}\n\treturn z;\n}\n#line 5 \"verify/atcoder/abc/150/f.___test.cpp\"\
     \n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector<int> a(n), b(n);\n\t\
     for(auto &x : a)cin >> x;\n\tfor(auto &x : b)cin >> x;\n\t\n\tvector<int> c;\n\
     \trep(i, n)c.pb(b[i]^b[(i+1)%n]);\n\trep(i, n)c.pb(a[i]^a[(i+1)%n]);\n\trep(i,\
@@ -68,16 +66,16 @@ data:
   dependsOn:
   - template/template.hpp
   - string/z_algorithm.hpp
-  isVerificationFile: true
-  path: verify/atcoder/abc/150/f.test.cpp
+  isVerificationFile: false
+  path: verify/atcoder/abc/150/f.___test.cpp
   requiredBy: []
-  timestamp: '2024-10-29 04:54:17+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-01-08 00:07:40+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: verify/atcoder/abc/150/f.test.cpp
+documentation_of: verify/atcoder/abc/150/f.___test.cpp
 layout: document
 redirect_from:
-- /verify/verify/atcoder/abc/150/f.test.cpp
-- /verify/verify/atcoder/abc/150/f.test.cpp.html
-title: verify/atcoder/abc/150/f.test.cpp
+- /library/verify/atcoder/abc/150/f.___test.cpp
+- /library/verify/atcoder/abc/150/f.___test.cpp.html
+title: verify/atcoder/abc/150/f.___test.cpp
 ---

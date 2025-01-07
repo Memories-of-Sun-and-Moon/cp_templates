@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/kth_root_integer.test.cpp
   requiredBy: []
-  timestamp: '2024-07-07 01:02:07+09:00'
+  timestamp: '2025-01-08 00:07:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/kth_root_integer.test.cpp
