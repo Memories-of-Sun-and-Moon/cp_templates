@@ -1,4 +1,6 @@
 
+#pragma once
+
 unsigned long long iroot(unsigned long long n, int k=2){
 	constexpr unsigned long long LIM = -1;
 	if(n <= 1 || k == 1){
