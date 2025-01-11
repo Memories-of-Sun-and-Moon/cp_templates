@@ -79,7 +79,7 @@ data:
       title: "2\u9805\u4FC2\u6570mod"
     - icon: ':heavy_check_mark:'
       path: math/counting_primes.hpp
-      title: math/counting_primes.hpp
+      title: "$n$ \u4EE5\u4E0B\u306E\u7D20\u6570\u306E\u6570\u3048\u4E0A\u3052"
     - icon: ':heavy_check_mark:'
       path: math/euler_phi_table.hpp
       title: "\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\uFF08\u30AA\u30A4\u30E9\
@@ -89,6 +89,9 @@ data:
       path: math/factor.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3\uFF08\u30DD\u30E9\u30FC\u30C9\u30FB\u30ED\
         \u30FC\u6CD5\uFF09"
+    - icon: ':heavy_check_mark:'
+      path: math/floor_sum.hpp
+      title: floor_sum
     - icon: ':heavy_check_mark:'
       path: math/formal_power_series.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\u30E9\u30A4\u30D6\u30E9\u30EA"
@@ -267,6 +270,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/factorize.test.cpp
       title: verify/yosupo/factorize.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/floor_sum.test.cpp
+      title: verify/yosupo/floor_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/kth_root_integer.test.cpp
       title: verify/yosupo/kth_root_integer.test.cpp

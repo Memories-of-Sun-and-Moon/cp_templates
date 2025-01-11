@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: math/counting_primes.hpp
-    title: math/counting_primes.hpp
+    title: "$n$ \u4EE5\u4E0B\u306E\u7D20\u6570\u306E\u6570\u3048\u4E0A\u3052"
   - icon: ':heavy_check_mark:'
     path: math/iroot.hpp
     title: "floor K \u4E57\u6839"

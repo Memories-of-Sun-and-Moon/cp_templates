@@ -88,8 +88,13 @@ data:
   - verify/yukicoder/1661.test.cpp
 documentation_of: math/counting_primes.hpp
 layout: document
-redirect_from:
-- /library/math/counting_primes.hpp
-- /library/math/counting_primes.hpp.html
-title: math/counting_primes.hpp
+title: "$n$ \u4EE5\u4E0B\u306E\u7D20\u6570\u306E\u6570\u3048\u4E0A\u3052"
 ---
+
+# $n$ 以下の素数の数え上げ
+
+## 使い方
+
+``counting_primes(ll n)`` : $n$ 以下の素数の数を返す。 $O(\frac{n^{3/4}}{\log n})$
+
+[参考](https://rsk0315.hatenablog.com/entry/2021/05/18/015511)

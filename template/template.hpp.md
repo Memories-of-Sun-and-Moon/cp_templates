@@ -109,6 +109,9 @@ data:
     path: verify/yosupo/factorize.test.cpp
     title: verify/yosupo/factorize.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/floor_sum.test.cpp
+    title: verify/yosupo/floor_sum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/kth_root_integer.test.cpp
     title: verify/yosupo/kth_root_integer.test.cpp
   - icon: ':heavy_check_mark:'
@@ -226,6 +229,7 @@ data:
   - verify/yosupo/suffixarray.test.cpp
   - verify/yosupo/two_edge_connected_components.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
+  - verify/yosupo/floor_sum.test.cpp
   - verify/yosupo/enumerate_palindromes.test.cpp
   - verify/aoj/alds1/14_B.test.cpp
   - verify/aoj/itp1/7_d.test.cpp
