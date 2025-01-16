@@ -12,6 +12,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/mo.hpp
       title: Mo's Algorithm
+    - icon: ':warning:'
+      path: data_structure/rollbackmo.hpp
+      title: Rollback Mo
     - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree.hpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
