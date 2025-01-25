@@ -45,13 +45,13 @@ data:
   isVerificationFile: false
   path: math/iroot.hpp
   requiredBy:
-  - verify/yosupo/counting_primes.cpp
   - math/counting_primes.hpp
+  - verify/yosupo/counting_primes.cpp
   timestamp: '2025-01-08 00:07:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/kth_root_integer.test.cpp
   - verify/yukicoder/1661.test.cpp
+  - verify/yosupo/kth_root_integer.test.cpp
 documentation_of: math/iroot.hpp
 layout: document
 title: "floor K \u4E57\u6839"

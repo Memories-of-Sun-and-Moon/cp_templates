@@ -63,6 +63,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/primal_dual.hpp
       title: "\u6700\u5C0F\u8CBB\u7528\u6D41\uFF08primal-dual\u6CD5\uFF09"
+    - icon: ':warning:'
+      path: graph/primal_dual_with_negative_edges.hpp
+      title: graph/primal_dual_with_negative_edges.hpp
     - icon: ':heavy_check_mark:'
       path: graph/strongly_connected_components.hpp
       title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"

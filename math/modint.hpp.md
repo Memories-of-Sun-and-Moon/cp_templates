@@ -63,8 +63,8 @@ data:
   timestamp: '2024-09-21 01:01:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/convolution_mod.test.cpp
   - verify/yukicoder/2219.test.cpp
+  - verify/yosupo/convolution_mod.test.cpp
 documentation_of: math/modint.hpp
 layout: document
 title: modint

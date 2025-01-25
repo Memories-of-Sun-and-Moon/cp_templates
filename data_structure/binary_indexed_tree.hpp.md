@@ -33,8 +33,8 @@ data:
   timestamp: '2024-09-26 01:20:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/dsl/2_E___BIT.test.cpp
   - verify/aoj/dsl/2_B___BIT.test.cpp
+  - verify/aoj/dsl/2_E___BIT.test.cpp
 documentation_of: data_structure/binary_indexed_tree.hpp
 layout: document
 title: BIT(Binary Indexed Tree)
