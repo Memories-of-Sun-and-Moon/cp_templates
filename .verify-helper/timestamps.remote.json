@@ -29,6 +29,7 @@
 "verify/yosupo/assignment.test.cpp": "2024-10-05 05:52:08 +0900",
 "verify/yosupo/assignment_negative.test.cpp": "2024-10-05 05:52:08 +0900",
 "verify/yosupo/convolution_mod.test.cpp": "2024-12-21 04:29:49 +0900",
+"verify/yosupo/discrete_logarithm.test.cpp": "2025-02-04 02:16:30 +0900",
 "verify/yosupo/enumerate_palindromes.test.cpp": "2024-07-07 01:02:07 +0900",
 "verify/yosupo/factorize.test.cpp": "2024-07-07 01:02:07 +0900",
 "verify/yosupo/floor_sum.test.cpp": "2025-01-11 18:31:32 +0900",
