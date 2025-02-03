@@ -87,6 +87,9 @@ data:
       path: math/counting_primes.hpp
       title: "$n$ \u4EE5\u4E0B\u306E\u7D20\u6570\u306E\u6570\u3048\u4E0A\u3052"
     - icon: ':heavy_check_mark:'
+      path: math/discrete_logarithm.hpp
+      title: discrete_logarithm
+    - icon: ':heavy_check_mark:'
       path: math/euler_phi_table.hpp
       title: "\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\uFF08\u30AA\u30A4\u30E9\
         \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09\u30C6\u30FC\
@@ -270,6 +273,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/convolution_mod.test.cpp
       title: verify/yosupo/convolution_mod.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/discrete_logarithm.test.cpp
+      title: verify/yosupo/discrete_logarithm.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/enumerate_palindromes.test.cpp
       title: verify/yosupo/enumerate_palindromes.test.cpp

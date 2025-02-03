@@ -103,6 +103,9 @@ data:
     path: verify/yosupo/convolution_mod.test.cpp
     title: verify/yosupo/convolution_mod.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/discrete_logarithm.test.cpp
+    title: verify/yosupo/discrete_logarithm.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/enumerate_palindromes.test.cpp
     title: verify/yosupo/enumerate_palindromes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -261,6 +264,7 @@ data:
   - verify/yosupo/convolution_mod.test.cpp
   - verify/yosupo/suffixarray.test.cpp
   - verify/yosupo/unionfind.test.cpp
+  - verify/yosupo/discrete_logarithm.test.cpp
   - verify/yosupo/enumerate_palindromes.test.cpp
   - verify/yosupo/two_sat.test.cpp
 documentation_of: template/template.hpp

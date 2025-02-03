@@ -3,12 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: math/discrete_logarithm.hpp
+    title: discrete_logarithm
+  - icon: ':heavy_check_mark:'
     path: math/formal_power_series.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\u30E9\u30A4\u30D6\u30E9\u30EA"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution_mod.test.cpp
     title: verify/yosupo/convolution_mod.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/discrete_logarithm.test.cpp
+    title: verify/yosupo/discrete_logarithm.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -30,10 +36,12 @@ data:
   path: math/power.hpp
   requiredBy:
   - math/formal_power_series.hpp
+  - math/discrete_logarithm.hpp
   timestamp: '2024-12-21 04:29:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/convolution_mod.test.cpp
+  - verify/yosupo/discrete_logarithm.test.cpp
 documentation_of: math/power.hpp
 layout: document
 redirect_from:

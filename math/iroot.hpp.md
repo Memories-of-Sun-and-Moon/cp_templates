@@ -5,10 +5,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/counting_primes.hpp
     title: "$n$ \u4EE5\u4E0B\u306E\u7D20\u6570\u306E\u6570\u3048\u4E0A\u3052"
+  - icon: ':heavy_check_mark:'
+    path: math/discrete_logarithm.hpp
+    title: discrete_logarithm
   - icon: ':warning:'
     path: verify/yosupo/counting_primes.cpp
     title: verify/yosupo/counting_primes.cpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/discrete_logarithm.test.cpp
+    title: verify/yosupo/discrete_logarithm.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/kth_root_integer.test.cpp
     title: verify/yosupo/kth_root_integer.test.cpp
@@ -46,12 +52,14 @@ data:
   path: math/iroot.hpp
   requiredBy:
   - math/counting_primes.hpp
+  - math/discrete_logarithm.hpp
   - verify/yosupo/counting_primes.cpp
   timestamp: '2025-01-08 00:07:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/1661.test.cpp
   - verify/yosupo/kth_root_integer.test.cpp
+  - verify/yosupo/discrete_logarithm.test.cpp
 documentation_of: math/iroot.hpp
 layout: document
 title: "floor K \u4E57\u6839"
