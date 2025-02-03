@@ -7,7 +7,7 @@ documentation_of: ./../../math/discrete_logarithm.hpp
 
 ## 使い方
 
-``discrete_logarithm(ll x, ll y, ll m)`` : $x^k \modp{m}$ となる最小の $k$ を返す。無い場合は $-1$ が返る。 $O(\sqrt(M))$
+``discrete_logarithm(ll x, ll y, ll m)`` : $x^k \pmod{m}$ となる最小の $k$ を返す。無い場合は $-1$ が返る。 $O(\sqrt(M))$
 
 ## 参考
 
