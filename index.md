@@ -49,6 +49,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/ford_fulkerson.hpp
       title: "\u6700\u5927\u6D41(Ford-Fulkerson)"
+    - icon: ':warning:'
+      path: graph/functional_graph_cycle_enumeration.hpp
+      title: graph/functional_graph_cycle_enumeration.hpp
     - icon: ':heavy_check_mark:'
       path: graph/hungarian.hpp
       title: "\u5272\u5F53\u554F\u984C\uFF08\u30CF\u30F3\u30AC\u30EA\u30A2\u30F3\u6CD5\
