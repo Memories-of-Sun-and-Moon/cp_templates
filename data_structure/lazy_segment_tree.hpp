@@ -1,3 +1,4 @@
+#pragma once
 
 template<class S, auto op, auto e, class F, auto mapping, auto composition, auto id>
 struct lazy_segment_tree {
