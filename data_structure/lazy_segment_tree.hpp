@@ -73,7 +73,6 @@ public:
 		return op(L, R);
 	}
 
-	// ACL にこの実装があるんだけど心配？
 	S all_fold() { return node[1]; };
 
 	void apply(int x, F f) {
