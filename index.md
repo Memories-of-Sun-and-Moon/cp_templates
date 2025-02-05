@@ -4,6 +4,10 @@ data:
   - name: data_structure
     pages:
     - icon: ':heavy_check_mark:'
+      path: data_structure/area_of_union_of_rectangles.hpp
+      title: "area_of_union_of_rectangles(\u9577\u65B9\u5F62\u306E\u548C\u96C6\u5408\
+        \u306E\u9762\u7A4D)"
+    - icon: ':heavy_check_mark:'
       path: data_structure/binary_indexed_tree.hpp
       title: BIT(Binary Indexed Tree)
     - icon: ':heavy_check_mark:'
@@ -267,6 +271,9 @@ data:
       title: verify/lc/assignment.test.cpp
   - name: verify/yosupo
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/area_of_union_of_rectangles.test.cpp
+      title: verify/yosupo/area_of_union_of_rectangles.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/assignment.test.cpp
       title: verify/yosupo/assignment.test.cpp

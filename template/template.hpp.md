@@ -94,6 +94,9 @@ data:
     path: verify/lc/assignment.test.cpp
     title: verify/lc/assignment.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/area_of_union_of_rectangles.test.cpp
+    title: verify/yosupo/area_of_union_of_rectangles.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/assignment.test.cpp
     title: verify/yosupo/assignment.test.cpp
   - icon: ':heavy_check_mark:'
@@ -267,6 +270,7 @@ data:
   - verify/yosupo/discrete_logarithm.test.cpp
   - verify/yosupo/enumerate_palindromes.test.cpp
   - verify/yosupo/two_sat.test.cpp
+  - verify/yosupo/area_of_union_of_rectangles.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:

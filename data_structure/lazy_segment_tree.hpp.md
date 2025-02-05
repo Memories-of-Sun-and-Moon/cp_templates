@@ -1,7 +1,11 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: data_structure/area_of_union_of_rectangles.hpp
+    title: "area_of_union_of_rectangles(\u9577\u65B9\u5F62\u306E\u548C\u96C6\u5408\
+      \u306E\u9762\u7A4D)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_E___segment_tree.test.cpp
@@ -18,6 +22,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
     title: verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/area_of_union_of_rectangles.test.cpp
+    title: verify/yosupo/area_of_union_of_rectangles.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -46,24 +53,23 @@ data:
     \ i) << i) != l)push(l >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\
     \t\t}\n\n\t\tS L = e(), R = e();\n\t\tfor(;l < r;l >>= 1, r >>= 1){\n\t\t\tif(l&1)L\
     \ = op(L, node[l++]);\n\t\t\tif(r&1)R = op(node[--r], R);\n\t\t}\n\t\treturn op(L,\
-    \ R);\n\t}\n\n\t// ACL \u306B\u3053\u306E\u5B9F\u88C5\u304C\u3042\u308B\u3093\u3060\
-    \u3051\u3069\u5FC3\u914D\uFF1F\n\t//S all_fold() { return node[1]; };\n\n\tvoid\
-    \ apply(int x, F f) {\n\t\tassert(0 <= x && x < n);\n\n\t\tx += size;\n\t\tfor(int\
-    \ i = log;i >= 1;i--)push(x >> i);\n\t\tnode[x] = mapping(f, node[x]);\n\t\tfor(int\
-    \ i = 1;i <= log;i++)update(x >> i);\n\t}\n\n\tvoid apply(int l, int r, F f) {\n\
-    \t\tassert(0 <= l && l <= r && r <= n);\n\t\tif(l == r)return;\n\n\t\tl += size;\n\
-    \t\tr += size;\n\n\t\tfor(int i = log;i >= 1;i--) {\n\t\t\tif(((l >> i) << i)\
-    \ != l)push(l >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\t\t}\n\
-    \n\t\t{\n\t\t\tint l2 = l, r2 = r;\n\t\t\twhile (l < r) {\n\t\t\t\tif (l & 1)\
-    \ all_apply(l++, f);\n\t\t\t\tif (r & 1) all_apply(--r, f);\n\t\t\t\tl >>= 1;\n\
-    \t\t\t\tr >>= 1;\n\t\t\t}\n\t\t\tl = l2;\n\t\t\tr = r2;\n\t\t}\n\n\t\tfor (int\
-    \ i = 1; i <= log; i++) {\n\t\t\tif (((l >> i) << i) != l) update(l >> i);\n\t\
-    \t\tif (((r >> i) << i) != r) update((r - 1) >> i);\n\t\t}\n\t}\n\n\ttemplate<bool\
-    \ (*g)(S)> int max_right(int l) {\n\t\treturn max_right(l, [](S x){ return g(x);\
-    \ });\n\t}\n\ttemplate<class G> int max_right(int l, G g) {\n\t\tassert(0 <= l\
-    \ && l <= n);\n\t\tassert(g(e()));\n\n\t\tif(l == n)return n;\n\n\t\tl += size;\n\
-    \t\tfor(int i = log;i >= 1;i--)push(l >> i);\n\n\t\tS sum = e();\n\t\tdo {\n\t\
-    \t\twhile(l%2 == 0)l >>= 1;\n\t\t\tif(not g(op(sum, node[l]))) {\n\t\t\t\twhile(l\
+    \ R);\n\t}\n\n\tS all_fold() { return node[1]; };\n\n\tvoid apply(int x, F f)\
+    \ {\n\t\tassert(0 <= x && x < n);\n\n\t\tx += size;\n\t\tfor(int i = log;i >=\
+    \ 1;i--)push(x >> i);\n\t\tnode[x] = mapping(f, node[x]);\n\t\tfor(int i = 1;i\
+    \ <= log;i++)update(x >> i);\n\t}\n\n\tvoid apply(int l, int r, F f) {\n\t\tassert(0\
+    \ <= l && l <= r && r <= n);\n\t\tif(l == r)return;\n\n\t\tl += size;\n\t\tr +=\
+    \ size;\n\n\t\tfor(int i = log;i >= 1;i--) {\n\t\t\tif(((l >> i) << i) != l)push(l\
+    \ >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\t\t}\n\n\t\t{\n\t\t\
+    \tint l2 = l, r2 = r;\n\t\t\twhile (l < r) {\n\t\t\t\tif (l & 1) all_apply(l++,\
+    \ f);\n\t\t\t\tif (r & 1) all_apply(--r, f);\n\t\t\t\tl >>= 1;\n\t\t\t\tr >>=\
+    \ 1;\n\t\t\t}\n\t\t\tl = l2;\n\t\t\tr = r2;\n\t\t}\n\n\t\tfor (int i = 1; i <=\
+    \ log; i++) {\n\t\t\tif (((l >> i) << i) != l) update(l >> i);\n\t\t\tif (((r\
+    \ >> i) << i) != r) update((r - 1) >> i);\n\t\t}\n\t}\n\n\ttemplate<bool (*g)(S)>\
+    \ int max_right(int l) {\n\t\treturn max_right(l, [](S x){ return g(x); });\n\t\
+    }\n\ttemplate<class G> int max_right(int l, G g) {\n\t\tassert(0 <= l && l <=\
+    \ n);\n\t\tassert(g(e()));\n\n\t\tif(l == n)return n;\n\n\t\tl += size;\n\t\t\
+    for(int i = log;i >= 1;i--)push(l >> i);\n\n\t\tS sum = e();\n\t\tdo {\n\t\t\t\
+    while(l%2 == 0)l >>= 1;\n\t\t\tif(not g(op(sum, node[l]))) {\n\t\t\t\twhile(l\
     \ < size) {\n\t\t\t\t\tpush(l);\n\t\t\t\t\tl <<= 1;\n\t\t\t\t\tif(g(op(sum, node[l])))\
     \ {\n\t\t\t\t\t\tsum = op(sum, node[l]);\n\t\t\t\t\t\tl++;\n\t\t\t\t\t}\n\t\t\t\
     \t}\n\t\t\t\treturn l-size;\n\t\t\t}\n\t\t\tsum = op(sum, node[l]);\n\t\t\tl++;\n\
@@ -99,24 +105,23 @@ data:
     \ i) << i) != l)push(l >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\
     \t\t}\n\n\t\tS L = e(), R = e();\n\t\tfor(;l < r;l >>= 1, r >>= 1){\n\t\t\tif(l&1)L\
     \ = op(L, node[l++]);\n\t\t\tif(r&1)R = op(node[--r], R);\n\t\t}\n\t\treturn op(L,\
-    \ R);\n\t}\n\n\t// ACL \u306B\u3053\u306E\u5B9F\u88C5\u304C\u3042\u308B\u3093\u3060\
-    \u3051\u3069\u5FC3\u914D\uFF1F\n\t//S all_fold() { return node[1]; };\n\n\tvoid\
-    \ apply(int x, F f) {\n\t\tassert(0 <= x && x < n);\n\n\t\tx += size;\n\t\tfor(int\
-    \ i = log;i >= 1;i--)push(x >> i);\n\t\tnode[x] = mapping(f, node[x]);\n\t\tfor(int\
-    \ i = 1;i <= log;i++)update(x >> i);\n\t}\n\n\tvoid apply(int l, int r, F f) {\n\
-    \t\tassert(0 <= l && l <= r && r <= n);\n\t\tif(l == r)return;\n\n\t\tl += size;\n\
-    \t\tr += size;\n\n\t\tfor(int i = log;i >= 1;i--) {\n\t\t\tif(((l >> i) << i)\
-    \ != l)push(l >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\t\t}\n\
-    \n\t\t{\n\t\t\tint l2 = l, r2 = r;\n\t\t\twhile (l < r) {\n\t\t\t\tif (l & 1)\
-    \ all_apply(l++, f);\n\t\t\t\tif (r & 1) all_apply(--r, f);\n\t\t\t\tl >>= 1;\n\
-    \t\t\t\tr >>= 1;\n\t\t\t}\n\t\t\tl = l2;\n\t\t\tr = r2;\n\t\t}\n\n\t\tfor (int\
-    \ i = 1; i <= log; i++) {\n\t\t\tif (((l >> i) << i) != l) update(l >> i);\n\t\
-    \t\tif (((r >> i) << i) != r) update((r - 1) >> i);\n\t\t}\n\t}\n\n\ttemplate<bool\
-    \ (*g)(S)> int max_right(int l) {\n\t\treturn max_right(l, [](S x){ return g(x);\
-    \ });\n\t}\n\ttemplate<class G> int max_right(int l, G g) {\n\t\tassert(0 <= l\
-    \ && l <= n);\n\t\tassert(g(e()));\n\n\t\tif(l == n)return n;\n\n\t\tl += size;\n\
-    \t\tfor(int i = log;i >= 1;i--)push(l >> i);\n\n\t\tS sum = e();\n\t\tdo {\n\t\
-    \t\twhile(l%2 == 0)l >>= 1;\n\t\t\tif(not g(op(sum, node[l]))) {\n\t\t\t\twhile(l\
+    \ R);\n\t}\n\n\tS all_fold() { return node[1]; };\n\n\tvoid apply(int x, F f)\
+    \ {\n\t\tassert(0 <= x && x < n);\n\n\t\tx += size;\n\t\tfor(int i = log;i >=\
+    \ 1;i--)push(x >> i);\n\t\tnode[x] = mapping(f, node[x]);\n\t\tfor(int i = 1;i\
+    \ <= log;i++)update(x >> i);\n\t}\n\n\tvoid apply(int l, int r, F f) {\n\t\tassert(0\
+    \ <= l && l <= r && r <= n);\n\t\tif(l == r)return;\n\n\t\tl += size;\n\t\tr +=\
+    \ size;\n\n\t\tfor(int i = log;i >= 1;i--) {\n\t\t\tif(((l >> i) << i) != l)push(l\
+    \ >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\t\t}\n\n\t\t{\n\t\t\
+    \tint l2 = l, r2 = r;\n\t\t\twhile (l < r) {\n\t\t\t\tif (l & 1) all_apply(l++,\
+    \ f);\n\t\t\t\tif (r & 1) all_apply(--r, f);\n\t\t\t\tl >>= 1;\n\t\t\t\tr >>=\
+    \ 1;\n\t\t\t}\n\t\t\tl = l2;\n\t\t\tr = r2;\n\t\t}\n\n\t\tfor (int i = 1; i <=\
+    \ log; i++) {\n\t\t\tif (((l >> i) << i) != l) update(l >> i);\n\t\t\tif (((r\
+    \ >> i) << i) != r) update((r - 1) >> i);\n\t\t}\n\t}\n\n\ttemplate<bool (*g)(S)>\
+    \ int max_right(int l) {\n\t\treturn max_right(l, [](S x){ return g(x); });\n\t\
+    }\n\ttemplate<class G> int max_right(int l, G g) {\n\t\tassert(0 <= l && l <=\
+    \ n);\n\t\tassert(g(e()));\n\n\t\tif(l == n)return n;\n\n\t\tl += size;\n\t\t\
+    for(int i = log;i >= 1;i--)push(l >> i);\n\n\t\tS sum = e();\n\t\tdo {\n\t\t\t\
+    while(l%2 == 0)l >>= 1;\n\t\t\tif(not g(op(sum, node[l]))) {\n\t\t\t\twhile(l\
     \ < size) {\n\t\t\t\t\tpush(l);\n\t\t\t\t\tl <<= 1;\n\t\t\t\t\tif(g(op(sum, node[l])))\
     \ {\n\t\t\t\t\t\tsum = op(sum, node[l]);\n\t\t\t\t\t\tl++;\n\t\t\t\t\t}\n\t\t\t\
     \t}\n\t\t\t\treturn l-size;\n\t\t\t}\n\t\t\tsum = op(sum, node[l]);\n\t\t\tl++;\n\
@@ -133,8 +138,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data_structure/lazy_segment_tree.hpp
-  requiredBy: []
-  timestamp: '2024-09-22 19:00:13+09:00'
+  requiredBy:
+  - data_structure/area_of_union_of_rectangles.hpp
+  timestamp: '2025-02-06 00:24:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dsl/2_G_Radd_Rsum.test.cpp
@@ -142,6 +148,7 @@ data:
   - verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
   - verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
   - verify/aoj/dsl/2_E___segment_tree.test.cpp
+  - verify/yosupo/area_of_union_of_rectangles.test.cpp
 documentation_of: data_structure/lazy_segment_tree.hpp
 layout: document
 title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"

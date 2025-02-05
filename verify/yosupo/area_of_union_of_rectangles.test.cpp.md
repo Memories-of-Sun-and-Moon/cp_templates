@@ -2,6 +2,10 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: data_structure/area_of_union_of_rectangles.hpp
+    title: "area_of_union_of_rectangles(\u9577\u65B9\u5F62\u306E\u548C\u96C6\u5408\
+      \u306E\u9762\u7A4D)"
+  - icon: ':heavy_check_mark:'
     path: data_structure/lazy_segment_tree.hpp
     title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - icon: ':heavy_check_mark:'
@@ -14,15 +18,15 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
+    PROBLEM: https://judge.yosupo.jp/problem/area_of_union_of_rectangles
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
-  bundledCode: "#line 1 \"verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\n\n#line\
-    \ 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing namespace std;\n\
-    using ll = long long;\nusing ull = unsigned long long;\nconst double pi = acos(-1);\n\
-    template<class T>constexpr T inf() { return ::std::numeric_limits<T>::max(); }\n\
-    template<class T>constexpr T hinf() { return inf<T>() / 2; }\ntemplate <typename\
+    - https://judge.yosupo.jp/problem/area_of_union_of_rectangles
+  bundledCode: "#line 1 \"verify/yosupo/area_of_union_of_rectangles.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/area_of_union_of_rectangles\"\n\n\
+    #line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing namespace\
+    \ std;\nusing ll = long long;\nusing ull = unsigned long long;\nconst double pi\
+    \ = acos(-1);\ntemplate<class T>constexpr T inf() { return ::std::numeric_limits<T>::max();\
+    \ }\ntemplate<class T>constexpr T hinf() { return inf<T>() / 2; }\ntemplate <typename\
     \ T_char>T_char TL(T_char cX) { return tolower(cX); }\ntemplate <typename T_char>T_char\
     \ TU(T_char cX) { return toupper(cX); }\ntemplate<class T> bool chmin(T& a,T b)\
     \ { if(a > b){a = b; return true;} return false; }\ntemplate<class T> bool chmax(T&\
@@ -96,38 +100,57 @@ data:
     \t\twhile(r < size) {\n\t\t\t\t\tpush(r);\n\t\t\t\t\tr = r*2 + 1;\n\t\t\t\t\t\
     if(g(op(node[r], sum))) {\n\t\t\t\t\t\tsum = op(node[r], sum);\n\t\t\t\t\t\tr--;\n\
     \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn r+1-size;\n\t\t\t}\n\t\t\tsum = op(node[r],\
-    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn 0;\n\t}\n};\n#line 5 \"verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp\"\
-    \n\nusing S = int;\nusing F = int;\n\nS op(S a, S b){ return min(a, b); }\nS e(){\
-    \ return inf<int>(); }\nS mapping(F f, S x){ return (f == -1 ? x : f); }\nF composition(F\
-    \ f, F g){ return (f == -1 ? g : f); }\nF id(){ return -1; }\n\nvoid mmrz::solve(){\n\
-    \tint n, q;\n\tcin >> n >> q;\n\n\tlazy_segment_tree<S, op, e, F, mapping, composition,\
-    \ id> seg(n);\n\n\twhile(q--){\n\t\tint op;\n\t\tcin >> op;\n\t\tif(op == 0){\n\
-    \t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\t\t\tt++;\n\t\t\tseg.apply(s,\
-    \ t, x);\n\t\t}else{\n\t\t\tint s, t;\n\t\t\tcin >> s >> t;\n\t\t\tt++;\n\t\t\t\
-    cout << seg.fold(s, t) << endl;\n\t\t}\n\t}\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
-    \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../data_structure/lazy_segment_tree.hpp\"\
-    \n\nusing S = int;\nusing F = int;\n\nS op(S a, S b){ return min(a, b); }\nS e(){\
-    \ return inf<int>(); }\nS mapping(F f, S x){ return (f == -1 ? x : f); }\nF composition(F\
-    \ f, F g){ return (f == -1 ? g : f); }\nF id(){ return -1; }\n\nvoid mmrz::solve(){\n\
-    \tint n, q;\n\tcin >> n >> q;\n\n\tlazy_segment_tree<S, op, e, F, mapping, composition,\
-    \ id> seg(n);\n\n\twhile(q--){\n\t\tint op;\n\t\tcin >> op;\n\t\tif(op == 0){\n\
-    \t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\t\t\tt++;\n\t\t\tseg.apply(s,\
-    \ t, x);\n\t\t}else{\n\t\t\tint s, t;\n\t\t\tcin >> s >> t;\n\t\t\tt++;\n\t\t\t\
-    cout << seg.fold(s, t) << endl;\n\t\t}\n\t}\n}\n"
+    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn 0;\n\t}\n};\n#line 2 \"data_structure/area_of_union_of_rectangles.hpp\"\
+    \n\ntemplate<class T>\nstruct area_of_union_rectangles {\nprivate:\n\tvector<T>\
+    \ ys;\n\tvector<tuple<T, int, int>>xs;\n\tvector<tuple<T, T, T, T>> rectangles;\n\
+    \tusing S = pair<int, T>;\n\tusing F = int;\n\tstatic S op(S a, S b){\n\t\tif(a.first\
+    \ < b.first)return a;\n\t\tif(a.first > b.first)return b;\n\t\treturn make_pair(a.first,\
+    \ a.second+b.second);\n\t}\n\tstatic S e(){ return make_pair(numeric_limits<int>::max()/2,\
+    \ 0); }\n\tstatic S mapping(F f, S x){ return make_pair(x.first+f, x.second);\
+    \ }\n\tstatic F composition(F f, F g){ return f+g; }\n\tstatic F id(){ return\
+    \ 0; }\npublic:\n\n\t// l, d, r, u\n\tarea_of_union_rectangles(vector<tuple<T,\
+    \ T, T, T>> _rectangles) : rectangles(_rectangles) {\n\t\tys.reserve(rectangles.size()+rectangles.size());\n\
+    \t\txs.reserve(rectangles.size()+rectangles.size());\n\n\t\tfor(size_t i = 0;i\
+    \ < rectangles.size();i++){\n\t\t\tauto &[l, d, r, u] = rectangles[i];\n\t\t\t\
+    ys.emplace_back(d);\n\t\t\tys.emplace_back(u);\n\t\t\txs.emplace_back(l, i, 1);\n\
+    \t\t\txs.emplace_back(r, i, -1);\n\t\t}\n\n\t\tsort(ys.begin(), ys.end());\n\t\
+    \tys.erase(unique(ys.begin(), ys.end()), ys.end());\n\t\tsort(xs.begin(), xs.end());\n\
+    \n\t\tmap<T, int> y_compress;\n\t\tfor(size_t i = 0;i < ys.size();i++){\n\t\t\t\
+    y_compress[ys[i]] = i;\n\t\t}\n\t\tfor(size_t i = 0;i < rectangles.size();i++){\n\
+    \t\t\tauto &[l, d, r, u] = rectangles[i];\n\t\t\tu = y_compress[u];\n\t\t\td =\
+    \ y_compress[d];\n\t\t}\n\t};\n\n\ttemplate<typename U>\n\tU solve(){\n\t\tvector<S>\
+    \ vs((int)ys.size()-1);\n\t\tfor(size_t i = 0;i+1 < ys.size();i++){\n\t\t\tvs[i]\
+    \ = make_pair(0, ys[i+1]-ys[i]);\n\t\t}\n\t\tlazy_segment_tree<S, op, e, F, mapping,\
+    \ composition, id> seg(vs);\n\t\t\n\t\tU ret = 0;\n\n\t\tT total = ys.back() -\
+    \ ys.front();\n\t\tfor(size_t i = 0;i+1 < xs.size();i++){\n\t\t\tauto &[X, idx,\
+    \ delta] = xs[i];\n\t\t\tauto &[l, d, r, u] = rectangles[idx];\n\t\t\tseg.apply(d,\
+    \ u, delta);\n\n\t\t\tauto [mn, cnt] = seg.all_fold();\n\n\t\t\tU dy = total -\
+    \ (mn == 0 ? cnt : 0);\n\t\t\tU dx = get<0>(xs[i+1]) - X;\n\n\t\t\tret += dy*dx;\n\
+    \t\t}\n\n\t\treturn ret;\n\t}\n};\n#line 5 \"verify/yosupo/area_of_union_of_rectangles.test.cpp\"\
+    \n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector<tuple<int, int, int,\
+    \ int>> rectangles(n);\n\tfor(auto &[l, d, r, u] : rectangles)cin >> l >> d >>\
+    \ r >> u;\n\n\tcout << area_of_union_rectangles<int>(rectangles).solve<ll>() <<\
+    \ '\\n';\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/area_of_union_of_rectangles\"\
+    \n\n#include \"./../../template/template.hpp\"\n#include \"./../../data_structure/area_of_union_of_rectangles.hpp\"\
+    \n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector<tuple<int, int, int,\
+    \ int>> rectangles(n);\n\tfor(auto &[l, d, r, u] : rectangles)cin >> l >> d >>\
+    \ r >> u;\n\n\tcout << area_of_union_rectangles<int>(rectangles).solve<ll>() <<\
+    \ '\\n';\n}\n"
   dependsOn:
   - template/template.hpp
+  - data_structure/area_of_union_of_rectangles.hpp
   - data_structure/lazy_segment_tree.hpp
   isVerificationFile: true
-  path: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
+  path: verify/yosupo/area_of_union_of_rectangles.test.cpp
   requiredBy: []
-  timestamp: '2025-02-06 00:24:28+09:00'
+  timestamp: '2025-02-06 00:31:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
+documentation_of: verify/yosupo/area_of_union_of_rectangles.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
-- /verify/verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp.html
-title: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
+- /verify/verify/yosupo/area_of_union_of_rectangles.test.cpp
+- /verify/verify/yosupo/area_of_union_of_rectangles.test.cpp.html
+title: verify/yosupo/area_of_union_of_rectangles.test.cpp
 ---

@@ -67,24 +67,23 @@ data:
     \ i) << i) != l)push(l >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\
     \t\t}\n\n\t\tS L = e(), R = e();\n\t\tfor(;l < r;l >>= 1, r >>= 1){\n\t\t\tif(l&1)L\
     \ = op(L, node[l++]);\n\t\t\tif(r&1)R = op(node[--r], R);\n\t\t}\n\t\treturn op(L,\
-    \ R);\n\t}\n\n\t// ACL \u306B\u3053\u306E\u5B9F\u88C5\u304C\u3042\u308B\u3093\u3060\
-    \u3051\u3069\u5FC3\u914D\uFF1F\n\t//S all_fold() { return node[1]; };\n\n\tvoid\
-    \ apply(int x, F f) {\n\t\tassert(0 <= x && x < n);\n\n\t\tx += size;\n\t\tfor(int\
-    \ i = log;i >= 1;i--)push(x >> i);\n\t\tnode[x] = mapping(f, node[x]);\n\t\tfor(int\
-    \ i = 1;i <= log;i++)update(x >> i);\n\t}\n\n\tvoid apply(int l, int r, F f) {\n\
-    \t\tassert(0 <= l && l <= r && r <= n);\n\t\tif(l == r)return;\n\n\t\tl += size;\n\
-    \t\tr += size;\n\n\t\tfor(int i = log;i >= 1;i--) {\n\t\t\tif(((l >> i) << i)\
-    \ != l)push(l >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\t\t}\n\
-    \n\t\t{\n\t\t\tint l2 = l, r2 = r;\n\t\t\twhile (l < r) {\n\t\t\t\tif (l & 1)\
-    \ all_apply(l++, f);\n\t\t\t\tif (r & 1) all_apply(--r, f);\n\t\t\t\tl >>= 1;\n\
-    \t\t\t\tr >>= 1;\n\t\t\t}\n\t\t\tl = l2;\n\t\t\tr = r2;\n\t\t}\n\n\t\tfor (int\
-    \ i = 1; i <= log; i++) {\n\t\t\tif (((l >> i) << i) != l) update(l >> i);\n\t\
-    \t\tif (((r >> i) << i) != r) update((r - 1) >> i);\n\t\t}\n\t}\n\n\ttemplate<bool\
-    \ (*g)(S)> int max_right(int l) {\n\t\treturn max_right(l, [](S x){ return g(x);\
-    \ });\n\t}\n\ttemplate<class G> int max_right(int l, G g) {\n\t\tassert(0 <= l\
-    \ && l <= n);\n\t\tassert(g(e()));\n\n\t\tif(l == n)return n;\n\n\t\tl += size;\n\
-    \t\tfor(int i = log;i >= 1;i--)push(l >> i);\n\n\t\tS sum = e();\n\t\tdo {\n\t\
-    \t\twhile(l%2 == 0)l >>= 1;\n\t\t\tif(not g(op(sum, node[l]))) {\n\t\t\t\twhile(l\
+    \ R);\n\t}\n\n\tS all_fold() { return node[1]; };\n\n\tvoid apply(int x, F f)\
+    \ {\n\t\tassert(0 <= x && x < n);\n\n\t\tx += size;\n\t\tfor(int i = log;i >=\
+    \ 1;i--)push(x >> i);\n\t\tnode[x] = mapping(f, node[x]);\n\t\tfor(int i = 1;i\
+    \ <= log;i++)update(x >> i);\n\t}\n\n\tvoid apply(int l, int r, F f) {\n\t\tassert(0\
+    \ <= l && l <= r && r <= n);\n\t\tif(l == r)return;\n\n\t\tl += size;\n\t\tr +=\
+    \ size;\n\n\t\tfor(int i = log;i >= 1;i--) {\n\t\t\tif(((l >> i) << i) != l)push(l\
+    \ >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\t\t}\n\n\t\t{\n\t\t\
+    \tint l2 = l, r2 = r;\n\t\t\twhile (l < r) {\n\t\t\t\tif (l & 1) all_apply(l++,\
+    \ f);\n\t\t\t\tif (r & 1) all_apply(--r, f);\n\t\t\t\tl >>= 1;\n\t\t\t\tr >>=\
+    \ 1;\n\t\t\t}\n\t\t\tl = l2;\n\t\t\tr = r2;\n\t\t}\n\n\t\tfor (int i = 1; i <=\
+    \ log; i++) {\n\t\t\tif (((l >> i) << i) != l) update(l >> i);\n\t\t\tif (((r\
+    \ >> i) << i) != r) update((r - 1) >> i);\n\t\t}\n\t}\n\n\ttemplate<bool (*g)(S)>\
+    \ int max_right(int l) {\n\t\treturn max_right(l, [](S x){ return g(x); });\n\t\
+    }\n\ttemplate<class G> int max_right(int l, G g) {\n\t\tassert(0 <= l && l <=\
+    \ n);\n\t\tassert(g(e()));\n\n\t\tif(l == n)return n;\n\n\t\tl += size;\n\t\t\
+    for(int i = log;i >= 1;i--)push(l >> i);\n\n\t\tS sum = e();\n\t\tdo {\n\t\t\t\
+    while(l%2 == 0)l >>= 1;\n\t\t\tif(not g(op(sum, node[l]))) {\n\t\t\t\twhile(l\
     \ < size) {\n\t\t\t\t\tpush(l);\n\t\t\t\t\tl <<= 1;\n\t\t\t\t\tif(g(op(sum, node[l])))\
     \ {\n\t\t\t\t\t\tsum = op(sum, node[l]);\n\t\t\t\t\t\tl++;\n\t\t\t\t\t}\n\t\t\t\
     \t}\n\t\t\t\treturn l-size;\n\t\t\t}\n\t\t\tsum = op(sum, node[l]);\n\t\t\tl++;\n\
@@ -126,7 +125,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
   requiredBy: []
-  timestamp: '2024-12-05 03:51:32+09:00'
+  timestamp: '2025-02-06 00:24:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
