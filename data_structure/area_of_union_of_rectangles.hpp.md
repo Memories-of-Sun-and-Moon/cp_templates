@@ -14,7 +14,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data_structure/lazy_segment_tree.hpp\"\n\ntemplate<class\
+  bundledCode: "#line 2 \"data_structure/lazy_segment_tree.hpp\"\n\ntemplate<class\
     \ S, auto op, auto e, class F, auto mapping, auto composition, auto id>\nstruct\
     \ lazy_segment_tree {\nprivate:\n\tint n;\n\tint log;\n\tint size;\n\tvector<S>\
     \ node;\n\tvector<F> lazy;\n\n\tvoid update(int k) { node[k] = op(node[2 * k],\
@@ -124,7 +124,7 @@ data:
   isVerificationFile: false
   path: data_structure/area_of_union_of_rectangles.hpp
   requiredBy: []
-  timestamp: '2025-02-06 00:31:25+09:00'
+  timestamp: '2025-02-06 00:38:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/area_of_union_of_rectangles.test.cpp

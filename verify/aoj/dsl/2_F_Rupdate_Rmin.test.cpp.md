@@ -44,7 +44,7 @@ data:
     # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
     \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
     \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
-    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"data_structure/lazy_segment_tree.hpp\"\
+    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 2 \"data_structure/lazy_segment_tree.hpp\"\
     \n\ntemplate<class S, auto op, auto e, class F, auto mapping, auto composition,\
     \ auto id>\nstruct lazy_segment_tree {\nprivate:\n\tint n;\n\tint log;\n\tint\
     \ size;\n\tvector<S> node;\n\tvector<F> lazy;\n\n\tvoid update(int k) { node[k]\
@@ -121,7 +121,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
   requiredBy: []
-  timestamp: '2025-02-06 00:24:28+09:00'
+  timestamp: '2025-02-06 00:38:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
