@@ -48,8 +48,8 @@ data:
     # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
     \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
     \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
-    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"math/is_prime.hpp\"\
-    \n\n__int128_t __power(__int128_t n, __int128_t k, __int128_t m) {\n    n %= m;\n\
+    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 2 \"math/is_prime.hpp\"\
+    \n__int128_t __power(__int128_t n, __int128_t k, __int128_t m) {\n    n %= m;\n\
     \t__int128_t ret = 1;\n    while(k > 0){\n        if(k & 1)ret = ret * n % m;\n\
     \        n = __int128_t(n) * n % m;\n        k >>= 1;\n    }\n    return ret %\
     \ m;\n}\n\nbool is_prime(long long n){\n    if(n <= 1)return false;\n    if(n\
@@ -90,7 +90,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-07-07 01:02:07+09:00'
+  timestamp: '2025-02-08 20:53:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/factorize.test.cpp

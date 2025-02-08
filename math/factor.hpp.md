@@ -15,11 +15,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/is_prime.hpp\"\n\n__int128_t __power(__int128_t n,\
-    \ __int128_t k, __int128_t m) {\n    n %= m;\n\t__int128_t ret = 1;\n    while(k\
-    \ > 0){\n        if(k & 1)ret = ret * n % m;\n        n = __int128_t(n) * n %\
-    \ m;\n        k >>= 1;\n    }\n    return ret % m;\n}\n\nbool is_prime(long long\
-    \ n){\n    if(n <= 1)return false;\n    if(n == 2 || n == 3 || n == 5)return true;\n\
+  bundledCode: "#line 2 \"math/is_prime.hpp\"\n__int128_t __power(__int128_t n, __int128_t\
+    \ k, __int128_t m) {\n    n %= m;\n\t__int128_t ret = 1;\n    while(k > 0){\n\
+    \        if(k & 1)ret = ret * n % m;\n        n = __int128_t(n) * n % m;\n   \
+    \     k >>= 1;\n    }\n    return ret % m;\n}\n\nbool is_prime(long long n){\n\
+    \    if(n <= 1)return false;\n    if(n == 2 || n == 3 || n == 5)return true;\n\
     \    if(n % 2 == 0)return false;\n    if(n % 3 == 0)return false;\n    if(n %\
     \ 5 == 0)return false;\n\n    vector<long long> A = {2, 325, 9375, 28178, 450775,\
     \ 9780504, 1795265022};\n\n    long long s = 0, d = n - 1;\n    while(d % 2 ==\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: false
   path: math/factor.hpp
   requiredBy: []
-  timestamp: '2024-06-27 23:33:17+09:00'
+  timestamp: '2025-02-08 20:53:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/factorize.test.cpp
