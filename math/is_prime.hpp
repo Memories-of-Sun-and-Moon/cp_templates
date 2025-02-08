@@ -1,4 +1,4 @@
-
+#pragma once
 __int128_t __power(__int128_t n, __int128_t k, __int128_t m) {
     n %= m;
 	__int128_t ret = 1;
