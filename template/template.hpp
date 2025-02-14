@@ -26,6 +26,7 @@ template<class T> using dijk = priority_queue<T, vector<T>, greater<T>>;
 # define len(x)                ((ll)(x).size())
 # define bit(n)               (1LL << (n))
 # define pb push_back
+# define eb emplace_back
 # define exists(c, e)         ((c).find(e) != (c).end())
 
 struct INIT{
