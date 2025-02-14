@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/floor_sum.hpp
     title: floor_sum
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -40,16 +40,16 @@ data:
     \         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n# define reps(i,opopo)\
     \        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n# define len(x)\
     \                ((ll)(x).size())\n# define bit(n)               (1LL << (n))\n\
-    # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
-    \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
-    \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
-    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"math/floor_sum.hpp\"\
-    \n\nll floor_sum(ll n, ll m, ll a, ll b){\n\tll ans = 0;\n\tif(a >= m){\n\t\t\
-    ans += (n-1) * n * (a/m) / 2;\n\t\ta %= m;\n\t}\n\tif(b >= m){\n\t\tans += n *\
-    \ (b/m);\n\t\tb %= m;\n\t}\n\n\tll x = a * (n-1) + b;\n\tif(x < m) return ans;\n\
-    \tll x_div = x/m;\n\tll x_mod = x%m;\n\tans += x_div + floor_sum(x_div, a, m,\
-    \ x_mod);\n\treturn ans;\n}\n#line 5 \"verify/yosupo/floor_sum.test.cpp\"\n\n\
-    using namespace mmrz;\n\nvoid mmrz::solve(){\n\tint t;\n\tcin >> t;\n\twhile(t--){\n\
+    # define pb push_back\n# define eb emplace_back\n# define exists(c, e)       \
+    \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
+    \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
+    namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
+    \ 1 \"math/floor_sum.hpp\"\n\nll floor_sum(ll n, ll m, ll a, ll b){\n\tll ans\
+    \ = 0;\n\tif(a >= m){\n\t\tans += (n-1) * n * (a/m) / 2;\n\t\ta %= m;\n\t}\n\t\
+    if(b >= m){\n\t\tans += n * (b/m);\n\t\tb %= m;\n\t}\n\n\tll x = a * (n-1) + b;\n\
+    \tif(x < m) return ans;\n\tll x_div = x/m;\n\tll x_mod = x%m;\n\tans += x_div\
+    \ + floor_sum(x_div, a, m, x_mod);\n\treturn ans;\n}\n#line 5 \"verify/yosupo/floor_sum.test.cpp\"\
+    \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint t;\n\tcin >> t;\n\twhile(t--){\n\
     \t\tll n, m, a, b;\n\t\tcin >> n >> m >> a >> b;\n\t\tcout << floor_sum(n, m,\
     \ a, b) << endl;\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/sum_of_floor_of_linear\"\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/floor_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-01-11 18:31:32+09:00'
+  timestamp: '2025-02-14 10:23:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/floor_sum.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dinic.hpp
     title: "\u6700\u5927\u6D41(Dinic)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -41,14 +41,14 @@ data:
     \         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n# define reps(i,opopo)\
     \        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n# define len(x)\
     \                ((ll)(x).size())\n# define bit(n)               (1LL << (n))\n\
-    # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
-    \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
-    \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
-    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"graph/dinic.hpp\"\
-    \n\ntemplate<typename T>\nstruct dinic {\n\n\tstruct edge{\n\t\tint to;\n\t\t\
-    T cap;\n\t\tT rev;\n\t};\n\t\t\n\tint n;\n\tvector<vector<edge>> G;\n\tvector<int>\
-    \ level;\n\tvector<int> iter;\n\n\tdinic(int _v) : n(_v), G(n), level(n), iter(n)\
-    \ {}\n\n\tvoid add_edge(int from, int to, T cap){\n\t\tG[from].push_back((edge){to,\
+    # define pb push_back\n# define eb emplace_back\n# define exists(c, e)       \
+    \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
+    \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
+    namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
+    \ 1 \"graph/dinic.hpp\"\n\ntemplate<typename T>\nstruct dinic {\n\n\tstruct edge{\n\
+    \t\tint to;\n\t\tT cap;\n\t\tT rev;\n\t};\n\t\t\n\tint n;\n\tvector<vector<edge>>\
+    \ G;\n\tvector<int> level;\n\tvector<int> iter;\n\n\tdinic(int _v) : n(_v), G(n),\
+    \ level(n), iter(n) {}\n\n\tvoid add_edge(int from, int to, T cap){\n\t\tG[from].push_back((edge){to,\
     \ cap, (T)G[to].size()});\n\t\tG[to].push_back((edge){from, 0, (T)(G[from].size()\
     \ - 1)});\n\t}\n\n\tvoid bfs(int s){\n\t\tfor(int i = 0;i < n;i++)level[i] = -1;\n\
     \t\tqueue<int> que;\n\t\tlevel[s] = 0;\n\t\tque.push(s);\n\t\twhile(!que.empty()){\n\
@@ -79,7 +79,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/grl/6_A___dinic.test.cpp
   requiredBy: []
-  timestamp: '2024-10-08 21:36:21+09:00'
+  timestamp: '2025-02-14 10:23:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/grl/6_A___dinic.test.cpp

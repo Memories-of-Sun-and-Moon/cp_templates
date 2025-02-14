@@ -35,13 +35,13 @@ data:
   isVerificationFile: false
   path: math/power.hpp
   requiredBy:
-  - math/formal_power_series.hpp
   - math/discrete_logarithm.hpp
+  - math/formal_power_series.hpp
   timestamp: '2024-12-21 04:29:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/convolution_mod.test.cpp
   - verify/yosupo/discrete_logarithm.test.cpp
+  - verify/yosupo/convolution_mod.test.cpp
 documentation_of: math/power.hpp
 layout: document
 redirect_from:

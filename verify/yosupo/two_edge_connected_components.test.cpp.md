@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data_structure/union_find.hpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/lowlink.hpp
     title: "lowlink\u3092\u7528\u3044\u305F\u6A4B\u30FB\u95A2\u7BC0\u70B9\u306E\u691C\
       \u51FA"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/two_edge_connected_components.hpp
     title: "\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\u5206\u89E3"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/two_edge_connected_components
@@ -48,24 +48,25 @@ data:
     \         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n# define reps(i,opopo)\
     \        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n# define len(x)\
     \                ((ll)(x).size())\n# define bit(n)               (1LL << (n))\n\
-    # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
-    \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
-    \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
-    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"graph/two_edge_connected_components.hpp\"\
-    \n\n#line 1 \"data_structure/union_find.hpp\"\n\nstruct union_find {\n\tvector<int>\
-    \ v;\n\tint g_size;\n\tint n;\n\n\tunion_find(size_t size) : v(size, -1), g_size(size),\
-    \ n(size) {}\n\n\tint root(int x){\n\t\tassert(x < n);\n\t\treturn (v[x] < 0 ?\
-    \ x : v[x] = root(v[x]));\n\t}\n\n\tbool is_root(int x){\n\t\tassert(x < n);\n\
-    \t\treturn root(x) == x;\n\t}\n\n\tbool unite(int x, int y){\n\t\tassert(x < n\
-    \ && y < n);\n\t\tx = root(x);\n\t\ty = root(y);\n\t\tif(x != y){\n\t\t\tif(v[x]\
-    \ > v[y])swap(x, y);\n\t\t\tv[x] += v[y];\n\t\t\tv[y] = x;\n\t\t\tg_size--;\n\t\
-    \t\treturn true;\n\t\t}\n\t\treturn false;\n\t}\n\n\tbool is_same(int x,int y){\n\
-    \t\tassert(x < n && y < n);\n\t\treturn root(x) == root(y);\n\t}\n\n\tint get_size(int\
-    \ x){\n\t\tassert(x < n);\n\t\tx = root(x);\n\t\treturn -v[x];\n\t}\n\n\tint groups_size(){\n\
-    \t\treturn g_size;\n\t}\n\n\tvector<vector<int>> groups(){\n\t\tvector<vector<int>>\
-    \ member(n);\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tmember[root(i)].push_back(i);\n\
-    \t\t}\n\n\t\tvector<vector<int>> ret;\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tif(member[i].empty())continue;\n\
-    \t\t\tret.push_back(member[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n#line 1 \"graph/lowlink.hpp\"\
+    # define pb push_back\n# define eb emplace_back\n# define exists(c, e)       \
+    \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
+    \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
+    namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
+    \ 1 \"graph/two_edge_connected_components.hpp\"\n\n#line 1 \"data_structure/union_find.hpp\"\
+    \n\nstruct union_find {\n\tvector<int> v;\n\tint g_size;\n\tint n;\n\n\tunion_find(size_t\
+    \ size) : v(size, -1), g_size(size), n(size) {}\n\n\tint root(int x){\n\t\tassert(x\
+    \ < n);\n\t\treturn (v[x] < 0 ? x : v[x] = root(v[x]));\n\t}\n\n\tbool is_root(int\
+    \ x){\n\t\tassert(x < n);\n\t\treturn root(x) == x;\n\t}\n\n\tbool unite(int x,\
+    \ int y){\n\t\tassert(x < n && y < n);\n\t\tx = root(x);\n\t\ty = root(y);\n\t\
+    \tif(x != y){\n\t\t\tif(v[x] > v[y])swap(x, y);\n\t\t\tv[x] += v[y];\n\t\t\tv[y]\
+    \ = x;\n\t\t\tg_size--;\n\t\t\treturn true;\n\t\t}\n\t\treturn false;\n\t}\n\n\
+    \tbool is_same(int x,int y){\n\t\tassert(x < n && y < n);\n\t\treturn root(x)\
+    \ == root(y);\n\t}\n\n\tint get_size(int x){\n\t\tassert(x < n);\n\t\tx = root(x);\n\
+    \t\treturn -v[x];\n\t}\n\n\tint groups_size(){\n\t\treturn g_size;\n\t}\n\n\t\
+    vector<vector<int>> groups(){\n\t\tvector<vector<int>> member(n);\n\t\tfor(int\
+    \ i = 0;i < n;i++){\n\t\t\tmember[root(i)].push_back(i);\n\t\t}\n\n\t\tvector<vector<int>>\
+    \ ret;\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tif(member[i].empty())continue;\n\t\
+    \t\tret.push_back(member[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n#line 1 \"graph/lowlink.hpp\"\
     \n\nclass lowlink{\n\tvector<vector<int>> g;\n\tvector<int> order, low;\n\tvector<bool>\
     \ __is_articulation;\n\n\tvoid dfs(int cur, int pre, int &time){\n\t\tint count_child\
     \ = 0;\n\t\tlow[cur] = order[cur] = time++;\n\t\tbool first_parent = true;\n\t\
@@ -113,8 +114,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/two_edge_connected_components.test.cpp
   requiredBy: []
-  timestamp: '2024-10-15 14:47:57+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-02-14 10:23:15+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/two_edge_connected_components.test.cpp
 layout: document

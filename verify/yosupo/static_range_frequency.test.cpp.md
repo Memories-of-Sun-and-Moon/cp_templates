@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/mo.hpp
     title: Mo's Algorithm
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -41,27 +41,28 @@ data:
     \         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n# define reps(i,opopo)\
     \        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n# define len(x)\
     \                ((ll)(x).size())\n# define bit(n)               (1LL << (n))\n\
-    # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
-    \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
-    \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
-    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"data_structure/mo.hpp\"\
-    \nclass Mo {\n\tvector<pair<int, int>> lr;\npublic:\n\tMo() = default;\n\tMo(const\
-    \ vector<pair<int, int>> &_lr) : lr(_lr) {}\n\n\ttemplate<typename AL, typename\
-    \ AR, typename EL, typename ER, typename F>\n\tvoid calc(const AL &add_left, const\
-    \ AR &add_right, const EL &erase_left, const ER& erase_right, const F &f, int\
-    \ _n = -1, int _B = -1){\n\t\tint n = (_n == -1 ? ranges::max(lr, {}, &pair<int,\
-    \ int>::second).second : _n);\n\t\tint q = (int)lr.size();\n\t\tint B = (_B ==\
-    \ -1 ? max(1, n/int(sqrt(q))) : _B);\n\n\t\tvector<int> index(q);\n\t\tiota(index.begin(),\
-    \ index.end(), 0);\n\t\tsort(index.begin(), index.end(), [&](int i, int j){\n\t\
-    \t\tconst auto &[l_i, r_i] = lr[i];\n\t\t\tconst auto &[l_j, r_j] = lr[j];\n\t\
-    \t\tconst int B_i = l_i / B, B_j = l_j / B;\n\t\t\tif(B_i != B_j){\n\t\t\t\treturn\
-    \ B_i < B_j;\n\t\t\t}\n\t\t\tif(B_i & 1){\n\t\t\t\treturn r_j < r_i;\n\t\t\t}else{\n\
-    \t\t\t\treturn r_i < r_j;\n\t\t\t}\n\t\t});\n\n\t\tint l = 0, r = 0;\n\t\tfor(int\
-    \ idx : index){\n\t\t\tconst auto &[L, R] = lr[idx];\n\n\t\t\twhile(L < l)add_left(--l);\n\
-    \t\t\twhile(r < R)add_right(r++);\n\t\t\t\n\t\t\twhile(l < L)erase_left(l++);\n\
-    \t\t\twhile(R < r)erase_right(--r);\n\n\t\t\tf(idx);\n\t\t}\n\t}\n\n\ttemplate<typename\
-    \ A, typename E, typename F>\n\tvoid calc(const A &add, const E &erase, const\
-    \ F &f){\n\t\tcalc(add, add, erase, erase, f);\n\t}\n};\n#line 5 \"verify/yosupo/static_range_frequency.test.cpp\"\
+    # define pb push_back\n# define eb emplace_back\n# define exists(c, e)       \
+    \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
+    \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
+    namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
+    \ 1 \"data_structure/mo.hpp\"\nclass Mo {\n\tvector<pair<int, int>> lr;\npublic:\n\
+    \tMo() = default;\n\tMo(const vector<pair<int, int>> &_lr) : lr(_lr) {}\n\n\t\
+    template<typename AL, typename AR, typename EL, typename ER, typename F>\n\tvoid\
+    \ calc(const AL &add_left, const AR &add_right, const EL &erase_left, const ER&\
+    \ erase_right, const F &f, int _n = -1, int _B = -1){\n\t\tint n = (_n == -1 ?\
+    \ ranges::max(lr, {}, &pair<int, int>::second).second : _n);\n\t\tint q = (int)lr.size();\n\
+    \t\tint B = (_B == -1 ? max(1, n/int(sqrt(q))) : _B);\n\n\t\tvector<int> index(q);\n\
+    \t\tiota(index.begin(), index.end(), 0);\n\t\tsort(index.begin(), index.end(),\
+    \ [&](int i, int j){\n\t\t\tconst auto &[l_i, r_i] = lr[i];\n\t\t\tconst auto\
+    \ &[l_j, r_j] = lr[j];\n\t\t\tconst int B_i = l_i / B, B_j = l_j / B;\n\t\t\t\
+    if(B_i != B_j){\n\t\t\t\treturn B_i < B_j;\n\t\t\t}\n\t\t\tif(B_i & 1){\n\t\t\t\
+    \treturn r_j < r_i;\n\t\t\t}else{\n\t\t\t\treturn r_i < r_j;\n\t\t\t}\n\t\t});\n\
+    \n\t\tint l = 0, r = 0;\n\t\tfor(int idx : index){\n\t\t\tconst auto &[L, R] =\
+    \ lr[idx];\n\n\t\t\twhile(L < l)add_left(--l);\n\t\t\twhile(r < R)add_right(r++);\n\
+    \t\t\t\n\t\t\twhile(l < L)erase_left(l++);\n\t\t\twhile(R < r)erase_right(--r);\n\
+    \n\t\t\tf(idx);\n\t\t}\n\t}\n\n\ttemplate<typename A, typename E, typename F>\n\
+    \tvoid calc(const A &add, const E &erase, const F &f){\n\t\tcalc(add, add, erase,\
+    \ erase, f);\n\t}\n};\n#line 5 \"verify/yosupo/static_range_frequency.test.cpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\
     \tvector<int> a(n);\n\tfor(auto &x : a)cin >> x;\n\tif(q == 0){\n\t\treturn;\n\
     \t}\n\tif(n == 0){\n\t\twhile(q--){\n\t\t\tint l, r, x;\n\t\t\tcin >> l >> r >>\
@@ -98,7 +99,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/static_range_frequency.test.cpp
   requiredBy: []
-  timestamp: '2024-09-26 02:06:34+09:00'
+  timestamp: '2025-02-14 10:23:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/static_range_frequency.test.cpp

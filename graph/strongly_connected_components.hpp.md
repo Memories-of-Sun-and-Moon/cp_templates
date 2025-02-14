@@ -2,25 +2,25 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/two_sat.hpp
     title: 2-SAT
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/3_C.test.cpp
     title: verify/aoj/grl/3_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/two_sat.test.cpp
     title: verify/yosupo/two_sat.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yukicoder/274.test.cpp
     title: verify/yukicoder/274.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/strongly_connected_components.hpp\"\n\nstruct scc_graph\
@@ -56,12 +56,12 @@ data:
   requiredBy:
   - graph/two_sat.hpp
   timestamp: '2024-07-03 15:50:00+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/aoj/grl/3_C.test.cpp
-  - verify/yukicoder/274.test.cpp
   - verify/yukicoder/2780.test.cpp
+  - verify/yukicoder/274.test.cpp
   - verify/yosupo/two_sat.test.cpp
+  - verify/aoj/grl/3_C.test.cpp
 documentation_of: graph/strongly_connected_components.hpp
 layout: document
 title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/two_edge_connected_components.hpp
     title: "\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\u5206\u89E3"
   _extendedVerifiedWith:
@@ -12,12 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/3_B.test.cpp
     title: verify/aoj/grl/3_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/two_edge_connected_components.test.cpp
     title: verify/yosupo/two_edge_connected_components.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/lowlink.hpp\"\n\nclass lowlink{\n\tvector<vector<int>>\
@@ -59,11 +59,11 @@ data:
   requiredBy:
   - graph/two_edge_connected_components.hpp
   timestamp: '2024-10-15 14:47:40+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/yosupo/two_edge_connected_components.test.cpp
   - verify/aoj/grl/3_B.test.cpp
   - verify/aoj/grl/3_A.test.cpp
-  - verify/yosupo/two_edge_connected_components.test.cpp
 documentation_of: graph/lowlink.hpp
 layout: document
 title: "lowlink\u3092\u7528\u3044\u305F\u6A4B\u30FB\u95A2\u7BC0\u70B9\u306E\u691C\u51FA"

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/iroot.hpp
     title: "floor K \u4E57\u6839"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -41,19 +41,19 @@ data:
     \         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n# define reps(i,opopo)\
     \        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n# define len(x)\
     \                ((ll)(x).size())\n# define bit(n)               (1LL << (n))\n\
-    # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
-    \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
-    \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
-    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"math/iroot.hpp\"\n\
-    \nunsigned long long iroot(unsigned long long n, int k=2){\n\tconstexpr unsigned\
-    \ long long LIM = -1;\n\tif(n <= 1 || k == 1){\n\t\treturn n;\n\t}\n\tif(k >=\
-    \ 64){\n\t\treturn 1;\n\t}\n\tif(k == 2){\n\t\treturn sqrtl(n);\n\t}\n\n\tif(n\
-    \ == LIM)n--;\n\n\tauto safe_mul = [&](unsigned long long &x, unsigned long long\
-    \ &y) -> void {\n\t\tif(x <= LIM / y){\n\t\t\tx *= y;\n\t\t}else{\n\t\t\tx = LIM;\n\
-    \t\t}\n\t};\n\n\tauto power = [&](unsigned long long a, int b) -> unsigned long\
-    \ long {\n\t\tunsigned long long ret = 1;\n\t\twhile(b){\n\t\t\tif(b & 1)safe_mul(ret,\
-    \ a);\n\t\t\tsafe_mul(a, a);\n\t\t\tb >>= 1;\n\t\t}\n\t\treturn ret;\n\t};\n\n\
-    \tunsigned long long ret = (k == 3 ? cbrt(n)-1 : pow(n, nextafter(1.0/double(k),\
+    # define pb push_back\n# define eb emplace_back\n# define exists(c, e)       \
+    \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
+    \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
+    namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
+    \ 1 \"math/iroot.hpp\"\n\nunsigned long long iroot(unsigned long long n, int k=2){\n\
+    \tconstexpr unsigned long long LIM = -1;\n\tif(n <= 1 || k == 1){\n\t\treturn\
+    \ n;\n\t}\n\tif(k >= 64){\n\t\treturn 1;\n\t}\n\tif(k == 2){\n\t\treturn sqrtl(n);\n\
+    \t}\n\n\tif(n == LIM)n--;\n\n\tauto safe_mul = [&](unsigned long long &x, unsigned\
+    \ long long &y) -> void {\n\t\tif(x <= LIM / y){\n\t\t\tx *= y;\n\t\t}else{\n\t\
+    \t\tx = LIM;\n\t\t}\n\t};\n\n\tauto power = [&](unsigned long long a, int b) ->\
+    \ unsigned long long {\n\t\tunsigned long long ret = 1;\n\t\twhile(b){\n\t\t\t\
+    if(b & 1)safe_mul(ret, a);\n\t\t\tsafe_mul(a, a);\n\t\t\tb >>= 1;\n\t\t}\n\t\t\
+    return ret;\n\t};\n\n\tunsigned long long ret = (k == 3 ? cbrt(n)-1 : pow(n, nextafter(1.0/double(k),\
     \ 0.0)));\n\twhile(power(ret+1, k) <= n)ret++;\n\treturn ret;\n}\n#line 5 \"verify/yosupo/kth_root_integer.test.cpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint t;\n\tcin >> t;\n\twhile(t--){\n\
     \t\tull a, k;\n\t\tcin >> a >> k;\n\t\tcout << iroot(a, k) << endl;\n\t}\n}\n"
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/kth_root_integer.test.cpp
   requiredBy: []
-  timestamp: '2025-01-08 00:07:56+09:00'
+  timestamp: '2025-02-14 10:23:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/kth_root_integer.test.cpp

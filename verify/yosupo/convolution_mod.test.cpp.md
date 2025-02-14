@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/formal_power_series.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\u30E9\u30A4\u30D6\u30E9\u30EA"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/modint.hpp
     title: modint
   - icon: ':heavy_check_mark:'
     path: math/power.hpp
     title: math/power.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -47,32 +47,33 @@ data:
     \         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n# define reps(i,opopo)\
     \        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n# define len(x)\
     \                ((ll)(x).size())\n# define bit(n)               (1LL << (n))\n\
-    # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
-    \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
-    \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
-    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"math/modint.hpp\"\
-    \n\ntemplate <std::uint_fast64_t Modulus> class modint {\n\tusing u64 = std::uint_fast64_t;\n\
-    public:\n\tu64 a;\n\tconstexpr modint(const u64 x = 0) noexcept : a(x % Modulus)\
-    \ {}\n\tconstexpr u64 &value() noexcept { return a; }\n\tconstexpr const u64 &value()\
-    \ const noexcept { return a; }\n\tconstexpr modint operator+(const modint rhs)\
-    \ const noexcept {\n\t\treturn modint(*this) += rhs;\n\t}\n\tconstexpr modint\
-    \ operator-(const modint rhs) const noexcept {\n\t\treturn modint(*this) -= rhs;\n\
-    \t}\n\tconstexpr modint operator*(const modint rhs) const noexcept {\n\t\treturn\
-    \ modint(*this) *= rhs;\n\t}\n\tconstexpr modint operator/(const modint rhs) const\
-    \ noexcept {\n\t\treturn modint(*this) /= rhs;\n\t}\n\tconstexpr modint &operator+=(const\
-    \ modint rhs) noexcept {\n\t\ta += rhs.a;\n\t\tif (a >= Modulus) {\n\t\t\ta -=\
-    \ Modulus;\n\t\t}\n\t\treturn *this;\n\t}\n\tconstexpr modint &operator-=(const\
-    \ modint rhs) noexcept {\n\t\tif (a < rhs.a) {\n\t\t\ta += Modulus;\n\t\t}\n\t\
-    \ta -= rhs.a;\n\t\treturn *this;\n\t}\n\tconstexpr modint &operator*=(const modint\
-    \ rhs) noexcept {\n\t\ta = a * rhs.a % Modulus;\n\t\treturn *this;\n\t}\n\tconstexpr\
-    \ modint &operator/=(modint rhs) noexcept {\n\t\tu64 exp = Modulus - 2;\n\t\t\
-    while (exp) {\n\t\t\tif (exp % 2) {\n\t\t\t\t*this *= rhs;\n\t\t\t}\n\t\t\trhs\
-    \ *= rhs;\n\t\t\texp /= 2;\n\t\t}\n\t\treturn *this;\n\t}\n\n\tfriend std::ostream&\
-    \ operator<<(std::ostream& os, const modint& rhs) {\n\t\tos << rhs.a;\n\t\treturn\
-    \ os;\n\t}\n};\n#line 5 \"verify/yosupo/convolution_mod.test.cpp\"\nusing mint998\
-    \ = modint<998244353>;\n#line 1 \"math/formal_power_series.hpp\"\n\ntemplate<typename\
-    \ mint998>\nstruct formal_power_series : vector<mint998> {\n\tusing vector<mint998>::vector;\n\
-    \tusing FPS = formal_power_series;\n\n\tFPS &operator+=(const FPS &r){\n\t\tif(r.size()\
+    # define pb push_back\n# define eb emplace_back\n# define exists(c, e)       \
+    \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
+    \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
+    namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
+    \ 1 \"math/modint.hpp\"\n\ntemplate <std::uint_fast64_t Modulus> class modint\
+    \ {\n\tusing u64 = std::uint_fast64_t;\npublic:\n\tu64 a;\n\tconstexpr modint(const\
+    \ u64 x = 0) noexcept : a(x % Modulus) {}\n\tconstexpr u64 &value() noexcept {\
+    \ return a; }\n\tconstexpr const u64 &value() const noexcept { return a; }\n\t\
+    constexpr modint operator+(const modint rhs) const noexcept {\n\t\treturn modint(*this)\
+    \ += rhs;\n\t}\n\tconstexpr modint operator-(const modint rhs) const noexcept\
+    \ {\n\t\treturn modint(*this) -= rhs;\n\t}\n\tconstexpr modint operator*(const\
+    \ modint rhs) const noexcept {\n\t\treturn modint(*this) *= rhs;\n\t}\n\tconstexpr\
+    \ modint operator/(const modint rhs) const noexcept {\n\t\treturn modint(*this)\
+    \ /= rhs;\n\t}\n\tconstexpr modint &operator+=(const modint rhs) noexcept {\n\t\
+    \ta += rhs.a;\n\t\tif (a >= Modulus) {\n\t\t\ta -= Modulus;\n\t\t}\n\t\treturn\
+    \ *this;\n\t}\n\tconstexpr modint &operator-=(const modint rhs) noexcept {\n\t\
+    \tif (a < rhs.a) {\n\t\t\ta += Modulus;\n\t\t}\n\t\ta -= rhs.a;\n\t\treturn *this;\n\
+    \t}\n\tconstexpr modint &operator*=(const modint rhs) noexcept {\n\t\ta = a *\
+    \ rhs.a % Modulus;\n\t\treturn *this;\n\t}\n\tconstexpr modint &operator/=(modint\
+    \ rhs) noexcept {\n\t\tu64 exp = Modulus - 2;\n\t\twhile (exp) {\n\t\t\tif (exp\
+    \ % 2) {\n\t\t\t\t*this *= rhs;\n\t\t\t}\n\t\t\trhs *= rhs;\n\t\t\texp /= 2;\n\
+    \t\t}\n\t\treturn *this;\n\t}\n\n\tfriend std::ostream& operator<<(std::ostream&\
+    \ os, const modint& rhs) {\n\t\tos << rhs.a;\n\t\treturn os;\n\t}\n};\n#line 5\
+    \ \"verify/yosupo/convolution_mod.test.cpp\"\nusing mint998 = modint<998244353>;\n\
+    #line 1 \"math/formal_power_series.hpp\"\n\ntemplate<typename mint998>\nstruct\
+    \ formal_power_series : vector<mint998> {\n\tusing vector<mint998>::vector;\n\t\
+    using FPS = formal_power_series;\n\n\tFPS &operator+=(const FPS &r){\n\t\tif(r.size()\
     \ > this->size()){\n\t\t\tthis->resize(r.size());\n\t\t}\n\t\tfor(size_t i = 0;i\
     \ < r.size();i++){\n\t\t\t(*this)[i] += r[i];\n\t\t}\n\t\treturn *this;\n\t}\n\
     \n\tFPS &operator+=(const mint998 &v){\n\t\tif(this->empty())this->resize(1);\n\
@@ -143,7 +144,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution_mod.test.cpp
   requiredBy: []
-  timestamp: '2024-12-21 04:29:49+09:00'
+  timestamp: '2025-02-14 10:23:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution_mod.test.cpp

@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/strongly_connected_components.hpp
     title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/two_sat.hpp
     title: 2-SAT
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/two_sat
@@ -43,18 +43,18 @@ data:
     \         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n# define reps(i,opopo)\
     \        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n# define len(x)\
     \                ((ll)(x).size())\n# define bit(n)               (1LL << (n))\n\
-    # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
-    \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
-    \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
-    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"graph/two_sat.hpp\"\
-    \n\n#line 1 \"graph/strongly_connected_components.hpp\"\n\nstruct scc_graph {\n\
-    \tint n;\n\tint k;\n\tvector<vector<int>> g;\n\tvector<vector<int>> rg;\n\tvector<bool>\
-    \ used;\n\tvector<int> cmp;\n\tvector<int> vs;\n\n\tscc_graph(int _n) : n(_n),\
-    \ k(0), g(n), rg(n), used(n), cmp(n) {}\n\n\tvoid add_edge(int a, int b) {\n\t\
-    \tg[a].push_back(b);\n\t\trg[b].push_back(a);\n\t}\n\n\tvoid dfs(int v){\n\t\t\
-    used[v] = true;\n\t\tfor(auto to : g[v]){\n\t\t\tif(not used[to])dfs(to);\n\t\t\
-    }\n\t\tvs.pb(v);\n\t}\n\n\tvoid rdfs(int v, int col){\n\t\tused[v] = true;\n\t\
-    \tcmp[v] = col;\n\t\tfor(auto to : rg[v]){\n\t\t\tif(not used[to])rdfs(to, col);\n\
+    # define pb push_back\n# define eb emplace_back\n# define exists(c, e)       \
+    \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
+    \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
+    namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
+    \ 1 \"graph/two_sat.hpp\"\n\n#line 1 \"graph/strongly_connected_components.hpp\"\
+    \n\nstruct scc_graph {\n\tint n;\n\tint k;\n\tvector<vector<int>> g;\n\tvector<vector<int>>\
+    \ rg;\n\tvector<bool> used;\n\tvector<int> cmp;\n\tvector<int> vs;\n\n\tscc_graph(int\
+    \ _n) : n(_n), k(0), g(n), rg(n), used(n), cmp(n) {}\n\n\tvoid add_edge(int a,\
+    \ int b) {\n\t\tg[a].push_back(b);\n\t\trg[b].push_back(a);\n\t}\n\n\tvoid dfs(int\
+    \ v){\n\t\tused[v] = true;\n\t\tfor(auto to : g[v]){\n\t\t\tif(not used[to])dfs(to);\n\
+    \t\t}\n\t\tvs.pb(v);\n\t}\n\n\tvoid rdfs(int v, int col){\n\t\tused[v] = true;\n\
+    \t\tcmp[v] = col;\n\t\tfor(auto to : rg[v]){\n\t\t\tif(not used[to])rdfs(to, col);\n\
     \t\t}\n\t}\n\n\tvector<vector<int>> scc() {\n\t\tfor(int i = 0;i < n;i++){\n\t\
     \t\tif(not used[i])dfs(i);\n\t\t}\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tused[i]\
     \ = false;\n\t\t}\n\t\tfor(auto i = vs.rbegin();i != vs.rend();i++){\n\t\t\tif(not\
@@ -100,8 +100,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/two_sat.test.cpp
   requiredBy: []
-  timestamp: '2024-07-07 01:02:07+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-02-14 10:23:15+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/two_sat.test.cpp
 layout: document

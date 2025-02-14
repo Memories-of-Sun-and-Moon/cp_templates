@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/two_edge_connected_components.hpp
     title: "\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\u5206\u89E3"
   _extendedVerifiedWith:
@@ -12,15 +12,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/2_A.test.cpp
     title: verify/aoj/grl/2_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/two_edge_connected_components.test.cpp
     title: verify/yosupo/two_edge_connected_components.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/unionfind.test.cpp
     title: verify/yosupo/unionfind.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data_structure/union_find.hpp\"\n\nstruct union_find {\n\
@@ -58,12 +58,12 @@ data:
   requiredBy:
   - graph/two_edge_connected_components.hpp
   timestamp: '2024-10-15 14:47:23+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/aoj/grl/2_A.test.cpp
-  - verify/aoj/dsl/1_A.test.cpp
   - verify/yosupo/two_edge_connected_components.test.cpp
   - verify/yosupo/unionfind.test.cpp
+  - verify/aoj/dsl/1_A.test.cpp
+  - verify/aoj/grl/2_A.test.cpp
 documentation_of: data_structure/union_find.hpp
 layout: document
 title: Union-Find

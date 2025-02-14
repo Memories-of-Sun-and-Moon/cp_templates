@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/segment_tree_0-indexed.hpp
     title: "0-indexed\u306E\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -41,29 +41,29 @@ data:
     \         for(ll i = 0, i##_len = (upupu);(i) < (i##_len);(i)++)\n# define reps(i,opopo)\
     \        for(ll i = 1, i##_len = (opopo);(i) <= (i##_len);(i)++)\n# define len(x)\
     \                ((ll)(x).size())\n# define bit(n)               (1LL << (n))\n\
-    # define pb push_back\n# define exists(c, e)         ((c).find(e) != (c).end())\n\
-    \nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\t\tstd::cin.tie(0);\n\
-    \t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\nnamespace mmrz {\n\tvoid\
-    \ solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line 1 \"data_structure/segment_tree_0-indexed.hpp\"\
-    \n\ntemplate<typename T>struct [[deprecated(\"use 1-indexed segment tree (segment_tree.hpp)\"\
-    )]] segment_tree {\n\tusing F = function<T(T, T)>;\n\n\tint n;\n\tvector<T> node;\n\
-    \tF combine;\n\tT identify;\n\n\tsegment_tree(vector<T> v, F _combine, T _identity)\
-    \ : combine(_combine), identify(_identity) {\n\t\tint sz = (int)v.size();\n\t\t\
-    n = 1;\n\t\twhile(n < sz)n *= 2;\n\t\tnode.resize(2 * n - 1, identify);\n\n\t\t\
-    for(int i = 0;i < sz;i++)node[i + n - 1] = v[i];\n\t\tfor(int i = n - 2;i >= 0;i--)node[i]\
-    \ = combine(node[2 * i + 1], node[2 * i + 2]);\n\t}\n\n\tsegment_tree(int _n,\
-    \ F _combine, T _identify) : combine(_combine), identify(_identify){\n\t\tint\
-    \ sz = _n;\n\t\tn = 1;\n\t\twhile(n < sz)n *= 2;\n\t\tnode.resize(2 * n - 1, identify);\n\
-    \t}\n\n\tT operator[](int x) {return node[x + n - 1]; }\n\n\tvoid set(int x, T\
-    \ val){\n\t\tx += (n - 1);\n\n\t\tnode[x] = val;\n\t\twhile(x > 0){\n\t\t\tx =\
-    \ (x - 1) / 2;\n\t\t\tnode[x] = combine(node[2 * x + 1], node[2 * x + 2]);\n\t\
-    \t}\n\t}\n\n\tT fold(int a, int b, int k = 0, int l = 0, int r = -1){\n\t\tif(r\
-    \ < 0) r = n;\n\n\t\tif(r <= a || b <= l)return identify;\n\t\t\n\t\tif(a <= l\
-    \ && r <= b)return node[k];\n\n\t\tT vl = fold(a, b, 2 * k + 1, l, (l + r) / 2);\n\
-    \t\tT vr = fold(a, b, 2 * k + 2, (l + r) / 2, r);\n\t\treturn combine(vl, vr);\n\
-    \t}\n};\n#line 5 \"verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp\"\n\n\
-    void mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tauto combine = [](int a,\
-    \ int b){return min(a, b); };\n\tsegment_tree<int> seg(n, combine, inf<int>());\n\
+    # define pb push_back\n# define eb emplace_back\n# define exists(c, e)       \
+    \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
+    \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
+    namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
+    \ 1 \"data_structure/segment_tree_0-indexed.hpp\"\n\ntemplate<typename T>struct\
+    \ [[deprecated(\"use 1-indexed segment tree (segment_tree.hpp)\")]] segment_tree\
+    \ {\n\tusing F = function<T(T, T)>;\n\n\tint n;\n\tvector<T> node;\n\tF combine;\n\
+    \tT identify;\n\n\tsegment_tree(vector<T> v, F _combine, T _identity) : combine(_combine),\
+    \ identify(_identity) {\n\t\tint sz = (int)v.size();\n\t\tn = 1;\n\t\twhile(n\
+    \ < sz)n *= 2;\n\t\tnode.resize(2 * n - 1, identify);\n\n\t\tfor(int i = 0;i <\
+    \ sz;i++)node[i + n - 1] = v[i];\n\t\tfor(int i = n - 2;i >= 0;i--)node[i] = combine(node[2\
+    \ * i + 1], node[2 * i + 2]);\n\t}\n\n\tsegment_tree(int _n, F _combine, T _identify)\
+    \ : combine(_combine), identify(_identify){\n\t\tint sz = _n;\n\t\tn = 1;\n\t\t\
+    while(n < sz)n *= 2;\n\t\tnode.resize(2 * n - 1, identify);\n\t}\n\n\tT operator[](int\
+    \ x) {return node[x + n - 1]; }\n\n\tvoid set(int x, T val){\n\t\tx += (n - 1);\n\
+    \n\t\tnode[x] = val;\n\t\twhile(x > 0){\n\t\t\tx = (x - 1) / 2;\n\t\t\tnode[x]\
+    \ = combine(node[2 * x + 1], node[2 * x + 2]);\n\t\t}\n\t}\n\n\tT fold(int a,\
+    \ int b, int k = 0, int l = 0, int r = -1){\n\t\tif(r < 0) r = n;\n\n\t\tif(r\
+    \ <= a || b <= l)return identify;\n\t\t\n\t\tif(a <= l && r <= b)return node[k];\n\
+    \n\t\tT vl = fold(a, b, 2 * k + 1, l, (l + r) / 2);\n\t\tT vr = fold(a, b, 2 *\
+    \ k + 2, (l + r) / 2, r);\n\t\treturn combine(vl, vr);\n\t}\n};\n#line 5 \"verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp\"\
+    \n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tauto combine = [](int\
+    \ a, int b){return min(a, b); };\n\tsegment_tree<int> seg(n, combine, inf<int>());\n\
     \twhile(q--){\n\t\tint com, x, y;\n\t\tcin >> com >> x >> y;\n\t\tif(com)cout\
     \ << seg.fold(x, y + 1) << endl;\n\t\telse seg.set(x, y);\n\t}\n}\n"
   code: "# define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
   requiredBy: []
-  timestamp: '2024-07-07 01:02:07+09:00'
+  timestamp: '2025-02-14 10:23:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
