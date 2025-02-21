@@ -38,5 +38,13 @@
 "verify/yosupo/number_of_substrings.test.cpp": "2025-02-14 10:23:15 +0900",
 "verify/yosupo/primality_test.test.cpp": "2025-02-14 10:23:15 +0900",
 "verify/yosupo/static_range_frequency.test.cpp": "2025-02-14 10:23:15 +0900",
-"verify/yosupo/suffixarray.test.cpp": "2025-02-14 10:23:15 +0900"
+"verify/yosupo/suffixarray.test.cpp": "2025-02-14 10:23:15 +0900",
+"verify/yosupo/two_edge_connected_components.test.cpp": "2025-02-14 10:23:15 +0900",
+"verify/yosupo/two_sat.test.cpp": "2025-02-14 10:23:15 +0900",
+"verify/yosupo/unionfind.test.cpp": "2025-02-14 10:23:15 +0900",
+"verify/yukicoder/1435.test.cpp": "2025-02-14 10:23:15 +0900",
+"verify/yukicoder/1661.test.cpp": "2025-02-14 10:23:15 +0900",
+"verify/yukicoder/2219.test.cpp": "2025-02-14 10:23:15 +0900",
+"verify/yukicoder/274.test.cpp": "2025-02-14 10:23:15 +0900",
+"verify/yukicoder/2780.test.cpp": "2025-02-14 10:23:15 +0900"
 }
