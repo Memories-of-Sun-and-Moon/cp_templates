@@ -11,7 +11,7 @@ struct primal_dual_with_negative_edges {
 	vector<T> dist;
 	vector<int> prevv, preve;
 
-	primal_dual_with_negative_edge(int _V) : V(_V), infty(numeric_limits<T>::max()/2) {
+	primal_dual_with_negative_edges(int _V) : V(_V), infty(numeric_limits<T>::max()/2) {
 		G.resize(V);
 		dist.resize(V);
 		prevv.resize(V);
