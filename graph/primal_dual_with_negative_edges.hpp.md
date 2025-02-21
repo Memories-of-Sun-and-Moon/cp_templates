@@ -24,8 +24,8 @@ data:
     if(e.cap > 0 && dist[e.to] > dist[v]+e.cost) {\n\t\t\t\t\t\t\tdist[e.to] = dist[v]\
     \ + e.cost;\n\t\t\t\t\t\t\tprevv[e.to] = v;\n\t\t\t\t\t\t\tpreve[e.to] = i;\n\t\
     \t\t\t\t\t\tupdate = true;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\
-    \t\t\tif(dist[t] == infty) {\n\t\t\t\treturn nullopt;\n\t\t\t}\n\n\t\t\tint d\
-    \ = f;\n\t\t\tfor(int v = t;v != s;v = prevv[v]) {\n\t\t\t\td = min(d, G[prevv[v]][preve[v]].cap);\n\
+    \t\t\tif(dist[t] == infty) {\n\t\t\t\treturn nullopt;\n\t\t\t}\n\n\t\t\tT d =\
+    \ f;\n\t\t\tfor(int v = t;v != s;v = prevv[v]) {\n\t\t\t\td = min(d, G[prevv[v]][preve[v]].cap);\n\
     \t\t\t}\n\t\t\tf -= d;\n\t\t\tres += d*dist[t];\n\t\t\tfor(int v = t;v != s;v\
     \ = prevv[v]) {\n\t\t\t\tauto &e = G[prevv[v]][preve[v]];\n\t\t\t\te.cap -= d;\n\
     \t\t\t\tG[v][e.rev].cap += d;\n\t\t\t}\n\t\t}\n\t\treturn res;\n\t}\n};\n"
@@ -44,8 +44,8 @@ data:
     if(e.cap > 0 && dist[e.to] > dist[v]+e.cost) {\n\t\t\t\t\t\t\tdist[e.to] = dist[v]\
     \ + e.cost;\n\t\t\t\t\t\t\tprevv[e.to] = v;\n\t\t\t\t\t\t\tpreve[e.to] = i;\n\t\
     \t\t\t\t\t\tupdate = true;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\
-    \t\t\tif(dist[t] == infty) {\n\t\t\t\treturn nullopt;\n\t\t\t}\n\n\t\t\tint d\
-    \ = f;\n\t\t\tfor(int v = t;v != s;v = prevv[v]) {\n\t\t\t\td = min(d, G[prevv[v]][preve[v]].cap);\n\
+    \t\t\tif(dist[t] == infty) {\n\t\t\t\treturn nullopt;\n\t\t\t}\n\n\t\t\tT d =\
+    \ f;\n\t\t\tfor(int v = t;v != s;v = prevv[v]) {\n\t\t\t\td = min(d, G[prevv[v]][preve[v]].cap);\n\
     \t\t\t}\n\t\t\tf -= d;\n\t\t\tres += d*dist[t];\n\t\t\tfor(int v = t;v != s;v\
     \ = prevv[v]) {\n\t\t\t\tauto &e = G[prevv[v]][preve[v]];\n\t\t\t\te.cap -= d;\n\
     \t\t\t\tG[v][e.rev].cap += d;\n\t\t\t}\n\t\t}\n\t\treturn res;\n\t}\n};\n"
@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: graph/primal_dual_with_negative_edges.hpp
   requiredBy: []
-  timestamp: '2025-02-21 18:50:25+09:00'
+  timestamp: '2025-02-22 05:25:05+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/primal_dual_with_negative_edges.hpp
