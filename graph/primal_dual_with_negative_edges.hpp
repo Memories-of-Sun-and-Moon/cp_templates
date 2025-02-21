@@ -49,7 +49,7 @@ struct primal_dual_with_negative_edges {
 				return nullopt;
 			}
 
-			int d = f;
+			T d = f;
 			for(int v = t;v != s;v = prevv[v]) {
 				d = min(d, G[prevv[v]][preve[v]].cap);
 			}
