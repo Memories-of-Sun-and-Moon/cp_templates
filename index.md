@@ -19,7 +19,7 @@ data:
     - icon: ':warning:'
       path: data_structure/rollbackmo.hpp
       title: Rollback Mo
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree.hpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree_2d.hpp
       title: "2D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/union_find.hpp
       title: Union-Find
   - name: dp
@@ -63,7 +63,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/lowest_common_ancestor.hpp
       title: Lowest Common Ancestor
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/lowlink.hpp
       title: "lowlink\u3092\u7528\u3044\u305F\u6A4B\u30FB\u95A2\u7BC0\u70B9\u306E\u691C\
         \u51FA"
@@ -73,13 +73,13 @@ data:
     - icon: ':warning:'
       path: graph/primal_dual_with_negative_edges.hpp
       title: graph/primal_dual_with_negative_edges.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/strongly_connected_components.hpp
       title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/two_edge_connected_components.hpp
       title: "\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\u5206\u89E3"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/two_sat.hpp
       title: 2-SAT
     - icon: ':warning:'
@@ -90,7 +90,7 @@ data:
     - icon: ':warning:'
       path: math/combination.hpp
       title: "2\u9805\u4FC2\u6570mod"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/counting_primes.hpp
       title: "$n$ \u4EE5\u4E0B\u306E\u7D20\u6570\u306E\u6570\u3048\u4E0A\u3052"
     - icon: ':heavy_check_mark:'
@@ -111,7 +111,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/formal_power_series.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\u30E9\u30A4\u30D6\u30E9\u30EA"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/iroot.hpp
       title: "floor K \u4E57\u6839"
     - icon: ':heavy_check_mark:'
@@ -121,7 +121,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/matrix.hpp
       title: "\u884C\u5217\u30E9\u30A4\u30D6\u30E9\u30EA"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/modint.hpp
       title: modint
     - icon: ':heavy_check_mark:'
@@ -146,7 +146,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/atcoder/abc/150
@@ -310,30 +310,30 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/suffixarray.test.cpp
       title: verify/yosupo/suffixarray.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/two_edge_connected_components.test.cpp
       title: verify/yosupo/two_edge_connected_components.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/two_sat.test.cpp
       title: verify/yosupo/two_sat.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/unionfind.test.cpp
       title: verify/yosupo/unionfind.test.cpp
   - name: verify/yukicoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yukicoder/1435.test.cpp
       title: verify/yukicoder/1435.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yukicoder/1661.test.cpp
       title: verify/yukicoder/1661.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yukicoder/2219.test.cpp
       title: verify/yukicoder/2219.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yukicoder/274.test.cpp
       title: verify/yukicoder/274.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yukicoder/2780.test.cpp
       title: verify/yukicoder/2780.test.cpp
 layout: toppage

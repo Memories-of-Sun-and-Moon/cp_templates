@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/counting_primes.hpp
     title: "$n$ \u4EE5\u4E0B\u306E\u7D20\u6570\u306E\u6570\u3048\u4E0A\u3052"
   - icon: ':heavy_check_mark:'
@@ -18,12 +18,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/kth_root_integer.test.cpp
     title: verify/yosupo/kth_root_integer.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/1661.test.cpp
     title: verify/yukicoder/1661.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/iroot.hpp\"\n\nunsigned long long iroot(unsigned long\
@@ -55,7 +55,7 @@ data:
   - math/counting_primes.hpp
   - verify/yosupo/counting_primes.cpp
   timestamp: '2025-01-08 00:07:56+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/1661.test.cpp
   - verify/yosupo/kth_root_integer.test.cpp

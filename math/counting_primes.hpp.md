@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/iroot.hpp
     title: "floor K \u4E57\u6839"
   _extendedRequiredBy:
@@ -9,12 +9,12 @@ data:
     path: verify/yosupo/counting_primes.cpp
     title: verify/yosupo/counting_primes.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/1661.test.cpp
     title: verify/yukicoder/1661.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://judge.yosupo.jp/submission/61551
@@ -83,7 +83,7 @@ data:
   requiredBy:
   - verify/yosupo/counting_primes.cpp
   timestamp: '2025-01-08 00:07:56+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/1661.test.cpp
 documentation_of: math/counting_primes.hpp

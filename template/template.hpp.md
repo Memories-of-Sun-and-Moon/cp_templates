@@ -132,33 +132,33 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/suffixarray.test.cpp
     title: verify/yosupo/suffixarray.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/two_edge_connected_components.test.cpp
     title: verify/yosupo/two_edge_connected_components.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/two_sat.test.cpp
     title: verify/yosupo/two_sat.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/unionfind.test.cpp
     title: verify/yosupo/unionfind.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/1435.test.cpp
     title: verify/yukicoder/1435.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/1661.test.cpp
     title: verify/yukicoder/1661.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2219.test.cpp
     title: verify/yukicoder/2219.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/274.test.cpp
     title: verify/yukicoder/274.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing\
@@ -221,7 +221,7 @@ data:
   - verify/yosupo/counting_primes.cpp
   - verify/atcoder/abc/150/f.___test.cpp
   timestamp: '2025-02-14 10:23:15+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/2219.test.cpp
   - verify/yukicoder/2780.test.cpp

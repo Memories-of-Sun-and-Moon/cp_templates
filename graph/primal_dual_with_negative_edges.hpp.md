@@ -11,7 +11,7 @@ data:
   bundledCode: "#line 1 \"graph/primal_dual_with_negative_edges.hpp\"\n\ntemplate<typename\
     \ T> \nstruct primal_dual_with_negative_edges {\n\tstruct edge {\n\t\tint to;\n\
     \t\tT cap, cost, rev;\n\t};\n\tint V;\n\tT infty;\n\tvector<vector<edge>> G;\n\
-    \tvector<T> dist;\n\tvector<int> prevv, preve;\n\n\tprimal_dual_with_negative_edge(int\
+    \tvector<T> dist;\n\tvector<int> prevv, preve;\n\n\tprimal_dual_with_negative_edges(int\
     \ _V) : V(_V), infty(numeric_limits<T>::max()/2) {\n\t\tG.resize(V);\n\t\tdist.resize(V);\n\
     \t\tprevv.resize(V);\n\t\tpreve.resize(V);\n\t}\n\n\tvoid add_edge(int from, int\
     \ to, int cap, int cost) {\n\t\tG[from].push_back((edge){to, cap, cost, (int)G[to].size()});\n\
@@ -31,7 +31,7 @@ data:
     \t\t\t\tG[v][e.rev].cap += d;\n\t\t\t}\n\t\t}\n\t\treturn res;\n\t}\n};\n"
   code: "\ntemplate<typename T> \nstruct primal_dual_with_negative_edges {\n\tstruct\
     \ edge {\n\t\tint to;\n\t\tT cap, cost, rev;\n\t};\n\tint V;\n\tT infty;\n\tvector<vector<edge>>\
-    \ G;\n\tvector<T> dist;\n\tvector<int> prevv, preve;\n\n\tprimal_dual_with_negative_edge(int\
+    \ G;\n\tvector<T> dist;\n\tvector<int> prevv, preve;\n\n\tprimal_dual_with_negative_edges(int\
     \ _V) : V(_V), infty(numeric_limits<T>::max()/2) {\n\t\tG.resize(V);\n\t\tdist.resize(V);\n\
     \t\tprevv.resize(V);\n\t\tpreve.resize(V);\n\t}\n\n\tvoid add_edge(int from, int\
     \ to, int cap, int cost) {\n\t\tG[from].push_back((edge){to, cap, cost, (int)G[to].size()});\n\
@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: graph/primal_dual_with_negative_edges.hpp
   requiredBy: []
-  timestamp: '2025-01-25 17:19:13+09:00'
+  timestamp: '2025-02-21 18:50:25+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/primal_dual_with_negative_edges.hpp
