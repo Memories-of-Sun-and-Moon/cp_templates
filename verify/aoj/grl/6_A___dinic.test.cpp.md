@@ -61,8 +61,8 @@ data:
     \t\t\t\tif(d > 0){\n\t\t\t\t\te.cap -= d;\n\t\t\t\t\tG[e.to][e.rev].cap += d;\n\
     \t\t\t\t\treturn d;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn 0;\n\t}\n\n\tT calc(int\
     \ s, int t){\n\t\tT flow = 0;\n\t\tfor(;;){\n\t\t\tbfs(s);\n\t\t\tif(level[t]\
-    \ < 0)return flow;\n\t\t\tfor(int i = 0;i < n;i++)iter[i] = 0;\n\t\t\tint f;\n\
-    \t\t\twhile((f = dfs(s, t, inf<T>())) > 0) {\n\t\t\t\tflow += f;\n\t\t\t}\n\t\t\
+    \ < 0)return flow;\n\t\t\tfor(int i = 0;i < n;i++)iter[i] = 0;\n\t\t\tT f;\n\t\
+    \t\twhile((f = dfs(s, t, inf<T>())) > 0) {\n\t\t\t\tflow += f;\n\t\t\t}\n\t\t\
     }\n\t}\n};\n#line 5 \"verify/aoj/grl/6_A___dinic.test.cpp\"\n\nusing namespace\
     \ mmrz;\n\nvoid mmrz::solve(){\n    int n, m;\n    cin >> n >> m;\n    dinic<int>\
     \ f(n);\n    while(m--){\n        int a, b, c;\n        cin >> a >> b >> c;\n\
@@ -79,7 +79,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/grl/6_A___dinic.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-02-22 17:50:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/grl/6_A___dinic.test.cpp

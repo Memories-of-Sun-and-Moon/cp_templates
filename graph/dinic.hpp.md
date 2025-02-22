@@ -28,7 +28,7 @@ data:
     \ 0){\n\t\t\t\t\te.cap -= d;\n\t\t\t\t\tG[e.to][e.rev].cap += d;\n\t\t\t\t\treturn\
     \ d;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn 0;\n\t}\n\n\tT calc(int s, int t){\n\
     \t\tT flow = 0;\n\t\tfor(;;){\n\t\t\tbfs(s);\n\t\t\tif(level[t] < 0)return flow;\n\
-    \t\t\tfor(int i = 0;i < n;i++)iter[i] = 0;\n\t\t\tint f;\n\t\t\twhile((f = dfs(s,\
+    \t\t\tfor(int i = 0;i < n;i++)iter[i] = 0;\n\t\t\tT f;\n\t\t\twhile((f = dfs(s,\
     \ t, inf<T>())) > 0) {\n\t\t\t\tflow += f;\n\t\t\t}\n\t\t}\n\t}\n};\n"
   code: "\ntemplate<typename T>\nstruct dinic {\n\n\tstruct edge{\n\t\tint to;\n\t\
     \tT cap;\n\t\tT rev;\n\t};\n\t\t\n\tint n;\n\tvector<vector<edge>> G;\n\tvector<int>\
@@ -46,14 +46,14 @@ data:
     \t\t\t\tif(d > 0){\n\t\t\t\t\te.cap -= d;\n\t\t\t\t\tG[e.to][e.rev].cap += d;\n\
     \t\t\t\t\treturn d;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn 0;\n\t}\n\n\tT calc(int\
     \ s, int t){\n\t\tT flow = 0;\n\t\tfor(;;){\n\t\t\tbfs(s);\n\t\t\tif(level[t]\
-    \ < 0)return flow;\n\t\t\tfor(int i = 0;i < n;i++)iter[i] = 0;\n\t\t\tint f;\n\
-    \t\t\twhile((f = dfs(s, t, inf<T>())) > 0) {\n\t\t\t\tflow += f;\n\t\t\t}\n\t\t\
+    \ < 0)return flow;\n\t\t\tfor(int i = 0;i < n;i++)iter[i] = 0;\n\t\t\tT f;\n\t\
+    \t\twhile((f = dfs(s, t, inf<T>())) > 0) {\n\t\t\t\tflow += f;\n\t\t\t}\n\t\t\
     }\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/dinic.hpp
   requiredBy: []
-  timestamp: '2024-10-08 21:36:21+09:00'
+  timestamp: '2025-02-22 17:50:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/grl/6_A___dinic.test.cpp
