@@ -60,7 +60,7 @@ struct dinic {
 			bfs(s);
 			if(level[t] < 0)return flow;
 			for(int i = 0;i < n;i++)iter[i] = 0;
-			int f;
+			T f;
 			while((f = dfs(s, t, inf<T>())) > 0) {
 				flow += f;
 			}
