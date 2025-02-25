@@ -5,13 +5,13 @@ data:
   - icon: ':warning:'
     path: verify/atcoder/abc/150/f.___test.cpp
     title: verify/atcoder/abc/150/f.___test.cpp
-  - icon: ':warning:'
-    path: verify/yosupo/zalgorithm.cpp
-    title: verify/yosupo/zalgorithm.cpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/zalgorithm.test.cpp
+    title: verify/yosupo/zalgorithm.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/z_algorithm.hpp\"\n\ntemplate<typename T>\nvector<int>\
@@ -31,11 +31,11 @@ data:
   isVerificationFile: false
   path: string/z_algorithm.hpp
   requiredBy:
-  - verify/yosupo/zalgorithm.cpp
   - verify/atcoder/abc/150/f.___test.cpp
   timestamp: '2024-10-29 03:58:04+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/yosupo/zalgorithm.test.cpp
 documentation_of: string/z_algorithm.hpp
 layout: document
 title: Z Algorithm

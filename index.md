@@ -147,7 +147,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/suffix_array.hpp
       title: Suffix Array
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/z_algorithm.hpp
       title: Z Algorithm
   - name: template
@@ -160,14 +160,6 @@ data:
     - icon: ':warning:'
       path: verify/atcoder/abc/150/f.___test.cpp
       title: verify/atcoder/abc/150/f.___test.cpp
-  - name: verify/yosupo
-    pages:
-    - icon: ':warning:'
-      path: verify/yosupo/counting_primes.cpp
-      title: verify/yosupo/counting_primes.cpp
-    - icon: ':warning:'
-      path: verify/yosupo/zalgorithm.cpp
-      title: verify/yosupo/zalgorithm.cpp
   - name: z_other
     pages:
     - icon: ':heavy_check_mark:'
@@ -290,6 +282,9 @@ data:
       path: verify/yosupo/convolution_mod.test.cpp
       title: verify/yosupo/convolution_mod.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/counting_primes.test.cpp
+      title: verify/yosupo/counting_primes.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/discrete_logarithm.test.cpp
       title: verify/yosupo/discrete_logarithm.test.cpp
     - icon: ':heavy_check_mark:'
@@ -328,6 +323,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/unionfind.test.cpp
       title: verify/yosupo/unionfind.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/zalgorithm.test.cpp
+      title: verify/yosupo/zalgorithm.test.cpp
   - name: verify/yukicoder
     pages:
     - icon: ':heavy_check_mark:'

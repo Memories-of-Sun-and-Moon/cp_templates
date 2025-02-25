@@ -5,12 +5,6 @@ data:
   - icon: ':warning:'
     path: verify/atcoder/abc/150/f.___test.cpp
     title: verify/atcoder/abc/150/f.___test.cpp
-  - icon: ':warning:'
-    path: verify/yosupo/counting_primes.cpp
-    title: verify/yosupo/counting_primes.cpp
-  - icon: ':warning:'
-    path: verify/yosupo/zalgorithm.cpp
-    title: verify/yosupo/zalgorithm.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/alds1/14_B.test.cpp
@@ -106,6 +100,9 @@ data:
     path: verify/yosupo/convolution_mod.test.cpp
     title: verify/yosupo/convolution_mod.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/counting_primes.test.cpp
+    title: verify/yosupo/counting_primes.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/discrete_logarithm.test.cpp
     title: verify/yosupo/discrete_logarithm.test.cpp
   - icon: ':heavy_check_mark:'
@@ -144,6 +141,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/unionfind.test.cpp
     title: verify/yosupo/unionfind.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/zalgorithm.test.cpp
+    title: verify/yosupo/zalgorithm.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/1435.test.cpp
     title: verify/yukicoder/1435.test.cpp
@@ -220,8 +220,6 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy:
-  - verify/yosupo/zalgorithm.cpp
-  - verify/yosupo/counting_primes.cpp
   - verify/atcoder/abc/150/f.___test.cpp
   timestamp: '2025-02-14 10:23:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -236,11 +234,13 @@ data:
   - verify/yosupo/area_of_union_of_rectangles.test.cpp
   - verify/yosupo/two_sat.test.cpp
   - verify/yosupo/two_edge_connected_components.test.cpp
+  - verify/yosupo/counting_primes.test.cpp
   - verify/yosupo/kth_root_integer.test.cpp
   - verify/yosupo/generalized_discrete_logarithm.test.cpp
   - verify/yosupo/discrete_logarithm.test.cpp
   - verify/yosupo/suffixarray.test.cpp
   - verify/yosupo/factorize.test.cpp
+  - verify/yosupo/zalgorithm.test.cpp
   - verify/yosupo/unionfind.test.cpp
   - verify/yosupo/floor_sum.test.cpp
   - verify/yosupo/assignment.test.cpp

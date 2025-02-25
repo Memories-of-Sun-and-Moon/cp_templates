@@ -14,12 +14,14 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/counting_primes
     links:
     - https://judge.yosupo.jp/problem/counting_primes
-  bundledCode: "#line 1 \"verify/yosupo/counting_primes.cpp\"\n#define PROBLEM \"\
-    https://judge.yosupo.jp/problem/counting_primes\"\n\n#line 1 \"template/template.hpp\"\
+  bundledCode: "#line 1 \"verify/yosupo/counting_primes.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/counting_primes\"\n\n#line 1 \"template/template.hpp\"\
     \n# include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nusing\
     \ ull = unsigned long long;\nconst double pi = acos(-1);\ntemplate<class T>constexpr\
     \ T inf() { return ::std::numeric_limits<T>::max(); }\ntemplate<class T>constexpr\
@@ -79,8 +81,8 @@ data:
     int e = smalls[half(M / q)] - pc;\n\t\tif (e < l + 1) break;\n\t\tll t = 0;\n\t\
     \tfor (int k = l + 1; k <= e; k++)\n\t\t\tt += smalls[half(divide(M, roughs[k]))];\n\
     \t\tlarges[0] += t - (ll)(e - l) * (pc + l - 1);\n\t}\n\treturn larges[0] + 1;\n\
-    }\n#line 5 \"verify/yosupo/counting_primes.cpp\"\n\nusing namespace mmrz;\n\n\
-    void mmrz::solve(){\n\tll n;\n\tcin >> n;\n\tcout << counting_primes(n) << endl;\n\
+    }\n#line 5 \"verify/yosupo/counting_primes.test.cpp\"\n\nusing namespace mmrz;\n\
+    \nvoid mmrz::solve(){\n\tll n;\n\tcin >> n;\n\tcout << counting_primes(n) << endl;\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/counting_primes\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../math/counting_primes.hpp\"\
@@ -90,16 +92,16 @@ data:
   - template/template.hpp
   - math/counting_primes.hpp
   - math/iroot.hpp
-  isVerificationFile: false
-  path: verify/yosupo/counting_primes.cpp
+  isVerificationFile: true
+  path: verify/yosupo/counting_primes.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2025-02-26 07:25:52+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yosupo/counting_primes.cpp
+documentation_of: verify/yosupo/counting_primes.test.cpp
 layout: document
 redirect_from:
-- /library/verify/yosupo/counting_primes.cpp
-- /library/verify/yosupo/counting_primes.cpp.html
-title: verify/yosupo/counting_primes.cpp
+- /verify/verify/yosupo/counting_primes.test.cpp
+- /verify/verify/yosupo/counting_primes.test.cpp.html
+title: verify/yosupo/counting_primes.test.cpp
 ---

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: string/z_algorithm.hpp
     title: Z Algorithm
   - icon: ':heavy_check_mark:'
