@@ -118,6 +118,9 @@ data:
     path: verify/yosupo/floor_sum.test.cpp
     title: verify/yosupo/floor_sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/generalized_discrete_logarithm.test.cpp
+    title: verify/yosupo/generalized_discrete_logarithm.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/kth_root_integer.test.cpp
     title: verify/yosupo/kth_root_integer.test.cpp
   - icon: ':heavy_check_mark:'
@@ -234,6 +237,7 @@ data:
   - verify/yosupo/two_sat.test.cpp
   - verify/yosupo/two_edge_connected_components.test.cpp
   - verify/yosupo/kth_root_integer.test.cpp
+  - verify/yosupo/generalized_discrete_logarithm.test.cpp
   - verify/yosupo/discrete_logarithm.test.cpp
   - verify/yosupo/suffixarray.test.cpp
   - verify/yosupo/factorize.test.cpp

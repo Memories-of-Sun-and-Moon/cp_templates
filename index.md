@@ -112,6 +112,12 @@ data:
       path: math/formal_power_series.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\u30E9\u30A4\u30D6\u30E9\u30EA"
     - icon: ':heavy_check_mark:'
+      path: math/generalized_discrete_logarithm.hpp
+      title: generalized_discrete_logarithm
+    - icon: ':warning:'
+      path: math/geometric_series_sum.hpp
+      title: "\u7B49\u6BD4\u6570\u5217\u306E\u7DCF\u548C"
+    - icon: ':heavy_check_mark:'
       path: math/iroot.hpp
       title: "floor K \u4E57\u6839"
     - icon: ':heavy_check_mark:'
@@ -295,6 +301,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/floor_sum.test.cpp
       title: verify/yosupo/floor_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/generalized_discrete_logarithm.test.cpp
+      title: verify/yosupo/generalized_discrete_logarithm.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/kth_root_integer.test.cpp
       title: verify/yosupo/kth_root_integer.test.cpp

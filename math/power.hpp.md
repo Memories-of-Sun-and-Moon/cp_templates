@@ -8,6 +8,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/formal_power_series.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\u30E9\u30A4\u30D6\u30E9\u30EA"
+  - icon: ':warning:'
+    path: math/geometric_series_sum.hpp
+    title: "\u7B49\u6BD4\u6570\u5217\u306E\u7DCF\u548C"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution_mod.test.cpp
@@ -15,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/discrete_logarithm.test.cpp
     title: verify/yosupo/discrete_logarithm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/generalized_discrete_logarithm.test.cpp
+    title: verify/yosupo/generalized_discrete_logarithm.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -35,11 +41,13 @@ data:
   isVerificationFile: false
   path: math/power.hpp
   requiredBy:
+  - math/geometric_series_sum.hpp
   - math/discrete_logarithm.hpp
   - math/formal_power_series.hpp
   timestamp: '2024-12-21 04:29:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo/generalized_discrete_logarithm.test.cpp
   - verify/yosupo/discrete_logarithm.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
 documentation_of: math/power.hpp
