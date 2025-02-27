@@ -29,7 +29,7 @@ struct primal_dual{
 		used_edge[to] = true;
 	}
 
-	T min_cost_flow(int s, int t, T f){
+	pair<bool, T> min_cost_flow(int s, int t, T f){
 		T res = 0;
 		while(f > 0){
 			priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> que;
@@ -51,7 +51,7 @@ struct primal_dual{
 				}
 			}
 			if(dist[t] == infty){
-				return -1;
+				return make_pair(false, res);
 			}
 			for(int v = 0;v < V;v++){
 				if(not used_edge[v])continue;
@@ -69,6 +69,6 @@ struct primal_dual{
 				G[v][e.rev].cap += d;
 			}
 		}
-		return res;
+		return make_pair(true, res);
 	}
 };

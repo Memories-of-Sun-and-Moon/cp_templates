@@ -14,5 +14,5 @@ void mmrz::solve(){
         cin >> a >> b >> c >> d;
         mcf.add_edge(a, b, c, d);
     }
-    cout << mcf.min_cost_flow(0, v-1, f) << endl;
+    cout << mcf.min_cost_flow(0, v-1, f).second << endl;
 }
