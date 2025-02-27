@@ -72,7 +72,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
     title: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aoj/grl/6_B.test.cpp
     title: verify/aoj/grl/6_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -159,9 +159,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing\
@@ -222,59 +222,59 @@ data:
   requiredBy:
   - verify/atcoder/abc/150/f.___test.cpp
   timestamp: '2025-02-14 10:23:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/yukicoder/2219.test.cpp
+  - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
+  - verify/aoj/dsl/2_E___segment_tree.test.cpp
+  - verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
+  - verify/aoj/dsl/2_B___segment_tree.test.cpp
+  - verify/aoj/dsl/2_G_Radd_Rsum.test.cpp
+  - verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
+  - verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
+  - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
+  - verify/aoj/dsl/2_B___BIT.test.cpp
+  - verify/aoj/dsl/2_E___BIT.test.cpp
+  - verify/aoj/dsl/2_A___segment_tree.test.cpp
+  - verify/aoj/dsl/1_A.test.cpp
+  - verify/aoj/dsl/5_B.test.cpp
+  - verify/aoj/itp1/7_d.test.cpp
+  - verify/aoj/id/2286.test.cpp
+  - verify/aoj/id/2828.test.cpp
+  - verify/aoj/grl/3_C.test.cpp
+  - verify/aoj/grl/6_B.test.cpp
+  - verify/aoj/grl/6_A___dinic.test.cpp
+  - verify/aoj/grl/2_A.test.cpp
+  - verify/aoj/grl/6_A___ford_fulkerson.test.cpp
+  - verify/aoj/grl/5_C.test.cpp
+  - verify/aoj/grl/3_B.test.cpp
+  - verify/aoj/grl/3_A.test.cpp
+  - verify/aoj/alds1/14_B.test.cpp
+  - verify/aoj/dpl/1_D.test.cpp
+  - verify/lc/assignment.test.cpp
   - verify/yukicoder/2780.test.cpp
   - verify/yukicoder/274.test.cpp
   - verify/yukicoder/1435.test.cpp
   - verify/yukicoder/1661.test.cpp
-  - verify/yosupo/number_of_substrings.test.cpp
-  - verify/yosupo/static_range_frequency.test.cpp
-  - verify/yosupo/area_of_union_of_rectangles.test.cpp
-  - verify/yosupo/two_sat.test.cpp
-  - verify/yosupo/two_edge_connected_components.test.cpp
-  - verify/yosupo/counting_primes.test.cpp
-  - verify/yosupo/kth_root_integer.test.cpp
-  - verify/yosupo/generalized_discrete_logarithm.test.cpp
-  - verify/yosupo/discrete_logarithm.test.cpp
-  - verify/yosupo/suffixarray.test.cpp
-  - verify/yosupo/factorize.test.cpp
-  - verify/yosupo/zalgorithm.test.cpp
-  - verify/yosupo/unionfind.test.cpp
+  - verify/yukicoder/2219.test.cpp
   - verify/yosupo/floor_sum.test.cpp
-  - verify/yosupo/assignment.test.cpp
+  - verify/yosupo/area_of_union_of_rectangles.test.cpp
+  - verify/yosupo/static_range_frequency.test.cpp
   - verify/yosupo/enumerate_palindromes.test.cpp
-  - verify/yosupo/assignment_negative.test.cpp
+  - verify/yosupo/factorize.test.cpp
+  - verify/yosupo/number_of_substrings.test.cpp
   - verify/yosupo/primality_test.test.cpp
+  - verify/yosupo/kth_root_integer.test.cpp
+  - verify/yosupo/discrete_logarithm.test.cpp
+  - verify/yosupo/assignment_negative.test.cpp
+  - verify/yosupo/two_edge_connected_components.test.cpp
+  - verify/yosupo/assignment.test.cpp
+  - verify/yosupo/unionfind.test.cpp
+  - verify/yosupo/zalgorithm.test.cpp
+  - verify/yosupo/counting_primes.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
-  - verify/lc/assignment.test.cpp
-  - verify/aoj/alds1/14_B.test.cpp
-  - verify/aoj/dpl/1_D.test.cpp
-  - verify/aoj/dsl/2_E___BIT.test.cpp
-  - verify/aoj/dsl/2_E___segment_tree.test.cpp
-  - verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
-  - verify/aoj/dsl/1_A.test.cpp
-  - verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
-  - verify/aoj/dsl/2_B___BIT.test.cpp
-  - verify/aoj/dsl/2_A___segment_tree.test.cpp
-  - verify/aoj/dsl/2_G_Radd_Rsum.test.cpp
-  - verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
-  - verify/aoj/dsl/5_B.test.cpp
-  - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
-  - verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
-  - verify/aoj/dsl/2_B___segment_tree.test.cpp
-  - verify/aoj/itp1/7_d.test.cpp
-  - verify/aoj/id/2828.test.cpp
-  - verify/aoj/id/2286.test.cpp
-  - verify/aoj/grl/3_B.test.cpp
-  - verify/aoj/grl/6_A___dinic.test.cpp
-  - verify/aoj/grl/3_C.test.cpp
-  - verify/aoj/grl/6_B.test.cpp
-  - verify/aoj/grl/5_C.test.cpp
-  - verify/aoj/grl/2_A.test.cpp
-  - verify/aoj/grl/3_A.test.cpp
-  - verify/aoj/grl/6_A___ford_fulkerson.test.cpp
+  - verify/yosupo/two_sat.test.cpp
+  - verify/yosupo/generalized_discrete_logarithm.test.cpp
+  - verify/yosupo/suffixarray.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:

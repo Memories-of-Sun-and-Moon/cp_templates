@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/two_sat.hpp
     title: 2-SAT
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
