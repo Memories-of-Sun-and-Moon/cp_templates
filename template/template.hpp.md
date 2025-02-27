@@ -72,7 +72,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
     title: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/6_B.test.cpp
     title: verify/aoj/grl/6_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -159,9 +159,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing\
@@ -222,7 +222,7 @@ data:
   requiredBy:
   - verify/atcoder/abc/150/f.___test.cpp
   timestamp: '2025-02-14 10:23:15+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dsl/2_B___segment_tree_0-indexed.test.cpp
   - verify/aoj/dsl/2_E___segment_tree.test.cpp

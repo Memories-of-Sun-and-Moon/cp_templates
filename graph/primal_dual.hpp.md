@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/6_B.test.cpp
     title: verify/aoj/grl/6_B.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/primal_dual.hpp\"\n\ntemplate<typename T>\nstruct\
@@ -65,7 +65,7 @@ data:
   path: graph/primal_dual.hpp
   requiredBy: []
   timestamp: '2025-02-28 03:58:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/grl/6_B.test.cpp
 documentation_of: graph/primal_dual.hpp

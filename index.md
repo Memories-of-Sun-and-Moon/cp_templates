@@ -67,7 +67,7 @@ data:
       path: graph/lowlink.hpp
       title: "lowlink\u3092\u7528\u3044\u305F\u6A4B\u30FB\u95A2\u7BC0\u70B9\u306E\u691C\
         \u51FA"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/primal_dual.hpp
       title: "\u6700\u5C0F\u8CBB\u7528\u6D41\uFF08primal-dual\u6CD5\uFF09"
     - icon: ':warning:'
@@ -152,7 +152,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/atcoder/abc/150
@@ -246,7 +246,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
       title: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/grl/6_B.test.cpp
       title: verify/aoj/grl/6_B.test.cpp
   - name: verify/aoj/id
