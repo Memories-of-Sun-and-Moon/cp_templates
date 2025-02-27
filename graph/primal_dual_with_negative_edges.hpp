@@ -23,8 +23,8 @@ struct primal_dual_with_negative_edges {
 		G[to].push_back((edge){from, 0, -cost, (int)G[from].size()-1});
 	}
 
-	optional<T> min_cost_flow(int s, int t, T f) {
-		int res = 0;
+	pair<bool, T> min_cost_flow(int s, int t, T f) {
+		T res = 0;
 		while(f > 0){
 			dist.assign(V, infty);
 			dist[s] = 0;
@@ -46,7 +46,7 @@ struct primal_dual_with_negative_edges {
 			}
 
 			if(dist[t] == infty) {
-				return nullopt;
+				return make_pair(false, res);
 			}
 
 			T d = f;
@@ -61,6 +61,6 @@ struct primal_dual_with_negative_edges {
 				G[v][e.rev].cap += d;
 			}
 		}
-		return res;
+		return make_pair(true, res);
 	}
 };
