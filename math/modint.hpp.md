@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2219.test.cpp
     title: verify/yukicoder/2219.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/3044.test.cpp
+    title: verify/yukicoder/3044.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -63,6 +66,7 @@ data:
   timestamp: '2024-09-21 01:01:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yukicoder/3044.test.cpp
   - verify/yukicoder/2219.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
 documentation_of: math/modint.hpp

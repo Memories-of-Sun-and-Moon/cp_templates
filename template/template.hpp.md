@@ -159,6 +159,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2780.test.cpp
     title: verify/yukicoder/2780.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/3044.test.cpp
+    title: verify/yukicoder/3044.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -254,6 +257,7 @@ data:
   - verify/yukicoder/2780.test.cpp
   - verify/yukicoder/274.test.cpp
   - verify/yukicoder/1435.test.cpp
+  - verify/yukicoder/3044.test.cpp
   - verify/yukicoder/1661.test.cpp
   - verify/yukicoder/2219.test.cpp
   - verify/yosupo/floor_sum.test.cpp

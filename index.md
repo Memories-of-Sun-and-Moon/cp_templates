@@ -343,6 +343,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/2780.test.cpp
       title: verify/yukicoder/2780.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yukicoder/3044.test.cpp
+      title: verify/yukicoder/3044.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/atcoder/M3_cp?logo=true)
