@@ -1,89 +1,87 @@
 
 template<typename T>
 struct matrix {
-	vector<vector<T>> mat;
+	vector<vector<T>> a;
 
-	matrix(size_t r, size_t c) {
-		mat.resize(r);
-		for(size_t i = 0;i < r;i++){
-			mat[i].resize(c);
+	matrix(){}
+	matrix(int n, int m) : a(n, vector<T>(m, 0)){}
+	matrix(int n) : a(n, vector<T>(n, 0)){}
+
+	size_t height() const {return a.size(); }
+	size_t width() const {return a[0].size(); }
+
+	const vector<T> &operator[](int k) const {return a.at(k); }
+	vector<T> &operator[](int k) {return a.at(k); }
+
+	static matrix I(size_t n){
+		matrix mat(n);
+		for(size_t i = 0;i < n;i++){
+			mat[i][i] = 1;
 		}
+		return mat;
 	}
 
-	matrix(vector<vector<T>> _mat) : mat(_mat){}
-
-	vector<T>& operator[](int i) {
-		return mat[i];
-	}
-	const vector<T>& operator[](int i) const {
-		return mat[i];
-	}
-
-	constexpr matrix operator+(const matrix rhs) const {
-		return matrix(*this) += rhs;
-	}
-	constexpr matrix operator-(const matrix rhs) const {
-		return matrix(*this) += rhs;
-	}
-	constexpr matrix operator*(const T rhs) const {
-		return matrix(*this) *= rhs;
-	}
-	constexpr matrix operator*(const matrix rhs) const {
-		return matrix(*this) *= rhs;
-	}
-	constexpr matrix operator+=(const matrix rhs) const {
-		assert((*this).size() == rhs.size() && (*this)[0].size() == rhs[0].size());
-		for(size_t i = 0;i < (*this).size();i++){
-			for(size_t j = 0;j < (*this)[0].size();j++){
-				mat += rhs[i][j];
-			}
-		}
-		return *this;
-	}
-	constexpr matrix operator-=(const matrix rhs) const {
-		for(size_t i = 0;i < (*this).size();i++){
-			for(size_t j = 0;j < (*this)[0].size();j++){
-				mat -= rhs[i][j];
+	matrix &operator+=(const matrix &b){
+		size_t n = height(), m = width();
+		assert(n == b.height() && m == b.width());
+		for(size_t i = 0;i < n;i++){
+			for(size_t j = 0;j < m;j++){
+				(*this)[i][j] += b[i][j];
 			}
 		}
 		return *this;
 	}
 
-	constexpr matrix operator*=(const T rhs) const {
-		for(size_t i = 0;i < (*this).size();i++){
-			for(size_t j = 0;j < (*this)[0].size();j++){
-				(*this)[i][j] *= rhs;
+	matrix &operator-=(const matrix &b){
+		size_t n = height(), m = width();
+		assert(n == b.height() && m == b.width());
+		for(size_t i = 0;i < n;i++){
+			for(size_t j = 0;j < m;j++){
+				(*this)[i][j] -= b[i][j];
 			}
 		}
 		return *this;
 	}
-	constexpr matrix operator*=(const matrix rhs) {
-		assert((*this)[0].size() == rhs.mat.size());
-		matrix c((*this).mat.size(), rhs[0].size());
-		for(size_t i = 0;i < (*this).mat.size();i++){
-			for(size_t k = 0;k < rhs.mat.size();k++){
-				for(size_t j = 0;j < rhs[0].size();j++){
-					c[i][j] += (*this)[i][k]*rhs[k][j];
+
+	matrix &operator*=(const matrix &b){
+		size_t n = height(), m = b.width(), p = width();
+		assert(p == b.height());
+		matrix c(n, m);
+		for(size_t i = 0;i < n;i++){
+			for(size_t k = 0;k < p;k++){
+				for(size_t j = 0;j < m;j++){
+					c[i][j] += (*this)[i][k] * b[k][j];
 				}
 			}
 		}
-		return (*this) = c;
-	}	
-	
-	matrix power(ll k) {
-		assert(mat.size() == mat[0].size());
-		matrix<T> b(mat.size(), mat[0].size());
-		for(size_t i = 0;i < b.mat.size();i++){
-			b[i][i] = 1;
-		}
-
-		while(k){
-			if(k & 1){
-				b *= (*this);
-			}
-			(*this) *= (*this);
-			k >>= 1;
-		}
-		return b;
+		a.swap(c.a);
+		return *this;
 	}
+
+	matrix &operator*=(const T &x){
+		size_t n = height(), m = width();
+		for(int i = 0;i < n;i++){
+			for(int j = 0;j < m;j++){
+				(*this)[i][j] *= x;
+			}
+		}
+		return *this;
+	}
+
+	matrix operator+(const matrix &b) const {return matrix(*this) += b; }
+	matrix operator-(const matrix &b) const {return matrix(*this) -= b; }
+	matrix operator*(const matrix &b) const {return matrix(*this) *= b; }
+	matrix operator*(const T &x) const {return matrix(*this) *= x; }
 };
+
+template<typename T>
+matrix<T> matrix_power(matrix<T> a, long long k){
+	assert(a.height() == a.width());
+	matrix<T> ret = matrix<T>::I(a.height());
+	while(k > 0){
+		if(k & 1)ret *= a;
+		a = a*a;
+		k >>= 1;
+	}
+	return ret;
+}

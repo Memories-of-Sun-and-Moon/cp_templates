@@ -8,4 +8,4 @@ documentation_of: ./../../math/matrix.hpp
 ## 使い方
 
 - ``+ - *`` はそのまま扱うことができる
-- ``power(ll k)`` 累乗が定義できるとき、 $k$ 乗を計算する
+- ``matrix_power(matrix<T> mat, ll k)`` 累乗が定義できるとき、 $mat$ の $k$ 乗を計算する
