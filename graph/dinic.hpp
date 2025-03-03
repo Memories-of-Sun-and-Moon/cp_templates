@@ -6,6 +6,7 @@ struct dinic {
 		int to;
 		T cap;
 		T rev;
+		T init_cap;
 	};
 		
 	int n;
@@ -13,11 +14,18 @@ struct dinic {
 	vector<int> level;
 	vector<int> iter;
 
-	dinic(int _v) : n(_v), G(n), level(n), iter(n) {}
+	vector<int> from_idx, to_idx;
+	int edge_idx;
 
-	void add_edge(int from, int to, T cap){
-		G[from].push_back((edge){to, cap, (T)G[to].size()});
-		G[to].push_back((edge){from, 0, (T)(G[from].size() - 1)});
+	dinic(int _v) : n(_v), G(n), level(n), iter(n), edge_idx(0) {}
+
+	int add_edge(int from, int to, T cap){
+		G[from].push_back((edge){to, cap, (T)G[to].size(), cap});
+		G[to].push_back((edge){from, 0, (T)(G[from].size() - 1), 0});
+		from_idx.emplace_back(from);
+		to_idx.emplace_back((int)G[from].size()-1);
+		
+		return edge_idx++;
 	}
 
 	void bfs(int s){
@@ -65,5 +73,9 @@ struct dinic {
 				flow += f;
 			}
 		}
+	}
+
+	T get_flow(int idx){
+		return G[from_idx[idx]][to_idx[idx]].init_cap - G[from_idx[idx]][to_idx[idx]].cap;
 	}
 };
