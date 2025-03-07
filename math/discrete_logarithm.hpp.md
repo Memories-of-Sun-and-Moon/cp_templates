@@ -28,12 +28,12 @@ data:
     b >>= 1;\n\t\t}\n\t\treturn ret;\n\t};\n\n\tunsigned long long ret = (k == 3 ?\
     \ cbrt(n)-1 : pow(n, nextafter(1.0/double(k), 0.0)));\n\twhile(power(ret+1, k)\
     \ <= n)ret++;\n\treturn ret;\n}\n#line 1 \"math/power.hpp\"\n\ntemplate<typename\
-    \ mint>\nmint power(mint n, long long k) {\n\tmint ret = 1;\n\twhile(k > 0) {\n\
-    \t\tif(k & 1)ret *= n;\n\t\tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\n\
-    long long power(long long n, long long k, long long p) {\n\tlong long ret = 1;\n\
-    \twhile(k > 0){\n\t\tif(k & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\
-    \t}\n\treturn ret;\n}\n#line 3 \"math/discrete_logarithm.hpp\"\n\nll __modinv(ll\
-    \ a, ll m){\n\tll b=m, u=1, v=0;\n\twhile(b){\n\t\tll t = a/b;\n\t\ta -= t*b;swap(a,\
+    \ T>\nT power(T n, long long k) {\n\tT ret = 1;\n\twhile(k > 0) {\n\t\tif(k &\
+    \ 1)ret *= n;\n\t\tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\nlong long\
+    \ power(long long n, long long k, long long p) {\n\tlong long ret = 1;\n\twhile(k\
+    \ > 0){\n\t\tif(k & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\t\
+    return ret;\n}\n#line 3 \"math/discrete_logarithm.hpp\"\n\nll __modinv(ll a, ll\
+    \ m){\n\tll b=m, u=1, v=0;\n\twhile(b){\n\t\tll t = a/b;\n\t\ta -= t*b;swap(a,\
     \ b);\n\t\tu -= t*v;swap(u, v);\n\t}\n\tu %= m;\n\tif(u < 0)u += m;\n\treturn\
     \ u;\n}\n\nll discrete_logarithm(ll x, ll y, ll m) {\n\tassert(x < m && y < m);\n\
     \tif(m == 1)return 0;\n\tif(y == 1)return 0;\n\tif(x == 0){\n\t\tif(y == 1)return\
@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: math/discrete_logarithm.hpp
   requiredBy: []
-  timestamp: '2025-02-04 02:16:30+09:00'
+  timestamp: '2025-03-08 05:27:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/discrete_logarithm.test.cpp
