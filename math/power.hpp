@@ -1,7 +1,7 @@
 
-template<typename mint>
-mint power(mint n, long long k) {
-	mint ret = 1;
+template<typename T>
+T power(T n, long long k) {
+	T ret = 1;
 	while(k > 0) {
 		if(k & 1)ret *= n;
 		n = n*n;
