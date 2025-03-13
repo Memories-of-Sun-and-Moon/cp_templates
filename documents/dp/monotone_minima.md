@@ -7,7 +7,7 @@ documentation_of: ./../../dp/monotone_minima.hpp
 
 ## 使い方
 
-- ``vector<int> monotone_minima(int n, int m, const F &argmin)`` : $N$ 行 $M$ 列の Monotone な行列について、$i$ 行目の $[l, r)$ 列の $\arg\min$ を求める関数を用意したとき、その行列における各行の最小値を求める $O(N + \sigma M \log N )$
+- ``vector<int> monotone_minima(int n, int m, const F &argmin)`` : $N$ 行 $M$ 列の Monotone な行列について、$i$ 行目の $[l, r)$ 列の $\arg\min$ （最小値の添え字）を求める関数を用意したとき、その行列における各行の最小値の添え字を求める $O(N + \sigma M \log N )$
 
 ただし、 $\sigma$ を $\arg\min$ を求める計算量とする。
 
