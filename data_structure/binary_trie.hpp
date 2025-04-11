@@ -1,4 +1,4 @@
-template<typename T, int MAX_LOG=32, typename D=int>
+template<typename T, int MAX_LOG=31, typename D=int>
 struct binary_trie {
 	struct Node {
 		Node *nxt[2];
