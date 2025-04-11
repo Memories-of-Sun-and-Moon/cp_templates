@@ -12,7 +12,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"data_structure/binary_trie.hpp\"\ntemplate<typename T, int\
-    \ MAX_LOG=32, typename D=int>\nstruct binary_trie {\n\tstruct Node {\n\t\tNode\
+    \ MAX_LOG=31, typename D=int>\nstruct binary_trie {\n\tstruct Node {\n\t\tNode\
     \ *nxt[2];\n\t\tD exist;\n\t\tvector<int> accept;\n\n\t\tNode() : nxt{nullptr,\
     \ nullptr}, exist(0) {}\n\t};\n\n\tNode *root;\n\n\texplicit binary_trie() : root(new\
     \ Node()) {}\n\texplicit binary_trie(Node *_root) : root(_root) {}\n\n\t~binary_trie()\
@@ -50,7 +50,7 @@ data:
     \ >> depth & 1)], bit, depth-1, xor_val);\n\t\t}\n\t\treturn ret;\n\t}\n\n\tvoid\
     \ clear(Node *t) {\n\t\tif (!t) return;\n\t\tclear(t->nxt[0]);\n\t\tclear(t->nxt[1]);\n\
     \t\tdelete t;\n\t}\n};\n"
-  code: "template<typename T, int MAX_LOG=32, typename D=int>\nstruct binary_trie\
+  code: "template<typename T, int MAX_LOG=31, typename D=int>\nstruct binary_trie\
     \ {\n\tstruct Node {\n\t\tNode *nxt[2];\n\t\tD exist;\n\t\tvector<int> accept;\n\
     \n\t\tNode() : nxt{nullptr, nullptr}, exist(0) {}\n\t};\n\n\tNode *root;\n\n\t\
     explicit binary_trie() : root(new Node()) {}\n\texplicit binary_trie(Node *_root)\
@@ -93,7 +93,7 @@ data:
   isVerificationFile: false
   path: data_structure/binary_trie.hpp
   requiredBy: []
-  timestamp: '2025-04-11 16:10:40+09:00'
+  timestamp: '2025-04-11 16:31:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/set_xor_min.test.cpp

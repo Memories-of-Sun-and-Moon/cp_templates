@@ -45,7 +45,7 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"data_structure/binary_trie.hpp\"\ntemplate<typename T, int MAX_LOG=32, typename\
+    \ 1 \"data_structure/binary_trie.hpp\"\ntemplate<typename T, int MAX_LOG=31, typename\
     \ D=int>\nstruct binary_trie {\n\tstruct Node {\n\t\tNode *nxt[2];\n\t\tD exist;\n\
     \t\tvector<int> accept;\n\n\t\tNode() : nxt{nullptr, nullptr}, exist(0) {}\n\t\
     };\n\n\tNode *root;\n\n\texplicit binary_trie() : root(new Node()) {}\n\texplicit\
@@ -102,7 +102,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/set_xor_min.test.cpp
   requiredBy: []
-  timestamp: '2025-04-11 16:10:40+09:00'
+  timestamp: '2025-04-11 16:31:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/set_xor_min.test.cpp
