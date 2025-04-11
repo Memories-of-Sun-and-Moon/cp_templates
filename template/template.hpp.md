@@ -127,6 +127,9 @@ data:
     path: verify/yosupo/primality_test.test.cpp
     title: verify/yosupo/primality_test.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/set_xor_min.test.cpp
+    title: verify/yosupo/set_xor_min.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/static_range_frequency.test.cpp
     title: verify/yosupo/static_range_frequency.test.cpp
   - icon: ':heavy_check_mark:'
@@ -269,6 +272,7 @@ data:
   - verify/yosupo/primality_test.test.cpp
   - verify/yosupo/kth_root_integer.test.cpp
   - verify/yosupo/discrete_logarithm.test.cpp
+  - verify/yosupo/set_xor_min.test.cpp
   - verify/yosupo/assignment_negative.test.cpp
   - verify/yosupo/two_edge_connected_components.test.cpp
   - verify/yosupo/assignment.test.cpp

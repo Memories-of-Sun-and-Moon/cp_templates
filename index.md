@@ -11,6 +11,9 @@ data:
       path: data_structure/binary_indexed_tree.hpp
       title: BIT(Binary Indexed Tree)
     - icon: ':heavy_check_mark:'
+      path: data_structure/binary_trie.hpp
+      title: Binary Trie
+    - icon: ':heavy_check_mark:'
       path: data_structure/lazy_segment_tree.hpp
       title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
@@ -308,6 +311,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/primality_test.test.cpp
       title: verify/yosupo/primality_test.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/set_xor_min.test.cpp
+      title: verify/yosupo/set_xor_min.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/static_range_frequency.test.cpp
       title: verify/yosupo/static_range_frequency.test.cpp
