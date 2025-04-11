@@ -39,6 +39,7 @@
 "verify/yosupo/kth_root_integer.test.cpp": "2025-02-14 10:23:15 +0900",
 "verify/yosupo/number_of_substrings.test.cpp": "2025-02-14 10:23:15 +0900",
 "verify/yosupo/primality_test.test.cpp": "2025-02-14 10:23:15 +0900",
+"verify/yosupo/set_xor_min.test.cpp": "2025-04-11 16:10:40 +0900",
 "verify/yosupo/static_range_frequency.test.cpp": "2025-02-14 10:23:15 +0900",
 "verify/yosupo/suffixarray.test.cpp": "2025-02-14 10:23:15 +0900",
 "verify/yosupo/two_edge_connected_components.test.cpp": "2025-02-14 10:23:15 +0900",
