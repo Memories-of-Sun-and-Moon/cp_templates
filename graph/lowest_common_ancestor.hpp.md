@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/5_C.test.cpp
     title: verify/aoj/grl/5_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/lca.test.cpp
+    title: verify/yosupo/lca.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -49,6 +52,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/grl/5_C.test.cpp
+  - verify/yosupo/lca.test.cpp
 documentation_of: graph/lowest_common_ancestor.hpp
 layout: document
 title: Lowest Common Ancestor

@@ -17,6 +17,9 @@ data:
       path: data_structure/lazy_segment_tree.hpp
       title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
+      path: data_structure/merge_sort_tree.hpp
+      title: merge-sort tree
+    - icon: ':heavy_check_mark:'
       path: data_structure/mo.hpp
       title: Mo's Algorithm
     - icon: ':warning:'
@@ -79,6 +82,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/strongly_connected_components.hpp
       title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
+    - icon: ':heavy_check_mark:'
+      path: graph/tree_diameter.hpp
+      title: "\u6728\u306E\u76F4\u5F84\u8A08\u7B97"
     - icon: ':heavy_check_mark:'
       path: graph/two_edge_connected_components.hpp
       title: "\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\u5206\u89E3"
@@ -306,6 +312,9 @@ data:
       path: verify/yosupo/kth_root_integer.test.cpp
       title: verify/yosupo/kth_root_integer.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/lca.test.cpp
+      title: verify/yosupo/lca.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/number_of_substrings.test.cpp
       title: verify/yosupo/number_of_substrings.test.cpp
     - icon: ':heavy_check_mark:'
@@ -320,6 +329,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/suffixarray.test.cpp
       title: verify/yosupo/suffixarray.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/tree_diameter.test.cpp
+      title: verify/yosupo/tree_diameter.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/two_edge_connected_components.test.cpp
       title: verify/yosupo/two_edge_connected_components.test.cpp
@@ -352,6 +364,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/3044.test.cpp
       title: verify/yukicoder/3044.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yukicoder/3078.test.cpp
+      title: verify/yukicoder/3078.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/atcoder/M3_cp?logo=true)
