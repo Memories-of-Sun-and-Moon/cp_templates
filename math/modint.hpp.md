@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: math/combination.hpp
-    title: "2\u9805\u4FC2\u6570mod"
+    title: binary_gcd
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution_mod.test.cpp

@@ -97,8 +97,11 @@ data:
   - name: math
     pages:
     - icon: ':warning:'
+      path: math/binary_gcd.hpp
+      title: math/binary_gcd.hpp
+    - icon: ':warning:'
       path: math/combination.hpp
-      title: "2\u9805\u4FC2\u6570mod"
+      title: binary_gcd
     - icon: ':heavy_check_mark:'
       path: math/counting_primes.hpp
       title: "$n$ \u4EE5\u4E0B\u306E\u7D20\u6570\u306E\u6570\u3048\u4E0A\u3052"
