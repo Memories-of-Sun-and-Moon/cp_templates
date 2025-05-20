@@ -47,18 +47,17 @@ data:
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
     \ 2 \"math/is_prime.hpp\"\n__int128_t __power(__int128_t n, __int128_t k, __int128_t\
-    \ m) {\n    n %= m;\n\t__int128_t ret = 1;\n    while(k > 0){\n        if(k &\
-    \ 1)ret = ret * n % m;\n        n = __int128_t(n) * n % m;\n        k >>= 1;\n\
-    \    }\n    return ret % m;\n}\n\nbool is_prime(long long n){\n    if(n <= 1)return\
-    \ false;\n    if(n == 2 || n == 3 || n == 5)return true;\n    if(n % 2 == 0)return\
-    \ false;\n    if(n % 3 == 0)return false;\n    if(n % 5 == 0)return false;\n\n\
-    \    vector<long long> A = {2, 325, 9375, 28178, 450775, 9780504, 1795265022};\n\
-    \n    long long s = 0, d = n - 1;\n    while(d % 2 == 0){\n        s++;\n    \
-    \    d >>= 1;\n    }\n\n    for (auto a : A){\n        if(a % n == 0)return true;\n\
-    \        long long t, x = __power(a, d, n);\n        if(x != 1){\n           \
-    \ for(t = 0;t < s;t++){\n                if(x == n - 1)break;\n              \
-    \  x = __int128_t(x) * x % n;\n            }\n            if(t == s)return false;\n\
-    \        }\n    }\n    return true;\n}\n#line 5 \"verify/yosupo/primality_test.test.cpp\"\
+    \ m) {\n\tn %= m;\n\t__int128_t ret = 1;\n\twhile(k > 0){\n\t\tif(k & 1)ret =\
+    \ ret * n % m;\n\t\tn = __int128_t(n) * n % m;\n\t\tk >>= 1;\n\t}\n\treturn ret\
+    \ % m;\n}\n\nbool is_prime(long long n){\n\tif(n <= 1)return false;\n\tif(n ==\
+    \ 2 || n == 3 || n == 5)return true;\n\tif(n % 2 == 0)return false;\n\tif(n %\
+    \ 3 == 0)return false;\n\tif(n % 5 == 0)return false;\n\n\tvector<long long> A\
+    \ = {2, 325, 9375, 28178, 450775, 9780504, 1795265022};\n\n\tlong long s = 0,\
+    \ d = n - 1;\n\twhile(d % 2 == 0){\n\t\ts++;\n\t\td >>= 1;\n\t}\n\n\tfor (auto\
+    \ a : A){\n\t\tif(a % n == 0)return true;\n\t\tlong long t, x = __power(a, d,\
+    \ n);\n\t\tif(x != 1){\n\t\t\tfor(t = 0;t < s;t++){\n\t\t\t\tif(x == n - 1)break;\n\
+    \t\t\t\tx = __int128_t(x) * x % n;\n\t\t\t}\n\t\t\tif(t == s)return false;\n\t\
+    \t}\n\t}\n\treturn true;\n}\n#line 5 \"verify/yosupo/primality_test.test.cpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n    int t;\n    cin >> t;\n\
     \    while(t--){\n        ll a;\n        cin >> a;\n        cout << (is_prime(a)\
     \ ? \"Yes\" : \"No\") << '\\n';\n    }\n}\n"
@@ -73,7 +72,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/primality_test.test.cpp
   requiredBy: []
-  timestamp: '2025-05-20 21:02:10+09:00'
+  timestamp: '2025-05-20 23:52:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/primality_test.test.cpp

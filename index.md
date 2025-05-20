@@ -96,7 +96,7 @@ data:
       title: graph/warshall_floyd.cpp
   - name: math
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/binary_gcd.hpp
       title: math/binary_gcd.hpp
     - icon: ':warning:'
@@ -344,6 +344,9 @@ data:
       title: verify/yosupo/zalgorithm.test.cpp
   - name: verify/yukicoder
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yukicoder/1250.test.cpp
+      title: verify/yukicoder/1250.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/1435.test.cpp
       title: verify/yukicoder/1435.test.cpp

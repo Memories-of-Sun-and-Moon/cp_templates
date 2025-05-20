@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/1250.test.cpp
+    title: verify/yukicoder/1250.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/binary_gcd.hpp\"\nll binary_gcd(ll a, ll b){\n\tif(a\
@@ -24,8 +27,9 @@ data:
   path: math/binary_gcd.hpp
   requiredBy: []
   timestamp: '2025-05-20 23:51:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/yukicoder/1250.test.cpp
 documentation_of: math/binary_gcd.hpp
 layout: document
 redirect_from:

@@ -151,6 +151,9 @@ data:
     path: verify/yosupo/zalgorithm.test.cpp
     title: verify/yosupo/zalgorithm.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/1250.test.cpp
+    title: verify/yukicoder/1250.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/1435.test.cpp
     title: verify/yukicoder/1435.test.cpp
   - icon: ':heavy_check_mark:'
@@ -242,6 +245,7 @@ data:
   - verify/yukicoder/3044.test.cpp
   - verify/yukicoder/3078.test.cpp
   - verify/yukicoder/2219.test.cpp
+  - verify/yukicoder/1250.test.cpp
   - verify/yukicoder/1661.test.cpp
   - verify/yosupo/assignment.test.cpp
   - verify/yosupo/factorize.test.cpp
