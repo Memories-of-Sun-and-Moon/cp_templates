@@ -70,20 +70,20 @@ data:
     \t}\n};\n#line 5 \"verify/aoj/grl/6_A___dinic.test.cpp\"\n\nusing namespace mmrz;\n\
     \nvoid mmrz::solve(){\n    int n, m;\n    cin >> n >> m;\n    dinic<int> f(n);\n\
     \    while(m--){\n        int a, b, c;\n        cin >> a >> b >> c;\n        f.add_edge(a,\
-    \ b, c);\n    }\n    cout << f.calc(0, n-1) << endl;\n}\n"
+    \ b, c);\n    }\n    cout << f.calc(0, n-1) << '\\n';\n}\n"
   code: "# define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A\"\
     \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../graph/dinic.hpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n    int n, m;\n    cin >> n\
     \ >> m;\n    dinic<int> f(n);\n    while(m--){\n        int a, b, c;\n       \
     \ cin >> a >> b >> c;\n        f.add_edge(a, b, c);\n    }\n    cout << f.calc(0,\
-    \ n-1) << endl;\n}\n"
+    \ n-1) << '\\n';\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/dinic.hpp
   isVerificationFile: true
   path: verify/aoj/grl/6_A___dinic.test.cpp
   requiredBy: []
-  timestamp: '2025-03-04 07:06:35+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/grl/6_A___dinic.test.cpp

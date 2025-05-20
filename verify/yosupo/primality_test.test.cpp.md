@@ -61,19 +61,19 @@ data:
     \        }\n    }\n    return true;\n}\n#line 5 \"verify/yosupo/primality_test.test.cpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n    int t;\n    cin >> t;\n\
     \    while(t--){\n        ll a;\n        cin >> a;\n        cout << (is_prime(a)\
-    \ ? \"Yes\" : \"No\") << endl;\n    }\n}\n"
+    \ ? \"Yes\" : \"No\") << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/primality_test\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../math/is_prime.hpp\"\n\n\
     using namespace mmrz;\n\nvoid mmrz::solve(){\n    int t;\n    cin >> t;\n    while(t--){\n\
     \        ll a;\n        cin >> a;\n        cout << (is_prime(a) ? \"Yes\" : \"\
-    No\") << endl;\n    }\n}\n"
+    No\") << '\\n';\n    }\n}\n"
   dependsOn:
   - template/template.hpp
   - math/is_prime.hpp
   isVerificationFile: true
   path: verify/yosupo/primality_test.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/primality_test.test.cpp

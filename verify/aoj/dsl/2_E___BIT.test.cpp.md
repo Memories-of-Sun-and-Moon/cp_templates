@@ -55,7 +55,7 @@ data:
     \tint n, q;\n\tcin >> n >> q;\n\tbinary_indexed_tree<int> BIT(n);\n\twhile(q--){\n\
     \t\tint com;\n\t\tcin >> com;\n\t\tif(com == 0){\n\t\t\tint s, t, x;\n\t\t\tcin\
     \ >> s >> t >> x;\n\t\t\tBIT.add(s, x);\n\t\t\tif(t+1 <= n)BIT.add(t+1, -x);\n\
-    \t\t}else{\n\t\t\tint t;\n\t\t\tcin >> t;\n\t\t\tcout << BIT.sum(t) << endl;\n\
+    \t\t}else{\n\t\t\tint t;\n\t\t\tcin >> t;\n\t\t\tcout << BIT.sum(t) << '\\n';\n\
     \t\t}\n\t}\n}\n"
   code: "# define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_E\"\
     \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../data_structure/binary_indexed_tree.hpp\"\
@@ -63,14 +63,14 @@ data:
     \ BIT(n);\n\twhile(q--){\n\t\tint com;\n\t\tcin >> com;\n\t\tif(com == 0){\n\t\
     \t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\t\t\tBIT.add(s, x);\n\t\t\tif(t+1\
     \ <= n)BIT.add(t+1, -x);\n\t\t}else{\n\t\t\tint t;\n\t\t\tcin >> t;\n\t\t\tcout\
-    \ << BIT.sum(t) << endl;\n\t\t}\n\t}\n}\n"
+    \ << BIT.sum(t) << '\\n';\n\t\t}\n\t}\n}\n"
   dependsOn:
   - template/template.hpp
   - data_structure/binary_indexed_tree.hpp
   isVerificationFile: true
   path: verify/aoj/dsl/2_E___BIT.test.cpp
   requiredBy: []
-  timestamp: '2025-03-09 13:19:51+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_E___BIT.test.cpp

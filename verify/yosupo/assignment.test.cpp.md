@@ -65,20 +65,20 @@ data:
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector\
     \ a(n, vector(n, 0LL));\n\trep(i, n)rep(j, n)cin >> a[i][j];\n\n\tvector<int>\
     \ h = hungarian<true, ll>(a);\n\tll x = 0;\n\trep(i, n)x += a[i][h[i]];\n\tcout\
-    \ << x << endl;\n\trep(i, n)cout << h[i] << \" \\n\"[i == n-1];\n}\n"
+    \ << x << '\\n';\n\trep(i, n)cout << h[i] << \" \\n\"[i == n-1];\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/assignment\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../graph/hungarian.hpp\"\n\
     \nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector\
     \ a(n, vector(n, 0LL));\n\trep(i, n)rep(j, n)cin >> a[i][j];\n\n\tvector<int>\
     \ h = hungarian<true, ll>(a);\n\tll x = 0;\n\trep(i, n)x += a[i][h[i]];\n\tcout\
-    \ << x << endl;\n\trep(i, n)cout << h[i] << \" \\n\"[i == n-1];\n}\n"
+    \ << x << '\\n';\n\trep(i, n)cout << h[i] << \" \\n\"[i == n-1];\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/hungarian.hpp
   isVerificationFile: true
   path: verify/yosupo/assignment.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/assignment.test.cpp

@@ -62,19 +62,19 @@ data:
     \ = h;\n\t\t}\n\t}\n};\n#line 5 \"verify/yosupo/number_of_substrings.test.cpp\"\
     \n\nvoid mmrz::solve(){\n\tstring s;\n\tcin >> s;\n\tsuffix_array sa(s, true);\n\
     \tll ans = len(s)*(len(s)+1)/2;\n\tans -= accumulate(all(sa.lcp), 0LL);\n\tcout\
-    \ << ans << endl;\n}\n"
+    \ << ans << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\n\
     \n#include \"./../../template/template.hpp\"\n#include \"./../../string/suffix_array.hpp\"\
     \n\nvoid mmrz::solve(){\n\tstring s;\n\tcin >> s;\n\tsuffix_array sa(s, true);\n\
     \tll ans = len(s)*(len(s)+1)/2;\n\tans -= accumulate(all(sa.lcp), 0LL);\n\tcout\
-    \ << ans << endl;\n}\n"
+    \ << ans << '\\n';\n}\n"
   dependsOn:
   - template/template.hpp
   - string/suffix_array.hpp
   isVerificationFile: true
   path: verify/yosupo/number_of_substrings.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/number_of_substrings.test.cpp

@@ -271,11 +271,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/itp1/7_d.test.cpp
       title: verify/aoj/itp1/7_d.test.cpp
-  - name: verify/lc
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: verify/lc/assignment.test.cpp
-      title: verify/lc/assignment.test.cpp
   - name: verify/yosupo
     pages:
     - icon: ':heavy_check_mark:'

@@ -79,9 +79,9 @@ data:
     \t};\n\n\ttwo_sat ts(n);\n\twhile(m--){\n\t\tint x, y, _zero;\n\t\tcin >> x >>\
     \ y >> _zero;\n\t\tauto [nx, x_tf] = f(x);\n\t\tauto [ny, y_tf] = f(y);\n\t\t\
     ts.add_clause(nx, x_tf, ny, y_tf);\n\t}\n\n\tauto ret = ts.solve();\n\tif(ret.empty()){\n\
-    \t\tcout << \"s UNSATISFIABLE\" << endl;\n\t\treturn;\n\t}\n\tcout << \"s SATISFIABLE\"\
-    \ << endl;\n\tcout << \"v\";\n\trep(i, n){\n\t\tcout << \" \" << (ret[i] ? \"\"\
-    \ : \"-\") << i+1;\n\t}\n\tcout << \" 0\" << endl;\n}\n"
+    \t\tcout << \"s UNSATISFIABLE\" << '\\n';\n\t\treturn;\n\t}\n\tcout << \"s SATISFIABLE\"\
+    \ << '\\n';\n\tcout << \"v\";\n\trep(i, n){\n\t\tcout << \" \" << (ret[i] ? \"\
+    \" : \"-\") << i+1;\n\t}\n\tcout << \" 0\" << '\\n';\n}\n"
   code: "# define PROBLEM \"https://judge.yosupo.jp/problem/two_sat\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../graph/two_sat.hpp\"\n\n\
     void mmrz::solve(){\n\tchar _p;\n\tstring _cnf;\n\tint n, m;\n\tcin >> _p >> _cnf\
@@ -90,9 +90,9 @@ data:
     \ttwo_sat ts(n);\n\twhile(m--){\n\t\tint x, y, _zero;\n\t\tcin >> x >> y >> _zero;\n\
     \t\tauto [nx, x_tf] = f(x);\n\t\tauto [ny, y_tf] = f(y);\n\t\tts.add_clause(nx,\
     \ x_tf, ny, y_tf);\n\t}\n\n\tauto ret = ts.solve();\n\tif(ret.empty()){\n\t\t\
-    cout << \"s UNSATISFIABLE\" << endl;\n\t\treturn;\n\t}\n\tcout << \"s SATISFIABLE\"\
-    \ << endl;\n\tcout << \"v\";\n\trep(i, n){\n\t\tcout << \" \" << (ret[i] ? \"\"\
-    \ : \"-\") << i+1;\n\t}\n\tcout << \" 0\" << endl;\n}\n"
+    cout << \"s UNSATISFIABLE\" << '\\n';\n\t\treturn;\n\t}\n\tcout << \"s SATISFIABLE\"\
+    \ << '\\n';\n\tcout << \"v\";\n\trep(i, n){\n\t\tcout << \" \" << (ret[i] ? \"\
+    \" : \"-\") << i+1;\n\t}\n\tcout << \" 0\" << '\\n';\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/two_sat.hpp
@@ -100,7 +100,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/two_sat.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/two_sat.test.cpp

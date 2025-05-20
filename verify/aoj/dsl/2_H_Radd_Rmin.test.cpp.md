@@ -105,7 +105,7 @@ data:
     \ composition, id> seg(_v);\n\n\twhile(q--){\n\t\tint op;\n\t\tcin >> op;\n\t\t\
     if(op == 0){\n\t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\t\t\tt++;\n\t\t\t\
     seg.apply(s, t, x);\n\t\t}else{\n\t\t\tint s, t;\n\t\t\tcin >> s >> t;\n\t\t\t\
-    t++;\n\t\t\tcout << seg.fold(s, t) << endl;\n\t\t}\n\t}\n}\n"
+    t++;\n\t\t\tcout << seg.fold(s, t) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H\"\
     \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../data_structure/lazy_segment_tree.hpp\"\
     \n\nusing S = ll;\nusing F = ll;\n\nS op(S a, S b){ return min(a, b); }\nS e(){\
@@ -115,14 +115,14 @@ data:
     \ mapping, composition, id> seg(_v);\n\n\twhile(q--){\n\t\tint op;\n\t\tcin >>\
     \ op;\n\t\tif(op == 0){\n\t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\t\t\t\
     t++;\n\t\t\tseg.apply(s, t, x);\n\t\t}else{\n\t\t\tint s, t;\n\t\t\tcin >> s >>\
-    \ t;\n\t\t\tt++;\n\t\t\tcout << seg.fold(s, t) << endl;\n\t\t}\n\t}\n}\n"
+    \ t;\n\t\t\tt++;\n\t\t\tcout << seg.fold(s, t) << '\\n';\n\t\t}\n\t}\n}\n"
   dependsOn:
   - template/template.hpp
   - data_structure/lazy_segment_tree.hpp
   isVerificationFile: true
   path: verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_H_Radd_Rmin.test.cpp

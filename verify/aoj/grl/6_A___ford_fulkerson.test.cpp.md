@@ -64,20 +64,20 @@ data:
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n    int n, m;\n    cin >> n\
     \ >> m;\n    ford_fulkerson<int> f(n);\n    while(m--){\n        int a, b, c;\n\
     \        cin >> a >> b >> c;\n        f.add_edge(a, b, c);\n    }\n    cout <<\
-    \ f.calc(0, n-1) << endl;\n}\n"
+    \ f.calc(0, n-1) << '\\n';\n}\n"
   code: "# define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A\"\
     \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../graph/ford_fulkerson.hpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n    int n, m;\n    cin >> n\
     \ >> m;\n    ford_fulkerson<int> f(n);\n    while(m--){\n        int a, b, c;\n\
     \        cin >> a >> b >> c;\n        f.add_edge(a, b, c);\n    }\n    cout <<\
-    \ f.calc(0, n-1) << endl;\n}\n"
+    \ f.calc(0, n-1) << '\\n';\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/ford_fulkerson.hpp
   isVerificationFile: true
   path: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/grl/6_A___ford_fulkerson.test.cpp

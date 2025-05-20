@@ -106,7 +106,7 @@ data:
     \ composition, id> seg(_v);\n\n\twhile(q--){\n\t\tint op;\n\t\tcin >> op;\n\t\t\
     if(op == 0){\n\t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\t\t\ts--;\n\t\t\t\
     seg.apply(s, t, x);\n\t\t}else{\n\t\t\tint i;\n\t\t\tcin >> i;\n\t\t\ti--;\n\t\
-    \t\tcout << seg[i].val << endl;\n\t\t}\n\t}\n}\n"
+    \t\tcout << seg[i].val << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E\"\
     \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../data_structure/lazy_segment_tree.hpp\"\
     \n\nstruct S {\n\tll val;\n\tint size;\n};\n\nusing F = ll;\n\nS op(S a, S b){\
@@ -117,14 +117,14 @@ data:
     \ composition, id> seg(_v);\n\n\twhile(q--){\n\t\tint op;\n\t\tcin >> op;\n\t\t\
     if(op == 0){\n\t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\t\t\ts--;\n\t\t\t\
     seg.apply(s, t, x);\n\t\t}else{\n\t\t\tint i;\n\t\t\tcin >> i;\n\t\t\ti--;\n\t\
-    \t\tcout << seg[i].val << endl;\n\t\t}\n\t}\n}\n"
+    \t\tcout << seg[i].val << '\\n';\n\t\t}\n\t}\n}\n"
   dependsOn:
   - template/template.hpp
   - data_structure/lazy_segment_tree.hpp
   isVerificationFile: true
   path: verify/aoj/dsl/2_E___segment_tree.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_E___segment_tree.test.cpp

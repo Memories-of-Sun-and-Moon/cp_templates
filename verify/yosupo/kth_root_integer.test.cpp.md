@@ -56,18 +56,18 @@ data:
     return ret;\n\t};\n\n\tunsigned long long ret = (k == 3 ? cbrt(n)-1 : pow(n, nextafter(1.0/double(k),\
     \ 0.0)));\n\twhile(power(ret+1, k) <= n)ret++;\n\treturn ret;\n}\n#line 5 \"verify/yosupo/kth_root_integer.test.cpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint t;\n\tcin >> t;\n\twhile(t--){\n\
-    \t\tull a, k;\n\t\tcin >> a >> k;\n\t\tcout << iroot(a, k) << endl;\n\t}\n}\n"
+    \t\tull a, k;\n\t\tcin >> a >> k;\n\t\tcout << iroot(a, k) << '\\n';\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/kth_root_integer\"\n\n\
     #include \"./../../template/template.hpp\"\n#include \"./../../math/iroot.hpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint t;\n\tcin >> t;\n\twhile(t--){\n\
-    \t\tull a, k;\n\t\tcin >> a >> k;\n\t\tcout << iroot(a, k) << endl;\n\t}\n}\n"
+    \t\tull a, k;\n\t\tcin >> a >> k;\n\t\tcout << iroot(a, k) << '\\n';\n\t}\n}\n"
   dependsOn:
   - template/template.hpp
   - math/iroot.hpp
   isVerificationFile: true
   path: verify/yosupo/kth_root_integer.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/kth_root_integer.test.cpp

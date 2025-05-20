@@ -61,14 +61,14 @@ data:
     \n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tunion_find uf(n);\n\t\
     while(q--){\n\t\tint t;\n\t\tcin >> t;\n\t\tif(t == 0){\n\t\t\tint u, v;\n\t\t\
     \tcin >> u >> v;\n\t\t\tuf.unite(u, v);\n\t\t}else{\n\t\t\tint u, v;\n\t\t\tcin\
-    \ >> u >> v;\n\t\t\tcout << (uf.is_same(u, v) ? 1 : 0) << endl;\n\t\t}\n\t}\n\
+    \ >> u >> v;\n\t\t\tcout << (uf.is_same(u, v) ? 1 : 0) << '\\n';\n\t\t}\n\t}\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../data_structure/union_find.hpp\"\
     \n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tunion_find uf(n);\n\t\
     while(q--){\n\t\tint t;\n\t\tcin >> t;\n\t\tif(t == 0){\n\t\t\tint u, v;\n\t\t\
     \tcin >> u >> v;\n\t\t\tuf.unite(u, v);\n\t\t}else{\n\t\t\tint u, v;\n\t\t\tcin\
-    \ >> u >> v;\n\t\t\tcout << (uf.is_same(u, v) ? 1 : 0) << endl;\n\t\t}\n\t}\n\
+    \ >> u >> v;\n\t\t\tcout << (uf.is_same(u, v) ? 1 : 0) << '\\n';\n\t\t}\n\t}\n\
     }\n"
   dependsOn:
   - template/template.hpp
@@ -76,7 +76,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/unionfind.test.cpp

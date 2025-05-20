@@ -106,7 +106,7 @@ data:
     \ op, e, F, mapping, composition, id> seg(_v);\n\n\twhile(q--){\n\t\tint op;\n\
     \t\tcin >> op;\n\t\tif(op == 0){\n\t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\
     \t\t\tt++;\n\t\t\tseg.apply(s, t, x);\n\t\t}else{\n\t\t\tint s, t;\n\t\t\tcin\
-    \ >> s >> t;\n\t\t\tt++;\n\t\t\tcout << seg.fold(s, t).val << endl;\n\t\t}\n\t\
+    \ >> s >> t;\n\t\t\tt++;\n\t\t\tcout << seg.fold(s, t).val << '\\n';\n\t\t}\n\t\
     }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
     \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../data_structure/lazy_segment_tree.hpp\"\
@@ -118,7 +118,7 @@ data:
     \ op, e, F, mapping, composition, id> seg(_v);\n\n\twhile(q--){\n\t\tint op;\n\
     \t\tcin >> op;\n\t\tif(op == 0){\n\t\t\tint s, t, x;\n\t\t\tcin >> s >> t >> x;\n\
     \t\t\tt++;\n\t\t\tseg.apply(s, t, x);\n\t\t}else{\n\t\t\tint s, t;\n\t\t\tcin\
-    \ >> s >> t;\n\t\t\tt++;\n\t\t\tcout << seg.fold(s, t).val << endl;\n\t\t}\n\t\
+    \ >> s >> t;\n\t\t\tt++;\n\t\t\tcout << seg.fold(s, t).val << '\\n';\n\t\t}\n\t\
     }\n}\n"
   dependsOn:
   - template/template.hpp
@@ -126,7 +126,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp

@@ -66,7 +66,7 @@ data:
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\
     \tvector<int> a(n);\n\tfor(auto &x : a)cin >> x;\n\tif(q == 0){\n\t\treturn;\n\
     \t}\n\tif(n == 0){\n\t\twhile(q--){\n\t\t\tint l, r, x;\n\t\t\tcin >> l >> r >>\
-    \ x;\n\t\t\tcout << 0 << endl;\n\t\t}\n\t\treturn;\n\t}\n\tvector<pair<int, int>>\
+    \ x;\n\t\t\tcout << 0 << '\\n';\n\t\t}\n\t\treturn;\n\t}\n\tvector<pair<int, int>>\
     \ lr(q);\n\tvector<int> x(q);\n\trep(i, q){\n\t\tcin >> lr[i].first >> lr[i].second\
     \ >> x[i];\n\t}\n\n\t{\n\t\tvector<int> v;\n\t\tfor(auto &e : a)v.pb(e);\n\t\t\
     for(auto &e : x)v.pb(e);\n\t\tsort(all(v));\n\t\tUNIQUE(v);\n\t\tmap<int, int>\
@@ -82,7 +82,7 @@ data:
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\
     \tvector<int> a(n);\n\tfor(auto &x : a)cin >> x;\n\tif(q == 0){\n\t\treturn;\n\
     \t}\n\tif(n == 0){\n\t\twhile(q--){\n\t\t\tint l, r, x;\n\t\t\tcin >> l >> r >>\
-    \ x;\n\t\t\tcout << 0 << endl;\n\t\t}\n\t\treturn;\n\t}\n\tvector<pair<int, int>>\
+    \ x;\n\t\t\tcout << 0 << '\\n';\n\t\t}\n\t\treturn;\n\t}\n\tvector<pair<int, int>>\
     \ lr(q);\n\tvector<int> x(q);\n\trep(i, q){\n\t\tcin >> lr[i].first >> lr[i].second\
     \ >> x[i];\n\t}\n\n\t{\n\t\tvector<int> v;\n\t\tfor(auto &e : a)v.pb(e);\n\t\t\
     for(auto &e : x)v.pb(e);\n\t\tsort(all(v));\n\t\tUNIQUE(v);\n\t\tmap<int, int>\
@@ -99,7 +99,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/static_range_frequency.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/static_range_frequency.test.cpp

@@ -55,20 +55,20 @@ data:
     \tint n, q;\n\tcin >> n >> q;\n\tbinary_indexed_tree<int> BIT(n);\n\twhile(q--){\n\
     \t\tint com, x, y;\n\t\tcin >> com >> x >> y;\n\t\tif(com == 0){\n\t\t\tBIT.add(x,\
     \ y);\n\t\t}else{\n\t\t\tcout << BIT.sum(y) - (x != 1 ? BIT.sum(x - 1) : 0) <<\
-    \ endl;\n\t\t}\n\t}\n}\n"
+    \ '\\n';\n\t\t}\n\t}\n}\n"
   code: "# define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B\"\
     \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../data_structure/binary_indexed_tree.hpp\"\
     \n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tbinary_indexed_tree<int>\
     \ BIT(n);\n\twhile(q--){\n\t\tint com, x, y;\n\t\tcin >> com >> x >> y;\n\t\t\
     if(com == 0){\n\t\t\tBIT.add(x, y);\n\t\t}else{\n\t\t\tcout << BIT.sum(y) - (x\
-    \ != 1 ? BIT.sum(x - 1) : 0) << endl;\n\t\t}\n\t}\n}\n"
+    \ != 1 ? BIT.sum(x - 1) : 0) << '\\n';\n\t\t}\n\t}\n}\n"
   dependsOn:
   - template/template.hpp
   - data_structure/binary_indexed_tree.hpp
   isVerificationFile: true
   path: verify/aoj/dsl/2_B___BIT.test.cpp
   requiredBy: []
-  timestamp: '2025-03-09 13:19:51+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_B___BIT.test.cpp

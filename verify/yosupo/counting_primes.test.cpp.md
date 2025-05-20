@@ -82,12 +82,12 @@ data:
     \tfor (int k = l + 1; k <= e; k++)\n\t\t\tt += smalls[half(divide(M, roughs[k]))];\n\
     \t\tlarges[0] += t - (ll)(e - l) * (pc + l - 1);\n\t}\n\treturn larges[0] + 1;\n\
     }\n#line 5 \"verify/yosupo/counting_primes.test.cpp\"\n\nusing namespace mmrz;\n\
-    \nvoid mmrz::solve(){\n\tll n;\n\tcin >> n;\n\tcout << counting_primes(n) << endl;\n\
-    }\n"
+    \nvoid mmrz::solve(){\n\tll n;\n\tcin >> n;\n\tcout << counting_primes(n) << '\\\
+    n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/counting_primes\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../math/counting_primes.hpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tll n;\n\tcin >> n;\n\tcout\
-    \ << counting_primes(n) << endl;\n}\n"
+    \ << counting_primes(n) << '\\n';\n}\n"
   dependsOn:
   - template/template.hpp
   - math/counting_primes.hpp
@@ -95,7 +95,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/counting_primes.test.cpp
   requiredBy: []
-  timestamp: '2025-02-26 07:25:52+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/counting_primes.test.cpp

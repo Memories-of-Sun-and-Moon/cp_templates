@@ -76,13 +76,13 @@ data:
     \nusing namespace mmrz;\n\nvoid mmrz::solve(){\n    int t;\n    cin >> t;\n  \
     \  while(t--){\n        ll a;\n        cin >> a;\n        vector<ll> ret = factor(a);\n\
     \        int k = len(ret);\n        cout << k;\n        rep(i, k){\n         \
-    \   cout << \" \" << ret[i];\n        }\n        cout << endl;\n    }\n}\n"
+    \   cout << \" \" << ret[i];\n        }\n        cout << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../math/factor.hpp\"\n\n\
     using namespace mmrz;\n\nvoid mmrz::solve(){\n    int t;\n    cin >> t;\n    while(t--){\n\
     \        ll a;\n        cin >> a;\n        vector<ll> ret = factor(a);\n     \
     \   int k = len(ret);\n        cout << k;\n        rep(i, k){\n            cout\
-    \ << \" \" << ret[i];\n        }\n        cout << endl;\n    }\n}\n"
+    \ << \" \" << ret[i];\n        }\n        cout << '\\n';\n    }\n}\n"
   dependsOn:
   - template/template.hpp
   - math/factor.hpp
@@ -90,7 +90,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/factorize.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/factorize.test.cpp

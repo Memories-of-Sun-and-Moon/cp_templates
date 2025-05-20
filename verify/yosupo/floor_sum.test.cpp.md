@@ -51,19 +51,19 @@ data:
     \ + floor_sum(x_div, a, m, x_mod);\n\treturn ans;\n}\n#line 5 \"verify/yosupo/floor_sum.test.cpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint t;\n\tcin >> t;\n\twhile(t--){\n\
     \t\tll n, m, a, b;\n\t\tcin >> n >> m >> a >> b;\n\t\tcout << floor_sum(n, m,\
-    \ a, b) << endl;\n\t}\n}\n"
+    \ a, b) << '\\n';\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/sum_of_floor_of_linear\"\
     \n\n#include \"./../../template/template.hpp\"\n#include \"./../../math/floor_sum.hpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint t;\n\tcin >> t;\n\twhile(t--){\n\
     \t\tll n, m, a, b;\n\t\tcin >> n >> m >> a >> b;\n\t\tcout << floor_sum(n, m,\
-    \ a, b) << endl;\n\t}\n}\n"
+    \ a, b) << '\\n';\n\t}\n}\n"
   dependsOn:
   - template/template.hpp
   - math/floor_sum.hpp
   isVerificationFile: true
   path: verify/yosupo/floor_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/floor_sum.test.cpp

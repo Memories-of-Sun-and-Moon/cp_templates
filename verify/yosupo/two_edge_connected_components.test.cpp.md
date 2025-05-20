@@ -96,15 +96,15 @@ data:
     \tint n, m;\n\tcin >> n >> m;\n\tvector<vector<int>> g(n);\n\twhile(m--){\n\t\t\
     int a, b;\n\t\tcin >> a >> b;\n\t\tg[a].pb(b);\n\t\tg[b].pb(a);\n\t}\n\n\tauto\
     \ [groups, comp, tree] = two_edge_connected_components(g);\n\n\tcout << len(groups)\
-    \ << endl;\n\tfor(auto v : groups){\n\t\tcout << len(v);\n\t\tfor(auto c : v){\n\
-    \t\t\tcout << \" \" << c;\n\t\t}\n\t\tcout << endl;\n\t}\n}\n"
+    \ << '\\n';\n\tfor(auto v : groups){\n\t\tcout << len(v);\n\t\tfor(auto c : v){\n\
+    \t\t\tcout << \" \" << c;\n\t\t}\n\t\tcout << '\\n';\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/two_edge_connected_components\"\
     \n\n#include \"./../../template/template.hpp\"\n#include \"./../../graph/two_edge_connected_components.hpp\"\
     \n\nvoid mmrz::solve(){\n\tint n, m;\n\tcin >> n >> m;\n\tvector<vector<int>>\
     \ g(n);\n\twhile(m--){\n\t\tint a, b;\n\t\tcin >> a >> b;\n\t\tg[a].pb(b);\n\t\
     \tg[b].pb(a);\n\t}\n\n\tauto [groups, comp, tree] = two_edge_connected_components(g);\n\
-    \n\tcout << len(groups) << endl;\n\tfor(auto v : groups){\n\t\tcout << len(v);\n\
-    \t\tfor(auto c : v){\n\t\t\tcout << \" \" << c;\n\t\t}\n\t\tcout << endl;\n\t\
+    \n\tcout << len(groups) << '\\n';\n\tfor(auto v : groups){\n\t\tcout << len(v);\n\
+    \t\tfor(auto c : v){\n\t\t\tcout << \" \" << c;\n\t\t}\n\t\tcout << '\\n';\n\t\
     }\n}\n"
   dependsOn:
   - template/template.hpp
@@ -114,7 +114,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/two_edge_connected_components.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-05-20 21:02:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/two_edge_connected_components.test.cpp

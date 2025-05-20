@@ -57,8 +57,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/1661.test.cpp
-  - verify/yosupo/counting_primes.test.cpp
   - verify/yosupo/kth_root_integer.test.cpp
+  - verify/yosupo/counting_primes.test.cpp
   - verify/yosupo/discrete_logarithm.test.cpp
 documentation_of: math/iroot.hpp
 layout: document
