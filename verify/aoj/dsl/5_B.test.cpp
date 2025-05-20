@@ -18,5 +18,5 @@ void mmrz::solve(){
 	}
 	int ans = 0;
 	for(int i = 0;i < RC;i++)for(int j = 0;j < RC;j++)ans = max(ans, seg.fold(0, 0, i+1, j+1));
-	cout << ans << endl;
+	cout << ans << '\n';
 }

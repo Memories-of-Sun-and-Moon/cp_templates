@@ -14,5 +14,5 @@ void mmrz::solve(){
         cin >> a >> b >> c;
         f.add_edge(a, b, c);
     }
-    cout << f.calc(0, n-1) << endl;
+    cout << f.calc(0, n-1) << '\n';
 }

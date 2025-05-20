@@ -13,7 +13,7 @@ void mmrz::solve(){
 		if(com == 0){
 			BIT.add(x, y);
 		}else{
-			cout << BIT.sum(y) - (x != 1 ? BIT.sum(x - 1) : 0) << endl;
+			cout << BIT.sum(y) - (x != 1 ? BIT.sum(x - 1) : 0) << '\n';
 		}
 	}
 }

@@ -11,6 +11,6 @@ void mmrz::solve(){
     while(t--){
         ll a;
         cin >> a;
-        cout << (is_prime(a) ? "Yes" : "No") << endl;
+        cout << (is_prime(a) ? "Yes" : "No") << '\n';
     }
 }

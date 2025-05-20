@@ -27,6 +27,6 @@ void mmrz::solve(){
 	while(q--){
 		int u, v;
 		cin >> u >> v;
-		cout << lca.get(u, v) << endl;
+		cout << lca.get(u, v) << '\n';
 	}
 }

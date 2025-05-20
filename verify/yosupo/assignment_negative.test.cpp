@@ -15,6 +15,6 @@ void mmrz::solve(){
 	vector<int> h = hungarian<false, ll>(a);
 	ll x = 0;
 	rep(i, n)x -= a[i][h[i]];
-	cout << x << endl;
+	cout << x << '\n';
 	rep(i, n)cout << h[i] << " \n"[i == n-1];
 }

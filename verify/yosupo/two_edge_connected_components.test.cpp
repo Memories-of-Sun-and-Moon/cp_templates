@@ -16,12 +16,12 @@ void mmrz::solve(){
 
 	auto [groups, comp, tree] = two_edge_connected_components(g);
 
-	cout << len(groups) << endl;
+	cout << len(groups) << '\n';
 	for(auto v : groups){
 		cout << len(v);
 		for(auto c : v){
 			cout << " " << c;
 		}
-		cout << endl;
+		cout << '\n';
 	}
 }

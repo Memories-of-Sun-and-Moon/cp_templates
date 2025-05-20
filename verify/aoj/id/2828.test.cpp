@@ -32,7 +32,7 @@ void mmrz::solve(){
 			ans -= a[i][h[i]];
 		}
 
-		cout << ans << endl;
+		cout << ans << '\n';
 
 	}
 }

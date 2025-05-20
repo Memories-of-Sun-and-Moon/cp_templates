@@ -17,7 +17,7 @@ void mmrz::solve(){
 		}else{
 			int u, v;
 			cin >> u >> v;
-			cout << (uf.is_same(u, v) ? 1 : 0) << endl;
+			cout << (uf.is_same(u, v) ? 1 : 0) << '\n';
 		}
 	}
 }

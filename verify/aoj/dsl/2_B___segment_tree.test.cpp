@@ -12,7 +12,7 @@ void mmrz::solve(){
 		int com, x, y;
 		cin >> com >> x >> y;
 		x--;
-		if(com)cout << seg.fold(x, y) << endl;
+		if(com)cout << seg.fold(x, y) << '\n';
 		else seg.set(x, seg[x]+y);
 	}
 }

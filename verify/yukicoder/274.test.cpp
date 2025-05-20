@@ -24,7 +24,7 @@ void mmrz::solve(){
 			bool f2 = is_overlap(l[i], r[i], m-r[j], m-l[j]);
 			if(not f1 && not f2)continue;
 			if(f1 && f2){
-				cout << "NO" << endl;
+				cout << "NO" << '\n';
 				return;
 			}
 			if(f1){
@@ -38,5 +38,5 @@ void mmrz::solve(){
 		}
 	}
 	auto ret = ts.solve();
-	cout << (len(ret) ? "YES" : "NO") << endl;
+	cout << (len(ret) ? "YES" : "NO") << '\n';
 }

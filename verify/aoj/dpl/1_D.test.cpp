@@ -8,5 +8,5 @@ void mmrz::solve(){
     cin >> n;
     vector<int> a(n);
     for(auto &x : a)cin >> x;
-    cout << longest_increasing_subsequences<true, int>(a) << endl;
+    cout << longest_increasing_subsequences<true, int>(a) << '\n';
 }

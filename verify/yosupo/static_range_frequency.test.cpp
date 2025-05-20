@@ -17,7 +17,7 @@ void mmrz::solve(){
 		while(q--){
 			int l, r, x;
 			cin >> l >> r >> x;
-			cout << 0 << endl;
+			cout << 0 << '\n';
 		}
 		return;
 	}

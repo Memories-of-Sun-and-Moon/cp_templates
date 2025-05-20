@@ -26,13 +26,13 @@ void mmrz::solve(){
 
 	auto ret = ts.solve();
 	if(ret.empty()){
-		cout << "s UNSATISFIABLE" << endl;
+		cout << "s UNSATISFIABLE" << '\n';
 		return;
 	}
-	cout << "s SATISFIABLE" << endl;
+	cout << "s SATISFIABLE" << '\n';
 	cout << "v";
 	rep(i, n){
 		cout << " " << (ret[i] ? "" : "-") << i+1;
 	}
-	cout << " 0" << endl;
+	cout << " 0" << '\n';
 }

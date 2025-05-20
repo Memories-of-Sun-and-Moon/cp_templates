@@ -41,6 +41,6 @@ void mmrz::solve(){
 		ans += max<int>(0, (r + 1) - l - 1);
 	}
 
-	cout << ans << endl;
+	cout << ans << '\n';
 
 }

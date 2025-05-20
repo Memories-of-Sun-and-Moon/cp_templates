@@ -37,7 +37,7 @@ void mmrz::solve(){
 	}
 
 	if(!flg){
-		cout << "No" << endl;
+		cout << "No" << '\n';
 		return;
 	}
 
@@ -49,9 +49,9 @@ void mmrz::solve(){
 			}
 		}
 		if(not c){
-			cout << "No" << endl;
+			cout << "No" << '\n';
 			return;
 		}
 	}
-	cout << "Yes" << endl;
+	cout << "Yes" << '\n';
 }

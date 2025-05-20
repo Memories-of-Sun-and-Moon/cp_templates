@@ -9,5 +9,5 @@ void mmrz::solve(){
 	suffix_array sa(s, true);
 	ll ans = len(s)*(len(s)+1)/2;
 	ans -= accumulate(all(sa.lcp), 0LL);
-	cout << ans << endl;
+	cout << ans << '\n';
 }

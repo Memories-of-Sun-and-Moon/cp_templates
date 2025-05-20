@@ -17,6 +17,6 @@ void mmrz::solve(){
         rep(i, k){
             cout << " " << ret[i];
         }
-        cout << endl;
+        cout << '\n';
     }
 }

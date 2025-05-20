@@ -11,6 +11,6 @@ void mmrz::solve(){
 	while(q--){
 		cin >> com >> x >> y;
 		if(com == 0)uf.unite(x, y);
-		else cout << uf.is_same(x, y) << endl;
+		else cout << uf.is_same(x, y) << '\n';
 	}
 }

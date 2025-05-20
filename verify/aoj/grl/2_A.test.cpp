@@ -23,5 +23,5 @@ void mmrz::solve(){
 		}
 	}
 	assert(uf.groups_size() == 1);
-	cout << ans << endl;
+	cout << ans << '\n';
 }

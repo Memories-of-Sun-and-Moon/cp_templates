@@ -11,7 +11,7 @@ void mmrz::solve(){
 
 	for(int i = 0;i < (int)s.size() - (int)t.size() + 1;i++){
 		if(rh.slice(i, (int)t.size()) == rh.slice((int)s.size(), (int)t.size())){
-			cout << i << endl;
+			cout << i << '\n';
 		}
 	}
 }

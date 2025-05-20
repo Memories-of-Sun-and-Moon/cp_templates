@@ -35,7 +35,7 @@ void mmrz::solve(){
 			int i;
 			cin >> i;
 			i--;
-			cout << seg[i].val << endl;
+			cout << seg[i].val << '\n';
 		}
 	}
 }

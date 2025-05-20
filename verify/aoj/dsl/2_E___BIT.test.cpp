@@ -18,7 +18,7 @@ void mmrz::solve(){
 		}else{
 			int t;
 			cin >> t;
-			cout << BIT.sum(t) << endl;
+			cout << BIT.sum(t) << '\n';
 		}
 	}
 }

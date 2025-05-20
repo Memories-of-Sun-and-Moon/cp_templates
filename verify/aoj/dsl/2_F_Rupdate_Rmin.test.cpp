@@ -30,7 +30,7 @@ void mmrz::solve(){
 			int s, t;
 			cin >> s >> t;
 			t++;
-			cout << seg.fold(s, t) << endl;
+			cout << seg.fold(s, t) << '\n';
 		}
 	}
 }

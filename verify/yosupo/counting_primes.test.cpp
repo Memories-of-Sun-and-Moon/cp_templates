@@ -8,5 +8,5 @@ using namespace mmrz;
 void mmrz::solve(){
 	ll n;
 	cin >> n;
-	cout << counting_primes(n) << endl;
+	cout << counting_primes(n) << '\n';
 }

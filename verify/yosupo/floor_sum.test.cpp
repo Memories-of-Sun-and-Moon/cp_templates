@@ -11,6 +11,6 @@ void mmrz::solve(){
 	while(t--){
 		ll n, m, a, b;
 		cin >> n >> m >> a >> b;
-		cout << floor_sum(n, m, a, b) << endl;
+		cout << floor_sum(n, m, a, b) << '\n';
 	}
 }

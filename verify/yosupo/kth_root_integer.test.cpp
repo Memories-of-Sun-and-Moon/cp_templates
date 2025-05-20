@@ -11,6 +11,6 @@ void mmrz::solve(){
 	while(t--){
 		ull a, k;
 		cin >> a >> k;
-		cout << iroot(a, k) << endl;
+		cout << iroot(a, k) << '\n';
 	}
 }

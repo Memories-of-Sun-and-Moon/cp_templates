@@ -19,7 +19,7 @@ void mmrz::solve(){
 	while(t--){
 		int n;
 		cin >> n;
-		cout << s[n]+1 << endl;
+		cout << s[n]+1 << '\n';
 	}
 
 }
