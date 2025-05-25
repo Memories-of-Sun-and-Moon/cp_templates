@@ -83,7 +83,7 @@ point project(line &s, point &p) {
 	return s.p1 + base*r;
 }
 
-point reflect(segment s, point p) {
+point reflect(line s, point p) {
 	return p + (project(s, p) - p) * 2.0;
 }
 
@@ -102,16 +102,18 @@ DOUBLE get_distance_sp(segment &s, point &p){
 	return get_distance_lp(s, p);
 }
 
-// DOUBLE get_distance(segment &s1, segment &s2){
-// 	if(intersect(s1, s2))return 0.0;
-// 	return min({get_distance_sp(s1, s2.p1), get_distance_sp(s1, s2.p2), get_distance_sp(s2, s1.p1), get_distance_sp(s2, s1.p2)});
-// }
+DOUBLE get_distance(segment &s1, segment &s2){
+	if(intersect(s1, s2))return 0.0;
+	return min({get_distance_sp(s1, s2.p1), get_distance_sp(s1, s2.p2), get_distance_sp(s2, s1.p1), get_distance_sp(s2, s1.p2)});
+}
 
 vector<point> get_crosspoint(line &l, line &m){
 	vector<point> res;
 	DOUBLE d = cross(m.p2-m.p1, l.p2-l.p1);
 	if(abs(d) < EPS)return vector<point>();
-	res.push_back(l.p1 + (l.p1+l.p2) * cross(m.p2-m.p1, m.p2-l.p1) / d);
+	DOUBLE t = cross(m.p2-m.p1, m.p2-l.p1) / d;
+	point r = l.p1 + (l.p2-l.p1) * t;
+	res.push_back(r);
 	return res;
 }
 
@@ -134,3 +136,25 @@ pair<point, point> get_crosspoints(circle &c1, circle &c2){
 }
 
 DOUBLE deg_to_rad(const DOUBLE &deg) {return deg*pi / 180.0; };
+
+//a > 0ならば+1, a == 0ならば0, a < 0ならば-1　を返す。　基本的にEPS込みの評価はこれで行う。
+//不等式は、加減算に直してこれに適用する。
+int sgn(const double a) {
+    return (a < -EPS ? -1 : (a > EPS ? +1 : 0));
+}
+
+//直交判定
+bool is_orthogonal(point a, point b){
+    return sgn(dot(a, b)) == 0;
+}
+bool is_orthogonal(segment s1, segment s2){
+    return sgn(dot(s1.p2 - s1.p1, s2.p2 - s2.p1)) == 0;
+}
+
+//並行判定
+bool is_parallel(point a, point b){
+    return sgn(cross(a, b)) == 0;
+}
+bool is_parallel(segment s1, segment s2){
+    return sgn(cross(s1.p2 - s1.p1, s2.p2 - s2.p1)) == 0;
+}

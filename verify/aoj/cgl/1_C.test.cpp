@@ -7,12 +7,12 @@ using namespace mmrz;
 
 void mmrz::solve(){
 	segment seg;
-	cin >> seg.p1.x >> seg.p1.y >> seg.p2.x >> seg.p2.y;
+	cin >> seg;
 	int q;
 	cin >> q;
 	while(q--){
 		point p;
-		cin >> p.x >> p.y;
+		cin >> p;
 		int ret = ccw(seg.p1, seg.p2, p);
 		if(ret == 1)cout << "COUNTER_CLOCKWISE" << endl;
 		if(ret == -1)cout << "CLOCKWISE" << endl;
