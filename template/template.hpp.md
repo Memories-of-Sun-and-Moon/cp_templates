@@ -49,6 +49,9 @@ data:
     path: verify/aoj/cgl/4_C.test.cpp
     title: verify/aoj/cgl/4_C.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/5_A.test.cpp
+    title: verify/aoj/cgl/5_A.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/dpl/1_D.test.cpp
     title: verify/aoj/dpl/1_D.test.cpp
   - icon: ':heavy_check_mark:'
@@ -317,6 +320,7 @@ data:
   - verify/aoj/cgl/2_B.test.cpp
   - verify/aoj/cgl/3_B.test.cpp
   - verify/aoj/cgl/2_C.test.cpp
+  - verify/aoj/cgl/5_A.test.cpp
   - verify/aoj/cgl/1_B.test.cpp
   - verify/aoj/cgl/4_C.test.cpp
   - verify/aoj/cgl/1_A.test.cpp

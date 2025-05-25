@@ -43,6 +43,9 @@ data:
     path: verify/aoj/cgl/4_C.test.cpp
     title: verify/aoj/cgl/4_C.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/5_A.test.cpp
+    title: verify/aoj/cgl/5_A.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/3154.test.cpp
     title: verify/yukicoder/3154.test.cpp
   _isVerificationFailed: false
@@ -148,7 +151,17 @@ data:
     \t\tconst point &nxt = p[(i+1)%n];\n\t\tauto cf = cross(s.p1 - now, s.p2 - now);\n\
     \t\tauto cs = cross(s.p1 - nxt, s.p2 - nxt);\n\t\tif(sgn(cf) >= 0){\n\t\t\tret.emplace_back(now);\n\
     \t\t}\n\t\tif(sgn(cf) * sgn(cs) < 0){\n\t\t\tline l = line{now, nxt};\n\t\t\t\
-    ret.emplace_back(get_crosspoint(l, s)[0]);\n\t\t}\n\t}\n\treturn ret;\n}\n"
+    ret.emplace_back(get_crosspoint(l, s)[0]);\n\t\t}\n\t}\n\treturn ret;\n}\n\nbool\
+    \ __compare_y(const point &a, const point &b){\n\treturn a.y < b.y;\n}\n\nDOUBLE\
+    \ closest_pair(vector<point> &p, int l=0, int r=-1) {\n\tif(r == -1)r = (int)p.size();\n\
+    \tif(r-l <= 1)return 1e100;\n\tint mid = (l+r)/2;\n\tDOUBLE x = p[mid].x;\n\t\
+    DOUBLE d = min(closest_pair(p, l, mid), closest_pair(p, mid, r));\n\tauto iti\
+    \ = p.begin(), itl =iti+l, itm = iti+mid, itr = iti+r;\n\tinplace_merge(itl, itm,\
+    \ itr, __compare_y);\n\n\tvector<point> near_line;\n\tfor(int i = l;i < r;i++){\n\
+    \t\tif(abs(p[i].x-x) >= d)continue;\n\n\t\tint sz = (int)near_line.size();\n\t\
+    \tfor(int j = sz-1;j >= 0;j--){\n\t\t\tpoint delta = p[i]-near_line[j];\n\t\t\t\
+    if(delta.y >= d)break;\n\t\t\td = min(d, sqrtl(delta.norm()));\n\t\t}\n\t\tnear_line.emplace_back(p[i]);\n\
+    \t}\n\treturn d;\n}\n"
   code: "\nusing DOUBLE = long double;\n\nconstexpr DOUBLE EPS = 1e-9;\n\nstruct point\
     \ {\n\tDOUBLE x, y;\n\n\tpoint(DOUBLE _x = 0, DOUBLE _y = 0): x(_x), y(_y) {}\n\
     \n\tpoint operator+(point p){ return point(x+p.x, y+p.y); };\n\tpoint operator-(point\
@@ -247,12 +260,22 @@ data:
     \t\tconst point &nxt = p[(i+1)%n];\n\t\tauto cf = cross(s.p1 - now, s.p2 - now);\n\
     \t\tauto cs = cross(s.p1 - nxt, s.p2 - nxt);\n\t\tif(sgn(cf) >= 0){\n\t\t\tret.emplace_back(now);\n\
     \t\t}\n\t\tif(sgn(cf) * sgn(cs) < 0){\n\t\t\tline l = line{now, nxt};\n\t\t\t\
-    ret.emplace_back(get_crosspoint(l, s)[0]);\n\t\t}\n\t}\n\treturn ret;\n}\n"
+    ret.emplace_back(get_crosspoint(l, s)[0]);\n\t\t}\n\t}\n\treturn ret;\n}\n\nbool\
+    \ __compare_y(const point &a, const point &b){\n\treturn a.y < b.y;\n}\n\nDOUBLE\
+    \ closest_pair(vector<point> &p, int l=0, int r=-1) {\n\tif(r == -1)r = (int)p.size();\n\
+    \tif(r-l <= 1)return 1e100;\n\tint mid = (l+r)/2;\n\tDOUBLE x = p[mid].x;\n\t\
+    DOUBLE d = min(closest_pair(p, l, mid), closest_pair(p, mid, r));\n\tauto iti\
+    \ = p.begin(), itl =iti+l, itm = iti+mid, itr = iti+r;\n\tinplace_merge(itl, itm,\
+    \ itr, __compare_y);\n\n\tvector<point> near_line;\n\tfor(int i = l;i < r;i++){\n\
+    \t\tif(abs(p[i].x-x) >= d)continue;\n\n\t\tint sz = (int)near_line.size();\n\t\
+    \tfor(int j = sz-1;j >= 0;j--){\n\t\t\tpoint delta = p[i]-near_line[j];\n\t\t\t\
+    if(delta.y >= d)break;\n\t\t\td = min(d, sqrtl(delta.norm()));\n\t\t}\n\t\tnear_line.emplace_back(p[i]);\n\
+    \t}\n\treturn d;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: geometry/util.hpp
   requiredBy: []
-  timestamp: '2025-05-26 07:56:17+09:00'
+  timestamp: '2025-05-26 08:31:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/3154.test.cpp
@@ -261,6 +284,7 @@ data:
   - verify/aoj/cgl/2_B.test.cpp
   - verify/aoj/cgl/3_B.test.cpp
   - verify/aoj/cgl/2_C.test.cpp
+  - verify/aoj/cgl/5_A.test.cpp
   - verify/aoj/cgl/1_B.test.cpp
   - verify/aoj/cgl/4_C.test.cpp
   - verify/aoj/cgl/1_A.test.cpp
@@ -395,3 +419,11 @@ $3$ 点の関係を判定
 
 - 多角形 $p$ を直線 $s$ で切った左側を返す $O(n)$
 - 右側を返す際は $s$ で与える $2$ 点を入れ替えると良い
+
+## ``DOUBLE closest_pair(vector<point> &p)``
+
+- 事前に $x$ 座標でソートされた頂点集合 $p$ の最近点対の距離を返す $O(N \log N)$
+
+分割統治法で求める
+
+[参考](https://hcpc-hokudai.github.io/archive/algorithm_divide_and_conquer_001.pdf)

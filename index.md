@@ -227,6 +227,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/cgl/4_C.test.cpp
       title: verify/aoj/cgl/4_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/5_A.test.cpp
+      title: verify/aoj/cgl/5_A.test.cpp
   - name: verify/aoj/dpl
     pages:
     - icon: ':heavy_check_mark:'
