@@ -13,7 +13,7 @@ struct point {
 	point operator*(DOUBLE a) {return point(x*a, y*a); };
 	point operator/(DOUBLE a) {return point(x/a, y/a); };
 
-	DOUBLE abs() {return sqrt(norm()); };
+	DOUBLE abs() {return sqrtl(norm()); };
 	DOUBLE norm() {return x*x + y*y; };
 
 	bool operator<(const point &p) const {
@@ -24,10 +24,14 @@ struct point {
 		return fabs(x-p.x) < EPS && fabs(y-p.y) < EPS;
 	}
 };
-
+istream& operator >> (istream &is, point &p){return is >> p.x >> p.y;}
+ostream& operator << (ostream &os, const point &p){return os << p.x << " " << p.y;}
 
 struct segment {point p1, p2; };
 typedef segment line;
+istream& operator >> (istream &is, segment &s){return is >> s.p1 >> s.p2;}
+ostream& operator << (ostream &os, const segment &s){return os << s.p1 << " " << s.p2;}
+
 
 struct circle {
 	point c;
@@ -52,16 +56,16 @@ constexpr int ON_SEGMENT = 0;
 int ccw(point p0, point p1, point p2) {
 	point a = p1 - p0;
 	point b = p2 - p0;
-
+	
 	if(p0 == p1)return ON_SEGMENT;
 	if(p0 == p2)return ON_SEGMENT;
 	if(p1 == p2)return ON_SEGMENT;
-
+	
 	if(cross(a, b) > EPS)return COUNTER_CLOCKWISE;
 	if(cross(a, b) < -EPS)return CLOCKWISE;
 	if(dot(a, b) < -EPS)return ONLINE_BACK;
 	if(a.norm() < b.norm())return ONLINE_FRONT;
-
+	
 	return ON_SEGMENT;
 }
 
@@ -79,6 +83,10 @@ point project(line &s, point &p) {
 	return s.p1 + base*r;
 }
 
+point reflect(segment s, point p) {
+	return p + (project(s, p) - p) * 2.0;
+}
+
 DOUBLE get_distance(point &a, point &b){
 	return (a-b).abs();
 }
@@ -94,10 +102,10 @@ DOUBLE get_distance_sp(segment &s, point &p){
 	return get_distance_lp(s, p);
 }
 
-DOUBLE get_distance(segment &s1, segment &s2){
-	if(intersect(s1, s2))return 0.0;
-	return min({get_distance_sp(s1, s2.p1), get_distance_sp(s1, s2.p2), get_distance_sp(s2, s1.p1), get_distance_sp(s2, s1.p2)});
-}
+// DOUBLE get_distance(segment &s1, segment &s2){
+// 	if(intersect(s1, s2))return 0.0;
+// 	return min({get_distance_sp(s1, s2.p1), get_distance_sp(s1, s2.p2), get_distance_sp(s2, s1.p1), get_distance_sp(s2, s1.p2)});
+// }
 
 vector<point> get_crosspoint(line &l, line &m){
 	vector<point> res;
