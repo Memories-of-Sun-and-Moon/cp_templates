@@ -31,6 +31,15 @@ data:
     path: verify/aoj/cgl/2_D.test.cpp
     title: verify/aoj/cgl/2_D.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/3_A.test.cpp
+    title: verify/aoj/cgl/3_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/3_B.test.cpp
+    title: verify/aoj/cgl/3_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/3_C.test.cpp
+    title: verify/aoj/cgl/3_C.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/dpl/1_D.test.cpp
     title: verify/aoj/dpl/1_D.test.cpp
   - icon: ':heavy_check_mark:'
@@ -290,11 +299,14 @@ data:
   - verify/yosupo/floor_sum.test.cpp
   - verify/yosupo/area_of_union_of_rectangles.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
+  - verify/aoj/cgl/3_C.test.cpp
   - verify/aoj/cgl/2_B.test.cpp
+  - verify/aoj/cgl/3_B.test.cpp
   - verify/aoj/cgl/2_C.test.cpp
   - verify/aoj/cgl/1_B.test.cpp
   - verify/aoj/cgl/1_A.test.cpp
   - verify/aoj/cgl/2_D.test.cpp
+  - verify/aoj/cgl/3_A.test.cpp
   - verify/aoj/cgl/1_C.test.cpp
   - verify/aoj/cgl/2_A.test.cpp
   - verify/aoj/alds1/14_B.test.cpp

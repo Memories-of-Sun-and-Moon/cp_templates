@@ -209,6 +209,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/cgl/2_D.test.cpp
       title: verify/aoj/cgl/2_D.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/3_A.test.cpp
+      title: verify/aoj/cgl/3_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/3_B.test.cpp
+      title: verify/aoj/cgl/3_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/3_C.test.cpp
+      title: verify/aoj/cgl/3_C.test.cpp
   - name: verify/aoj/dpl
     pages:
     - icon: ':heavy_check_mark:'
