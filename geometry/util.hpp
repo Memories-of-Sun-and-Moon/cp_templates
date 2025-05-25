@@ -287,3 +287,31 @@ polygon convex_cut(polygon &p, line s){
 	}
 	return ret;
 }
+
+bool __compare_y(const point &a, const point &b){
+	return a.y < b.y;
+}
+
+DOUBLE closest_pair(vector<point> &p, int l=0, int r=-1) {
+	if(r == -1)r = (int)p.size();
+	if(r-l <= 1)return 1e100;
+	int mid = (l+r)/2;
+	DOUBLE x = p[mid].x;
+	DOUBLE d = min(closest_pair(p, l, mid), closest_pair(p, mid, r));
+	auto iti = p.begin(), itl =iti+l, itm = iti+mid, itr = iti+r;
+	inplace_merge(itl, itm, itr, __compare_y);
+
+	vector<point> near_line;
+	for(int i = l;i < r;i++){
+		if(abs(p[i].x-x) >= d)continue;
+
+		int sz = (int)near_line.size();
+		for(int j = sz-1;j >= 0;j--){
+			point delta = p[i]-near_line[j];
+			if(delta.y >= d)break;
+			d = min(d, sqrtl(delta.norm()));
+		}
+		near_line.emplace_back(p[i]);
+	}
+	return d;
+}

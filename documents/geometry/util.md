@@ -124,3 +124,11 @@ $3$ 点の関係を判定
 
 - 多角形 $p$ を直線 $s$ で切った左側を返す $O(n)$
 - 右側を返す際は $s$ で与える $2$ 点を入れ替えると良い
+
+## ``DOUBLE closest_pair(vector<point> &p)``
+
+- 事前に $x$ 座標でソートされた頂点集合 $p$ の最近点対の距離を返す $O(N \log N)$
+
+分割統治法で求める
+
+[参考](https://hcpc-hokudai.github.io/archive/algorithm_divide_and_conquer_001.pdf)
