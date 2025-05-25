@@ -45,10 +45,7 @@ data:
         \u5024\u554F\u984C(monotone-minima)"
   - name: geometry
     pages:
-    - icon: ':warning:'
-      path: geometry/point.hpp
-      title: geometry/point.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: geometry/util.hpp
       title: geometry/util.hpp
   - name: graph
@@ -189,6 +186,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/alds1/14_B.test.cpp
       title: verify/aoj/alds1/14_B.test.cpp
+  - name: verify/aoj/cgl
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/1_A.test.cpp
+      title: verify/aoj/cgl/1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/1_B.test.cpp
+      title: verify/aoj/cgl/1_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/1_C.test.cpp
+      title: verify/aoj/cgl/1_C.test.cpp
   - name: verify/aoj/dpl
     pages:
     - icon: ':heavy_check_mark:'
