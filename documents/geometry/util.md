@@ -104,3 +104,23 @@ $3$ 点の関係を判定
   - 含まれる場合は 2
   - 辺上は 1
   - それ以外は 0
+
+## ``polygon convex_hull(polygon p, bool allow_colinear=false)``
+
+- 多角形 $p$ 凸包を返す(``allow_colinear=true`` の時は、$3$ 点が同一直線状にあることを許す) $O(N \log N)$
+
+## ``DOUBLE diameter(polygon &p)``
+
+- 多角形 $p$ の直径(最遠点対) を返す $O(N \log N)$
+
+キャリパー法で求める。
+
+凸法を求めたのち、辞書順最小 $p_i$ と辞書順最大 $p_j$ を用意。
+
+ベクトル $p_{i+1}-p_i, p_{j+1}-p{j}$ の外積を基に進める頂点を決め、それぞれで距離を求める。
+
+
+## ``polygon convex_cut(polygon &p, line s)``
+
+- 多角形 $p$ を直線 $s$ で切った左側を返す $O(n)$
+- 右側を返す際は $s$ で与える $2$ 点を入れ替えると良い

@@ -225,3 +225,65 @@ int contains(polygon g, point p){
 	}
 	return (x ? 2 : 0);
 }
+
+polygon convex_hull(polygon &ps, bool allow_colinear=false){
+	int n = (int)ps.size();
+	sort(ps.begin(), ps.end());
+	int k = 0;
+	polygon qs(n*2);
+	for(int i = 0;i < n;i++){
+		if(allow_colinear)while(k > 1 && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1]) <  0.0)k--;
+		else              while(k > 1 && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1]) <= 0.0)k--;
+		qs[k++] = ps[i];
+	}
+	for(int i = n-2, t=k;i >= 0;i--){
+		if(allow_colinear)while(k > t && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1]) <  0.0)k--;
+		else              while(k > t && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1]) <= 0.0)k--;
+		qs[k++] = ps[i];
+	}
+	qs.resize(k-1);
+	return qs;
+}
+
+DOUBLE diameter(polygon &ps) {
+	polygon convex = convex_hull(ps, false);
+	int n = (int)convex.size();
+
+	if(n == 2)return get_distance(convex[0], convex[1]);
+
+	int i = 0, j = 0;
+	for(int k = 0;k < n;k++){
+		if(convex[k] < convex[i])i = k;
+		if(convex[j] < convex[k])j = k;
+	}
+	DOUBLE res = 0;
+	int si = i, sj = j;
+	while(i != sj || j != si){
+		res = max(res, get_distance(convex[i], convex[j]));
+		if(cross(convex[(i+1)%n]-convex[i], convex[(j+1)%n]-convex[j]) < 0.0){
+			i = (i+1) % n;
+		}else{
+			j = (j+1) % n;
+		}
+	}
+	return res;
+}
+
+polygon convex_cut(polygon &p, line s){
+	polygon ret;
+	int n = (int)p.size();
+	for(int i = 0;i < n;i++){
+		const point &now = p[i];
+		const point &nxt = p[(i+1)%n];
+		auto cf = cross(s.p1 - now, s.p2 - now);
+		auto cs = cross(s.p1 - nxt, s.p2 - nxt);
+		if(sgn(cf) >= 0){
+			ret.emplace_back(now);
+		}
+		if(sgn(cf) * sgn(cs) < 0){
+			line l = line{now, nxt};
+			ret.emplace_back(get_crosspoint(l, s)[0]);
+		}
+	}
+	return ret;
+}
