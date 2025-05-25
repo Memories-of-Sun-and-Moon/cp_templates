@@ -47,7 +47,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: geometry/util.hpp
-      title: geometry/util.hpp
+      title: "\u5E7E\u4F55\u30E9\u30A4\u30D6\u30E9\u30EA"
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -197,6 +197,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/cgl/1_C.test.cpp
       title: verify/aoj/cgl/1_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/2_A.test.cpp
+      title: verify/aoj/cgl/2_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/2_B.test.cpp
+      title: verify/aoj/cgl/2_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/2_C.test.cpp
+      title: verify/aoj/cgl/2_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/2_D.test.cpp
+      title: verify/aoj/cgl/2_D.test.cpp
   - name: verify/aoj/dpl
     pages:
     - icon: ':heavy_check_mark:'
