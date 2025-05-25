@@ -218,6 +218,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/cgl/3_C.test.cpp
       title: verify/aoj/cgl/3_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/4_A.test.cpp
+      title: verify/aoj/cgl/4_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/4_B.test.cpp
+      title: verify/aoj/cgl/4_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/4_C.test.cpp
+      title: verify/aoj/cgl/4_C.test.cpp
   - name: verify/aoj/dpl
     pages:
     - icon: ':heavy_check_mark:'
@@ -397,6 +406,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/3078.test.cpp
       title: verify/yukicoder/3078.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yukicoder/3154.test.cpp
+      title: verify/yukicoder/3154.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/atcoder/M3_cp?logo=true)

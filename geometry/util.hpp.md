@@ -33,6 +33,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/cgl/3_C.test.cpp
     title: verify/aoj/cgl/3_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/4_A.test.cpp
+    title: verify/aoj/cgl/4_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/4_B.test.cpp
+    title: verify/aoj/cgl/4_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/4_C.test.cpp
+    title: verify/aoj/cgl/4_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/3154.test.cpp
+    title: verify/yukicoder/3154.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -116,7 +128,27 @@ data:
     \ < n;i++){\n\t\tpoint a = g[i]-p, b = g[(i+1)%n]-p;\n\t\tif(abs(cross(a, b))\
     \ < EPS && dot(a, b) < EPS)return 1;\n\t\tif(a.y > b.y)swap(a, b);\n\t\tif(a.y\
     \ < EPS && EPS < b.y && cross(a, b) > EPS)x = !x;\n\t}\n\treturn (x ? 2 : 0);\n\
-    }\n"
+    }\n\npolygon convex_hull(polygon &ps, bool allow_colinear=false){\n\tint n = (int)ps.size();\n\
+    \tsort(ps.begin(), ps.end());\n\tint k = 0;\n\tpolygon qs(n*2);\n\tfor(int i =\
+    \ 0;i < n;i++){\n\t\tif(allow_colinear)while(k > 1 && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1])\
+    \ <  0.0)k--;\n\t\telse              while(k > 1 && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1])\
+    \ <= 0.0)k--;\n\t\tqs[k++] = ps[i];\n\t}\n\tfor(int i = n-2, t=k;i >= 0;i--){\n\
+    \t\tif(allow_colinear)while(k > t && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1]) < \
+    \ 0.0)k--;\n\t\telse              while(k > t && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1])\
+    \ <= 0.0)k--;\n\t\tqs[k++] = ps[i];\n\t}\n\tqs.resize(k-1);\n\treturn qs;\n}\n\
+    \nDOUBLE diameter(polygon &ps) {\n\tpolygon convex = convex_hull(ps, false);\n\
+    \tint n = (int)convex.size();\n\n\tif(n == 2)return get_distance(convex[0], convex[1]);\n\
+    \n\tint i = 0, j = 0;\n\tfor(int k = 0;k < n;k++){\n\t\tif(convex[k] < convex[i])i\
+    \ = k;\n\t\tif(convex[j] < convex[k])j = k;\n\t}\n\tDOUBLE res = 0;\n\tint si\
+    \ = i, sj = j;\n\twhile(i != sj || j != si){\n\t\tres = max(res, get_distance(convex[i],\
+    \ convex[j]));\n\t\tif(cross(convex[(i+1)%n]-convex[i], convex[(j+1)%n]-convex[j])\
+    \ < 0.0){\n\t\t\ti = (i+1) % n;\n\t\t}else{\n\t\t\tj = (j+1) % n;\n\t\t}\n\t}\n\
+    \treturn res;\n}\n\npolygon convex_cut(polygon &p, line s){\n\tpolygon ret;\n\t\
+    int n = (int)p.size();\n\tfor(int i = 0;i < n;i++){\n\t\tconst point &now = p[i];\n\
+    \t\tconst point &nxt = p[(i+1)%n];\n\t\tauto cf = cross(s.p1 - now, s.p2 - now);\n\
+    \t\tauto cs = cross(s.p1 - nxt, s.p2 - nxt);\n\t\tif(sgn(cf) >= 0){\n\t\t\tret.emplace_back(now);\n\
+    \t\t}\n\t\tif(sgn(cf) * sgn(cs) < 0){\n\t\t\tline l = line{now, nxt};\n\t\t\t\
+    ret.emplace_back(get_crosspoint(l, s)[0]);\n\t\t}\n\t}\n\treturn ret;\n}\n"
   code: "\nusing DOUBLE = long double;\n\nconstexpr DOUBLE EPS = 1e-9;\n\nstruct point\
     \ {\n\tDOUBLE x, y;\n\n\tpoint(DOUBLE _x = 0, DOUBLE _y = 0): x(_x), y(_y) {}\n\
     \n\tpoint operator+(point p){ return point(x+p.x, y+p.y); };\n\tpoint operator-(point\
@@ -195,20 +227,44 @@ data:
     \ < n;i++){\n\t\tpoint a = g[i]-p, b = g[(i+1)%n]-p;\n\t\tif(abs(cross(a, b))\
     \ < EPS && dot(a, b) < EPS)return 1;\n\t\tif(a.y > b.y)swap(a, b);\n\t\tif(a.y\
     \ < EPS && EPS < b.y && cross(a, b) > EPS)x = !x;\n\t}\n\treturn (x ? 2 : 0);\n\
-    }\n"
+    }\n\npolygon convex_hull(polygon &ps, bool allow_colinear=false){\n\tint n = (int)ps.size();\n\
+    \tsort(ps.begin(), ps.end());\n\tint k = 0;\n\tpolygon qs(n*2);\n\tfor(int i =\
+    \ 0;i < n;i++){\n\t\tif(allow_colinear)while(k > 1 && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1])\
+    \ <  0.0)k--;\n\t\telse              while(k > 1 && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1])\
+    \ <= 0.0)k--;\n\t\tqs[k++] = ps[i];\n\t}\n\tfor(int i = n-2, t=k;i >= 0;i--){\n\
+    \t\tif(allow_colinear)while(k > t && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1]) < \
+    \ 0.0)k--;\n\t\telse              while(k > t && cross(qs[k-1]-qs[k-2], ps[i]-qs[k-1])\
+    \ <= 0.0)k--;\n\t\tqs[k++] = ps[i];\n\t}\n\tqs.resize(k-1);\n\treturn qs;\n}\n\
+    \nDOUBLE diameter(polygon &ps) {\n\tpolygon convex = convex_hull(ps, false);\n\
+    \tint n = (int)convex.size();\n\n\tif(n == 2)return get_distance(convex[0], convex[1]);\n\
+    \n\tint i = 0, j = 0;\n\tfor(int k = 0;k < n;k++){\n\t\tif(convex[k] < convex[i])i\
+    \ = k;\n\t\tif(convex[j] < convex[k])j = k;\n\t}\n\tDOUBLE res = 0;\n\tint si\
+    \ = i, sj = j;\n\twhile(i != sj || j != si){\n\t\tres = max(res, get_distance(convex[i],\
+    \ convex[j]));\n\t\tif(cross(convex[(i+1)%n]-convex[i], convex[(j+1)%n]-convex[j])\
+    \ < 0.0){\n\t\t\ti = (i+1) % n;\n\t\t}else{\n\t\t\tj = (j+1) % n;\n\t\t}\n\t}\n\
+    \treturn res;\n}\n\npolygon convex_cut(polygon &p, line s){\n\tpolygon ret;\n\t\
+    int n = (int)p.size();\n\tfor(int i = 0;i < n;i++){\n\t\tconst point &now = p[i];\n\
+    \t\tconst point &nxt = p[(i+1)%n];\n\t\tauto cf = cross(s.p1 - now, s.p2 - now);\n\
+    \t\tauto cs = cross(s.p1 - nxt, s.p2 - nxt);\n\t\tif(sgn(cf) >= 0){\n\t\t\tret.emplace_back(now);\n\
+    \t\t}\n\t\tif(sgn(cf) * sgn(cs) < 0){\n\t\t\tline l = line{now, nxt};\n\t\t\t\
+    ret.emplace_back(get_crosspoint(l, s)[0]);\n\t\t}\n\t}\n\treturn ret;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: geometry/util.hpp
   requiredBy: []
-  timestamp: '2025-05-26 07:11:22+09:00'
+  timestamp: '2025-05-26 07:56:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yukicoder/3154.test.cpp
   - verify/aoj/cgl/3_C.test.cpp
+  - verify/aoj/cgl/4_A.test.cpp
   - verify/aoj/cgl/2_B.test.cpp
   - verify/aoj/cgl/3_B.test.cpp
   - verify/aoj/cgl/2_C.test.cpp
   - verify/aoj/cgl/1_B.test.cpp
+  - verify/aoj/cgl/4_C.test.cpp
   - verify/aoj/cgl/1_A.test.cpp
+  - verify/aoj/cgl/4_B.test.cpp
   - verify/aoj/cgl/2_D.test.cpp
   - verify/aoj/cgl/3_A.test.cpp
   - verify/aoj/cgl/1_C.test.cpp
@@ -319,3 +375,23 @@ $3$ 点の関係を判定
   - 含まれる場合は 2
   - 辺上は 1
   - それ以外は 0
+
+## ``polygon convex_hull(polygon p, bool allow_colinear=false)``
+
+- 多角形 $p$ 凸包を返す(``allow_colinear=true`` の時は、$3$ 点が同一直線状にあることを許す) $O(N \log N)$
+
+## ``DOUBLE diameter(polygon &p)``
+
+- 多角形 $p$ の直径(最遠点対) を返す $O(N \log N)$
+
+キャリパー法で求める。
+
+凸法を求めたのち、辞書順最小 $p_i$ と辞書順最大 $p_j$ を用意。
+
+ベクトル $p_{i+1}-p_i, p_{j+1}-p{j}$ の外積を基に進める頂点を決め、それぞれで距離を求める。
+
+
+## ``polygon convex_cut(polygon &p, line s)``
+
+- 多角形 $p$ を直線 $s$ で切った左側を返す $O(n)$
+- 右側を返す際は $s$ で与える $2$ 点を入れ替えると良い

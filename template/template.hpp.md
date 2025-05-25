@@ -40,6 +40,15 @@ data:
     path: verify/aoj/cgl/3_C.test.cpp
     title: verify/aoj/cgl/3_C.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/4_A.test.cpp
+    title: verify/aoj/cgl/4_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/4_B.test.cpp
+    title: verify/aoj/cgl/4_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/4_C.test.cpp
+    title: verify/aoj/cgl/4_C.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/dpl/1_D.test.cpp
     title: verify/aoj/dpl/1_D.test.cpp
   - icon: ':heavy_check_mark:'
@@ -204,6 +213,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/3078.test.cpp
     title: verify/yukicoder/3078.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/3154.test.cpp
+    title: verify/yukicoder/3154.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -273,6 +285,7 @@ data:
   - verify/yukicoder/1435.test.cpp
   - verify/yukicoder/274.test.cpp
   - verify/yukicoder/3044.test.cpp
+  - verify/yukicoder/3154.test.cpp
   - verify/yukicoder/3078.test.cpp
   - verify/yukicoder/2219.test.cpp
   - verify/yukicoder/1250.test.cpp
@@ -300,11 +313,14 @@ data:
   - verify/yosupo/area_of_union_of_rectangles.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
   - verify/aoj/cgl/3_C.test.cpp
+  - verify/aoj/cgl/4_A.test.cpp
   - verify/aoj/cgl/2_B.test.cpp
   - verify/aoj/cgl/3_B.test.cpp
   - verify/aoj/cgl/2_C.test.cpp
   - verify/aoj/cgl/1_B.test.cpp
+  - verify/aoj/cgl/4_C.test.cpp
   - verify/aoj/cgl/1_A.test.cpp
+  - verify/aoj/cgl/4_B.test.cpp
   - verify/aoj/cgl/2_D.test.cpp
   - verify/aoj/cgl/3_A.test.cpp
   - verify/aoj/cgl/1_C.test.cpp
