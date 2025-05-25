@@ -27,6 +27,8 @@ struct point {
 istream& operator >> (istream &is, point &p){return is >> p.x >> p.y;}
 ostream& operator << (ostream &os, const point &p){return os << p.x << " " << p.y;}
 
+using polygon = vector<point>;
+
 struct segment {point p1, p2; };
 typedef segment line;
 istream& operator >> (istream &is, segment &s){return is >> s.p1 >> s.p2;}
@@ -157,4 +159,69 @@ bool is_parallel(point a, point b){
 }
 bool is_parallel(segment s1, segment s2){
     return sgn(cross(s1.p2 - s1.p1, s2.p2 - s2.p1)) == 0;
+}
+
+DOUBLE area(polygon &p){
+	DOUBLE s = 0.0;
+	size_t n = p.size();
+	for(size_t i = 0;i < n;i++){
+		int nxt = (i+1)%n;
+		s += p[i].x*p[nxt].y - p[nxt].x*p[i].y;
+	}
+	s = abs(s);
+	s /= 2.0;
+	return s;
+}
+
+bool __is_convex_allow_colinear(polygon &p){
+	int n = ssize(p);
+	assert(n >= 3);
+	int base_ccw;
+	{
+		int idx = 0;
+		int r;
+		while(true){
+			r = ccw(p[idx], p[(idx+1)%n], p[(idx+2)%n]);
+			if(r == CLOCKWISE || r == COUNTER_CLOCKWISE){
+				base_ccw = r;
+				break;
+			}
+			idx++;
+		}
+	}
+	for(int i = 0;i < n;i++){
+		int r = ccw(p[i], p[(i+1)%n], p[(i+2)%n]);
+		if(r != CLOCKWISE && r != COUNTER_CLOCKWISE)continue;
+		if(r != base_ccw)return false;
+	}
+	return true;
+}
+
+bool is_convex(polygon &p, bool allow_colinear=false){
+	if(allow_colinear)return __is_convex_allow_colinear(p);
+	int n = ssize(p);
+	assert(n >= 3);
+	int base_ccw = ccw(p[0], p[1], p[2]);
+	for(int i = 0;i < n;i++){
+		int r = ccw(p[i], p[(i+1)%n], p[(i+2)%n]);
+		if(r != base_ccw)return false;
+	}
+	return true;
+}
+
+/*
+IN 2
+ON 1
+OUT 0
+*/
+int contains(polygon g, point p){
+	int n = (int)g.size();
+	bool x = false;
+	for(int i = 0;i < n;i++){
+		point a = g[i]-p, b = g[(i+1)%n]-p;
+		if(abs(cross(a, b)) < EPS && dot(a, b) < EPS)return 1;
+		if(a.y > b.y)swap(a, b);
+		if(a.y < EPS && EPS < b.y && cross(a, b) > EPS)x = !x;
+	}
+	return (x ? 2 : 0);
 }

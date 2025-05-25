@@ -90,3 +90,17 @@ $3$ 点の関係を判定
 
 - 平行判定をする
 
+## ``DOUBLE area(polygon p)``
+
+- (凸とは限らない)多角形 $p$ の面積を求める
+
+## ``bool is_convex(polygon p, bool allow_colinear=false)``
+
+- 多角形 $p$ の凸性判定を行う(``allow_colinear=true`` の時は、$3$ 点が同一直線状にあることを許す)
+
+## ``int contains(polygon g, point p)``
+
+- (凸とは限らない)多角形 $g$ と点 $p$ の包含関係を返す
+  - 含まれる場合は 2
+  - 辺上は 1
+  - それ以外は 0
