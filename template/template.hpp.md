@@ -51,6 +51,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/cgl/5_A.test.cpp
     title: verify/aoj/cgl/5_A.test.cpp
+  - icon: ':x:'
+    path: verify/aoj/cgl/7_A.test.cpp
+    title: verify/aoj/cgl/7_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/7_B.test.cpp
+    title: verify/aoj/cgl/7_B.test.cpp
+  - icon: ':x:'
+    path: verify/aoj/cgl/7_C.test.cpp
+    title: verify/aoj/cgl/7_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/7_D.test.cpp
+    title: verify/aoj/cgl/7_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/7_E.test.cpp
+    title: verify/aoj/cgl/7_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/cgl/7_F.test.cpp
+    title: verify/aoj/cgl/7_F.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dpl/1_D.test.cpp
     title: verify/aoj/dpl/1_D.test.cpp
@@ -219,9 +237,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/3154.test.cpp
     title: verify/yukicoder/3154.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing\
@@ -282,7 +300,7 @@ data:
   requiredBy:
   - verify/atcoder/abc/150/f.___test.cpp
   timestamp: '2025-02-14 10:23:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yukicoder/2780.test.cpp
   - verify/yukicoder/1435.test.cpp
@@ -318,14 +336,20 @@ data:
   - verify/aoj/cgl/3_C.test.cpp
   - verify/aoj/cgl/4_A.test.cpp
   - verify/aoj/cgl/2_B.test.cpp
+  - verify/aoj/cgl/7_D.test.cpp
   - verify/aoj/cgl/3_B.test.cpp
   - verify/aoj/cgl/2_C.test.cpp
+  - verify/aoj/cgl/7_F.test.cpp
+  - verify/aoj/cgl/7_B.test.cpp
   - verify/aoj/cgl/5_A.test.cpp
   - verify/aoj/cgl/1_B.test.cpp
   - verify/aoj/cgl/4_C.test.cpp
   - verify/aoj/cgl/1_A.test.cpp
   - verify/aoj/cgl/4_B.test.cpp
+  - verify/aoj/cgl/7_C.test.cpp
   - verify/aoj/cgl/2_D.test.cpp
+  - verify/aoj/cgl/7_A.test.cpp
+  - verify/aoj/cgl/7_E.test.cpp
   - verify/aoj/cgl/3_A.test.cpp
   - verify/aoj/cgl/1_C.test.cpp
   - verify/aoj/cgl/2_A.test.cpp

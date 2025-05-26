@@ -45,7 +45,7 @@ data:
         \u5024\u554F\u984C(monotone-minima)"
   - name: geometry
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geometry/util.hpp
       title: "\u5E7E\u4F55\u30E9\u30A4\u30D6\u30E9\u30EA"
   - name: graph
@@ -161,7 +161,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/atcoder/abc/150
@@ -230,6 +230,24 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/cgl/5_A.test.cpp
       title: verify/aoj/cgl/5_A.test.cpp
+    - icon: ':x:'
+      path: verify/aoj/cgl/7_A.test.cpp
+      title: verify/aoj/cgl/7_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/7_B.test.cpp
+      title: verify/aoj/cgl/7_B.test.cpp
+    - icon: ':x:'
+      path: verify/aoj/cgl/7_C.test.cpp
+      title: verify/aoj/cgl/7_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/7_D.test.cpp
+      title: verify/aoj/cgl/7_D.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/7_E.test.cpp
+      title: verify/aoj/cgl/7_E.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/cgl/7_F.test.cpp
+      title: verify/aoj/cgl/7_F.test.cpp
   - name: verify/aoj/dpl
     pages:
     - icon: ':heavy_check_mark:'
