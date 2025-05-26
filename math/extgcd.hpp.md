@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/id/3362.test.cpp
+    title: verify/aoj/id/3362.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/ntl/1_E.test.cpp
     title: verify/aoj/ntl/1_E.test.cpp
   _isVerificationFailed: false
@@ -25,6 +28,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/ntl/1_E.test.cpp
+  - verify/aoj/id/3362.test.cpp
 documentation_of: math/extgcd.hpp
 layout: document
 title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"

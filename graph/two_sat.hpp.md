@@ -7,6 +7,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/id/3205.test.cpp
+    title: verify/aoj/id/3205.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/two_sat.test.cpp
     title: verify/yosupo/two_sat.test.cpp
   - icon: ':heavy_check_mark:'
@@ -66,6 +69,7 @@ data:
   verifiedWith:
   - verify/yukicoder/274.test.cpp
   - verify/yosupo/two_sat.test.cpp
+  - verify/aoj/id/3205.test.cpp
 documentation_of: graph/two_sat.hpp
 layout: document
 title: 2-SAT

@@ -142,6 +142,12 @@ data:
     path: verify/aoj/id/2828.test.cpp
     title: verify/aoj/id/2828.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/id/3205.test.cpp
+    title: verify/aoj/id/3205.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/id/3362.test.cpp
+    title: verify/aoj/id/3362.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/itp1/7_d.test.cpp
     title: verify/aoj/itp1/7_d.test.cpp
   - icon: ':heavy_check_mark:'
@@ -375,8 +381,10 @@ data:
   - verify/aoj/dsl/2_B___segment_tree.test.cpp
   - verify/aoj/ntl/1_D.test.cpp
   - verify/aoj/ntl/1_E.test.cpp
+  - verify/aoj/id/3362.test.cpp
   - verify/aoj/id/2286.test.cpp
   - verify/aoj/id/2828.test.cpp
+  - verify/aoj/id/3205.test.cpp
   - verify/aoj/dpl/1_D.test.cpp
   - verify/aoj/grl/3_C.test.cpp
   - verify/aoj/grl/5_C.test.cpp
