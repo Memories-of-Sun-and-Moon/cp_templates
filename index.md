@@ -111,6 +111,9 @@ data:
         \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09\u30C6\u30FC\
         \u30D6\u30EB"
     - icon: ':heavy_check_mark:'
+      path: math/extgcd.hpp
+      title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
+    - icon: ':heavy_check_mark:'
       path: math/factor.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3\uFF08\u30DD\u30E9\u30FC\u30C9\u30FB\u30ED\
         \u30FC\u6CD5\uFF09"
@@ -333,6 +336,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/itp1/7_d.test.cpp
       title: verify/aoj/itp1/7_d.test.cpp
+  - name: verify/aoj/ntl
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/ntl/1_E.test.cpp
+      title: verify/aoj/ntl/1_E.test.cpp
   - name: verify/yosupo
     pages:
     - icon: ':heavy_check_mark:'
