@@ -6,7 +6,6 @@
 using namespace mmrz;
 
 void mmrz::solve(){
-circle a, b;
 	circle a, b;
 	cin >> a >> b;
 	cout << intersect(a, b) << '\n';

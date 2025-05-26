@@ -7,12 +7,7 @@
 using namespace mmrz;
 
 void mmrz::solve(){
-	point p;
-	cin >> p;
-	circle c;
-	cin >> c;
-	auto [a, b] = tangent(c, p);
-	if(sgn(a.x-b.x) != -1)swap(a, b);
-	if(sgn(a.y-b.y) != -1)swap(a, b);
-	cout << a << '\n' << b << '\n';
+	point p1, p2, p3;
+	cin >> p1 >> p2 >> p3;
+	cout << circumcircle_of_a_triangle(p1, p2, p3) << '\n';
 }
