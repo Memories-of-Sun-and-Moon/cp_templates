@@ -45,13 +45,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/cgl/5_A.test.cpp
     title: verify/aoj/cgl/5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/cgl/7_A.test.cpp
     title: verify/aoj/cgl/7_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/cgl/7_B.test.cpp
     title: verify/aoj/cgl/7_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/cgl/7_C.test.cpp
     title: verify/aoj/cgl/7_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -66,9 +66,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/3154.test.cpp
     title: verify/yukicoder/3154.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geometry/util.hpp\"\n\nusing DOUBLE = long double;\n\nconstexpr\
@@ -380,7 +380,7 @@ data:
   path: geometry/util.hpp
   requiredBy: []
   timestamp: '2025-05-26 22:24:33+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/3154.test.cpp
   - verify/aoj/cgl/3_C.test.cpp

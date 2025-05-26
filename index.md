@@ -45,7 +45,7 @@ data:
         \u5024\u554F\u984C(monotone-minima)"
   - name: geometry
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/util.hpp
       title: "\u5E7E\u4F55\u30E9\u30A4\u30D6\u30E9\u30EA"
   - name: graph
@@ -161,7 +161,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/atcoder/abc/150
@@ -230,13 +230,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/cgl/5_A.test.cpp
       title: verify/aoj/cgl/5_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/cgl/7_A.test.cpp
       title: verify/aoj/cgl/7_A.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/cgl/7_B.test.cpp
       title: verify/aoj/cgl/7_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/cgl/7_C.test.cpp
       title: verify/aoj/cgl/7_C.test.cpp
     - icon: ':heavy_check_mark:'

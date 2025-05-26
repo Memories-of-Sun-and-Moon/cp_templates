@@ -51,13 +51,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/cgl/5_A.test.cpp
     title: verify/aoj/cgl/5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/cgl/7_A.test.cpp
     title: verify/aoj/cgl/7_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aoj/cgl/7_B.test.cpp
     title: verify/aoj/cgl/7_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/cgl/7_C.test.cpp
     title: verify/aoj/cgl/7_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -237,9 +237,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/3154.test.cpp
     title: verify/yukicoder/3154.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n# include <bits/stdc++.h>\nusing\
@@ -300,7 +300,7 @@ data:
   requiredBy:
   - verify/atcoder/abc/150/f.___test.cpp
   timestamp: '2025-02-14 10:23:15+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/2780.test.cpp
   - verify/yukicoder/1435.test.cpp
