@@ -106,6 +106,10 @@ data:
       path: math/discrete_logarithm.hpp
       title: discrete_logarithm
     - icon: ':heavy_check_mark:'
+      path: math/euler_phi.hpp
+      title: "\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\uFF08\u30AA\u30A4\u30E9\
+        \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09"
+    - icon: ':heavy_check_mark:'
       path: math/euler_phi_table.hpp
       title: "\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\uFF08\u30AA\u30A4\u30E9\
         \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09\u30C6\u30FC\
@@ -338,6 +342,9 @@ data:
       title: verify/aoj/itp1/7_d.test.cpp
   - name: verify/aoj/ntl
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/ntl/1_D.test.cpp
+      title: verify/aoj/ntl/1_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/ntl/1_E.test.cpp
       title: verify/aoj/ntl/1_E.test.cpp

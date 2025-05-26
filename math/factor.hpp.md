@@ -5,8 +5,15 @@ data:
     path: math/is_prime.hpp
     title: "\u7D20\u6570\u5224\u5B9A\uFF08\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\
       \u7D20\u6570\u5224\u5B9A\u6CD5\uFF09"
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: math/euler_phi.hpp
+    title: "\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\uFF08\u30AA\u30A4\u30E9\
+      \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/aoj/ntl/1_D.test.cpp
+    title: verify/aoj/ntl/1_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/factorize.test.cpp
     title: verify/yosupo/factorize.test.cpp
@@ -52,11 +59,13 @@ data:
   - math/is_prime.hpp
   isVerificationFile: false
   path: math/factor.hpp
-  requiredBy: []
+  requiredBy:
+  - math/euler_phi.hpp
   timestamp: '2025-05-20 23:52:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/factorize.test.cpp
+  - verify/aoj/ntl/1_D.test.cpp
 documentation_of: math/factor.hpp
 layout: document
 title: "\u7D20\u56E0\u6570\u5206\u89E3\uFF08\u30DD\u30E9\u30FC\u30C9\u30FB\u30ED\u30FC\
