@@ -13,6 +13,6 @@ void mmrz::solve(){
 	while(q--){
 		point p;
 		cin >> p;
-		cout << reflect(l, p) << endl;
+		cout << reflect(l, p) << '\n';
 	}
 }

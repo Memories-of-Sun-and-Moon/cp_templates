@@ -15,6 +15,6 @@ void mmrz::solve(){
 		point p;
 		cin >> p;
 		point ret = project(s, p);
-		cout << ret.x << " " << ret.y << endl;
+		cout << ret.x << " " << ret.y << '\n';
 	}
 }

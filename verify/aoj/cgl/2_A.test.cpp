@@ -11,8 +11,8 @@ void mmrz::solve(){
 	while(q--){
 		line s1, s2;
 		cin >> s1 >> s2;
-		if(is_parallel(s1, s2))cout << 2 << endl;
-		else if(is_orthogonal(s1, s2))cout << 1 << endl;
-		else cout << 0 << endl;
+		if(is_parallel(s1, s2))cout << 2 << '\n';
+		else if(is_orthogonal(s1, s2))cout << 1 << '\n';
+		else cout << 0 << '\n';
 	}
 }

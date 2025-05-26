@@ -14,10 +14,10 @@ void mmrz::solve(){
 		point p;
 		cin >> p;
 		int ret = ccw(seg.p1, seg.p2, p);
-		if(ret == 1)cout << "COUNTER_CLOCKWISE" << endl;
-		if(ret == -1)cout << "CLOCKWISE" << endl;
-		if(ret == 2)cout << "ONLINE_BACK" << endl;
-		if(ret == -2)cout << "ONLINE_FRONT" << endl;
-		if(ret == 0)cout << "ON_SEGMENT" << endl;
+		if(ret == 1)cout << "COUNTER_CLOCKWISE" << '\n';
+		if(ret == -1)cout << "CLOCKWISE" << '\n';
+		if(ret == 2)cout << "ONLINE_BACK" << '\n';
+		if(ret == -2)cout << "ONLINE_FRONT" << '\n';
+		if(ret == 0)cout << "ON_SEGMENT" << '\n';
 	}
 }

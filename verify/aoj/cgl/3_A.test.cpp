@@ -11,5 +11,5 @@ void mmrz::solve(){
 	vector<point> poly(n);
 	for(auto &p : poly) cin >> p;
 
-	cout << fixed << setprecision(1) << area(poly) << endl;
+	cout << fixed << setprecision(1) << area(poly) << '\n';
 }

@@ -62,6 +62,10 @@ $3$ 点の関係を判定
 
 - $2$ 直線の交差判定
 
+## ``int intersect(circle &1, circle &2)``
+
+- $2$ 円の交差判定(共通接線の数を返す)
+
 ## ``point project(line s, point p)``
 
 - 直線と点の射影を返す

@@ -11,5 +11,5 @@ void mmrz::solve(){
 	vector<point> poly(n);
 	for(auto &p : poly) cin >> p;
 
-	cout << (is_convex(poly, true) ? 1 : 0) << endl;
+	cout << (is_convex(poly, true) ? 1 : 0) << '\n';
 }

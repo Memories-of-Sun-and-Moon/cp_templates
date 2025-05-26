@@ -21,6 +21,6 @@ void mmrz::solve(){
 		}
 	}
 	rep(i, len(qs)){
-		cout << int(qs[(i+idx)%len(qs)].x) << " " << int(qs[(i+idx)%len(qs)].y) << endl;
+		cout << int(qs[(i+idx)%len(qs)].x) << " " << int(qs[(i+idx)%len(qs)].y) << '\n';
 	}
 }

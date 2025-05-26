@@ -15,6 +15,6 @@ void mmrz::solve(){
 	while(q--){
 		point p;
 		cin >> p;
-		cout << contains(ps, p) << endl;
+		cout << contains(ps, p) << '\n';
 	}
 }

@@ -13,6 +13,6 @@ void mmrz::solve(){
 		cin >> s1; 
 		cin >> s2; 
 
-		cout << intersect(s1, s2) << endl;
+		cout << intersect(s1, s2) << '\n';
 	}
 }
