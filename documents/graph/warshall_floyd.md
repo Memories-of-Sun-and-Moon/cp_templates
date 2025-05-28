@@ -1,6 +1,6 @@
 ---
 title: 全頂点間最短距離 O(V^3) 及び更新を O(V^2) で行うアルゴリズム (ワーシャルフロイド法)
-documentation_of: ./../../graph/dinic.hpp
+documentation_of: ./../../graph/warshall_floyd.hpp
 ---
 
 # 全頂点間最短距離 O(V^3) 及び更新を O(V^2) で行うアルゴリズム (ワーシャルフロイド法)
