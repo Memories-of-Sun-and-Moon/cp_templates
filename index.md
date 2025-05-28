@@ -52,7 +52,9 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: graph/dinic.hpp
-      title: "\u6700\u5927\u6D41(Dinic)"
+      title: "\u5168\u9802\u70B9\u9593\u6700\u77ED\u8DDD\u96E2 O(V^3) \u53CA\u3073\
+        \u66F4\u65B0\u3092 O(V^2) \u3067\u884C\u3046\u30A2\u30EB\u30B4\u30EA\u30BA\
+        \u30E0 (\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5)"
     - icon: ':heavy_check_mark:'
       path: graph/ford_fulkerson.hpp
       title: "\u6700\u5927\u6D41(Ford-Fulkerson)"
@@ -88,9 +90,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/two_sat.hpp
       title: 2-SAT
-    - icon: ':warning:'
-      path: graph/warshall_floyd.cpp
-      title: graph/warshall_floyd.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph/warshall_floyd.hpp
+      title: graph/warshall_floyd.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -329,6 +331,12 @@ data:
       title: verify/aoj/grl/6_B.test.cpp
   - name: verify/aoj/id
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/id/0526.test.cpp
+      title: verify/aoj/id/0526.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/id/2005.test.cpp
+      title: verify/aoj/id/2005.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/id/2286.test.cpp
       title: verify/aoj/id/2286.test.cpp
