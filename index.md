@@ -52,9 +52,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: graph/dinic.hpp
-      title: "\u5168\u9802\u70B9\u9593\u6700\u77ED\u8DDD\u96E2 O(V^3) \u53CA\u3073\
-        \u66F4\u65B0\u3092 O(V^2) \u3067\u884C\u3046\u30A2\u30EB\u30B4\u30EA\u30BA\
-        \u30E0 (\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5)"
+      title: "\u6700\u5927\u6D41(Dinic)"
     - icon: ':heavy_check_mark:'
       path: graph/ford_fulkerson.hpp
       title: "\u6700\u5927\u6D41(Ford-Fulkerson)"
@@ -92,7 +90,9 @@ data:
       title: 2-SAT
     - icon: ':heavy_check_mark:'
       path: graph/warshall_floyd.hpp
-      title: graph/warshall_floyd.hpp
+      title: "\u5168\u9802\u70B9\u9593\u6700\u77ED\u8DDD\u96E2 O(V^3) \u53CA\u3073\
+        \u66F4\u65B0\u3092 O(V^2) \u3067\u884C\u3046\u30A2\u30EB\u30B4\u30EA\u30BA\
+        \u30E0 (\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5)"
   - name: math
     pages:
     - icon: ':heavy_check_mark:'

@@ -46,8 +46,16 @@ data:
   - verify/aoj/id/2005.test.cpp
 documentation_of: graph/warshall_floyd.hpp
 layout: document
-redirect_from:
-- /library/graph/warshall_floyd.hpp
-- /library/graph/warshall_floyd.hpp.html
-title: graph/warshall_floyd.hpp
+title: "\u5168\u9802\u70B9\u9593\u6700\u77ED\u8DDD\u96E2 O(V^3) \u53CA\u3073\u66F4\
+  \u65B0\u3092 O(V^2) \u3067\u884C\u3046\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0 (\u30EF\
+  \u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5)"
 ---
+
+# 全頂点間最短距離 O(V^3) 及び更新を O(V^2) で行うアルゴリズム (ワーシャルフロイド法)
+
+## 使い方
+
+- ``warshall_floyd(vector<vector<T>> &edge_cost, T infty=::numeric_limits<T>()/2)`` : コンストラクタ。距離行列を用意する。
+  - 全頂点間最短距離を格納した行列 ``dist`` が $O(V^3)$ で求まる。
+  - ただし、 ``edge_cost[i][i] = 0``, 結ばれていない頂点間は $\text{infty}$ を格納すること($2 \times \text{infty} < \text(型 T の最大値)$ である必要がある)
+- ``void update(int s, int t, T, cost)`` : ``edge_cost[s][t]`` を ``cost`` に更新する。 $O(V^2)$
