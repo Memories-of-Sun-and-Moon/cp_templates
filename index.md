@@ -100,7 +100,7 @@ data:
       title: math/binary_gcd.hpp
     - icon: ':warning:'
       path: math/combination.hpp
-      title: binary_gcd
+      title: "2\u9805\u4FC2\u6570mod"
     - icon: ':heavy_check_mark:'
       path: math/counting_primes.hpp
       title: "$n$ \u4EE5\u4E0B\u306E\u7D20\u6570\u306E\u6570\u3048\u4E0A\u3052"
@@ -450,6 +450,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/2780.test.cpp
       title: verify/yukicoder/2780.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yukicoder/3020.test.cpp
+      title: verify/yukicoder/3020.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/3044.test.cpp
       title: verify/yukicoder/3044.test.cpp

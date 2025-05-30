@@ -382,27 +382,27 @@ data:
   timestamp: '2025-05-26 22:24:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yukicoder/3154.test.cpp
-  - verify/aoj/cgl/3_C.test.cpp
-  - verify/aoj/cgl/4_A.test.cpp
-  - verify/aoj/cgl/2_B.test.cpp
-  - verify/aoj/cgl/7_D.test.cpp
-  - verify/aoj/cgl/3_B.test.cpp
   - verify/aoj/cgl/2_C.test.cpp
   - verify/aoj/cgl/7_F.test.cpp
-  - verify/aoj/cgl/7_B.test.cpp
-  - verify/aoj/cgl/5_A.test.cpp
-  - verify/aoj/cgl/1_B.test.cpp
-  - verify/aoj/cgl/4_C.test.cpp
   - verify/aoj/cgl/1_A.test.cpp
-  - verify/aoj/cgl/4_B.test.cpp
+  - verify/aoj/cgl/4_A.test.cpp
+  - verify/aoj/cgl/4_C.test.cpp
   - verify/aoj/cgl/7_C.test.cpp
-  - verify/aoj/cgl/2_D.test.cpp
-  - verify/aoj/cgl/7_A.test.cpp
-  - verify/aoj/cgl/7_E.test.cpp
-  - verify/aoj/cgl/3_A.test.cpp
-  - verify/aoj/cgl/1_C.test.cpp
   - verify/aoj/cgl/2_A.test.cpp
+  - verify/aoj/cgl/7_A.test.cpp
+  - verify/aoj/cgl/1_C.test.cpp
+  - verify/aoj/cgl/5_A.test.cpp
+  - verify/aoj/cgl/3_B.test.cpp
+  - verify/aoj/cgl/3_A.test.cpp
+  - verify/aoj/cgl/4_B.test.cpp
+  - verify/aoj/cgl/2_D.test.cpp
+  - verify/aoj/cgl/7_E.test.cpp
+  - verify/aoj/cgl/1_B.test.cpp
+  - verify/aoj/cgl/3_C.test.cpp
+  - verify/aoj/cgl/7_B.test.cpp
+  - verify/aoj/cgl/7_D.test.cpp
+  - verify/aoj/cgl/2_B.test.cpp
+  - verify/yukicoder/3154.test.cpp
 documentation_of: geometry/util.hpp
 layout: document
 title: "\u5E7E\u4F55\u30E9\u30A4\u30D6\u30E9\u30EA"

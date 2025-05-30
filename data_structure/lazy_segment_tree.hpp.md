@@ -143,12 +143,12 @@ data:
   timestamp: '2025-02-06 00:38:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/area_of_union_of_rectangles.test.cpp
   - verify/aoj/dsl/2_F_Rupdate_Rmin.test.cpp
   - verify/aoj/dsl/2_E___segment_tree.test.cpp
-  - verify/aoj/dsl/2_G_Radd_Rsum.test.cpp
   - verify/aoj/dsl/2_I_Rupdate_Rsum.test.cpp
+  - verify/aoj/dsl/2_G_Radd_Rsum.test.cpp
   - verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
+  - verify/yosupo/area_of_union_of_rectangles.test.cpp
 documentation_of: data_structure/lazy_segment_tree.hpp
 layout: document
 title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"

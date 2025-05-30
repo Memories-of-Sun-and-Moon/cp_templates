@@ -64,8 +64,8 @@ data:
   timestamp: '2025-05-20 23:52:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/factorize.test.cpp
   - verify/aoj/ntl/1_D.test.cpp
+  - verify/yosupo/factorize.test.cpp
 documentation_of: math/factor.hpp
 layout: document
 title: "\u7D20\u56E0\u6570\u5206\u89E3\uFF08\u30DD\u30E9\u30FC\u30C9\u30FB\u30ED\u30FC\

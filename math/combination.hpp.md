@@ -56,15 +56,19 @@ data:
   verifiedWith: []
 documentation_of: math/combination.hpp
 layout: document
-title: binary_gcd
+title: "2\u9805\u4FC2\u6570mod"
 ---
 
-# binary_gcd
+# 2項係数mod
 
 ## 使い方
 
-``binary_gcd(ll a, ll b)`` : $\text{gcd}(a, b)$ を返す。$O(\log{a+b})$ 程度
+``binomial<T> bin`` : 2項係数mod $M$ (型は ``T``) のコンストラクタを呼ぶ。2項係数で扱う値の上限を $K = 1010101$ としており、型 ``T`` における $1!, 2!, ..., K!$ 及びそれらの逆元の計算に比例した計算量がかかる。
+
+``bin.nCr(n, r)`` : $_nC_r \pmod{M}$ を返す。
 
 ## 概要
 
-除算が遅いため、それを回避するためにビットシフトに限定した GCD 計算アルゴリズム
+## Verify
+
+[AtCoder](https://atcoder.jp/contests/abc066/tasks/arc077_b)

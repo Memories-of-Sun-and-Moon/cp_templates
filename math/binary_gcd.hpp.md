@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yukicoder/1250.test.cpp
     title: verify/yukicoder/1250.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/3020.test.cpp
+    title: verify/yukicoder/3020.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -29,6 +32,7 @@ data:
   timestamp: '2025-05-20 23:51:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yukicoder/3020.test.cpp
   - verify/yukicoder/1250.test.cpp
 documentation_of: math/binary_gcd.hpp
 layout: document
