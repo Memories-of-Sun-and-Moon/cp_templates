@@ -97,7 +97,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: math/binary_gcd.hpp
-      title: math/binary_gcd.hpp
+      title: binary_gcd
     - icon: ':warning:'
       path: math/combination.hpp
       title: "2\u9805\u4FC2\u6570mod"
@@ -154,6 +154,9 @@ data:
     - icon: ':warning:'
       path: math/range_sieve.cpp
       title: math/range_sieve.cpp
+    - icon: ':heavy_check_mark:'
+      path: math/stern_brocot_tree.hpp
+      title: stern_brocot_tree
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
@@ -412,6 +415,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/static_range_frequency.test.cpp
       title: verify/yosupo/static_range_frequency.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/stern_brocot_tree.test.cpp
+      title: verify/yosupo/stern_brocot_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/suffixarray.test.cpp
       title: verify/yosupo/suffixarray.test.cpp

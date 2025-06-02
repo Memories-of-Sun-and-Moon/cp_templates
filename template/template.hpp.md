@@ -211,6 +211,9 @@ data:
     path: verify/yosupo/static_range_frequency.test.cpp
     title: verify/yosupo/static_range_frequency.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/stern_brocot_tree.test.cpp
+    title: verify/yosupo/stern_brocot_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/suffixarray.test.cpp
     title: verify/yosupo/suffixarray.test.cpp
   - icon: ':heavy_check_mark:'
@@ -379,6 +382,7 @@ data:
   - verify/yosupo/area_of_union_of_rectangles.test.cpp
   - verify/yosupo/tree_diameter.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
+  - verify/yosupo/stern_brocot_tree.test.cpp
   - verify/yosupo/primality_test.test.cpp
   - verify/yosupo/unionfind.test.cpp
   - verify/yosupo/generalized_discrete_logarithm.test.cpp

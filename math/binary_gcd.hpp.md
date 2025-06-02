@@ -36,8 +36,15 @@ data:
   - verify/yukicoder/1250.test.cpp
 documentation_of: math/binary_gcd.hpp
 layout: document
-redirect_from:
-- /library/math/binary_gcd.hpp
-- /library/math/binary_gcd.hpp.html
-title: math/binary_gcd.hpp
+title: binary_gcd
 ---
+
+# binary_gcd
+
+## 使い方
+
+``binary_gcd(ll a, ll b)`` : $\text{gcd}(a, b)$ を返す。$O(\log{a+b})$ 程度
+
+## 概要
+
+除算が遅いため、それを回避するためにビットシフトに限定した GCD 計算アルゴリズム
