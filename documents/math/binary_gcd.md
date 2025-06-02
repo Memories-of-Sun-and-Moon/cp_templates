@@ -1,6 +1,6 @@
 ---
 title: binary_gcd
-documentation_of: ./../../math/combination.hpp
+documentation_of: ./../../math/binary_gcd.hpp
 ---
 
 # binary_gcd
