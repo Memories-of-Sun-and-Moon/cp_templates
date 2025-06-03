@@ -205,6 +205,9 @@ data:
     path: verify/yosupo/primality_test.test.cpp
     title: verify/yosupo/primality_test.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/scc.test.cpp
+    title: verify/yosupo/scc.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/set_xor_min.test.cpp
     title: verify/yosupo/set_xor_min.test.cpp
   - icon: ':heavy_check_mark:'
@@ -393,6 +396,7 @@ data:
   - verify/yosupo/zalgorithm.test.cpp
   - verify/yosupo/static_range_frequency.test.cpp
   - verify/yosupo/floor_sum.test.cpp
+  - verify/yosupo/scc.test.cpp
   - verify/yosupo/factorize.test.cpp
   - verify/yosupo/counting_primes.test.cpp
   - verify/yosupo/discrete_logarithm.test.cpp

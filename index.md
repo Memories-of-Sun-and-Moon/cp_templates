@@ -410,6 +410,9 @@ data:
       path: verify/yosupo/primality_test.test.cpp
       title: verify/yosupo/primality_test.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/scc.test.cpp
+      title: verify/yosupo/scc.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/set_xor_min.test.cpp
       title: verify/yosupo/set_xor_min.test.cpp
     - icon: ':heavy_check_mark:'

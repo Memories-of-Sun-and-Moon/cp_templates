@@ -13,6 +13,9 @@ data:
     path: verify/aoj/id/3205.test.cpp
     title: verify/aoj/id/3205.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/scc.test.cpp
+    title: verify/yosupo/scc.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/two_sat.test.cpp
     title: verify/yosupo/two_sat.test.cpp
   - icon: ':heavy_check_mark:'
@@ -63,6 +66,7 @@ data:
   verifiedWith:
   - verify/aoj/id/3205.test.cpp
   - verify/aoj/grl/3_C.test.cpp
+  - verify/yosupo/scc.test.cpp
   - verify/yosupo/two_sat.test.cpp
   - verify/yukicoder/2780.test.cpp
   - verify/yukicoder/274.test.cpp
