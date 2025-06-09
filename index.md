@@ -173,6 +173,9 @@ data:
       title: Z Algorithm
   - name: template
     pages:
+    - icon: ':warning:'
+      path: template/bint.hpp
+      title: template/bint.hpp
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
