@@ -27,13 +27,16 @@ data:
       title: Rollback Mo
     - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree.hpp
-      title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+      title: sparse table
     - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree_0-indexed.hpp
       title: "0-indexed\u306E\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree_2d.hpp
       title: "2D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':heavy_check_mark:'
+      path: data_structure/sparse_table.hpp
+      title: data_structure/sparse_table.hpp
     - icon: ':heavy_check_mark:'
       path: data_structure/union_find.hpp
       title: Union-Find
@@ -421,6 +424,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/static_range_frequency.test.cpp
       title: verify/yosupo/static_range_frequency.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/staticrmq.test.cpp
+      title: verify/yosupo/staticrmq.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/stern_brocot_tree.test.cpp
       title: verify/yosupo/stern_brocot_tree.test.cpp

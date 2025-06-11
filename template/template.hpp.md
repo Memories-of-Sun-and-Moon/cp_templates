@@ -214,6 +214,9 @@ data:
     path: verify/yosupo/static_range_frequency.test.cpp
     title: verify/yosupo/static_range_frequency.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/staticrmq.test.cpp
+    title: verify/yosupo/staticrmq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/stern_brocot_tree.test.cpp
     title: verify/yosupo/stern_brocot_tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -391,6 +394,7 @@ data:
   - verify/yosupo/generalized_discrete_logarithm.test.cpp
   - verify/yosupo/kth_root_integer.test.cpp
   - verify/yosupo/assignment_negative.test.cpp
+  - verify/yosupo/staticrmq.test.cpp
   - verify/yosupo/assignment.test.cpp
   - verify/yosupo/enumerate_palindromes.test.cpp
   - verify/yosupo/zalgorithm.test.cpp
