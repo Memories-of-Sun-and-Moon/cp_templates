@@ -54,6 +54,7 @@
 "verify/yosupo/area_of_union_of_rectangles.test.cpp": "2025-02-14 10:23:15 +0900",
 "verify/yosupo/assignment.test.cpp": "2025-05-20 21:02:10 +0900",
 "verify/yosupo/assignment_negative.test.cpp": "2025-05-20 21:02:10 +0900",
+"verify/yosupo/associative_array.test.cpp": "2025-06-15 12:56:39 +0900",
 "verify/yosupo/convolution_mod.test.cpp": "2025-03-08 05:27:09 +0900",
 "verify/yosupo/counting_primes.test.cpp": "2025-05-20 21:02:10 +0900",
 "verify/yosupo/discrete_logarithm.test.cpp": "2025-03-08 05:27:09 +0900",
@@ -85,5 +86,6 @@
 "verify/yukicoder/3020.test.cpp": "2025-05-31 03:56:04 +0900",
 "verify/yukicoder/3044.test.cpp": "2025-03-04 06:01:24 +0900",
 "verify/yukicoder/3078.test.cpp": "2025-05-07 23:26:27 +0900",
-"verify/yukicoder/3154.test.cpp": "2025-05-26 22:24:33 +0900"
+"verify/yukicoder/3154.test.cpp": "2025-05-26 22:24:33 +0900",
+"verify/yukicoder/8016.test.cpp": "2025-06-15 12:56:39 +0900"
 }
