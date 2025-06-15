@@ -51,8 +51,8 @@ data:
   timestamp: '2024-09-28 02:39:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/grl/5_C.test.cpp
   - verify/yosupo/lca.test.cpp
+  - verify/aoj/grl/5_C.test.cpp
 documentation_of: graph/lowest_common_ancestor.hpp
 layout: document
 title: Lowest Common Ancestor

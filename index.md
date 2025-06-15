@@ -14,6 +14,9 @@ data:
       path: data_structure/binary_trie.hpp
       title: Binary Trie
     - icon: ':heavy_check_mark:'
+      path: data_structure/hash_map.hpp
+      title: "\u30CF\u30C3\u30B7\u30E5\u30DE\u30C3\u30D7"
+    - icon: ':heavy_check_mark:'
       path: data_structure/lazy_segment_tree.hpp
       title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
@@ -27,7 +30,7 @@ data:
       title: Rollback Mo
     - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree.hpp
-      title: sparse table
+      title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree_0-indexed.hpp
       title: "0-indexed\u306E\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -383,6 +386,9 @@ data:
       path: verify/yosupo/assignment_negative.test.cpp
       title: verify/yosupo/assignment_negative.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/associative_array.test.cpp
+      title: verify/yosupo/associative_array.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/convolution_mod.test.cpp
       title: verify/yosupo/convolution_mod.test.cpp
     - icon: ':heavy_check_mark:'
@@ -480,6 +486,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/3154.test.cpp
       title: verify/yukicoder/3154.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yukicoder/8016.test.cpp
+      title: verify/yukicoder/8016.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/atcoder/M3_cp?logo=true)

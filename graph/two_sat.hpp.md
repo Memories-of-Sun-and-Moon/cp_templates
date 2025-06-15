@@ -67,9 +67,9 @@ data:
   timestamp: '2024-07-03 15:50:00+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/id/3205.test.cpp
-  - verify/yosupo/two_sat.test.cpp
   - verify/yukicoder/274.test.cpp
+  - verify/yosupo/two_sat.test.cpp
+  - verify/aoj/id/3205.test.cpp
 documentation_of: graph/two_sat.hpp
 layout: document
 title: 2-SAT

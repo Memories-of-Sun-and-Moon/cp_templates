@@ -42,8 +42,8 @@ data:
   timestamp: '2025-05-29 06:44:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/id/0526.test.cpp
   - verify/aoj/id/2005.test.cpp
+  - verify/aoj/id/0526.test.cpp
 documentation_of: graph/warshall_floyd.hpp
 layout: document
 title: "\u5168\u9802\u70B9\u9593\u6700\u77ED\u8DDD\u96E2 O(V^3) \u53CA\u3073\u66F4\

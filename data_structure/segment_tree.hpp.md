@@ -85,15 +85,15 @@ data:
   timestamp: '2024-11-07 00:12:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/dsl/2_B___segment_tree.test.cpp
-  - verify/aoj/dsl/2_A___segment_tree.test.cpp
   - verify/yukicoder/1435.test.cpp
+  - verify/aoj/dsl/2_A___segment_tree.test.cpp
+  - verify/aoj/dsl/2_B___segment_tree.test.cpp
 documentation_of: data_structure/segment_tree.hpp
 layout: document
-title: sparse table
+title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
 ---
 
-# sparse table
+# セグメント木
 
 ## 使い方
 
@@ -103,9 +103,23 @@ title: sparse table
 
 また、要素の取り方は **0-indexed** であることに注意する。
 
-- ``sparse_table<T>(const vector<T> &v, auto combine)`` : 要素数 $N$ の sparse table を生成する $O(N \log{N})$
-- ``T fold(int l, int r)`` : $[l, r)$ を満たす区間内に対する区間演算クエリの結果を返す $O(1)$
+- ``segment_tree<T>(int N, auto combine, T identify)`` : 要素数 $N$ の セグメント木を生成する
+- ``segment_tree<T>(vector<T> v, auto combine, T identify)`` : 要素数 $N$ で、 ``vector<T> v`` で初期化されたセグメント木を生成する
+- ``void set(int x, T val)`` : $x$ 番目の要素を $val$ に変更する  $O(\log(N))$
+- ``T fold(int l, int r)`` : $[l, r)$ を満たす区間内に対する区間演算クエリの結果を返す $O(\log(N))$
+- ``seg[x]`` : $x$ 番目の値を返す。$O(1)$
+- ``max_right(f<bool(T)>, int l)`` : $l \leq i < N$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最大（ $N-1$ 寄り）のものを返す $O(\log(N))$
+
+## !!CAUTION!!
+
+``max_right(f<bool(T)>, int l)`` の検証は atcoder の問題上に手動で提出しており、自動では verify されない
+
+## !!!UNVERIFIED!!!
+
+- ``min_left(f<bool(T)>, int r)`` : $0 \leq i \leq r$ のうち、各要素に対する条件 $f$ を満たすもののなかで最も最小（ $0$ 寄り）のものを返す $O(\log(N))$
+- ``T all_fold()`` : $[0, n)$ を満たす区間内に対する区間演算クエリの結果を返す $O(1)$
+
 
 ## 概要
 
-$2$ 冪の長さの全区間をあらかじめ計算しておき、$[L, R)$ に対する区間演算は $2$ つの区間の和集合として求める。
+内部で完全二分木を **1-indexed** で構築している。こちらの方が定数倍がよく、また ``max_right()`` なども実装しやすい。
