@@ -1,5 +1,14 @@
 
 template<typename T>
+concept NotPrimitiveInt =
+    !(std::is_same_v<T, int> ||
+		std::is_same_v<T, long> ||
+		std::is_same_v<T, long long> ||
+		std::is_same_v<T, unsigned> ||
+		std::is_same_v<T, unsigned long> ||
+		std::is_same_v<T, unsigned long long>);
+
+template<NotPrimitiveInt T>
 T power(T n, long long k) {
 	T ret = 1;
 	while(k > 0) {
