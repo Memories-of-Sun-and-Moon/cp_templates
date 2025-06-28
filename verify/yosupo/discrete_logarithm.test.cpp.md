@@ -61,27 +61,31 @@ data:
     if(b & 1)safe_mul(ret, a);\n\t\t\tsafe_mul(a, a);\n\t\t\tb >>= 1;\n\t\t}\n\t\t\
     return ret;\n\t};\n\n\tunsigned long long ret = (k == 3 ? cbrt(n)-1 : pow(n, nextafter(1.0/double(k),\
     \ 0.0)));\n\twhile(power(ret+1, k) <= n)ret++;\n\treturn ret;\n}\n#line 1 \"math/power.hpp\"\
-    \n\ntemplate<typename T>\nT power(T n, long long k) {\n\tT ret = 1;\n\twhile(k\
-    \ > 0) {\n\t\tif(k & 1)ret *= n;\n\t\tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n\
-    }\n\nlong long power(long long n, long long k, long long p) {\n\tlong long ret\
-    \ = 1;\n\twhile(k > 0){\n\t\tif(k & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\t\
-    k >>= 1;\n\t}\n\treturn ret;\n}\n#line 3 \"math/discrete_logarithm.hpp\"\n\nll\
-    \ __modinv(ll a, ll m){\n\tll b=m, u=1, v=0;\n\twhile(b){\n\t\tll t = a/b;\n\t\
-    \ta -= t*b;swap(a, b);\n\t\tu -= t*v;swap(u, v);\n\t}\n\tu %= m;\n\tif(u < 0)u\
-    \ += m;\n\treturn u;\n}\n\nll discrete_logarithm(ll x, ll y, ll m) {\n\tassert(x\
-    \ < m && y < m);\n\tif(m == 1)return 0;\n\tif(y == 1)return 0;\n\tif(x == 0){\n\
-    \t\tif(y == 1)return 0;\n\t\telse if(y == 0)return 1;\n\t\telse return -1;\n\t\
-    }\n\n\tif(gcd(x, m) != 1){\n\t\tll d = gcd(x, m);\n\t\tif(y%d)return -1;\n\t\t\
-    y /= d;\n\t\tm /= d;\n\t\tll ret = discrete_logarithm(x%m, (y*__modinv(x/d, m))%m,\
-    \ m);\n\t\tif(ret == -1)return -1;\n\t\telse return ret+1;\n\t}\n\n\tll sq = iroot(m);\n\
-    \tif(sq < 3)sq = 3;\n\tvector<ll> _b(sq);\n\tfor(int i = 0;i < sq;i++)_b[i] =\
-    \ (i == 0 ? 1 : (_b[i-1]*x)%m);\n\n\tmap<ll, ll> b;\n\tfor(int i = sq-1;i >= 0;i--)b[_b[i]]\
-    \ = i;\n\n\tll inv = __modinv((_b.back()*x)%m, m);\n\n\tfor(int i = 0;i < sq;i++){\n\
-    \t\tll num = (y*power(inv, i, m))%m;\n\t\tif(b.contains(num)){\n\t\t\treturn i*sq\
-    \ + b[num];\n\t\t}\n\t}\n\treturn -1;\n};\n#line 5 \"verify/yosupo/discrete_logarithm.test.cpp\"\
-    \n\nusing namespace mmrz;\n\nvoid SOLVE(){\n\tint x, y, m;\n\tcin >> x >> y >>\
-    \ m;\n\tcout << discrete_logarithm(x, y, m) << '\\n';\n}\n\nvoid mmrz::solve(){\n\
-    \tint t = 1;\n\tcin >> t;\n\twhile(t--)SOLVE();\n}\n"
+    \n\ntemplate<typename T>\nconcept NotPrimitiveInt =\n    !(std::is_same_v<T, int>\
+    \ ||\n\t\tstd::is_same_v<T, long> ||\n\t\tstd::is_same_v<T, long long> ||\n\t\t\
+    std::is_same_v<T, unsigned> ||\n\t\tstd::is_same_v<T, unsigned long> ||\n\t\t\
+    std::is_same_v<T, unsigned long long>);\n\ntemplate<NotPrimitiveInt T>\nT power(T\
+    \ n, long long k) {\n\tT ret = 1;\n\twhile(k > 0) {\n\t\tif(k & 1)ret *= n;\n\t\
+    \tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\nlong long power(long long n,\
+    \ long long k, long long p) {\n\tlong long ret = 1;\n\twhile(k > 0){\n\t\tif(k\
+    \ & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\
+    #line 3 \"math/discrete_logarithm.hpp\"\n\nll __modinv(ll a, ll m){\n\tll b=m,\
+    \ u=1, v=0;\n\twhile(b){\n\t\tll t = a/b;\n\t\ta -= t*b;swap(a, b);\n\t\tu -=\
+    \ t*v;swap(u, v);\n\t}\n\tu %= m;\n\tif(u < 0)u += m;\n\treturn u;\n}\n\nll discrete_logarithm(ll\
+    \ x, ll y, ll m) {\n\tassert(x < m && y < m);\n\tif(m == 1)return 0;\n\tif(y ==\
+    \ 1)return 0;\n\tif(x == 0){\n\t\tif(y == 1)return 0;\n\t\telse if(y == 0)return\
+    \ 1;\n\t\telse return -1;\n\t}\n\n\tif(gcd(x, m) != 1){\n\t\tll d = gcd(x, m);\n\
+    \t\tif(y%d)return -1;\n\t\ty /= d;\n\t\tm /= d;\n\t\tll ret = discrete_logarithm(x%m,\
+    \ (y*__modinv(x/d, m))%m, m);\n\t\tif(ret == -1)return -1;\n\t\telse return ret+1;\n\
+    \t}\n\n\tll sq = iroot(m);\n\tif(sq < 3)sq = 3;\n\tvector<ll> _b(sq);\n\tfor(int\
+    \ i = 0;i < sq;i++)_b[i] = (i == 0 ? 1 : (_b[i-1]*x)%m);\n\n\tmap<ll, ll> b;\n\
+    \tfor(int i = sq-1;i >= 0;i--)b[_b[i]] = i;\n\n\tll inv = __modinv((_b.back()*x)%m,\
+    \ m);\n\n\tfor(int i = 0;i < sq;i++){\n\t\tll num = (y*power(inv, i, m))%m;\n\t\
+    \tif(b.contains(num)){\n\t\t\treturn i*sq + b[num];\n\t\t}\n\t}\n\treturn -1;\n\
+    };\n#line 5 \"verify/yosupo/discrete_logarithm.test.cpp\"\n\nusing namespace mmrz;\n\
+    \nvoid SOLVE(){\n\tint x, y, m;\n\tcin >> x >> y >> m;\n\tcout << discrete_logarithm(x,\
+    \ y, m) << '\\n';\n}\n\nvoid mmrz::solve(){\n\tint t = 1;\n\tcin >> t;\n\twhile(t--)SOLVE();\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/discrete_logarithm_mod\"\
     \n\n#include \"./../../template/template.hpp\"\n#include \"./../../math/discrete_logarithm.hpp\"\
     \n\nusing namespace mmrz;\n\nvoid SOLVE(){\n\tint x, y, m;\n\tcin >> x >> y >>\
@@ -95,7 +99,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/discrete_logarithm.test.cpp
   requiredBy: []
-  timestamp: '2025-03-08 05:27:09+09:00'
+  timestamp: '2025-06-28 11:56:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/discrete_logarithm.test.cpp

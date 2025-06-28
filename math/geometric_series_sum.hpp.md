@@ -11,15 +11,18 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/power.hpp\"\n\ntemplate<typename T>\nT power(T n, long\
-    \ long k) {\n\tT ret = 1;\n\twhile(k > 0) {\n\t\tif(k & 1)ret *= n;\n\t\tn = n*n;\n\
-    \t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\nlong long power(long long n, long long\
-    \ k, long long p) {\n\tlong long ret = 1;\n\twhile(k > 0){\n\t\tif(k & 1)ret =\
-    \ ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n#line 2 \"\
-    math/geometric_series_sum.hpp\"\n\nll geometric_series_sum(ll a, ll n, ll m){\n\
-    \tif(n == 0)return 0;\n\tif(n & 1){\n\t\treturn (geometric_series_sum(a, n-1,\
-    \ m) + power(a, n-1, m)) % m;\n\t}\n\treturn (geometric_series_sum(a, n/2, m)\
-    \ * (1LL + power(a, n/2, m))) % m;\n}\n"
+  bundledCode: "#line 1 \"math/power.hpp\"\n\ntemplate<typename T>\nconcept NotPrimitiveInt\
+    \ =\n    !(std::is_same_v<T, int> ||\n\t\tstd::is_same_v<T, long> ||\n\t\tstd::is_same_v<T,\
+    \ long long> ||\n\t\tstd::is_same_v<T, unsigned> ||\n\t\tstd::is_same_v<T, unsigned\
+    \ long> ||\n\t\tstd::is_same_v<T, unsigned long long>);\n\ntemplate<NotPrimitiveInt\
+    \ T>\nT power(T n, long long k) {\n\tT ret = 1;\n\twhile(k > 0) {\n\t\tif(k &\
+    \ 1)ret *= n;\n\t\tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\nlong long\
+    \ power(long long n, long long k, long long p) {\n\tlong long ret = 1;\n\twhile(k\
+    \ > 0){\n\t\tif(k & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\t\
+    return ret;\n}\n#line 2 \"math/geometric_series_sum.hpp\"\n\nll geometric_series_sum(ll\
+    \ a, ll n, ll m){\n\tif(n == 0)return 0;\n\tif(n & 1){\n\t\treturn (geometric_series_sum(a,\
+    \ n-1, m) + power(a, n-1, m)) % m;\n\t}\n\treturn (geometric_series_sum(a, n/2,\
+    \ m) * (1LL + power(a, n/2, m))) % m;\n}\n"
   code: "#include \"../math/power.hpp\"\n\nll geometric_series_sum(ll a, ll n, ll\
     \ m){\n\tif(n == 0)return 0;\n\tif(n & 1){\n\t\treturn (geometric_series_sum(a,\
     \ n-1, m) + power(a, n-1, m)) % m;\n\t}\n\treturn (geometric_series_sum(a, n/2,\
@@ -29,7 +32,7 @@ data:
   isVerificationFile: false
   path: math/geometric_series_sum.hpp
   requiredBy: []
-  timestamp: '2025-03-08 05:27:09+09:00'
+  timestamp: '2025-06-28 11:56:03+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/geometric_series_sum.hpp

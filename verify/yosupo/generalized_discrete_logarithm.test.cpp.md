@@ -57,11 +57,14 @@ data:
     \t\t\t\t\treturn (j <= n ? j : -1);\n\t\t\t\t}\n\t\t\t}\n\t\t\tif(is_first_loop){\n\
     \t\t\t\tis_first_loop = false;\n\t\t\t}else{\n\t\t\t\treturn -1;\n\t\t\t}\n\t\t\
     }\n\t\tfx = next_val;\n\t}\n\treturn -1;\n}\n#line 1 \"math/power.hpp\"\n\ntemplate<typename\
-    \ T>\nT power(T n, long long k) {\n\tT ret = 1;\n\twhile(k > 0) {\n\t\tif(k &\
-    \ 1)ret *= n;\n\t\tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\nlong long\
-    \ power(long long n, long long k, long long p) {\n\tlong long ret = 1;\n\twhile(k\
-    \ > 0){\n\t\tif(k & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\t\
-    return ret;\n}\n#line 6 \"verify/yosupo/generalized_discrete_logarithm.test.cpp\"\
+    \ T>\nconcept NotPrimitiveInt =\n    !(std::is_same_v<T, int> ||\n\t\tstd::is_same_v<T,\
+    \ long> ||\n\t\tstd::is_same_v<T, long long> ||\n\t\tstd::is_same_v<T, unsigned>\
+    \ ||\n\t\tstd::is_same_v<T, unsigned long> ||\n\t\tstd::is_same_v<T, unsigned\
+    \ long long>);\n\ntemplate<NotPrimitiveInt T>\nT power(T n, long long k) {\n\t\
+    T ret = 1;\n\twhile(k > 0) {\n\t\tif(k & 1)ret *= n;\n\t\tn = n*n;\n\t\tk >>=\
+    \ 1;\n\t}\n\treturn ret;\n}\n\nlong long power(long long n, long long k, long\
+    \ long p) {\n\tlong long ret = 1;\n\twhile(k > 0){\n\t\tif(k & 1)ret = ret*n %\
+    \ p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n#line 6 \"verify/yosupo/generalized_discrete_logarithm.test.cpp\"\
     \n\nusing namespace mmrz;\n\nvoid SOLVE(){\n\tll x, y, m;\n\tcin >> x >> y >>\
     \ m;\n\n\tauto f = [&x, &m](ll a) -> ll {\n\t\treturn (a*x)%m;\n\t};\n\n\tint\
     \ sq = sqrt(m);\n\tll x_sq = power(x, sq, m);\n\tauto f_sq = [&x_sq, &m](ll a)\
@@ -83,7 +86,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/generalized_discrete_logarithm.test.cpp
   requiredBy: []
-  timestamp: '2025-03-08 05:27:09+09:00'
+  timestamp: '2025-06-28 11:56:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/generalized_discrete_logarithm.test.cpp

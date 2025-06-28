@@ -26,16 +26,23 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/power.hpp\"\n\ntemplate<typename T>\nT power(T n, long\
-    \ long k) {\n\tT ret = 1;\n\twhile(k > 0) {\n\t\tif(k & 1)ret *= n;\n\t\tn = n*n;\n\
-    \t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\nlong long power(long long n, long long\
-    \ k, long long p) {\n\tlong long ret = 1;\n\twhile(k > 0){\n\t\tif(k & 1)ret =\
-    \ ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n"
-  code: "\ntemplate<typename T>\nT power(T n, long long k) {\n\tT ret = 1;\n\twhile(k\
-    \ > 0) {\n\t\tif(k & 1)ret *= n;\n\t\tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n\
-    }\n\nlong long power(long long n, long long k, long long p) {\n\tlong long ret\
-    \ = 1;\n\twhile(k > 0){\n\t\tif(k & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\t\
-    k >>= 1;\n\t}\n\treturn ret;\n}\n"
+  bundledCode: "#line 1 \"math/power.hpp\"\n\ntemplate<typename T>\nconcept NotPrimitiveInt\
+    \ =\n    !(std::is_same_v<T, int> ||\n\t\tstd::is_same_v<T, long> ||\n\t\tstd::is_same_v<T,\
+    \ long long> ||\n\t\tstd::is_same_v<T, unsigned> ||\n\t\tstd::is_same_v<T, unsigned\
+    \ long> ||\n\t\tstd::is_same_v<T, unsigned long long>);\n\ntemplate<NotPrimitiveInt\
+    \ T>\nT power(T n, long long k) {\n\tT ret = 1;\n\twhile(k > 0) {\n\t\tif(k &\
+    \ 1)ret *= n;\n\t\tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\nlong long\
+    \ power(long long n, long long k, long long p) {\n\tlong long ret = 1;\n\twhile(k\
+    \ > 0){\n\t\tif(k & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\t\
+    return ret;\n}\n"
+  code: "\ntemplate<typename T>\nconcept NotPrimitiveInt =\n    !(std::is_same_v<T,\
+    \ int> ||\n\t\tstd::is_same_v<T, long> ||\n\t\tstd::is_same_v<T, long long> ||\n\
+    \t\tstd::is_same_v<T, unsigned> ||\n\t\tstd::is_same_v<T, unsigned long> ||\n\t\
+    \tstd::is_same_v<T, unsigned long long>);\n\ntemplate<NotPrimitiveInt T>\nT power(T\
+    \ n, long long k) {\n\tT ret = 1;\n\twhile(k > 0) {\n\t\tif(k & 1)ret *= n;\n\t\
+    \tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\nlong long power(long long n,\
+    \ long long k, long long p) {\n\tlong long ret = 1;\n\twhile(k > 0){\n\t\tif(k\
+    \ & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/power.hpp
@@ -43,7 +50,7 @@ data:
   - math/discrete_logarithm.hpp
   - math/formal_power_series.hpp
   - math/geometric_series_sum.hpp
-  timestamp: '2025-03-08 05:27:09+09:00'
+  timestamp: '2025-06-28 11:56:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/generalized_discrete_logarithm.test.cpp
