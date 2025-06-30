@@ -1,3 +1,10 @@
+
+#pragma once
+
+#include<cassert>
+#include<utility>
+#include<vector>
+
 template<typename T, int MAX_LOG=31, typename D=int>
 struct binary_trie {
 	struct Node {

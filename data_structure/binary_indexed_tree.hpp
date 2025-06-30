@@ -1,4 +1,9 @@
 
+#pragma once
+
+#include<cassert>
+#include<vector>
+
 template<typename T>struct binary_indexed_tree {
 	int n;
 	std::vector<T> BIT;

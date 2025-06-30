@@ -1,6 +1,12 @@
 
-template<typename T>struct [[deprecated("use 1-indexed segment tree (segment_tree.hpp)")]] segment_tree {
-	using F = function<T(T, T)>;
+#pragma once
+
+#include<functional>
+#include<vector>
+
+template<typename T>
+struct [[deprecated("use 1-indexed segment tree (segment_tree.hpp)")]] segment_tree {
+	using F = std::function<T(T, T)>;
 
 	int n;
 	std::vector<T> node;

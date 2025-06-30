@@ -1,4 +1,9 @@
 
+#pragma once
+
+#include<bitset>
+#include<cstdint>
+
 template<typename Key, typename Val, uint32_t N, typename HashFunc = std::hash<Key>>
 struct hash_map {
 	static_assert(__builtin_popcount(N) == 1);

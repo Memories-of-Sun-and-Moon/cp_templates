@@ -1,6 +1,12 @@
 
+#pragma once
+
+#include<cassert>
+#include<functional>
+#include<vector>
+
 template<typename T>struct segment_tree {
-	using F = function<T(T, T)>;
+	using F = std::function<T(T, T)>;
 
 	int offset;
 	int n;
@@ -46,7 +52,7 @@ template<typename T>struct segment_tree {
 
 	T all_fold() { return node[1]; };
 
-	int max_right(const function<bool(T)> f, int l = 0){
+	int max_right(const std::function<bool(T)> f, int l = 0){
 		assert(0 <= l && l <= n);
 		assert(f(identify));
 
@@ -72,7 +78,7 @@ template<typename T>struct segment_tree {
 		return n;
 	}
 
-	int min_left(const function<bool(T)> f, int r = -1){
+	int min_left(const std::function<bool(T)> f, int r = -1){
 		if(r == 0)return 0;
 		if(r == -1)r = n;
 		r += offset;

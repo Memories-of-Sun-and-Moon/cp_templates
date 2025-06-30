@@ -1,7 +1,13 @@
 
+#pragma once
+
+#include<cassert>
+#include<functional>
+#include<vector>
+
 template<typename T>
 struct sparse_table {
-	using F = function<T(T, T)>;
+	using F = std::function<T(T, T)>;
 
 	F f;
 	std::vector<std::vector<T>> table;
@@ -14,7 +20,7 @@ struct sparse_table {
 		const int msb = 32 - __builtin_clz(n);
 		
 		table.assign(msb, std::vector<T>(n));
-		for(int i = 0;i < ssize(v);i++){
+		for(int i = 0;i < std::ssize(v);i++){
 			table[0][i] = v[i];
 		}
 		for(int i = 1;i < msb;i++){
@@ -23,8 +29,8 @@ struct sparse_table {
 			}
 		}
 
-		lr_length.resize(ssize(v) + 1);
-		for(int i = 2;i < ssize(lr_length);i++){
+		lr_length.resize(std::ssize(v) + 1);
+		for(int i = 2;i < std::ssize(lr_length);i++){
 			lr_length[i] = lr_length[i >> 1] + 1;
 		}
 	}
