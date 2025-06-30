@@ -19,9 +19,9 @@ std::vector<int> manachar(std::string _s){
 		while(i-k >= 0 && k+r[i-k] < j) r[i+k] = r[i-k], k++;
 		i += k, j -= k;
 	}
-	for(int i = 0;i < n;i++){
-		if(i&1)r[i] /= 2;
-		else r[i] = (r[i]+1)/2;
+	for(int k = 0;k < n;k++){
+		if(k&1)r[k] >>= 1;
+		else r[k] = (r[k]+1) >> 1;
 	}
 	return r;
 }
