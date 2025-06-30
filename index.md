@@ -114,6 +114,9 @@ data:
       path: math/discrete_logarithm.hpp
       title: discrete_logarithm
     - icon: ':heavy_check_mark:'
+      path: math/dynamic_modint.hpp
+      title: "\u4EFB\u610F modint \u578B"
+    - icon: ':heavy_check_mark:'
       path: math/euler_phi.hpp
       title: "\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\uFF08\u30AA\u30A4\u30E9\
         \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09"
@@ -486,6 +489,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/3154.test.cpp
       title: verify/yukicoder/3154.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yukicoder/3187.test.cpp
+      title: verify/yukicoder/3187.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/8016.test.cpp
       title: verify/yukicoder/8016.test.cpp

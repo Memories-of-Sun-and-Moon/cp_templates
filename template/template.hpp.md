@@ -271,6 +271,9 @@ data:
     path: verify/yukicoder/3154.test.cpp
     title: verify/yukicoder/3154.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yukicoder/3187.test.cpp
+    title: verify/yukicoder/3187.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/8016.test.cpp
     title: verify/yukicoder/8016.test.cpp
   _isVerificationFailed: false
@@ -342,6 +345,7 @@ data:
   - verify/yukicoder/3020.test.cpp
   - verify/yukicoder/2780.test.cpp
   - verify/yukicoder/3044.test.cpp
+  - verify/yukicoder/3187.test.cpp
   - verify/yukicoder/1661.test.cpp
   - verify/yukicoder/3078.test.cpp
   - verify/yukicoder/3154.test.cpp
