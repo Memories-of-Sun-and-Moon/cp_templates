@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include "is_prime.hpp"

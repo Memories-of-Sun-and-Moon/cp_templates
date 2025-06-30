@@ -1,9 +1,10 @@
 #pragma once
-#include<bits/stdc++.h>
-using namespace std;
+
+#include<functional>
+#include<vector>
 
 template<typename T>struct segment_tree_2d {
-	using F = function<T(T, T)>;
+	using F = std::function<T(T, T)>;
 	int id(int r, int c) const {return r*2*w+c; }
 
 	int h, w;

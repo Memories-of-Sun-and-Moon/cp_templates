@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include "../math/iroot.hpp"

@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include "./lazy_segment_tree.hpp"

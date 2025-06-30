@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include "./strongly_connected_components.hpp"

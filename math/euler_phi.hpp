@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include "../math/factor.hpp"
