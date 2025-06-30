@@ -1,12 +1,14 @@
 
+#include<vector>
+
 struct scc_graph {
 	int n;
 	int k;
-	vector<vector<int>> g;
-	vector<vector<int>> rg;
-	vector<bool> used;
-	vector<int> cmp;
-	vector<int> vs;
+	std::vector<std::vector<int>> g;
+	std::vector<std::vector<int>> rg;
+	std::vector<bool> used;
+	std::vector<int> cmp;
+	std::vector<int> vs;
 
 	scc_graph(int _n) : n(_n), k(0), g(n), rg(n), used(n), cmp(n) {}
 
@@ -20,7 +22,7 @@ struct scc_graph {
 		for(auto to : g[v]){
 			if(not used[to])dfs(to);
 		}
-		vs.pb(v);
+		vs.push_back(v);
 	}
 
 	void rdfs(int v, int col){
@@ -31,7 +33,7 @@ struct scc_graph {
 		}
 	}
 
-	vector<vector<int>> scc() {
+	std::vector<std::vector<int>> scc() {
 		for(int i = 0;i < n;i++){
 			if(not used[i])dfs(i);
 		}
@@ -41,7 +43,7 @@ struct scc_graph {
 		for(auto i = vs.rbegin();i != vs.rend();i++){
 			if(not used[*i])rdfs(*i, k++);
 		}
-		vector<vector<int>> ret(k);
+		std::vector<std::vector<int>> ret(k);
 		for(int i = 0;i < n;i++){
 			ret[cmp[i]].push_back(i);
 		}

@@ -1,13 +1,15 @@
 
+#include<vector>
+
 struct lowest_common_ancestor {
 private:
 	int n;
 	int root;
-	vector<vector<int>>par;
+	std::vector<std::vector<int>>par;
 public:
-	vector<int>depth;
+	std::vector<int>depth;
 
-	lowest_common_ancestor(vector<vector<int>>& g, int Root) : n((int)g.size()) {
+	lowest_common_ancestor(std::vector<std::vector<int>>& g, int Root) : n((int)g.size()) {
 		depth.resize(n);
 		par.resize(n);
 		for (int i = 0; i < n; i++)par[i].resize(31);
@@ -33,7 +35,7 @@ public:
 	}
 
 	int get(int u, int v) {
-		if (depth[u] > depth[v])swap(u, v);
+		if (depth[u] > depth[v])std::swap(u, v);
 		for (int i = 30; i >= 0; i--) {
 			if (((depth[v] - depth[u]) >> i) & 1) {
 				v = par[v][i];

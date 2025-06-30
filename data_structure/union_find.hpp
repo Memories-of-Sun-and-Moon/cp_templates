@@ -1,4 +1,7 @@
 
+#include<cassert>
+#include<vector>
+
 struct union_find {
 	std::vector<int> v;
 	int g_size;

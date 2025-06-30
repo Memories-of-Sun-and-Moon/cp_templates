@@ -1,4 +1,10 @@
 
+#include<functional>
+#include<limits>
+#include<utility>
+#include<queue>
+#include<vector>
+
 template<typename T>
 struct primal_dual{
 	struct edge {
@@ -8,12 +14,12 @@ struct primal_dual{
 	};
 	int V;
 	T infty;
-	vector<vector<edge>> G;
-	vector<T> h, dist;
-	vector<int> prevv, preve;
-	vector<bool> used_edge;
+	std::vector<std::vector<edge>> G;
+	std::vector<T> h, dist;
+	std::vector<int> prevv, preve;
+	std::vector<bool> used_edge;
 
-	primal_dual(int _V) : V(_V), infty(numeric_limits<T>::max()/2) {
+	primal_dual(int _V) : V(_V), infty(std::numeric_limits<T>::max()/2) {
 		G.resize(V);
 		h.resize(V);
 		dist.resize(V);
@@ -29,10 +35,10 @@ struct primal_dual{
 		used_edge[to] = true;
 	}
 
-	pair<bool, T> min_cost_flow(int s, int t, T f){
+	std::pair<bool, T> min_cost_flow(int s, int t, T f){
 		T res = 0;
 		while(f > 0){
-			priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> que;
+			std::priority_queue<std::pair<T, int>, std::vector<std::pair<T, int>>, std::greater<std::pair<T, int>>> que;
 			dist.assign(V, infty);
 			dist[s] = 0;
 			que.push({0, s});

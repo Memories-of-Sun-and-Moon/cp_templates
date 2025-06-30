@@ -1,12 +1,15 @@
 
+#include<numeric>
+#include<vector>
+
 template<typename T>
 struct warshall_floyd {
 private:
 	int V;
 public:
-	vector<vector<T>> dist;
+	std::vector<std::vector<T>> dist;
 
-	warshall_floyd(vector<vector<T>> &edge_cost, T infty=::numeric_limits<T>()/2) : V(ssize(edge_cost)), dist(edge_cost){
+	warshall_floyd(std::vector<std::vector<T>> &edge_cost, T infty=std::numeric_limits<T>::max()/2) : V(ssize(edge_cost)), dist(edge_cost){
 		for(int k = 0;k < V;k++){
 			for(int i = 0;i < V;i++){
 				if(dist[i][k] == infty)continue;

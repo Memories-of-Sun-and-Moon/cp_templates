@@ -1,4 +1,8 @@
 
+#include<numeric>
+#include<utility>
+#include<vector>
+
 template<typename T> 
 struct primal_dual_with_negative_edges {
 	struct edge {
@@ -8,14 +12,14 @@ struct primal_dual_with_negative_edges {
 	};
 	int V;
 	T infty;
-	vector<vector<edge>> G;
-	vector<T> dist;
-	vector<int> prevv, preve;
+	std::vector<std::vector<edge>> G;
+	std::vector<T> dist;
+	std::vector<int> prevv, preve;
 
-	vector<int> from_idx, to_idx;
+	std::vector<int> from_idx, to_idx;
 	int edge_idx;
 
-	primal_dual_with_negative_edges(int _V) : V(_V), infty(numeric_limits<T>::max()/2), edge_idx(0) {
+	primal_dual_with_negative_edges(int _V) : V(_V), infty(std::numeric_limits<T>::max()/2), edge_idx(0) {
 		G.resize(V);
 		dist.resize(V);
 		prevv.resize(V);
@@ -31,7 +35,7 @@ struct primal_dual_with_negative_edges {
 		return edge_idx++;
 	}
 
-	pair<bool, T> min_cost_flow(int s, int t, T f) {
+	std::pair<bool, T> min_cost_flow(int s, int t, T f) {
 		T res = 0;
 		while(f > 0){
 			dist.assign(V, infty);

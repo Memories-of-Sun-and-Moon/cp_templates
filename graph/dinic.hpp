@@ -1,4 +1,8 @@
 
+#include<numeric>
+#include<queue>
+#include<vector>
+
 template<typename T>
 struct dinic {
 
@@ -10,11 +14,11 @@ struct dinic {
 	};
 		
 	int n;
-	vector<vector<edge>> G;
-	vector<int> level;
-	vector<int> iter;
+	std::vector<std::vector<edge>> G;
+	std::vector<int> level;
+	std::vector<int> iter;
 
-	vector<int> from_idx, to_idx;
+	std::vector<int> from_idx, to_idx;
 	int edge_idx;
 
 	dinic(int _v) : n(_v), G(n), level(n), iter(n), edge_idx(0) {}
@@ -30,7 +34,7 @@ struct dinic {
 
 	void bfs(int s){
 		for(int i = 0;i < n;i++)level[i] = -1;
-		queue<int> que;
+		std::queue<int> que;
 		level[s] = 0;
 		que.push(s);
 		while(!que.empty()){
@@ -69,7 +73,7 @@ struct dinic {
 			if(level[t] < 0)return flow;
 			for(int i = 0;i < n;i++)iter[i] = 0;
 			T f;
-			while((f = dfs(s, t, inf<T>())) > 0) {
+			while((f = dfs(s, t, std::numeric_limits<T>::max())) > 0) {
 				flow += f;
 			}
 		}

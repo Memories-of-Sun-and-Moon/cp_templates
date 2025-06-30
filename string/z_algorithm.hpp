@@ -1,4 +1,6 @@
 
+#include<vector>
+
 template<typename T>
 vector<int> z_algorithm(const T &s){
 	vector<int> z(s.size());

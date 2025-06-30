@@ -1,7 +1,11 @@
 
+#include<limits>
+#include<numeric>
+#include<vector>
+
 template<bool is_min, typename T>
-vector<int> hungarian(vector<vector<T>> a) {
-	T infty = numeric_limits<T>::max()/T(2);
+std::vector<int> hungarian(std::vector<std::vector<T>> a) {
+	T infty = std::numeric_limits<T>::max()/T(2);
 	int n = (int)a.size();
 	
 	if(not is_min){
@@ -12,16 +16,16 @@ vector<int> hungarian(vector<vector<T>> a) {
 		}
 	}
 
-	vector<int> p(n);
-	iota(p.begin(), p.end(), 0);
+	std::vector<int> p(n);
+	std::iota(p.begin(), p.end(), 0);
 
-	vector<T> h = {0};
+	std::vector<T> h = {0};
 	h.reserve(n);
 	for(int i = 1;i < n;i++){
 		h.push_back(0);
-		vector<T> d(i+1, infty);
-		vector<int> pre(i+1, -1);
-		vector<bool> used(i+1, false);
+		std::vector<T> d(i+1, infty);
+		std::vector<int> pre(i+1, -1);
+		std::vector<bool> used(i+1, false);
 
 		d[i] = 0;
 		pre[i] = i;
@@ -51,7 +55,7 @@ vector<int> hungarian(vector<vector<T>> a) {
 
 		int cur = i;
 		while(pre[cur] != i){
-			swap(p[cur], p[pre[cur]]);
+			std::swap(p[cur], p[pre[cur]]);
 			cur = pre[cur];
 		}
 		h = d;

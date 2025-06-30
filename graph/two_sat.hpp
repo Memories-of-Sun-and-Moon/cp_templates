@@ -28,17 +28,17 @@ struct two_sat {
 		add_clause(i, false, i, false);
 	}
 
-	vector<bool> solve(){
-		vector<vector<int>> scc = g.scc();
-		vector<int> c(2*n);
+	std::vector<bool> solve(){
+		std::vector<std::vector<int>> scc = g.scc();
+		std::vector<int> c(2*n);
 		for(int i = 0;i < (int)scc.size();i++){
 			for(auto v : scc[i]){
 				c[v] = i;
 			}
 		}
-		vector<bool> res(n);
+		std::vector<bool> res(n);
 		for(int i = 0;i < n;i++){
-			if(c[i << 1] == c[i << 1 | 1])return vector<bool>();
+			if(c[i << 1] == c[i << 1 | 1])return std::vector<bool>();
 			res[i] = (c[i << 1] < c[i << 1 | 1]);
 		}
 		return res;
