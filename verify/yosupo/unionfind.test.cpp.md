@@ -44,26 +44,26 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"data_structure/union_find.hpp\"\n\nstruct union_find {\n\tstd::vector<int>\
-    \ v;\n\tint g_size;\n\tint n;\n\n\tunion_find(size_t size) : v(size, -1), g_size(size),\
-    \ n(size) {}\n\n\tint root(int x){\n\t\tassert(x < n);\n\t\treturn (v[x] < 0 ?\
-    \ x : v[x] = root(v[x]));\n\t}\n\n\tbool is_root(int x){\n\t\tassert(x < n);\n\
-    \t\treturn root(x) == x;\n\t}\n\n\tbool unite(int x, int y){\n\t\tassert(x < n\
-    \ && y < n);\n\t\tx = root(x);\n\t\ty = root(y);\n\t\tif(x != y){\n\t\t\tif(v[x]\
-    \ > v[y])std::swap(x, y);\n\t\t\tv[x] += v[y];\n\t\t\tv[y] = x;\n\t\t\tg_size--;\n\
-    \t\t\treturn true;\n\t\t}\n\t\treturn false;\n\t}\n\n\tbool is_same(int x,int\
-    \ y){\n\t\tassert(x < n && y < n);\n\t\treturn root(x) == root(y);\n\t}\n\n\t\
-    int get_size(int x){\n\t\tassert(x < n);\n\t\tx = root(x);\n\t\treturn -v[x];\n\
-    \t}\n\n\tint groups_size(){\n\t\treturn g_size;\n\t}\n\n\tstd::vector<std::vector<int>>\
-    \ groups(){\n\t\tstd::vector<std::vector<int>> member(n);\n\t\tfor(int i = 0;i\
-    \ < n;i++){\n\t\t\tmember[root(i)].push_back(i);\n\t\t}\n\n\t\tstd::vector<std::vector<int>>\
-    \ ret;\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tif(member[i].empty())continue;\n\t\
-    \t\tret.push_back(member[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n#line 5 \"verify/yosupo/unionfind.test.cpp\"\
-    \n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tunion_find uf(n);\n\t\
-    while(q--){\n\t\tint t;\n\t\tcin >> t;\n\t\tif(t == 0){\n\t\t\tint u, v;\n\t\t\
-    \tcin >> u >> v;\n\t\t\tuf.unite(u, v);\n\t\t}else{\n\t\t\tint u, v;\n\t\t\tcin\
-    \ >> u >> v;\n\t\t\tcout << (uf.is_same(u, v) ? 1 : 0) << '\\n';\n\t\t}\n\t}\n\
-    }\n"
+    \ 1 \"data_structure/union_find.hpp\"\n\n#line 4 \"data_structure/union_find.hpp\"\
+    \n\nstruct union_find {\n\tstd::vector<int> v;\n\tint g_size;\n\tint n;\n\n\t\
+    union_find(size_t size) : v(size, -1), g_size(size), n(size) {}\n\n\tint root(int\
+    \ x){\n\t\tassert(x < n);\n\t\treturn (v[x] < 0 ? x : v[x] = root(v[x]));\n\t\
+    }\n\n\tbool is_root(int x){\n\t\tassert(x < n);\n\t\treturn root(x) == x;\n\t\
+    }\n\n\tbool unite(int x, int y){\n\t\tassert(x < n && y < n);\n\t\tx = root(x);\n\
+    \t\ty = root(y);\n\t\tif(x != y){\n\t\t\tif(v[x] > v[y])std::swap(x, y);\n\t\t\
+    \tv[x] += v[y];\n\t\t\tv[y] = x;\n\t\t\tg_size--;\n\t\t\treturn true;\n\t\t}\n\
+    \t\treturn false;\n\t}\n\n\tbool is_same(int x,int y){\n\t\tassert(x < n && y\
+    \ < n);\n\t\treturn root(x) == root(y);\n\t}\n\n\tint get_size(int x){\n\t\tassert(x\
+    \ < n);\n\t\tx = root(x);\n\t\treturn -v[x];\n\t}\n\n\tint groups_size(){\n\t\t\
+    return g_size;\n\t}\n\n\tstd::vector<std::vector<int>> groups(){\n\t\tstd::vector<std::vector<int>>\
+    \ member(n);\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tmember[root(i)].push_back(i);\n\
+    \t\t}\n\n\t\tstd::vector<std::vector<int>> ret;\n\t\tfor(int i = 0;i < n;i++){\n\
+    \t\t\tif(member[i].empty())continue;\n\t\t\tret.push_back(member[i]);\n\t\t}\n\
+    \t\treturn ret;\n\t}\n};\n#line 5 \"verify/yosupo/unionfind.test.cpp\"\n\nvoid\
+    \ mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tunion_find uf(n);\n\twhile(q--){\n\
+    \t\tint t;\n\t\tcin >> t;\n\t\tif(t == 0){\n\t\t\tint u, v;\n\t\t\tcin >> u >>\
+    \ v;\n\t\t\tuf.unite(u, v);\n\t\t}else{\n\t\t\tint u, v;\n\t\t\tcin >> u >> v;\n\
+    \t\t\tcout << (uf.is_same(u, v) ? 1 : 0) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ \"./../../template/template.hpp\"\n#include \"./../../data_structure/union_find.hpp\"\
     \n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tunion_find uf(n);\n\t\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2025-06-30 19:47:50+09:00'
+  timestamp: '2025-07-01 01:47:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/unionfind.test.cpp

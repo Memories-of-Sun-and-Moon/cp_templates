@@ -19,22 +19,22 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/two_edge_connected_components.hpp\"\n\n#line 1 \"\
-    data_structure/union_find.hpp\"\n\nstruct union_find {\n\tstd::vector<int> v;\n\
-    \tint g_size;\n\tint n;\n\n\tunion_find(size_t size) : v(size, -1), g_size(size),\
-    \ n(size) {}\n\n\tint root(int x){\n\t\tassert(x < n);\n\t\treturn (v[x] < 0 ?\
-    \ x : v[x] = root(v[x]));\n\t}\n\n\tbool is_root(int x){\n\t\tassert(x < n);\n\
-    \t\treturn root(x) == x;\n\t}\n\n\tbool unite(int x, int y){\n\t\tassert(x < n\
-    \ && y < n);\n\t\tx = root(x);\n\t\ty = root(y);\n\t\tif(x != y){\n\t\t\tif(v[x]\
-    \ > v[y])std::swap(x, y);\n\t\t\tv[x] += v[y];\n\t\t\tv[y] = x;\n\t\t\tg_size--;\n\
-    \t\t\treturn true;\n\t\t}\n\t\treturn false;\n\t}\n\n\tbool is_same(int x,int\
-    \ y){\n\t\tassert(x < n && y < n);\n\t\treturn root(x) == root(y);\n\t}\n\n\t\
-    int get_size(int x){\n\t\tassert(x < n);\n\t\tx = root(x);\n\t\treturn -v[x];\n\
-    \t}\n\n\tint groups_size(){\n\t\treturn g_size;\n\t}\n\n\tstd::vector<std::vector<int>>\
-    \ groups(){\n\t\tstd::vector<std::vector<int>> member(n);\n\t\tfor(int i = 0;i\
-    \ < n;i++){\n\t\t\tmember[root(i)].push_back(i);\n\t\t}\n\n\t\tstd::vector<std::vector<int>>\
-    \ ret;\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tif(member[i].empty())continue;\n\t\
-    \t\tret.push_back(member[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n#line 1 \"graph/lowlink.hpp\"\
-    \n\n#include<vector>\n#include<utility>\n\nclass lowlink{\n\tstd::vector<std::vector<int>>\
+    data_structure/union_find.hpp\"\n\n#include<cassert>\n#include<vector>\n\nstruct\
+    \ union_find {\n\tstd::vector<int> v;\n\tint g_size;\n\tint n;\n\n\tunion_find(size_t\
+    \ size) : v(size, -1), g_size(size), n(size) {}\n\n\tint root(int x){\n\t\tassert(x\
+    \ < n);\n\t\treturn (v[x] < 0 ? x : v[x] = root(v[x]));\n\t}\n\n\tbool is_root(int\
+    \ x){\n\t\tassert(x < n);\n\t\treturn root(x) == x;\n\t}\n\n\tbool unite(int x,\
+    \ int y){\n\t\tassert(x < n && y < n);\n\t\tx = root(x);\n\t\ty = root(y);\n\t\
+    \tif(x != y){\n\t\t\tif(v[x] > v[y])std::swap(x, y);\n\t\t\tv[x] += v[y];\n\t\t\
+    \tv[y] = x;\n\t\t\tg_size--;\n\t\t\treturn true;\n\t\t}\n\t\treturn false;\n\t\
+    }\n\n\tbool is_same(int x,int y){\n\t\tassert(x < n && y < n);\n\t\treturn root(x)\
+    \ == root(y);\n\t}\n\n\tint get_size(int x){\n\t\tassert(x < n);\n\t\tx = root(x);\n\
+    \t\treturn -v[x];\n\t}\n\n\tint groups_size(){\n\t\treturn g_size;\n\t}\n\n\t\
+    std::vector<std::vector<int>> groups(){\n\t\tstd::vector<std::vector<int>> member(n);\n\
+    \t\tfor(int i = 0;i < n;i++){\n\t\t\tmember[root(i)].push_back(i);\n\t\t}\n\n\t\
+    \tstd::vector<std::vector<int>> ret;\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tif(member[i].empty())continue;\n\
+    \t\t\tret.push_back(member[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n#line 1 \"graph/lowlink.hpp\"\
+    \n\n#line 3 \"graph/lowlink.hpp\"\n#include<utility>\n\nclass lowlink{\n\tstd::vector<std::vector<int>>\
     \ g;\n\tstd::vector<int> order, low;\n\tstd::vector<bool> __is_articulation;\n\
     \n\tvoid dfs(int cur, int pre, int &time){\n\t\tint count_child = 0;\n\t\tlow[cur]\
     \ = order[cur] = time++;\n\t\tbool first_parent = true;\n\t\tfor(int to : g[cur]){\n\
@@ -51,36 +51,34 @@ data:
     \ u, int v) const {\n\t\tif(order[u] > order[v]){\n\t\t\tstd::swap(u, v);\n\t\t\
     }\n\t\treturn order[u] < low[v];\n\t}\n\n\tbool is_articulation(int v) const {\n\
     \t\treturn __is_articulation[v];\n\t}\n};\n#line 4 \"graph/two_edge_connected_components.hpp\"\
-    \n\nauto two_edge_connected_components(vector<vector<int>> &g){\n    lowlink l(g);\n\
-    \    union_find uf((int)g.size());\n    for(int i = 0;i < (int)g.size();i++){\n\
-    \        for(int to : g[i]){\n            if(not l.is_bridge(i, to)){\n      \
-    \          uf.unite(i, to);\n            }\n        }\n    }\n\n    vector<vector<int>>\
-    \ group = uf.groups();\n    vector<int> comp((int)g.size());\n    for(int i =\
-    \ 0;i < (int)group.size();i++){\n        for(int v : group[i]){\n            comp[v]\
-    \ = i;\n        }\n    }\n\n    vector<vector<int>> tree((int)group.size());\n\
-    \    for(int i = 0;i < (int)g.size();i++){\n        for(int to : g[i]){\n    \
-    \        if(comp[i] != comp[to]){\n                tree[comp[i]].push_back(comp[to]);\n\
-    \            }\n        }\n    }\n\n    return make_tuple(group, comp, tree);\n\
-    }\n"
+    \n\n#line 6 \"graph/two_edge_connected_components.hpp\"\n#include<tuple>\n\nauto\
+    \ two_edge_connected_components(std::vector<std::vector<int>> &g){\n\tlowlink\
+    \ l(g);\n\tunion_find uf((int)g.size());\n\tfor(int i = 0;i < (int)g.size();i++){\n\
+    \t\tfor(int to : g[i]){\n\t\t\tif(not l.is_bridge(i, to)){\n\t\t\t\tuf.unite(i,\
+    \ to);\n\t\t\t}\n\t\t}\n\t}\n\n\tstd::vector<std::vector<int>> group = uf.groups();\n\
+    \tstd::vector<int> comp((int)g.size());\n\tfor(int i = 0;i < (int)group.size();i++){\n\
+    \t\tfor(int v : group[i]){\n\t\t\tcomp[v] = i;\n\t\t}\n\t}\n\n\tstd::vector<std::vector<int>>\
+    \ tree((int)group.size());\n\tfor(int i = 0;i < (int)g.size();i++){\n\t\tfor(int\
+    \ to : g[i]){\n\t\t\tif(comp[i] != comp[to]){\n\t\t\t\ttree[comp[i]].push_back(comp[to]);\n\
+    \t\t\t}\n\t\t}\n\t}\n\n\treturn make_tuple(group, comp, tree);\n}\n"
   code: "\n#include \"../data_structure/union_find.hpp\"\n#include \"./lowlink.hpp\"\
-    \n\nauto two_edge_connected_components(vector<vector<int>> &g){\n    lowlink l(g);\n\
-    \    union_find uf((int)g.size());\n    for(int i = 0;i < (int)g.size();i++){\n\
-    \        for(int to : g[i]){\n            if(not l.is_bridge(i, to)){\n      \
-    \          uf.unite(i, to);\n            }\n        }\n    }\n\n    vector<vector<int>>\
-    \ group = uf.groups();\n    vector<int> comp((int)g.size());\n    for(int i =\
-    \ 0;i < (int)group.size();i++){\n        for(int v : group[i]){\n            comp[v]\
-    \ = i;\n        }\n    }\n\n    vector<vector<int>> tree((int)group.size());\n\
-    \    for(int i = 0;i < (int)g.size();i++){\n        for(int to : g[i]){\n    \
-    \        if(comp[i] != comp[to]){\n                tree[comp[i]].push_back(comp[to]);\n\
-    \            }\n        }\n    }\n\n    return make_tuple(group, comp, tree);\n\
-    }\n"
+    \n\n#include<cassert>\n#include<tuple>\n\nauto two_edge_connected_components(std::vector<std::vector<int>>\
+    \ &g){\n\tlowlink l(g);\n\tunion_find uf((int)g.size());\n\tfor(int i = 0;i <\
+    \ (int)g.size();i++){\n\t\tfor(int to : g[i]){\n\t\t\tif(not l.is_bridge(i, to)){\n\
+    \t\t\t\tuf.unite(i, to);\n\t\t\t}\n\t\t}\n\t}\n\n\tstd::vector<std::vector<int>>\
+    \ group = uf.groups();\n\tstd::vector<int> comp((int)g.size());\n\tfor(int i =\
+    \ 0;i < (int)group.size();i++){\n\t\tfor(int v : group[i]){\n\t\t\tcomp[v] = i;\n\
+    \t\t}\n\t}\n\n\tstd::vector<std::vector<int>> tree((int)group.size());\n\tfor(int\
+    \ i = 0;i < (int)g.size();i++){\n\t\tfor(int to : g[i]){\n\t\t\tif(comp[i] !=\
+    \ comp[to]){\n\t\t\t\ttree[comp[i]].push_back(comp[to]);\n\t\t\t}\n\t\t}\n\t}\n\
+    \n\treturn make_tuple(group, comp, tree);\n}\n"
   dependsOn:
   - data_structure/union_find.hpp
   - graph/lowlink.hpp
   isVerificationFile: false
   path: graph/two_edge_connected_components.hpp
   requiredBy: []
-  timestamp: '2025-06-30 19:47:50+09:00'
+  timestamp: '2025-07-01 01:47:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/two_edge_connected_components.test.cpp

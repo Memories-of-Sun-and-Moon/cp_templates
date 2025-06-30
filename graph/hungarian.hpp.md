@@ -17,13 +17,14 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/hungarian.hpp\"\n\ntemplate<bool is_min, typename\
-    \ T>\nvector<int> hungarian(vector<vector<T>> a) {\n\tT infty = numeric_limits<T>::max()/T(2);\n\
-    \tint n = (int)a.size();\n\t\n\tif(not is_min){\n\t\tfor(int i = 0;i < n;i++){\n\
-    \t\t\tfor(int j = 0; j < n;j++){\n\t\t\t\ta[i][j] = -a[i][j];\n\t\t\t}\n\t\t}\n\
-    \t}\n\n\tvector<int> p(n);\n\tiota(p.begin(), p.end(), 0);\n\n\tvector<T> h =\
-    \ {0};\n\th.reserve(n);\n\tfor(int i = 1;i < n;i++){\n\t\th.push_back(0);\n\t\t\
-    vector<T> d(i+1, infty);\n\t\tvector<int> pre(i+1, -1);\n\t\tvector<bool> used(i+1,\
+  bundledCode: "#line 1 \"graph/hungarian.hpp\"\n\n#include<limits>\n#include<numeric>\n\
+    #include<vector>\n\ntemplate<bool is_min, typename T>\nstd::vector<int> hungarian(std::vector<std::vector<T>>\
+    \ a) {\n\tT infty = std::numeric_limits<T>::max()/T(2);\n\tint n = (int)a.size();\n\
+    \t\n\tif(not is_min){\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tfor(int j = 0; j <\
+    \ n;j++){\n\t\t\t\ta[i][j] = -a[i][j];\n\t\t\t}\n\t\t}\n\t}\n\n\tstd::vector<int>\
+    \ p(n);\n\tstd::iota(p.begin(), p.end(), 0);\n\n\tstd::vector<T> h = {0};\n\t\
+    h.reserve(n);\n\tfor(int i = 1;i < n;i++){\n\t\th.push_back(0);\n\t\tstd::vector<T>\
+    \ d(i+1, infty);\n\t\tstd::vector<int> pre(i+1, -1);\n\t\tstd::vector<bool> used(i+1,\
     \ false);\n\n\t\td[i] = 0;\n\t\tpre[i] = i;\n\n\t\tfor(int _ = 0;_ <= i;_++){\n\
     \t\t\tT min_d = infty;\n\t\t\tint v = -1;\n\t\t\tfor(int j = 0;j <= i;j++){\n\t\
     \t\t\tif(not used[j] && min_d > d[j]-h[j]){\n\t\t\t\t\tmin_d = d[j]-h[j];\n\t\t\
@@ -31,29 +32,30 @@ data:
     \ j = 0;j <= i;j++){\n\t\t\t\tif(not used[j] || j == i){\n\t\t\t\t\tT nd = d[v]\
     \ - a[v][p[v]] + a[j][p[v]];\n\t\t\t\t\tif(d[j] > nd){\n\t\t\t\t\t\td[j] = nd;\n\
     \t\t\t\t\t\tpre[j] = v;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tint cur\
-    \ = i;\n\t\twhile(pre[cur] != i){\n\t\t\tswap(p[cur], p[pre[cur]]);\n\t\t\tcur\
-    \ = pre[cur];\n\t\t}\n\t\th = d;\n\t}\n\treturn p;\n}\n"
-  code: "\ntemplate<bool is_min, typename T>\nvector<int> hungarian(vector<vector<T>>\
-    \ a) {\n\tT infty = numeric_limits<T>::max()/T(2);\n\tint n = (int)a.size();\n\
+    \ = i;\n\t\twhile(pre[cur] != i){\n\t\t\tstd::swap(p[cur], p[pre[cur]]);\n\t\t\
+    \tcur = pre[cur];\n\t\t}\n\t\th = d;\n\t}\n\treturn p;\n}\n"
+  code: "\n#include<limits>\n#include<numeric>\n#include<vector>\n\ntemplate<bool\
+    \ is_min, typename T>\nstd::vector<int> hungarian(std::vector<std::vector<T>>\
+    \ a) {\n\tT infty = std::numeric_limits<T>::max()/T(2);\n\tint n = (int)a.size();\n\
     \t\n\tif(not is_min){\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tfor(int j = 0; j <\
-    \ n;j++){\n\t\t\t\ta[i][j] = -a[i][j];\n\t\t\t}\n\t\t}\n\t}\n\n\tvector<int> p(n);\n\
-    \tiota(p.begin(), p.end(), 0);\n\n\tvector<T> h = {0};\n\th.reserve(n);\n\tfor(int\
-    \ i = 1;i < n;i++){\n\t\th.push_back(0);\n\t\tvector<T> d(i+1, infty);\n\t\tvector<int>\
-    \ pre(i+1, -1);\n\t\tvector<bool> used(i+1, false);\n\n\t\td[i] = 0;\n\t\tpre[i]\
-    \ = i;\n\n\t\tfor(int _ = 0;_ <= i;_++){\n\t\t\tT min_d = infty;\n\t\t\tint v\
-    \ = -1;\n\t\t\tfor(int j = 0;j <= i;j++){\n\t\t\t\tif(not used[j] && min_d > d[j]-h[j]){\n\
-    \t\t\t\t\tmin_d = d[j]-h[j];\n\t\t\t\t\tv = j;\n\t\t\t\t}\n\t\t\t}\n\t\t\t\t\n\
-    \t\t\tused[v] = true;\n\n\t\t\tfor(int j = 0;j <= i;j++){\n\t\t\t\tif(not used[j]\
-    \ || j == i){\n\t\t\t\t\tT nd = d[v] - a[v][p[v]] + a[j][p[v]];\n\t\t\t\t\tif(d[j]\
-    \ > nd){\n\t\t\t\t\t\td[j] = nd;\n\t\t\t\t\t\tpre[j] = v;\n\t\t\t\t\t}\n\t\t\t\
-    \t}\n\t\t\t}\n\t\t}\n\n\t\tint cur = i;\n\t\twhile(pre[cur] != i){\n\t\t\tswap(p[cur],\
-    \ p[pre[cur]]);\n\t\t\tcur = pre[cur];\n\t\t}\n\t\th = d;\n\t}\n\treturn p;\n\
-    }\n"
+    \ n;j++){\n\t\t\t\ta[i][j] = -a[i][j];\n\t\t\t}\n\t\t}\n\t}\n\n\tstd::vector<int>\
+    \ p(n);\n\tstd::iota(p.begin(), p.end(), 0);\n\n\tstd::vector<T> h = {0};\n\t\
+    h.reserve(n);\n\tfor(int i = 1;i < n;i++){\n\t\th.push_back(0);\n\t\tstd::vector<T>\
+    \ d(i+1, infty);\n\t\tstd::vector<int> pre(i+1, -1);\n\t\tstd::vector<bool> used(i+1,\
+    \ false);\n\n\t\td[i] = 0;\n\t\tpre[i] = i;\n\n\t\tfor(int _ = 0;_ <= i;_++){\n\
+    \t\t\tT min_d = infty;\n\t\t\tint v = -1;\n\t\t\tfor(int j = 0;j <= i;j++){\n\t\
+    \t\t\tif(not used[j] && min_d > d[j]-h[j]){\n\t\t\t\t\tmin_d = d[j]-h[j];\n\t\t\
+    \t\t\tv = j;\n\t\t\t\t}\n\t\t\t}\n\t\t\t\t\n\t\t\tused[v] = true;\n\n\t\t\tfor(int\
+    \ j = 0;j <= i;j++){\n\t\t\t\tif(not used[j] || j == i){\n\t\t\t\t\tT nd = d[v]\
+    \ - a[v][p[v]] + a[j][p[v]];\n\t\t\t\t\tif(d[j] > nd){\n\t\t\t\t\t\td[j] = nd;\n\
+    \t\t\t\t\t\tpre[j] = v;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tint cur\
+    \ = i;\n\t\twhile(pre[cur] != i){\n\t\t\tstd::swap(p[cur], p[pre[cur]]);\n\t\t\
+    \tcur = pre[cur];\n\t\t}\n\t\th = d;\n\t}\n\treturn p;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/hungarian.hpp
   requiredBy: []
-  timestamp: '2024-10-05 05:52:08+09:00'
+  timestamp: '2025-07-01 01:47:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/assignment.test.cpp

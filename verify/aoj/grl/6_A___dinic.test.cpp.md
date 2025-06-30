@@ -45,15 +45,16 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"graph/dinic.hpp\"\n\ntemplate<typename T>\nstruct dinic {\n\n\tstruct edge{\n\
-    \t\tint to;\n\t\tT cap;\n\t\tT rev;\n\t\tT init_cap;\n\t};\n\t\t\n\tint n;\n\t\
-    vector<vector<edge>> G;\n\tvector<int> level;\n\tvector<int> iter;\n\n\tvector<int>\
-    \ from_idx, to_idx;\n\tint edge_idx;\n\n\tdinic(int _v) : n(_v), G(n), level(n),\
-    \ iter(n), edge_idx(0) {}\n\n\tint add_edge(int from, int to, T cap){\n\t\tG[from].push_back((edge){to,\
+    \ 1 \"graph/dinic.hpp\"\n\n#line 5 \"graph/dinic.hpp\"\n\ntemplate<typename T>\n\
+    struct dinic {\n\n\tstruct edge{\n\t\tint to;\n\t\tT cap;\n\t\tT rev;\n\t\tT init_cap;\n\
+    \t};\n\t\t\n\tint n;\n\tstd::vector<std::vector<edge>> G;\n\tstd::vector<int>\
+    \ level;\n\tstd::vector<int> iter;\n\n\tstd::vector<int> from_idx, to_idx;\n\t\
+    int edge_idx;\n\n\tdinic(int _v) : n(_v), G(n), level(n), iter(n), edge_idx(0)\
+    \ {}\n\n\tint add_edge(int from, int to, T cap){\n\t\tG[from].push_back((edge){to,\
     \ cap, (T)G[to].size(), cap});\n\t\tG[to].push_back((edge){from, 0, (T)(G[from].size()\
     \ - 1), 0});\n\t\tfrom_idx.emplace_back(from);\n\t\tto_idx.emplace_back((int)G[from].size()-1);\n\
     \t\t\n\t\treturn edge_idx++;\n\t}\n\n\tvoid bfs(int s){\n\t\tfor(int i = 0;i <\
-    \ n;i++)level[i] = -1;\n\t\tqueue<int> que;\n\t\tlevel[s] = 0;\n\t\tque.push(s);\n\
+    \ n;i++)level[i] = -1;\n\t\tstd::queue<int> que;\n\t\tlevel[s] = 0;\n\t\tque.push(s);\n\
     \t\twhile(!que.empty()){\n\t\t\tint v = que.front();\n\t\t\tque.pop();\n\t\t\t\
     for(int i = 0;i < (int)G[v].size();i++){\n\t\t\t\tedge &e = G[v][i];\n\t\t\t\t\
     if(e.cap > 0 && level[e.to] < 0){\n\t\t\t\t\tlevel[e.to] = level[v] + 1;\n\t\t\
@@ -64,7 +65,7 @@ data:
     \ d;\n\t\t\t\t\tG[e.to][e.rev].cap += d;\n\t\t\t\t\treturn d;\n\t\t\t\t}\n\t\t\
     \t}\n\t\t}\n\t\treturn 0;\n\t}\n\n\tT calc(int s, int t){\n\t\tT flow = 0;\n\t\
     \tfor(;;){\n\t\t\tbfs(s);\n\t\t\tif(level[t] < 0)return flow;\n\t\t\tfor(int i\
-    \ = 0;i < n;i++)iter[i] = 0;\n\t\t\tT f;\n\t\t\twhile((f = dfs(s, t, inf<T>()))\
+    \ = 0;i < n;i++)iter[i] = 0;\n\t\t\tT f;\n\t\t\twhile((f = dfs(s, t, std::numeric_limits<T>::max()))\
     \ > 0) {\n\t\t\t\tflow += f;\n\t\t\t}\n\t\t}\n\t}\n\n\tT get_flow(int idx){\n\t\
     \treturn G[from_idx[idx]][to_idx[idx]].init_cap - G[from_idx[idx]][to_idx[idx]].cap;\n\
     \t}\n};\n#line 5 \"verify/aoj/grl/6_A___dinic.test.cpp\"\n\nusing namespace mmrz;\n\
@@ -83,7 +84,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/grl/6_A___dinic.test.cpp
   requiredBy: []
-  timestamp: '2025-05-20 21:02:10+09:00'
+  timestamp: '2025-07-01 01:47:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/grl/6_A___dinic.test.cpp

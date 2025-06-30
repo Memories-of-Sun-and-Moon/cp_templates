@@ -45,7 +45,7 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"graph/tree_diameter.hpp\"\n\n#line 5 \"graph/tree_diameter.hpp\"\n\ntemplate<typename\
+    \ 1 \"graph/tree_diameter.hpp\"\n\n#line 6 \"graph/tree_diameter.hpp\"\n\ntemplate<typename\
     \ T=long long>\nstd::pair<T, std::vector<int>> tree_diameter(const std::vector<std::vector<std::pair<int,\
     \ T>>> &g){\n\tint n = (int)g.size();\n\tstd::vector dis(n, std::numeric_limits<T>::max());\n\
     \tstd::queue<int> q;\n\tdis[0] = 0;\n\tq.push(0);\n\n\twhile(not q.empty()){\n\
@@ -83,7 +83,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/tree_diameter.test.cpp
   requiredBy: []
-  timestamp: '2025-06-30 19:47:50+09:00'
+  timestamp: '2025-07-01 01:47:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/tree_diameter.test.cpp

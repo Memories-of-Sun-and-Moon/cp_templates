@@ -43,18 +43,19 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"string/z_algorithm.hpp\"\n\ntemplate<typename T>\nvector<int> z_algorithm(const\
-    \ T &s){\n\tvector<int> z(s.size());\n\tz[0] = (int)z.size();\n\tint i = 1, j\
-    \ = 0;\n\twhile(i < (int)z.size()){\n\t\twhile(i+j < (int)s.size() && s[j] ==\
-    \ s[i+j])j++;\n\t\tz[i] = j;\n\t\t\n\t\tif(j == 0){\n\t\t\ti++;\n\t\t\tcontinue;\n\
-    \t\t}\n\t\t\n\t\tint k = 1;\n\t\twhile(k < j && k + z[k] < j){\n\t\t\tz[i+k] =\
-    \ z[k];\n\t\t\tk++;\n\t\t}\n\t\ti += k;\n\t\tj -= k;\n\t}\n\treturn z;\n}\n#line\
-    \ 5 \"verify/atcoder/abc/150/f.___test.cpp\"\n\nvoid mmrz::solve(){\n\tint n;\n\
-    \tcin >> n;\n\tvector<int> a(n), b(n);\n\tfor(auto &x : a)cin >> x;\n\tfor(auto\
-    \ &x : b)cin >> x;\n\t\n\tvector<int> c;\n\trep(i, n)c.pb(b[i]^b[(i+1)%n]);\n\t\
-    rep(i, n)c.pb(a[i]^a[(i+1)%n]);\n\trep(i, n)c.pb(a[i]^a[(i+1)%n]);\n\n\tauto z\
-    \ = z_algorithm(c);\n\t\n\trep(i, n){\n\t\tif(z[n+i] >= n){\n\t\t\tcout << i <<\
-    \ \" \" << (a[i]^b[0]) << '\\n';\n\t\t}\n\t}\n}\n"
+    \ 1 \"string/z_algorithm.hpp\"\n\n#line 3 \"string/z_algorithm.hpp\"\n\ntemplate<typename\
+    \ T>\nstd::vector<int> z_algorithm(const T &s){\n\tstd::vector<int> z(s.size());\n\
+    \tz[0] = (int)z.size();\n\tint i = 1, j = 0;\n\twhile(i < (int)z.size()){\n\t\t\
+    while(i+j < (int)s.size() && s[j] == s[i+j])j++;\n\t\tz[i] = j;\n\t\t\n\t\tif(j\
+    \ == 0){\n\t\t\ti++;\n\t\t\tcontinue;\n\t\t}\n\t\t\n\t\tint k = 1;\n\t\twhile(k\
+    \ < j && k + z[k] < j){\n\t\t\tz[i+k] = z[k];\n\t\t\tk++;\n\t\t}\n\t\ti += k;\n\
+    \t\tj -= k;\n\t}\n\treturn z;\n}\n#line 5 \"verify/atcoder/abc/150/f.___test.cpp\"\
+    \n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector<int> a(n), b(n);\n\t\
+    for(auto &x : a)cin >> x;\n\tfor(auto &x : b)cin >> x;\n\t\n\tvector<int> c;\n\
+    \trep(i, n)c.pb(b[i]^b[(i+1)%n]);\n\trep(i, n)c.pb(a[i]^a[(i+1)%n]);\n\trep(i,\
+    \ n)c.pb(a[i]^a[(i+1)%n]);\n\n\tauto z = z_algorithm(c);\n\t\n\trep(i, n){\n\t\
+    \tif(z[n+i] >= n){\n\t\t\tcout << i << \" \" << (a[i]^b[0]) << '\\n';\n\t\t}\n\
+    \t}\n}\n"
   code: "#define PROBLEM \"https://atcoder.jp/contests/abc150/tasks/abc150_f\"\n\n\
     #include \"./../../../../template/template.hpp\"\n#include \"./../../../../string/z_algorithm.hpp\"\
     \n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector<int> a(n), b(n);\n\t\
@@ -69,7 +70,7 @@ data:
   isVerificationFile: false
   path: verify/atcoder/abc/150/f.___test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-07-01 01:51:51+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: verify/atcoder/abc/150/f.___test.cpp

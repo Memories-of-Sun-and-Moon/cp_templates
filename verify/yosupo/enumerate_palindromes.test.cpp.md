@@ -45,18 +45,18 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"string/manachar.hpp\"\n\nvector<int> manachar(string _s){\n    string t\
-    \ = \"\";\n    int n = (int)_s.size();\n    for(int i = 0;i < n;i++){\n      \
-    \  if(i)t += '#';\n        t += _s[i];\n    }\n    n = (int)t.size();\n    int\
-    \ i = 0, j = 0;\n    vector<int> r(n);\n    while(i < n){\n        while(i-j >=\
-    \ 0 && i+j < n && t[i-j] == t[i+j]) j++;\n        r[i] = j;\n        int k = 1;\n\
-    \        while(i-k >= 0 && k+r[i-k] < j) r[i+k] = r[i-k], k++;\n        i += k,\
-    \ j -= k;\n    }\n    for(int i = 0;i < n;i++){\n        if(i%2)r[i] /= 2;\n \
-    \       else r[i] = (r[i]+1)/2;\n    }\n    return r;\n}\n\n/*\nint i = 0, j =\
-    \ 0;\nwhile (i < S.size()) {\n  while (i-j >= 0 && i+j < S.size() && S[i-j] ==\
-    \ S[i+j]) ++j;\n  R[i] = j;\n  int k = 1;\n  while (i-k >= 0 && k+R[i-k] < j)\
-    \ R[i+k] = R[i-k], ++k;\n  i += k; j -= k;\n}\n*/\n#line 5 \"verify/yosupo/enumerate_palindromes.test.cpp\"\
-    \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n    string s;\n    cin >> s;\n\
+    \ 1 \"string/manachar.hpp\"\n\n#line 4 \"string/manachar.hpp\"\n\nstd::vector<int>\
+    \ manachar(std::string _s){\n\tstd::string t = \"\";\n\tint n = (int)_s.size();\n\
+    \tfor(int i = 0;i < n;i++){\n\t\tif(i)t += '#';\n\t\tt += _s[i];\n\t}\n\tn = (int)t.size();\n\
+    \tint i = 0, j = 0;\n\tstd::vector<int> r(n);\n\twhile(i < n){\n\t\twhile(i-j\
+    \ >= 0 && i+j < n && t[i-j] == t[i+j]) j++;\n\t\tr[i] = j;\n\t\tint k = 1;\n\t\
+    \twhile(i-k >= 0 && k+r[i-k] < j) r[i+k] = r[i-k], k++;\n\t\ti += k, j -= k;\n\
+    \t}\n\tfor(int k = 0;k < n;k++){\n\t\tif(k&1)r[k] >>= 1;\n\t\telse r[k] = (r[k]+1)\
+    \ >> 1;\n\t}\n\treturn r;\n}\n\n/*\nint i = 0, j = 0;\nwhile (i < S.size()) {\n\
+    \  while (i-j >= 0 && i+j < S.size() && S[i-j] == S[i+j]) ++j;\n  R[i] = j;\n\
+    \  int k = 1;\n  while (i-k >= 0 && k+R[i-k] < j) R[i+k] = R[i-k], ++k;\n  i +=\
+    \ k; j -= k;\n}\n*/\n#line 5 \"verify/yosupo/enumerate_palindromes.test.cpp\"\n\
+    \nusing namespace mmrz;\n\nvoid mmrz::solve(){\n    string s;\n    cin >> s;\n\
     \    vector<int> r = manachar(s);\n    vector<int> ans(2*len(s)-1);\n    rep(i,\
     \ 2*len(s)-1){\n        if(i%2){\n            ans[i] = r[i]*2;\n        }else{\n\
     \            ans[i] = r[i]*2-1;\n        }\n    }\n    rep(i, 2*len(s)-1){\n \
@@ -74,7 +74,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2025-02-14 10:23:15+09:00'
+  timestamp: '2025-07-01 01:55:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/enumerate_palindromes.test.cpp

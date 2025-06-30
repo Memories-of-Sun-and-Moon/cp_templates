@@ -44,20 +44,21 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"graph/lowest_common_ancestor.hpp\"\n\nstruct lowest_common_ancestor {\n\
-    private:\n\tint n;\n\tint root;\n\tvector<vector<int>>par;\npublic:\n\tvector<int>depth;\n\
-    \n\tlowest_common_ancestor(vector<vector<int>>& g, int Root) : n((int)g.size())\
-    \ {\n\t\tdepth.resize(n);\n\t\tpar.resize(n);\n\t\tfor (int i = 0; i < n; i++)par[i].resize(31);\n\
-    \t\troot = Root;\n\n\t\tauto dfs = [&](auto f, int v, int p, int d) -> void {\n\
-    \t\t\tpar[v][0] = p;\n\t\t\tdepth[v] = d;\n\t\t\tfor(size_t i = 0;i < g[v].size();i++){\n\
-    \t\t\t\tif(g[v][i] == p)continue;\n\t\t\t\tf(f, g[v][i], v, d+1);\n\t\t\t}\n\t\
-    \t};\n\n\t\tdfs(dfs, root, -1, 0);\n\t\t\n\t\tfor (int i = 0; i < 30; i++) {\n\
-    \t\t\tfor (int j = 0; j < n; j++) {\n\t\t\t\tif (par[j][i] == -1)par[j][i + 1]\
-    \ = -1;\n\t\t\t\telse par[j][i + 1] = par[par[j][i]][i];\n\t\t\t}\n\t\t}\n\t}\n\
-    \n\tint get(int u, int v) {\n\t\tif (depth[u] > depth[v])swap(u, v);\n\t\tfor\
-    \ (int i = 30; i >= 0; i--) {\n\t\t\tif (((depth[v] - depth[u]) >> i) & 1) {\n\
-    \t\t\t\tv = par[v][i];\n\t\t\t}\n\t\t}\n\t\tif (u == v)return u;\n\n\t\tfor (int\
-    \ i = 30; i >= 0; i--) {\n\t\t\tif (par[u][i] != par[v][i]) {\n\t\t\t\tu = par[u][i];\n\
+    \ 1 \"graph/lowest_common_ancestor.hpp\"\n\n#line 3 \"graph/lowest_common_ancestor.hpp\"\
+    \n\nstruct lowest_common_ancestor {\nprivate:\n\tint n;\n\tint root;\n\tstd::vector<std::vector<int>>par;\n\
+    public:\n\tstd::vector<int>depth;\n\n\tlowest_common_ancestor(std::vector<std::vector<int>>&\
+    \ g, int Root) : n((int)g.size()) {\n\t\tdepth.resize(n);\n\t\tpar.resize(n);\n\
+    \t\tfor (int i = 0; i < n; i++)par[i].resize(31);\n\t\troot = Root;\n\n\t\tauto\
+    \ dfs = [&](auto f, int v, int p, int d) -> void {\n\t\t\tpar[v][0] = p;\n\t\t\
+    \tdepth[v] = d;\n\t\t\tfor(size_t i = 0;i < g[v].size();i++){\n\t\t\t\tif(g[v][i]\
+    \ == p)continue;\n\t\t\t\tf(f, g[v][i], v, d+1);\n\t\t\t}\n\t\t};\n\n\t\tdfs(dfs,\
+    \ root, -1, 0);\n\t\t\n\t\tfor (int i = 0; i < 30; i++) {\n\t\t\tfor (int j =\
+    \ 0; j < n; j++) {\n\t\t\t\tif (par[j][i] == -1)par[j][i + 1] = -1;\n\t\t\t\t\
+    else par[j][i + 1] = par[par[j][i]][i];\n\t\t\t}\n\t\t}\n\t}\n\n\tint get(int\
+    \ u, int v) {\n\t\tif (depth[u] > depth[v])std::swap(u, v);\n\t\tfor (int i =\
+    \ 30; i >= 0; i--) {\n\t\t\tif (((depth[v] - depth[u]) >> i) & 1) {\n\t\t\t\t\
+    v = par[v][i];\n\t\t\t}\n\t\t}\n\t\tif (u == v)return u;\n\n\t\tfor (int i = 30;\
+    \ i >= 0; i--) {\n\t\t\tif (par[u][i] != par[v][i]) {\n\t\t\t\tu = par[u][i];\n\
     \t\t\t\tv = par[v][i];\n\t\t\t}\n\t\t}\n\t\treturn par[u][0];\n\t}\n};\n#line\
     \ 5 \"verify/yosupo/lca.test.cpp\"\n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin\
     \ >> n >> q;\n\tvector<vector<int>> g(n);\n\tfor(int i = 1;i < n;i++){\n\t\tint\
@@ -76,7 +77,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/lca.test.cpp
   requiredBy: []
-  timestamp: '2025-04-18 16:25:55+09:00'
+  timestamp: '2025-07-01 01:47:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/lca.test.cpp

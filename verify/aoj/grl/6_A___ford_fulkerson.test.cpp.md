@@ -45,22 +45,20 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"graph/ford_fulkerson.hpp\"\n\ntemplate<typename T>\nstruct ford_fulkerson\
-    \ {\n\n    struct edge{\n        int to;\n        T cap;\n        T rev;\n   \
-    \ };\n\n    int n;\n    vector<vector<edge>> G;\n    vector<bool> used;\n\n  \
-    \  ford_fulkerson(int _v) : n(_v), G(n), used(n) {}\n\n    void add_edge(int from,\
-    \ int to, T cap){\n        G[from].push_back((edge){to, cap, (T)G[to].size()});\n\
-    \        G[to].push_back((edge){from, 0, (T)(G[from].size() - 1)});\n    }\n\n\
-    \    T dfs(int v, int t, T f){\n        if(v == t)return f;\n        used[v] =\
-    \ true;\n        for(int i = 0;i < (int)G[v].size();i++){\n            edge &e\
-    \ = G[v][i];\n            if(!used[e.to] && e.cap > 0){\n                T d =\
-    \ dfs(e.to, t, min(f, e.cap));\n                if(d > 0){\n                 \
-    \   e.cap -= d;\n                    G[e.to][e.rev].cap += d;\n              \
-    \      return d;\n                }\n            }\n        }\n        return\
-    \ 0;\n    }\n\n    T calc(int s, int t){\n        T flow = 0;\n        for(;;){\n\
-    \            for(int i = 0;i < n;i++)used[i] = false;\n            int f = dfs(s,\
-    \ t, inf<T>());\n            if(f == 0)return flow;\n            flow += f;\n\
-    \        }\n    }\n};\n#line 5 \"verify/aoj/grl/6_A___ford_fulkerson.test.cpp\"\
+    \ 1 \"graph/ford_fulkerson.hpp\"\n\n#line 4 \"graph/ford_fulkerson.hpp\"\n\ntemplate<typename\
+    \ T>\nstruct ford_fulkerson {\n\n\tstruct edge{\n\t\tint to;\n\t\tT cap;\n\t\t\
+    T rev;\n\t};\n\n\tint n;\n\tstd::vector<std::vector<edge>> G;\n\tstd::vector<bool>\
+    \ used;\n\n\tford_fulkerson(int _v) : n(_v), G(n), used(n) {}\n\n\tvoid add_edge(int\
+    \ from, int to, T cap){\n\t\tG[from].push_back((edge){to, cap, (T)G[to].size()});\n\
+    \t\tG[to].push_back((edge){from, 0, (T)(G[from].size() - 1)});\n\t}\n\n\tT dfs(int\
+    \ v, int t, T f){\n\t\tif(v == t)return f;\n\t\tused[v] = true;\n\t\tfor(int i\
+    \ = 0;i < (int)G[v].size();i++){\n\t\t\tedge &e = G[v][i];\n\t\t\tif(!used[e.to]\
+    \ && e.cap > 0){\n\t\t\t\tT d = dfs(e.to, t, min(f, e.cap));\n\t\t\t\tif(d > 0){\n\
+    \t\t\t\t\te.cap -= d;\n\t\t\t\t\tG[e.to][e.rev].cap += d;\n\t\t\t\t\treturn d;\n\
+    \t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn 0;\n\t}\n\n\tT calc(int s, int t){\n\t\t\
+    T flow = 0;\n\t\tfor(;;){\n\t\t\tfor(int i = 0;i < n;i++)used[i] = false;\n\t\t\
+    \tT f = dfs(s, t, std::numeric_limits<T>::max());\n\t\t\tif(f == 0)return flow;\n\
+    \t\t\tflow += f;\n\t\t}\n\t}\n};\n#line 5 \"verify/aoj/grl/6_A___ford_fulkerson.test.cpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n    int n, m;\n    cin >> n\
     \ >> m;\n    ford_fulkerson<int> f(n);\n    while(m--){\n        int a, b, c;\n\
     \        cin >> a >> b >> c;\n        f.add_edge(a, b, c);\n    }\n    cout <<\
@@ -77,7 +75,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
   requiredBy: []
-  timestamp: '2025-05-20 21:02:10+09:00'
+  timestamp: '2025-07-01 01:47:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/grl/6_A___ford_fulkerson.test.cpp
