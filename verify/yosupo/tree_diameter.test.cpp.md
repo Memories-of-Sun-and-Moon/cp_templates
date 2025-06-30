@@ -45,25 +45,27 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"graph/tree_diameter.hpp\"\n\ntemplate<typename T=ll>\npair<T, vector<int>>\
-    \ tree_diameter(const vector<vector<pair<int, T>>> &g){\n\tint n = (int)g.size();\n\
-    \tvector dis(n, inf<T>());\n\tqueue<int> q;\n\tdis[0] = 0;\n\tq.push(0);\n\n\t\
-    while(not q.empty()){\n\t\tint v = q.front();\n\t\tq.pop();\n\t\tfor(auto [to,\
-    \ c] : g[v]){\n\t\t\tif(dis[to] != inf<T>())continue;\n\t\t\tdis[to] = dis[v]+c;\n\
-    \t\t\tq.push(to);\n\t\t}\n\t}\n\n\tint r1 = -1;\n\tT mx = 0;\n\tfor(int v = 0;v\
-    \ < n;v++){\n\t\tif(chmax(mx, dis[v])){\n\t\t\tr1 = v;\n\t\t}\n\t}\n\n\tdis.assign(n,\
-    \ inf<T>());\n\tvector<int> par(n, -1);\n\tdis[r1] = 0;\n\tq.push(r1);\n\n\twhile(not\
-    \ q.empty()){\n\t\tint v = q.front();\n\t\tq.pop();\n\t\tfor(auto [to, c] : g[v]){\n\
-    \t\t\tif(dis[to] != inf<T>())continue;\n\t\t\tdis[to] = dis[v]+c;\n\t\t\tpar[to]\
-    \ = v;\n\t\t\tq.push(to);\n\t\t}\n\t}\n\n\tint r2 = -1;\n\tT diameter = 0;\n\t\
-    for(int v = 0;v < n;v++){\n\t\tif(chmax(diameter, dis[v])){\n\t\t\tr2 = v;\n\t\
-    \t}\n\t}\n\n\tvector<int> path;\n\tfor(int cur = r2;cur != -1;cur = par[cur]){\n\
-    \t\tpath.eb(cur);\n\t}\n\n\treturn {diameter, path};\n}\n\npair<int, vector<int>>\
-    \ tree_diameter(const vector<vector<int>> &g_unweighted){\n\tint n = (int)g_unweighted.size();\n\
-    \tvector<vector<pair<int, int>>> g(n);\n\n\tfor(int u = 0;u < n;u++){\n\t\tfor(int\
-    \ v : g_unweighted[u]){\n\t\t\tg[u].eb(v, 1);\n\t\t\tg[v].eb(u, 1);\n\t\t}\n\t\
-    }\n\treturn tree_diameter(g);\n}\n#line 5 \"verify/yosupo/tree_diameter.test.cpp\"\
-    \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector<vector<pair<int,\
+    \ 1 \"graph/tree_diameter.hpp\"\n\n#line 5 \"graph/tree_diameter.hpp\"\n\ntemplate<typename\
+    \ T=long long>\nstd::pair<T, std::vector<int>> tree_diameter(const std::vector<std::vector<std::pair<int,\
+    \ T>>> &g){\n\tint n = (int)g.size();\n\tstd::vector dis(n, std::numeric_limits<T>::max());\n\
+    \tstd::queue<int> q;\n\tdis[0] = 0;\n\tq.push(0);\n\n\twhile(not q.empty()){\n\
+    \t\tint v = q.front();\n\t\tq.pop();\n\t\tfor(auto [to, c] : g[v]){\n\t\t\tif(dis[to]\
+    \ != std::numeric_limits<T>::max())continue;\n\t\t\tdis[to] = dis[v]+c;\n\t\t\t\
+    q.push(to);\n\t\t}\n\t}\n\n\tint r1 = -1;\n\tT mx = 0;\n\tfor(int v = 0;v < n;v++){\n\
+    \t\tif(chmax(mx, dis[v])){\n\t\t\tr1 = v;\n\t\t}\n\t}\n\n\tdis.assign(n, std::numeric_limits<T>::max());\n\
+    \tstd::vector<int> par(n, -1);\n\tdis[r1] = 0;\n\tq.push(r1);\n\n\twhile(not q.empty()){\n\
+    \t\tint v = q.front();\n\t\tq.pop();\n\t\tfor(auto [to, c] : g[v]){\n\t\t\tif(dis[to]\
+    \ != std::numeric_limits<T>::max())continue;\n\t\t\tdis[to] = dis[v]+c;\n\t\t\t\
+    par[to] = v;\n\t\t\tq.push(to);\n\t\t}\n\t}\n\n\tint r2 = -1;\n\tT diameter =\
+    \ 0;\n\tfor(int v = 0;v < n;v++){\n\t\tif(chmax(diameter, dis[v])){\n\t\t\tr2\
+    \ = v;\n\t\t}\n\t}\n\n\tstd::vector<int> path;\n\tfor(int cur = r2;cur != -1;cur\
+    \ = par[cur]){\n\t\tpath.emplace_back(cur);\n\t}\n\n\treturn {diameter, path};\n\
+    }\n\nstd::pair<int, std::vector<int>> tree_diameter(const std::vector<std::vector<int>>\
+    \ &g_unweighted){\n\tint n = (int)g_unweighted.size();\n\tstd::vector<std::vector<std::pair<int,\
+    \ int>>> g(n);\n\n\tfor(int u = 0;u < n;u++){\n\t\tfor(int v : g_unweighted[u]){\n\
+    \t\t\tg[u].emplace_back(v, 1);\n\t\t\tg[v].emplace_back(u, 1);\n\t\t}\n\t}\n\t\
+    return tree_diameter(g);\n}\n#line 5 \"verify/yosupo/tree_diameter.test.cpp\"\n\
+    \nusing namespace mmrz;\n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector<vector<pair<int,\
     \ ll>>> g(n);\n\trep(i, n-1){\n\t\tint a, b, c;\n\t\tcin >> a >> b >> c;\n\t\t\
     g[a].eb(b, c);\n\t\tg[b].eb(a, c);\n\t}\n\n\tauto [diameter, path] = tree_diameter(g);\n\
     \n\tcout << diameter << \" \" << len(path) << '\\n';\n\trep(i, len(path))cout\
@@ -81,7 +83,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/tree_diameter.test.cpp
   requiredBy: []
-  timestamp: '2025-04-18 17:04:06+09:00'
+  timestamp: '2025-06-30 19:47:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/tree_diameter.test.cpp

@@ -45,10 +45,10 @@ data:
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
     \ 1 \"data_structure/sparse_table.hpp\"\n\ntemplate<typename T>\nstruct sparse_table\
-    \ {\n\tusing F = function<T(T, T)>;\n\n\tF f;\n\tvector<vector<T>> table;\n\t\
-    vector<int> lr_length;\n\n\tsparse_table() = default;\n\n\tsparse_table(const\
-    \ vector<T> &v, const F &_f) : f(_f) {\n\t\tconst int n = (int)v.size();\n\t\t\
-    const int msb = 32 - __builtin_clz(n);\n\t\t\n\t\ttable.assign(msb, vector<T>(n));\n\
+    \ {\n\tusing F = function<T(T, T)>;\n\n\tF f;\n\tstd::vector<std::vector<T>> table;\n\
+    \tstd::vector<int> lr_length;\n\n\tsparse_table() = default;\n\n\tsparse_table(const\
+    \ std::vector<T> &v, const F &_f) : f(_f) {\n\t\tconst int n = (int)v.size();\n\
+    \t\tconst int msb = 32 - __builtin_clz(n);\n\t\t\n\t\ttable.assign(msb, std::vector<T>(n));\n\
     \t\tfor(int i = 0;i < ssize(v);i++){\n\t\t\ttable[0][i] = v[i];\n\t\t}\n\t\tfor(int\
     \ i = 1;i < msb;i++){\n\t\t\tfor(int j = 0;j + (1 << i) <= n;j++){\n\t\t\t\ttable[i][j]\
     \ = f(table[i-1][j], table[i-1][j + (1 << (i-1))]);\n\t\t\t}\n\t\t}\n\n\t\tlr_length.resize(ssize(v)\
@@ -71,7 +71,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/staticrmq.test.cpp
   requiredBy: []
-  timestamp: '2025-06-11 11:58:45+09:00'
+  timestamp: '2025-06-30 19:47:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/staticrmq.test.cpp

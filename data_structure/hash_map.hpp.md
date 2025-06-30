@@ -17,7 +17,7 @@ data:
   bundledCode: "#line 1 \"data_structure/hash_map.hpp\"\n\ntemplate<typename Key,\
     \ typename Val, uint32_t N, typename HashFunc = std::hash<Key>>\nstruct hash_map\
     \ {\n\tstatic_assert(__builtin_popcount(N) == 1);\n\tKey key[N];\n\tVal val[N];\n\
-    \tbitset<N> use;\n\t\n\tstatic constexpr uint32_t shift = 64 - __builtin_ctz(N);\n\
+    \tstd::bitset<N> use;\n\t\n\tstatic constexpr uint32_t shift = 64 - __builtin_ctz(N);\n\
     \tstatic constexpr uint64_t r = 11995408973635179863ULL;\n\n\tVal& operator[](const\
     \ Key & k) noexcept {\n\t\tuint64_t h = HashFunc{}(k);\n\t\tuint32_t hash = (h*r)\
     \ >> shift;\n\t\twhile(true){\n\t\t\tif(!use[hash]){\n\t\t\t\tkey[hash] = k;\n\
@@ -25,8 +25,8 @@ data:
     \ == k)return val[hash];\n\t\t\t(++hash) &= (N-1);\n\t\t}\n\t}\n};\n"
   code: "\ntemplate<typename Key, typename Val, uint32_t N, typename HashFunc = std::hash<Key>>\n\
     struct hash_map {\n\tstatic_assert(__builtin_popcount(N) == 1);\n\tKey key[N];\n\
-    \tVal val[N];\n\tbitset<N> use;\n\t\n\tstatic constexpr uint32_t shift = 64 -\
-    \ __builtin_ctz(N);\n\tstatic constexpr uint64_t r = 11995408973635179863ULL;\n\
+    \tVal val[N];\n\tstd::bitset<N> use;\n\t\n\tstatic constexpr uint32_t shift =\
+    \ 64 - __builtin_ctz(N);\n\tstatic constexpr uint64_t r = 11995408973635179863ULL;\n\
     \n\tVal& operator[](const Key & k) noexcept {\n\t\tuint64_t h = HashFunc{}(k);\n\
     \t\tuint32_t hash = (h*r) >> shift;\n\t\twhile(true){\n\t\t\tif(!use[hash]){\n\
     \t\t\t\tkey[hash] = k;\n\t\t\t\tuse[hash] = 1;\n\t\t\t\treturn val[hash];\n\t\t\
@@ -36,7 +36,7 @@ data:
   isVerificationFile: false
   path: data_structure/hash_map.hpp
   requiredBy: []
-  timestamp: '2025-06-15 12:56:39+09:00'
+  timestamp: '2025-06-30 19:47:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/8016.test.cpp

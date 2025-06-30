@@ -47,8 +47,8 @@ data:
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
     \ 1 \"data_structure/segment_tree_0-indexed.hpp\"\n\ntemplate<typename T>struct\
     \ [[deprecated(\"use 1-indexed segment tree (segment_tree.hpp)\")]] segment_tree\
-    \ {\n\tusing F = function<T(T, T)>;\n\n\tint n;\n\tvector<T> node;\n\tF combine;\n\
-    \tT identify;\n\n\tsegment_tree(vector<T> v, F _combine, T _identity) : combine(_combine),\
+    \ {\n\tusing F = function<T(T, T)>;\n\n\tint n;\n\tstd::vector<T> node;\n\tF combine;\n\
+    \tT identify;\n\n\tsegment_tree(std::vector<T> v, F _combine, T _identity) : combine(_combine),\
     \ identify(_identity) {\n\t\tint sz = (int)v.size();\n\t\tn = 1;\n\t\twhile(n\
     \ < sz)n *= 2;\n\t\tnode.resize(2 * n - 1, identify);\n\n\t\tfor(int i = 0;i <\
     \ sz;i++)node[i + n - 1] = v[i];\n\t\tfor(int i = n - 2;i >= 0;i--)node[i] = combine(node[2\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp
   requiredBy: []
-  timestamp: '2025-05-20 21:02:10+09:00'
+  timestamp: '2025-06-30 19:47:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_A___segment_tree_0-indexed.test.cpp

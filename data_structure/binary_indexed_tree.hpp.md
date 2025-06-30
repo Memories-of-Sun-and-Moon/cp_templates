@@ -15,13 +15,13 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"data_structure/binary_indexed_tree.hpp\"\n\ntemplate<typename\
-    \ T>struct binary_indexed_tree {\n\tint n;\n\tvector<T> BIT;\n\tbinary_indexed_tree(int\
+    \ T>struct binary_indexed_tree {\n\tint n;\n\tstd::vector<T> BIT;\n\tbinary_indexed_tree(int\
     \ n_) : n(n_ + 1), BIT(n, 0) {}\n\n\tvoid add(int i, T x){\n\t\tassert(1 <= i\
     \ && i <= n);\n\t\tfor(int idx = i;idx < n;idx += (idx & -idx)){\n\t\t\tBIT[idx]\
     \ += x;\n\t\t}\n\t}\n\t\n\tT sum(int i) {\n\t\tassert(1 <= i && i <= n);\n\t\t\
     T ret = 0;\n\t\tfor(int idx = i;idx > 0;idx -= (idx & -idx)){\n\t\t\tret += BIT[idx];\n\
     \t\t}\n\t\treturn ret;\n\t}\n};\n"
-  code: "\ntemplate<typename T>struct binary_indexed_tree {\n\tint n;\n\tvector<T>\
+  code: "\ntemplate<typename T>struct binary_indexed_tree {\n\tint n;\n\tstd::vector<T>\
     \ BIT;\n\tbinary_indexed_tree(int n_) : n(n_ + 1), BIT(n, 0) {}\n\n\tvoid add(int\
     \ i, T x){\n\t\tassert(1 <= i && i <= n);\n\t\tfor(int idx = i;idx < n;idx +=\
     \ (idx & -idx)){\n\t\t\tBIT[idx] += x;\n\t\t}\n\t}\n\t\n\tT sum(int i) {\n\t\t\
@@ -31,7 +31,7 @@ data:
   isVerificationFile: false
   path: data_structure/binary_indexed_tree.hpp
   requiredBy: []
-  timestamp: '2025-03-09 13:19:51+09:00'
+  timestamp: '2025-06-30 19:47:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dsl/2_B___BIT.test.cpp
