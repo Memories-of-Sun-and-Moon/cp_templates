@@ -1,5 +1,6 @@
-#include<bits/stdc++.h>
-using namespace std;
+
+#include<string>
+#include<vector>
 
 struct rolling_hash {
 	using ull = unsigned long long;
@@ -10,14 +11,14 @@ struct rolling_hash {
 	const ull MASK61 = MOD;
 	const ull POSITIVIZER = MOD * ((1UL << 3) - 1);
 
-	string s;
+	std::string s;
 	int n;
 	const ull bs = 23948798;
 
-	vector<ull> base_pow;
-	vector<ull> prefix_hash;
+	std::vector<ull> base_pow;
+	std::vector<ull> prefix_hash;
 
-	rolling_hash(string _s){
+	rolling_hash(std::string _s){
 		s = _s;
 		n = int(s.size());
 		base_pow.resize(n + 1);

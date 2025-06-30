@@ -1,19 +1,22 @@
 
+#include<numeric>
+#include<vector>
+
 template <typename T> struct suffix_array {
 	T s;
-	vector<int> sa;
-	vector<int> rank;
-	vector<int> lcp;
+	std::vector<int> sa;
+	std::vector<int> rank;
+	std::vector<int> lcp;
 
 	suffix_array(const T &str, bool gen_lcp = true) : s(str) {
 		int n = (int)s.size();
 		sa.resize(n+1);
-		iota(sa.begin(), sa.end(), 0);
+		std::iota(sa.begin(), sa.end(), 0);
 		rank.assign(n+1, -1);
 		for(int i = 0;i < n;i++){
 			rank[i] = s[i];
 		}
-		vector<int> tmp(n+1);
+		std::vector<int> tmp(n+1);
 		int k;
 		auto comp_sa = [&](int i, int j) -> bool {
 			if(rank[i] != rank[j])return rank[i] < rank[j];

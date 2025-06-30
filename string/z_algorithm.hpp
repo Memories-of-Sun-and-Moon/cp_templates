@@ -2,8 +2,8 @@
 #include<vector>
 
 template<typename T>
-vector<int> z_algorithm(const T &s){
-	vector<int> z(s.size());
+std::vector<int> z_algorithm(const T &s){
+	std::vector<int> z(s.size());
 	z[0] = (int)z.size();
 	int i = 1, j = 0;
 	while(i < (int)z.size()){
