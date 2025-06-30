@@ -1,4 +1,9 @@
 
+#pragma once
+
+#include<cstdint>
+#include<iostream>
+
 class dynamic_modint {
 	using u64 = std::uint_fast64_t;
 	static u64 Modulus;

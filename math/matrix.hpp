@@ -1,17 +1,22 @@
 
+#pragma once
+
+#include<cassert>
+#include<vector>
+
 template<typename T>
 struct matrix {
-	vector<vector<T>> a;
+	std::vector<std::vector<T>> a;
 
 	matrix(){}
-	matrix(int n, int m) : a(n, vector<T>(m, 0)){}
-	matrix(int n) : a(n, vector<T>(n, 0)){}
+	matrix(int n, int m) : a(n, std::vector<T>(m, 0)){}
+	matrix(int n) : a(n, std::vector<T>(n, 0)){}
 
 	size_t height() const {return a.size(); }
 	size_t width() const {return a[0].size(); }
 
-	const vector<T> &operator[](int k) const {return a.at(k); }
-	vector<T> &operator[](int k) {return a.at(k); }
+	const std::vector<T> &operator[](int k) const {return a.at(k); }
+	std::vector<T> &operator[](int k) {return a.at(k); }
 
 	static matrix I(size_t n){
 		matrix mat(n);

@@ -1,4 +1,6 @@
 
+#pragma once
+
 #include<limits>
 #include<numeric>
 #include<vector>

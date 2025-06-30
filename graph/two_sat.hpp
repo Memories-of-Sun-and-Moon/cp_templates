@@ -1,4 +1,6 @@
 
+#pragma once
+
 #include "./strongly_connected_components.hpp"
 
 struct two_sat {

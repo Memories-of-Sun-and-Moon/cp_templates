@@ -1,7 +1,11 @@
 
+#pragma once
+
+#include <type_traits>
+
 template<typename T>
 concept NotPrimitiveInt =
-    !(std::is_same_v<T, int> ||
+	!(std::is_same_v<T, int> ||
 		std::is_same_v<T, long> ||
 		std::is_same_v<T, long long> ||
 		std::is_same_v<T, unsigned> ||

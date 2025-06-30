@@ -1,4 +1,9 @@
 
+#pragma once
+
+#include<cstdint>
+#include<iostream>
+
 template <std::uint_fast64_t Modulus> class modint {
 	using u64 = std::uint_fast64_t;
 public:

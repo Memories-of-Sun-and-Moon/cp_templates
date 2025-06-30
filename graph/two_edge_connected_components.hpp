@@ -1,4 +1,6 @@
 
+#pragma once
+
 #include "../data_structure/union_find.hpp"
 #include "./lowlink.hpp"
 

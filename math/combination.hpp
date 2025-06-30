@@ -1,11 +1,15 @@
 
+#pragma once
+
 #include "modint.hpp"
+
+#include<vector>
 
 constexpr int max_combination = 1010101;
 template<typename T>
 struct binomial {
 
-	vector<T> fact, inv_fact;
+	std::vector<T> fact, inv_fact;
 
 	binomial(){
 		fact.resize(max_combination);

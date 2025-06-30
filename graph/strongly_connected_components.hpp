@@ -1,4 +1,6 @@
 
+#pragma once
+
 #include<vector>
 
 struct scc_graph {

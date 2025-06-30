@@ -1,4 +1,6 @@
 
+#pragma once
+
 #include<vector>
 
 std::vector<std::vector<int>> functional_graph_cycle_enumeration(std::vector<int> a){

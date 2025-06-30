@@ -1,6 +1,6 @@
 
-ll floor_sum(ll n, ll m, ll a, ll b){
-	ll ans = 0;
+long long floor_sum(long long n, long long m, long long a, long long b){
+	long long ans = 0;
 	if(a >= m){
 		ans += (n-1) * n * (a/m) / 2;
 		a %= m;
@@ -10,10 +10,10 @@ ll floor_sum(ll n, ll m, ll a, ll b){
 		b %= m;
 	}
 
-	ll x = a * (n-1) + b;
+	long long x = a * (n-1) + b;
 	if(x < m) return ans;
-	ll x_div = x/m;
-	ll x_mod = x%m;
+	long long x_div = x/m;
+	long long x_mod = x%m;
 	ans += x_div + floor_sum(x_div, a, m, x_mod);
 	return ans;
 }

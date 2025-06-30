@@ -1,4 +1,8 @@
+
 #pragma once
+
+#include<vector>
+
 __int128_t __power(__int128_t n, __int128_t k, __int128_t m) {
 	n %= m;
 	__int128_t ret = 1;
@@ -17,7 +21,7 @@ bool is_prime(long long n){
 	if(n % 3 == 0)return false;
 	if(n % 5 == 0)return false;
 
-	vector<long long> A = {2, 325, 9375, 28178, 450775, 9780504, 1795265022};
+	std::vector<long long> A = {2, 325, 9375, 28178, 450775, 9780504, 1795265022};
 
 	long long s = 0, d = n - 1;
 	while(d % 2 == 0){

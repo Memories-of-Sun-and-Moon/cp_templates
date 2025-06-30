@@ -1,9 +1,11 @@
 
+#pragma once
+
 #include "../math/factor.hpp"
 
 long long euler_phi(long long x){
 	auto f = factor(x);
-	UNIQUE(f);
+	f.erase(unique(f.begin(), f.end()),f.end());
 	long long ret = x;
 	for(auto e : f){
 		ret *= (e-1);

@@ -1,6 +1,9 @@
 
+#include<cmath>
+#include<limits>
+
 unsigned long long iroot(unsigned long long n, int k=2){
-	constexpr unsigned long long LIM = -1;
+	constexpr unsigned long long LIM = std::numeric_limits<unsigned long long>::max();
 	if(n <= 1 || k == 1){
 		return n;
 	}
@@ -31,7 +34,7 @@ unsigned long long iroot(unsigned long long n, int k=2){
 		return ret;
 	};
 
-	unsigned long long ret = (k == 3 ? cbrt(n)-1 : pow(n, nextafter(1.0/double(k), 0.0)));
+	unsigned long long ret = (k == 3 ? cbrt(n)-1 : std::pow(n, std::nextafter(1.0/double(k), 0.0)));
 	while(power(ret+1, k) <= n)ret++;
 	return ret;
 }

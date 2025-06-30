@@ -1,6 +1,10 @@
 
-vector<int> euler_phi_table(int n){
-	vector<int> phi(n + 1);
+#pragma once
+
+#include<vector>
+
+std::vector<int> euler_phi_table(int n){
+	std::vector<int> phi(n + 1);
 	for(int i = 0;i <= n;i++){
 		phi[i] = i;
 	}

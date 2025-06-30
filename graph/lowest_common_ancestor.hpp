@@ -1,4 +1,6 @@
 
+#pragma once
+
 #include<vector>
 
 struct lowest_common_ancestor {

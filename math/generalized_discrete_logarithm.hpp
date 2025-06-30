@@ -1,11 +1,15 @@
 
+#pragma once
+
+#include<unordered_set>
+
 template<typename T>
 T generalized_discrete_logarithm(T x, T y, auto f, int n, auto f_m, int m){
 	if(x == y){
 		return 0;
 	}
 
-	unordered_set<T> baby_steps;
+	std::unordered_set<T> baby_steps;
 	T fy = y;
 	for(int i = 0;i < m;i++){
 		baby_steps.insert(fy);
