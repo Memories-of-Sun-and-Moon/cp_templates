@@ -1,9 +1,13 @@
 
-template<typename T=ll>
-pair<T, vector<int>> tree_diameter(const vector<vector<pair<int, T>>> &g){
+#include<vector>
+#include<utility>
+#include<queue>
+
+template<typename T=long long>
+std::pair<T, std::vector<int>> tree_diameter(const std::vector<std::vector<std::pair<int, T>>> &g){
 	int n = (int)g.size();
-	vector dis(n, inf<T>());
-	queue<int> q;
+	std::vector dis(n, std::numeric_limits<T>::max());
+	std::queue<int> q;
 	dis[0] = 0;
 	q.push(0);
 
@@ -11,7 +15,7 @@ pair<T, vector<int>> tree_diameter(const vector<vector<pair<int, T>>> &g){
 		int v = q.front();
 		q.pop();
 		for(auto [to, c] : g[v]){
-			if(dis[to] != inf<T>())continue;
+			if(dis[to] != std::numeric_limits<T>::max())continue;
 			dis[to] = dis[v]+c;
 			q.push(to);
 		}
@@ -25,8 +29,8 @@ pair<T, vector<int>> tree_diameter(const vector<vector<pair<int, T>>> &g){
 		}
 	}
 
-	dis.assign(n, inf<T>());
-	vector<int> par(n, -1);
+	dis.assign(n, std::numeric_limits<T>::max());
+	std::vector<int> par(n, -1);
 	dis[r1] = 0;
 	q.push(r1);
 
@@ -34,7 +38,7 @@ pair<T, vector<int>> tree_diameter(const vector<vector<pair<int, T>>> &g){
 		int v = q.front();
 		q.pop();
 		for(auto [to, c] : g[v]){
-			if(dis[to] != inf<T>())continue;
+			if(dis[to] != std::numeric_limits<T>::max())continue;
 			dis[to] = dis[v]+c;
 			par[to] = v;
 			q.push(to);
@@ -49,22 +53,22 @@ pair<T, vector<int>> tree_diameter(const vector<vector<pair<int, T>>> &g){
 		}
 	}
 
-	vector<int> path;
+	std::vector<int> path;
 	for(int cur = r2;cur != -1;cur = par[cur]){
-		path.eb(cur);
+		path.emplace_back(cur);
 	}
 
 	return {diameter, path};
 }
 
-pair<int, vector<int>> tree_diameter(const vector<vector<int>> &g_unweighted){
+std::pair<int, std::vector<int>> tree_diameter(const std::vector<std::vector<int>> &g_unweighted){
 	int n = (int)g_unweighted.size();
-	vector<vector<pair<int, int>>> g(n);
+	std::vector<std::vector<std::pair<int, int>>> g(n);
 
 	for(int u = 0;u < n;u++){
 		for(int v : g_unweighted[u]){
-			g[u].eb(v, 1);
-			g[v].eb(u, 1);
+			g[u].emplace_back(v, 1);
+			g[v].emplace_back(u, 1);
 		}
 	}
 	return tree_diameter(g);

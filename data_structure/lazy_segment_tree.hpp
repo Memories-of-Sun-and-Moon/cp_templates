@@ -6,8 +6,8 @@ private:
 	int n;
 	int log;
 	int size;
-	vector<S> node;
-	vector<F> lazy;
+	std::vector<S> node;
+	std::vector<F> lazy;
 
 	void update(int k) { node[k] = op(node[2 * k], node[2 * k + 1]); }
 	void all_apply(int k, F f) {
@@ -22,9 +22,9 @@ private:
 public:
 	lazy_segment_tree() : lazy_segment_tree(0) {}
 
-	lazy_segment_tree(int _n) : lazy_segment_tree(vector<S>(_n, e())) {}
+	lazy_segment_tree(int _n) : lazy_segment_tree(std::vector<S>(_n, e())) {}
 
-	lazy_segment_tree(const vector<S> &v) : n((int)v.size()) {
+	lazy_segment_tree(const std::vector<S> &v) : n((int)v.size()) {
 		size = 1;
 		while(size < n) size <<= 1;
 

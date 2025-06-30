@@ -1,6 +1,6 @@
 
 struct union_find {
-	vector<int> v;
+	std::vector<int> v;
 	int g_size;
 	int n;
 
@@ -21,7 +21,7 @@ struct union_find {
 		x = root(x);
 		y = root(y);
 		if(x != y){
-			if(v[x] > v[y])swap(x, y);
+			if(v[x] > v[y])std::swap(x, y);
 			v[x] += v[y];
 			v[y] = x;
 			g_size--;
@@ -45,13 +45,13 @@ struct union_find {
 		return g_size;
 	}
 
-	vector<vector<int>> groups(){
-		vector<vector<int>> member(n);
+	std::vector<std::vector<int>> groups(){
+		std::vector<std::vector<int>> member(n);
 		for(int i = 0;i < n;i++){
 			member[root(i)].push_back(i);
 		}
 
-		vector<vector<int>> ret;
+		std::vector<std::vector<int>> ret;
 		for(int i = 0;i < n;i++){
 			if(member[i].empty())continue;
 			ret.push_back(member[i]);

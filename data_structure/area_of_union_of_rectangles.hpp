@@ -3,9 +3,9 @@
 template<class T>
 struct area_of_union_rectangles {
 private:
-	vector<T> ys;
-	vector<tuple<T, int, int>>xs;
-	vector<tuple<T, T, T, T>> rectangles;
+	std::vector<T> ys;
+	std::vector<tuple<T, int, int>>xs;
+	std::vector<tuple<T, T, T, T>> rectangles;
 	using S = pair<int, T>;
 	using F = int;
 	static S op(S a, S b){
@@ -13,14 +13,14 @@ private:
 		if(a.first > b.first)return b;
 		return make_pair(a.first, a.second+b.second);
 	}
-	static S e(){ return make_pair(numeric_limits<int>::max()/2, 0); }
+	static S e(){ return make_pair(std::numeric_limits<int>::max()/2, 0); }
 	static S mapping(F f, S x){ return make_pair(x.first+f, x.second); }
 	static F composition(F f, F g){ return f+g; }
 	static F id(){ return 0; }
 public:
 
 	// l, d, r, u
-	area_of_union_rectangles(vector<tuple<T, T, T, T>> _rectangles) : rectangles(_rectangles) {
+	area_of_union_rectangles(std::vector<tuple<T, T, T, T>> _rectangles) : rectangles(_rectangles) {
 		ys.reserve(rectangles.size()+rectangles.size());
 		xs.reserve(rectangles.size()+rectangles.size());
 
@@ -49,7 +49,7 @@ public:
 
 	template<typename U>
 	U solve(){
-		vector<S> vs((int)ys.size()-1);
+		std::vector<S> vs((int)ys.size()-1);
 		for(size_t i = 0;i+1 < ys.size();i++){
 			vs[i] = make_pair(0, ys[i+1]-ys[i]);
 		}

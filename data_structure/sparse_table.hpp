@@ -4,16 +4,16 @@ struct sparse_table {
 	using F = function<T(T, T)>;
 
 	F f;
-	vector<vector<T>> table;
-	vector<int> lr_length;
+	std::vector<std::vector<T>> table;
+	std::vector<int> lr_length;
 
 	sparse_table() = default;
 
-	sparse_table(const vector<T> &v, const F &_f) : f(_f) {
+	sparse_table(const std::vector<T> &v, const F &_f) : f(_f) {
 		const int n = (int)v.size();
 		const int msb = 32 - __builtin_clz(n);
 		
-		table.assign(msb, vector<T>(n));
+		table.assign(msb, std::vector<T>(n));
 		for(int i = 0;i < ssize(v);i++){
 			table[0][i] = v[i];
 		}

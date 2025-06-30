@@ -1,21 +1,25 @@
-ostream& operator<<(ostream& os, __int128_t value) {
+
+#include<istream>
+#include<ostream>
+
+std::ostream& operator<<(std::ostream& os, __int128_t value) {
 	if (value == 0) return os << '0';
 	bool neg = false;
 	if (value < 0) {
 		neg = true;
 		value = -value;
 	}
-	string s;
+	std::string s;
 	while (value > 0) {
 		s += '0' + value % 10;
 		value /= 10;
 	}
 	if (neg) s += '-';
-	reverse(s.begin(), s.end());
+	std::reverse(s.begin(), s.end());
 	return os << s;
 }
-istream& operator>>(istream& is, __int128_t& value) {
-	string s;
+std::istream& operator>>(std::istream& is, __int128_t& value) {
+	std::string s;
 	is >> s;
 	value = 0;
 	bool neg = false;

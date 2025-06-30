@@ -3,7 +3,7 @@ struct binary_trie {
 	struct Node {
 		Node *nxt[2];
 		D exist;
-		vector<int> accept;
+		std::vector<int> accept;
 
 		Node() : nxt{nullptr, nullptr}, exist(0) {}
 	};
@@ -32,17 +32,17 @@ struct binary_trie {
 		return (node ? node->exist : 0);
 	}
 
-	pair<T, Node *> min_element(T xor_val=0) {
+	std::pair<T, Node *> min_element(T xor_val=0) {
 		assert(root->exist > 0);
 		return kth_element(0, xor_val);
 	}
 
-	pair<T, Node *> max_element(T xor_val=0) {
+	std::pair<T, Node *> max_element(T xor_val=0) {
 		assert(root->exist > 0);
 		return kth_element(root->exist - 1, xor_val);
 	}
 
-	pair<T, Node *> kth_element(D k, T xor_val=0) {
+	std::pair<T, Node *> kth_element(D k, T xor_val=0) {
 		assert(0 <= k && k < root->exist);
 		return kth_element(root, k, MAX_LOG, xor_val);
 	}
@@ -79,7 +79,7 @@ private:
 		}
 	}
 	
-	pair<T, Node *> kth_element(Node *t, D k, int depth, T xor_val) {
+	std::pair<T, Node *> kth_element(Node *t, D k, int depth, T xor_val) {
 		if(depth == -1) {
 			return {0, t};
 		}else{

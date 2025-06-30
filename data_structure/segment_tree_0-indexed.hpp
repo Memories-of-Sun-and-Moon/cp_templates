@@ -3,11 +3,11 @@ template<typename T>struct [[deprecated("use 1-indexed segment tree (segment_tre
 	using F = function<T(T, T)>;
 
 	int n;
-	vector<T> node;
+	std::vector<T> node;
 	F combine;
 	T identify;
 
-	segment_tree(vector<T> v, F _combine, T _identity) : combine(_combine), identify(_identity) {
+	segment_tree(std::vector<T> v, F _combine, T _identity) : combine(_combine), identify(_identity) {
 		int sz = (int)v.size();
 		n = 1;
 		while(n < sz)n *= 2;

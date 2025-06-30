@@ -2,8 +2,8 @@
 template<typename T>
 struct merge_sort_tree {
 	int n;
-	vector<vector<T>> x, cs;
-	merge_sort_tree(const vector<T> &v) : n(ssize(v)) {
+	std::vector<std::vector<T>> x, cs;
+	merge_sort_tree(const std::vector<T> &v) : n(ssize(v)) {
 		x.resize(n*2);
 		cs.resize(n*2);
 		for(int i = 0;i < n;i++)x[n+i] = {v[i]}, cs[n+i] = {0, v[i]};

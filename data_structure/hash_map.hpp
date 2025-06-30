@@ -4,7 +4,7 @@ struct hash_map {
 	static_assert(__builtin_popcount(N) == 1);
 	Key key[N];
 	Val val[N];
-	bitset<N> use;
+	std::bitset<N> use;
 	
 	static constexpr uint32_t shift = 64 - __builtin_ctz(N);
 	static constexpr uint64_t r = 11995408973635179863ULL;

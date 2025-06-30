@@ -7,7 +7,7 @@ template<typename T>struct segment_tree_2d {
 	int id(int r, int c) const {return r*2*w+c; }
 
 	int h, w;
-	vector<T> node;
+	std::vector<T> node;
 	F combine;
 	T identify;
 
@@ -18,7 +18,7 @@ template<typename T>struct segment_tree_2d {
 		node.assign(4*h*w, identify);
 	}
 
-	segment_tree_2d(vector<vector<T>> &v, F _combine, T _identify) : combine(_combine), identify(_identify){
+	segment_tree_2d(std::vector<std::vector<T>> &v, F _combine, T _identify) : combine(_combine), identify(_identify){
 		h = w = 1;
 		while(h < (int)v.size()) h <<= 1;
 		while(w < (int)v[0].size()) w <<= 1;

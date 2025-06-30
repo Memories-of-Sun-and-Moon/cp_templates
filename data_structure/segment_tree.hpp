@@ -4,13 +4,13 @@ template<typename T>struct segment_tree {
 
 	int offset;
 	int n;
-	vector<T> node;
+	std::vector<T> node;
 	F combine;
 	T identify;
 
-	segment_tree(int _n, F _combine, T _identify) : segment_tree(vector<T>(_n, _identify), _combine, _identify) {}
+	segment_tree(int _n, F _combine, T _identify) : segment_tree(std::vector<T>(_n, _identify), _combine, _identify) {}
 
-	segment_tree(const vector<T> &v, F _combine, T _identify) : n((int)v.size()), combine(_combine), identify(_identify) {
+	segment_tree(const std::vector<T> &v, F _combine, T _identify) : n((int)v.size()), combine(_combine), identify(_identify) {
 		offset = 1;
 		while(offset < n)offset <<= 1;
 

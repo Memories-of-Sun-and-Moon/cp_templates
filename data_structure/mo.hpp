@@ -1,16 +1,16 @@
 class Mo {
-	vector<pair<int, int>> lr;
+	std::vector<std::pair<int, int>> lr;
 public:
 	Mo() = default;
-	Mo(const vector<pair<int, int>> &_lr) : lr(_lr) {}
+	Mo(const std::vector<std::pair<int, int>> &_lr) : lr(_lr) {}
 
 	template<typename AL, typename AR, typename EL, typename ER, typename F>
 	void calc(const AL &add_left, const AR &add_right, const EL &erase_left, const ER& erase_right, const F &f, int _n = -1, int _B = -1){
-		int n = (_n == -1 ? ranges::max(lr, {}, &pair<int, int>::second).second : _n);
+		int n = (_n == -1 ? ranges::max(lr, {}, &std::pair<int, int>::second).second : _n);
 		int q = (int)lr.size();
 		int B = (_B == -1 ? max(1, n/int(sqrt(q))) : _B);
 
-		vector<int> index(q);
+		std::vector<int> index(q);
 		iota(index.begin(), index.end(), 0);
 		sort(index.begin(), index.end(), [&](int i, int j){
 			const auto &[l_i, r_i] = lr[i];

@@ -1,8 +1,10 @@
 
-vector<vector<int>> functional_graph_cycle_enumeration(vector<int> a){
-	vector<vector<int>> ret;
+#include<vector>
+
+std::vector<std::vector<int>> functional_graph_cycle_enumeration(std::vector<int> a){
+	std::vector<std::vector<int>> ret;
 	int n = (int)a.size();
-	vector vis(n, 0);
+	std::vector vis(n, 0);
 	for(int i = 0;i < n;i++){
 		if(vis[i] != 0)continue;
 		int cur = i;
@@ -13,7 +15,7 @@ vector<vector<int>> functional_graph_cycle_enumeration(vector<int> a){
 		if(vis[cur] == 1){
 			int cnt = 0;
 			int u = cur;
-			vector<int> v;
+			std::vector<int> v;
 			do{
 				cnt++;
 				v.emplace_back(u);

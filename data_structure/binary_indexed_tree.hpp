@@ -1,7 +1,7 @@
 
 template<typename T>struct binary_indexed_tree {
 	int n;
-	vector<T> BIT;
+	std::vector<T> BIT;
 	binary_indexed_tree(int n_) : n(n_ + 1), BIT(n, 0) {}
 
 	void add(int i, T x){
