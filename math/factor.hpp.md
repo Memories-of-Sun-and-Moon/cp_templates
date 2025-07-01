@@ -7,6 +7,9 @@ data:
       \u7D20\u6570\u5224\u5B9A\u6CD5\uFF09"
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: math/enumerate_divisors.hpp
+    title: "\u7D04\u6570\u5217\u6319"
+  - icon: ':heavy_check_mark:'
     path: math/euler_phi.hpp
     title: "\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\uFF08\u30AA\u30A4\u30E9\
       \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09"
@@ -64,6 +67,7 @@ data:
   isVerificationFile: false
   path: math/factor.hpp
   requiredBy:
+  - math/enumerate_divisors.hpp
   - math/euler_phi.hpp
   timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
