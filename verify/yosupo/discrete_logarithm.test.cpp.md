@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/discrete_logarithm.hpp
     title: discrete_logarithm
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/iroot.hpp
     title: "floor K \u4E57\u6839"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/power.hpp
     title: math/power.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []

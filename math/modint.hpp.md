@@ -9,15 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution_mod.test.cpp
     title: verify/yosupo/convolution_mod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/2219.test.cpp
     title: verify/yukicoder/2219.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/3044.test.cpp
     title: verify/yukicoder/3044.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"math/modint.hpp\"\n\n#include<cstdint>\n#include<iostream>\n\
@@ -66,7 +66,7 @@ data:
   requiredBy:
   - math/combination.hpp
   timestamp: '2025-07-01 03:22:56+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/3044.test.cpp
   - verify/yukicoder/2219.test.cpp

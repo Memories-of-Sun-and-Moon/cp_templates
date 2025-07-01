@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/is_prime.hpp
     title: "\u7D20\u6570\u5224\u5B9A\uFF08\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\
       \u7D20\u6570\u5224\u5B9A\u6CD5\uFF09"
@@ -12,14 +12,17 @@ data:
       \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/id/1642.test.cpp
+    title: verify/aoj/id/1642.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/ntl/1_D.test.cpp
     title: verify/aoj/ntl/1_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/factorize.test.cpp
     title: verify/yosupo/factorize.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"math/factor.hpp\"\n\n#line 2 \"math/is_prime.hpp\"\n\n#include<vector>\n\
@@ -63,9 +66,10 @@ data:
   requiredBy:
   - math/euler_phi.hpp
   timestamp: '2025-07-01 03:22:56+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/factorize.test.cpp
+  - verify/aoj/id/1642.test.cpp
   - verify/aoj/ntl/1_D.test.cpp
 documentation_of: math/factor.hpp
 layout: document

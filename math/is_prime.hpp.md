@@ -6,23 +6,26 @@ data:
     path: math/euler_phi.hpp
     title: "\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\uFF08\u30AA\u30A4\u30E9\
       \u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\uFF09"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/factor.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3\uFF08\u30DD\u30E9\u30FC\u30C9\u30FB\u30ED\
       \u30FC\u6CD5\uFF09"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/id/1642.test.cpp
+    title: verify/aoj/id/1642.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/ntl/1_D.test.cpp
     title: verify/aoj/ntl/1_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/factorize.test.cpp
     title: verify/yosupo/factorize.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/primality_test.test.cpp
     title: verify/yosupo/primality_test.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"math/is_prime.hpp\"\n\n#include<vector>\n\n__int128_t __power(__int128_t\
@@ -56,10 +59,11 @@ data:
   - math/euler_phi.hpp
   - math/factor.hpp
   timestamp: '2025-07-01 03:22:56+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/primality_test.test.cpp
   - verify/yosupo/factorize.test.cpp
+  - verify/aoj/id/1642.test.cpp
   - verify/aoj/ntl/1_D.test.cpp
 documentation_of: math/is_prime.hpp
 layout: document

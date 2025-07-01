@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/staticrmq.test.cpp
     title: verify/yosupo/staticrmq.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data_structure/sparse_table.hpp\"\n\n#include<cassert>\n\
@@ -42,7 +42,7 @@ data:
   path: data_structure/sparse_table.hpp
   requiredBy: []
   timestamp: '2025-07-01 03:22:56+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/staticrmq.test.cpp
 documentation_of: data_structure/sparse_table.hpp

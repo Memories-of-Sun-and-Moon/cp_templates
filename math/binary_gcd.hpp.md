@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/1250.test.cpp
     title: verify/yukicoder/1250.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/3020.test.cpp
     title: verify/yukicoder/3020.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"math/binary_gcd.hpp\"\n\n#include<algorithm>\n#include<cmath>\n\
@@ -31,7 +31,7 @@ data:
   path: math/binary_gcd.hpp
   requiredBy: []
   timestamp: '2025-07-01 03:22:56+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/3020.test.cpp
   - verify/yukicoder/1250.test.cpp

@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/itp1/7_d.test.cpp
     title: verify/aoj/itp1/7_d.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/3044.test.cpp
     title: verify/yukicoder/3044.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"math/matrix.hpp\"\n\n#include<cassert>\n#include<vector>\n\
@@ -77,7 +77,7 @@ data:
   path: math/matrix.hpp
   requiredBy: []
   timestamp: '2025-07-01 03:22:56+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/3044.test.cpp
   - verify/aoj/itp1/7_d.test.cpp

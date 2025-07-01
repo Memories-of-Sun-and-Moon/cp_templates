@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/generalized_discrete_logarithm.test.cpp
     title: verify/yosupo/generalized_discrete_logarithm.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"math/generalized_discrete_logarithm.hpp\"\n\n#include<unordered_set>\n\
@@ -35,7 +35,7 @@ data:
   path: math/generalized_discrete_logarithm.hpp
   requiredBy: []
   timestamp: '2025-07-01 03:22:56+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/generalized_discrete_logarithm.test.cpp
 documentation_of: math/generalized_discrete_logarithm.hpp
