@@ -1,5 +1,7 @@
 #pragma once
 
+#include "./factor.hpp"
+
 #include<algorithm>
 #include<vector>
 
