@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dinic.hpp
     title: "\u6700\u5927\u6D41(Dinic)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -45,7 +45,7 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"graph/dinic.hpp\"\n\n#line 5 \"graph/dinic.hpp\"\n\ntemplate<typename T>\n\
+    \ 2 \"graph/dinic.hpp\"\n\n#line 6 \"graph/dinic.hpp\"\n\ntemplate<typename T>\n\
     struct dinic {\n\n\tstruct edge{\n\t\tint to;\n\t\tT cap;\n\t\tT rev;\n\t\tT init_cap;\n\
     \t};\n\t\t\n\tint n;\n\tstd::vector<std::vector<edge>> G;\n\tstd::vector<int>\
     \ level;\n\tstd::vector<int> iter;\n\n\tstd::vector<int> from_idx, to_idx;\n\t\
@@ -84,7 +84,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/grl/6_A___dinic.test.cpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/grl/6_A___dinic.test.cpp

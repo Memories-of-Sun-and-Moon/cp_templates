@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/generalized_discrete_logarithm.hpp
     title: generalized_discrete_logarithm
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/power.hpp
     title: math/power.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/discrete_logarithm_mod
@@ -48,29 +48,31 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"math/generalized_discrete_logarithm.hpp\"\n\ntemplate<typename T>\nT generalized_discrete_logarithm(T\
-    \ x, T y, auto f, int n, auto f_m, int m){\n\tif(x == y){\n\t\treturn 0;\n\t}\n\
-    \n\tunordered_set<T> baby_steps;\n\tT fy = y;\n\tfor(int i = 0;i < m;i++){\n\t\
-    \tbaby_steps.insert(fy);\n\t\tfy = f(fy);\n\t}\n\n\tT fx = x;\n\tbool is_first_loop\
-    \ = true;\n\tfor(int i = 0;i <= n;i += m){\n\t\tT next_val = f_m(fx);\n\t\tif(baby_steps.contains(next_val)){\n\
+    \ 2 \"math/generalized_discrete_logarithm.hpp\"\n\n#line 4 \"math/generalized_discrete_logarithm.hpp\"\
+    \n\ntemplate<typename T>\nT generalized_discrete_logarithm(T x, T y, auto f, int\
+    \ n, auto f_m, int m){\n\tif(x == y){\n\t\treturn 0;\n\t}\n\n\tstd::unordered_set<T>\
+    \ baby_steps;\n\tT fy = y;\n\tfor(int i = 0;i < m;i++){\n\t\tbaby_steps.insert(fy);\n\
+    \t\tfy = f(fy);\n\t}\n\n\tT fx = x;\n\tbool is_first_loop = true;\n\tfor(int i\
+    \ = 0;i <= n;i += m){\n\t\tT next_val = f_m(fx);\n\t\tif(baby_steps.contains(next_val)){\n\
     \t\t\tfor(int j = i+1;j <= i+m;j++){\n\t\t\t\tfx = f(fx);\n\t\t\t\tif(fx == y){\n\
     \t\t\t\t\treturn (j <= n ? j : -1);\n\t\t\t\t}\n\t\t\t}\n\t\t\tif(is_first_loop){\n\
     \t\t\t\tis_first_loop = false;\n\t\t\t}else{\n\t\t\t\treturn -1;\n\t\t\t}\n\t\t\
-    }\n\t\tfx = next_val;\n\t}\n\treturn -1;\n}\n#line 1 \"math/power.hpp\"\n\ntemplate<typename\
-    \ T>\nconcept NotPrimitiveInt =\n    !(std::is_same_v<T, int> ||\n\t\tstd::is_same_v<T,\
-    \ long> ||\n\t\tstd::is_same_v<T, long long> ||\n\t\tstd::is_same_v<T, unsigned>\
-    \ ||\n\t\tstd::is_same_v<T, unsigned long> ||\n\t\tstd::is_same_v<T, unsigned\
-    \ long long>);\n\ntemplate<NotPrimitiveInt T>\nT power(T n, long long k) {\n\t\
-    T ret = 1;\n\twhile(k > 0) {\n\t\tif(k & 1)ret *= n;\n\t\tn = n*n;\n\t\tk >>=\
-    \ 1;\n\t}\n\treturn ret;\n}\n\nlong long power(long long n, long long k, long\
-    \ long p) {\n\tlong long ret = 1;\n\twhile(k > 0){\n\t\tif(k & 1)ret = ret*n %\
-    \ p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n#line 6 \"verify/yosupo/generalized_discrete_logarithm.test.cpp\"\
-    \n\nusing namespace mmrz;\n\nvoid SOLVE(){\n\tll x, y, m;\n\tcin >> x >> y >>\
-    \ m;\n\n\tauto f = [&x, &m](ll a) -> ll {\n\t\treturn (a*x)%m;\n\t};\n\n\tint\
-    \ sq = sqrt(m);\n\tll x_sq = power(x, sq, m);\n\tauto f_sq = [&x_sq, &m](ll a)\
-    \ -> ll {\n\t\treturn (a*x_sq)%m;\n\t};\n\n\tcout << generalized_discrete_logarithm<int>(1%m,\
-    \ y, f, m, f_sq, sq) << '\\n';\n}\n\nvoid mmrz::solve(){\n\tint t = 1;\n\tcin\
-    \ >> t;\n\twhile(t--)SOLVE();\n}\n"
+    }\n\t\tfx = next_val;\n\t}\n\treturn -1;\n}\n#line 2 \"math/power.hpp\"\n\n#include\
+    \ <type_traits>\n\ntemplate<typename T>\nconcept NotPrimitiveInt =\n\t!(std::is_same_v<T,\
+    \ int> ||\n\t\tstd::is_same_v<T, long> ||\n\t\tstd::is_same_v<T, long long> ||\n\
+    \t\tstd::is_same_v<T, unsigned> ||\n\t\tstd::is_same_v<T, unsigned long> ||\n\t\
+    \tstd::is_same_v<T, unsigned long long>);\n\ntemplate<NotPrimitiveInt T>\nT power(T\
+    \ n, long long k) {\n\tT ret = 1;\n\twhile(k > 0) {\n\t\tif(k & 1)ret *= n;\n\t\
+    \tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\nlong long power(long long n,\
+    \ long long k, long long p) {\n\tlong long ret = 1;\n\twhile(k > 0){\n\t\tif(k\
+    \ & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\
+    #line 6 \"verify/yosupo/generalized_discrete_logarithm.test.cpp\"\n\nusing namespace\
+    \ mmrz;\n\nvoid SOLVE(){\n\tll x, y, m;\n\tcin >> x >> y >> m;\n\n\tauto f = [&x,\
+    \ &m](ll a) -> ll {\n\t\treturn (a*x)%m;\n\t};\n\n\tint sq = sqrt(m);\n\tll x_sq\
+    \ = power(x, sq, m);\n\tauto f_sq = [&x_sq, &m](ll a) -> ll {\n\t\treturn (a*x_sq)%m;\n\
+    \t};\n\n\tcout << generalized_discrete_logarithm<int>(1%m, y, f, m, f_sq, sq)\
+    \ << '\\n';\n}\n\nvoid mmrz::solve(){\n\tint t = 1;\n\tcin >> t;\n\twhile(t--)SOLVE();\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/discrete_logarithm_mod\"\
     \n\n#include \"./../../template/template.hpp\"\n#include \"./../../math/generalized_discrete_logarithm.hpp\"\
     \n#include \"./../../math/power.hpp\"\n\nusing namespace mmrz;\n\nvoid SOLVE(){\n\
@@ -86,8 +88,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/generalized_discrete_logarithm.test.cpp
   requiredBy: []
-  timestamp: '2025-06-28 11:56:03+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/generalized_discrete_logarithm.test.cpp
 layout: document

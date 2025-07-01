@@ -14,7 +14,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/warshall_floyd.hpp\"\n\n#include<numeric>\n#include<vector>\n\
+  bundledCode: "#line 2 \"graph/warshall_floyd.hpp\"\n\n#include<numeric>\n#include<vector>\n\
     \ntemplate<typename T>\nstruct warshall_floyd {\nprivate:\n\tint V;\npublic:\n\
     \tstd::vector<std::vector<T>> dist;\n\n\twarshall_floyd(std::vector<std::vector<T>>\
     \ &edge_cost, T infty=std::numeric_limits<T>::max()/2) : V(ssize(edge_cost)),\
@@ -25,21 +25,22 @@ data:
     \ s, int t, T cost){\n\t\tdist[s][t] = cost;\n\t\tfor(int u = 0;u < V;u++){\n\t\
     \t\tfor(int v = 0;v < V;v++){\n\t\t\t\tdist[u][v] = min(dist[u][v], dist[u][s]+dist[s][t]+dist[t][v]);\n\
     \t\t\t}\n\t\t}\n\t}\n};\n\n"
-  code: "\n#include<numeric>\n#include<vector>\n\ntemplate<typename T>\nstruct warshall_floyd\
-    \ {\nprivate:\n\tint V;\npublic:\n\tstd::vector<std::vector<T>> dist;\n\n\twarshall_floyd(std::vector<std::vector<T>>\
-    \ &edge_cost, T infty=std::numeric_limits<T>::max()/2) : V(ssize(edge_cost)),\
-    \ dist(edge_cost){\n\t\tfor(int k = 0;k < V;k++){\n\t\t\tfor(int i = 0;i < V;i++){\n\
-    \t\t\t\tif(dist[i][k] == infty)continue;\n\t\t\t\tfor(int j = 0;j < V;j++){\n\t\
-    \t\t\t\tif(dist[k][j] == infty)continue;\n\t\t\t\t\tdist[i][j] = min(dist[i][j],\
-    \ dist[i][k] + dist[k][j]);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tvoid update(int\
-    \ s, int t, T cost){\n\t\tdist[s][t] = cost;\n\t\tfor(int u = 0;u < V;u++){\n\t\
-    \t\tfor(int v = 0;v < V;v++){\n\t\t\t\tdist[u][v] = min(dist[u][v], dist[u][s]+dist[s][t]+dist[t][v]);\n\
-    \t\t\t}\n\t\t}\n\t}\n};\n\n"
+  code: "#pragma once\n\n#include<numeric>\n#include<vector>\n\ntemplate<typename\
+    \ T>\nstruct warshall_floyd {\nprivate:\n\tint V;\npublic:\n\tstd::vector<std::vector<T>>\
+    \ dist;\n\n\twarshall_floyd(std::vector<std::vector<T>> &edge_cost, T infty=std::numeric_limits<T>::max()/2)\
+    \ : V(ssize(edge_cost)), dist(edge_cost){\n\t\tfor(int k = 0;k < V;k++){\n\t\t\
+    \tfor(int i = 0;i < V;i++){\n\t\t\t\tif(dist[i][k] == infty)continue;\n\t\t\t\t\
+    for(int j = 0;j < V;j++){\n\t\t\t\t\tif(dist[k][j] == infty)continue;\n\t\t\t\t\
+    \tdist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);\n\t\t\t\t}\n\t\t\t}\n\
+    \t\t}\n\t}\n\n\tvoid update(int s, int t, T cost){\n\t\tdist[s][t] = cost;\n\t\
+    \tfor(int u = 0;u < V;u++){\n\t\t\tfor(int v = 0;v < V;v++){\n\t\t\t\tdist[u][v]\
+    \ = min(dist[u][v], dist[u][s]+dist[s][t]+dist[t][v]);\n\t\t\t}\n\t\t}\n\t}\n\
+    };\n\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/warshall_floyd.hpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/id/2005.test.cpp

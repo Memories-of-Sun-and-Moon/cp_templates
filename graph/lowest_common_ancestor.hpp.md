@@ -6,15 +6,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/5_C.test.cpp
     title: verify/aoj/grl/5_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/lca.test.cpp
     title: verify/yosupo/lca.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/lowest_common_ancestor.hpp\"\n\n#include<vector>\n\
+  bundledCode: "#line 2 \"graph/lowest_common_ancestor.hpp\"\n\n#include<vector>\n\
     \nstruct lowest_common_ancestor {\nprivate:\n\tint n;\n\tint root;\n\tstd::vector<std::vector<int>>par;\n\
     public:\n\tstd::vector<int>depth;\n\n\tlowest_common_ancestor(std::vector<std::vector<int>>&\
     \ g, int Root) : n((int)g.size()) {\n\t\tdepth.resize(n);\n\t\tpar.resize(n);\n\
@@ -30,8 +30,8 @@ data:
     v = par[v][i];\n\t\t\t}\n\t\t}\n\t\tif (u == v)return u;\n\n\t\tfor (int i = 30;\
     \ i >= 0; i--) {\n\t\t\tif (par[u][i] != par[v][i]) {\n\t\t\t\tu = par[u][i];\n\
     \t\t\t\tv = par[v][i];\n\t\t\t}\n\t\t}\n\t\treturn par[u][0];\n\t}\n};\n"
-  code: "\n#include<vector>\n\nstruct lowest_common_ancestor {\nprivate:\n\tint n;\n\
-    \tint root;\n\tstd::vector<std::vector<int>>par;\npublic:\n\tstd::vector<int>depth;\n\
+  code: "#pragma once\n\n#include<vector>\n\nstruct lowest_common_ancestor {\nprivate:\n\
+    \tint n;\n\tint root;\n\tstd::vector<std::vector<int>>par;\npublic:\n\tstd::vector<int>depth;\n\
     \n\tlowest_common_ancestor(std::vector<std::vector<int>>& g, int Root) : n((int)g.size())\
     \ {\n\t\tdepth.resize(n);\n\t\tpar.resize(n);\n\t\tfor (int i = 0; i < n; i++)par[i].resize(31);\n\
     \t\troot = Root;\n\n\t\tauto dfs = [&](auto f, int v, int p, int d) -> void {\n\
@@ -49,8 +49,8 @@ data:
   isVerificationFile: false
   path: graph/lowest_common_ancestor.hpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/lca.test.cpp
   - verify/aoj/grl/5_C.test.cpp

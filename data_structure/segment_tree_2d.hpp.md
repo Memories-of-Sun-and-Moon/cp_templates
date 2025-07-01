@@ -11,10 +11,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"data_structure/segment_tree_2d.hpp\"\n#include<bits/stdc++.h>\n\
-    using namespace std;\n\ntemplate<typename T>struct segment_tree_2d {\n\tusing\
-    \ F = function<T(T, T)>;\n\tint id(int r, int c) const {return r*2*w+c; }\n\n\t\
-    int h, w;\n\tstd::vector<T> node;\n\tF combine;\n\tT identify;\n\n\tsegment_tree_2d(int\
+  bundledCode: "#line 2 \"data_structure/segment_tree_2d.hpp\"\n\n#include<functional>\n\
+    #include<vector>\n\ntemplate<typename T>struct segment_tree_2d {\n\tusing F =\
+    \ std::function<T(T, T)>;\n\tint id(int r, int c) const {return r*2*w+c; }\n\n\
+    \tint h, w;\n\tstd::vector<T> node;\n\tF combine;\n\tT identify;\n\n\tsegment_tree_2d(int\
     \ _h, int _w, F _combine, T _identify) : combine(_combine), identify(_identify){\n\
     \t\th = w = 1;\n\t\twhile(h < _h) h <<= 1;\n\t\twhile(w < _w) w <<= 1;\n\t\tnode.assign(4*h*w,\
     \ identify);\n\t}\n\n\tsegment_tree_2d(std::vector<std::vector<T>> &v, F _combine,\
@@ -43,10 +43,10 @@ data:
     \ <= lj)return identify;\n\t\tif(lj <= sj && tj <= rj)return node[id(i, k)];\n\
     \t\tT vs = fold_w(lj, rj, i, 2*k+1, sj, (sj+tj)/2);\n\t\tT vt = fold_w(lj, rj,\
     \ i, 2*k+2, (sj+tj)/2, tj);\n\t\treturn combine(vs, vt);\n\t}\n};\n\n"
-  code: "#pragma once\n#include<bits/stdc++.h>\nusing namespace std;\n\ntemplate<typename\
-    \ T>struct segment_tree_2d {\n\tusing F = function<T(T, T)>;\n\tint id(int r,\
-    \ int c) const {return r*2*w+c; }\n\n\tint h, w;\n\tstd::vector<T> node;\n\tF\
-    \ combine;\n\tT identify;\n\n\tsegment_tree_2d(int _h, int _w, F _combine, T _identify)\
+  code: "#pragma once\n\n#include<functional>\n#include<vector>\n\ntemplate<typename\
+    \ T>struct segment_tree_2d {\n\tusing F = std::function<T(T, T)>;\n\tint id(int\
+    \ r, int c) const {return r*2*w+c; }\n\n\tint h, w;\n\tstd::vector<T> node;\n\t\
+    F combine;\n\tT identify;\n\n\tsegment_tree_2d(int _h, int _w, F _combine, T _identify)\
     \ : combine(_combine), identify(_identify){\n\t\th = w = 1;\n\t\twhile(h < _h)\
     \ h <<= 1;\n\t\twhile(w < _w) w <<= 1;\n\t\tnode.assign(4*h*w, identify);\n\t\
     }\n\n\tsegment_tree_2d(std::vector<std::vector<T>> &v, F _combine, T _identify)\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: false
   path: data_structure/segment_tree_2d.hpp
   requiredBy: []
-  timestamp: '2025-06-30 19:47:50+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dsl/5_B.test.cpp

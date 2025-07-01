@@ -11,26 +11,25 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"z_other/longest_increasing_subsequences.hpp\"\ntemplate\
-    \ <bool is_strict, class T>\nint longest_increasing_subsequences(const vector<T>&\
-    \ v){\n    vector<T> dp;\n\n    auto it = dp.begin();\n\n    for(auto elem : v){\n\
-    \        if constexpr (is_strict){\n            it = lower_bound(dp.begin(), dp.end(),\
-    \ elem);\n        }else{\n            it = upper_bound(dp.begin(), dp.end(), elem);\n\
-    \        }\n        if(it == dp.end()){\n            dp.push_back(elem);\n   \
-    \     }else{\n            *it = elem;\n        }\n    }\n\n    return int(dp.size());\n\
-    }\n\n"
-  code: "template <bool is_strict, class T>\nint longest_increasing_subsequences(const\
-    \ vector<T>& v){\n    vector<T> dp;\n\n    auto it = dp.begin();\n\n    for(auto\
-    \ elem : v){\n        if constexpr (is_strict){\n            it = lower_bound(dp.begin(),\
-    \ dp.end(), elem);\n        }else{\n            it = upper_bound(dp.begin(), dp.end(),\
-    \ elem);\n        }\n        if(it == dp.end()){\n            dp.push_back(elem);\n\
-    \        }else{\n            *it = elem;\n        }\n    }\n\n    return int(dp.size());\n\
-    }\n\n"
+  bundledCode: "#line 2 \"z_other/longest_increasing_subsequences.hpp\"\n\n#include<algorithm>\n\
+    #include<vector>\n\ntemplate <bool is_strict, class T>\nint longest_increasing_subsequences(const\
+    \ std::vector<T>& v){\n\tstd::vector<T> dp;\n\n\tauto it = dp.begin();\n\n\tfor(auto\
+    \ elem : v){\n\t\tif constexpr (is_strict){\n\t\t\tit = std::lower_bound(dp.begin(),\
+    \ dp.end(), elem);\n\t\t}else{\n\t\t\tit = std::upper_bound(dp.begin(), dp.end(),\
+    \ elem);\n\t\t}\n\t\tif(it == dp.end()){\n\t\t\tdp.push_back(elem);\n\t\t}else{\n\
+    \t\t\t*it = elem;\n\t\t}\n\t}\n\n\treturn int(dp.size());\n}\n\n"
+  code: "#pragma once\n\n#include<algorithm>\n#include<vector>\n\ntemplate <bool is_strict,\
+    \ class T>\nint longest_increasing_subsequences(const std::vector<T>& v){\n\t\
+    std::vector<T> dp;\n\n\tauto it = dp.begin();\n\n\tfor(auto elem : v){\n\t\tif\
+    \ constexpr (is_strict){\n\t\t\tit = std::lower_bound(dp.begin(), dp.end(), elem);\n\
+    \t\t}else{\n\t\t\tit = std::upper_bound(dp.begin(), dp.end(), elem);\n\t\t}\n\t\
+    \tif(it == dp.end()){\n\t\t\tdp.push_back(elem);\n\t\t}else{\n\t\t\t*it = elem;\n\
+    \t\t}\n\t}\n\n\treturn int(dp.size());\n}\n\n"
   dependsOn: []
   isVerificationFile: false
   path: z_other/longest_increasing_subsequences.hpp
   requiredBy: []
-  timestamp: '2024-07-01 17:44:46+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/dpl/1_D.test.cpp

@@ -6,24 +6,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/associative_array.test.cpp
     title: verify/yosupo/associative_array.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yukicoder/8016.test.cpp
     title: verify/yukicoder/8016.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data_structure/hash_map.hpp\"\n\ntemplate<typename Key,\
-    \ typename Val, uint32_t N, typename HashFunc = std::hash<Key>>\nstruct hash_map\
-    \ {\n\tstatic_assert(__builtin_popcount(N) == 1);\n\tKey key[N];\n\tVal val[N];\n\
-    \tstd::bitset<N> use;\n\t\n\tstatic constexpr uint32_t shift = 64 - __builtin_ctz(N);\n\
-    \tstatic constexpr uint64_t r = 11995408973635179863ULL;\n\n\tVal& operator[](const\
-    \ Key & k) noexcept {\n\t\tuint64_t h = HashFunc{}(k);\n\t\tuint32_t hash = (h*r)\
-    \ >> shift;\n\t\twhile(true){\n\t\t\tif(!use[hash]){\n\t\t\t\tkey[hash] = k;\n\
-    \t\t\t\tuse[hash] = 1;\n\t\t\t\treturn val[hash];\n\t\t\t}\n\t\t\tif(key[hash]\
-    \ == k)return val[hash];\n\t\t\t(++hash) &= (N-1);\n\t\t}\n\t}\n};\n"
-  code: "\ntemplate<typename Key, typename Val, uint32_t N, typename HashFunc = std::hash<Key>>\n\
+  bundledCode: "#line 2 \"data_structure/hash_map.hpp\"\n\n#include<bitset>\n#include<cstdint>\n\
+    \ntemplate<typename Key, typename Val, uint32_t N, typename HashFunc = std::hash<Key>>\n\
     struct hash_map {\n\tstatic_assert(__builtin_popcount(N) == 1);\n\tKey key[N];\n\
     \tVal val[N];\n\tstd::bitset<N> use;\n\t\n\tstatic constexpr uint32_t shift =\
     \ 64 - __builtin_ctz(N);\n\tstatic constexpr uint64_t r = 11995408973635179863ULL;\n\
@@ -32,12 +24,21 @@ data:
     \t\t\t\tkey[hash] = k;\n\t\t\t\tuse[hash] = 1;\n\t\t\t\treturn val[hash];\n\t\t\
     \t}\n\t\t\tif(key[hash] == k)return val[hash];\n\t\t\t(++hash) &= (N-1);\n\t\t\
     }\n\t}\n};\n"
+  code: "#pragma once\n\n#include<bitset>\n#include<cstdint>\n\ntemplate<typename\
+    \ Key, typename Val, uint32_t N, typename HashFunc = std::hash<Key>>\nstruct hash_map\
+    \ {\n\tstatic_assert(__builtin_popcount(N) == 1);\n\tKey key[N];\n\tVal val[N];\n\
+    \tstd::bitset<N> use;\n\t\n\tstatic constexpr uint32_t shift = 64 - __builtin_ctz(N);\n\
+    \tstatic constexpr uint64_t r = 11995408973635179863ULL;\n\n\tVal& operator[](const\
+    \ Key & k) noexcept {\n\t\tuint64_t h = HashFunc{}(k);\n\t\tuint32_t hash = (h*r)\
+    \ >> shift;\n\t\twhile(true){\n\t\t\tif(!use[hash]){\n\t\t\t\tkey[hash] = k;\n\
+    \t\t\t\tuse[hash] = 1;\n\t\t\t\treturn val[hash];\n\t\t\t}\n\t\t\tif(key[hash]\
+    \ == k)return val[hash];\n\t\t\t(++hash) &= (N-1);\n\t\t}\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data_structure/hash_map.hpp
   requiredBy: []
-  timestamp: '2025-06-30 19:47:50+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yukicoder/8016.test.cpp
   - verify/yosupo/associative_array.test.cpp

@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/tree_diameter.test.cpp
     title: verify/yosupo/tree_diameter.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/tree_diameter.hpp\"\n\n#include<numeric>\n#include<vector>\n\
+  bundledCode: "#line 2 \"graph/tree_diameter.hpp\"\n\n#include<numeric>\n#include<vector>\n\
     #include<utility>\n#include<queue>\n\ntemplate<typename T=long long>\nstd::pair<T,\
     \ std::vector<int>> tree_diameter(const std::vector<std::vector<std::pair<int,\
     \ T>>> &g){\n\tint n = (int)g.size();\n\tstd::vector dis(n, std::numeric_limits<T>::max());\n\
@@ -32,17 +32,17 @@ data:
     \ int>>> g(n);\n\n\tfor(int u = 0;u < n;u++){\n\t\tfor(int v : g_unweighted[u]){\n\
     \t\t\tg[u].emplace_back(v, 1);\n\t\t\tg[v].emplace_back(u, 1);\n\t\t}\n\t}\n\t\
     return tree_diameter(g);\n}\n"
-  code: "\n#include<numeric>\n#include<vector>\n#include<utility>\n#include<queue>\n\
-    \ntemplate<typename T=long long>\nstd::pair<T, std::vector<int>> tree_diameter(const\
-    \ std::vector<std::vector<std::pair<int, T>>> &g){\n\tint n = (int)g.size();\n\
-    \tstd::vector dis(n, std::numeric_limits<T>::max());\n\tstd::queue<int> q;\n\t\
-    dis[0] = 0;\n\tq.push(0);\n\n\twhile(not q.empty()){\n\t\tint v = q.front();\n\
-    \t\tq.pop();\n\t\tfor(auto [to, c] : g[v]){\n\t\t\tif(dis[to] != std::numeric_limits<T>::max())continue;\n\
-    \t\t\tdis[to] = dis[v]+c;\n\t\t\tq.push(to);\n\t\t}\n\t}\n\n\tint r1 = -1;\n\t\
-    T mx = 0;\n\tfor(int v = 0;v < n;v++){\n\t\tif(chmax(mx, dis[v])){\n\t\t\tr1 =\
-    \ v;\n\t\t}\n\t}\n\n\tdis.assign(n, std::numeric_limits<T>::max());\n\tstd::vector<int>\
-    \ par(n, -1);\n\tdis[r1] = 0;\n\tq.push(r1);\n\n\twhile(not q.empty()){\n\t\t\
-    int v = q.front();\n\t\tq.pop();\n\t\tfor(auto [to, c] : g[v]){\n\t\t\tif(dis[to]\
+  code: "#pragma once\n\n#include<numeric>\n#include<vector>\n#include<utility>\n\
+    #include<queue>\n\ntemplate<typename T=long long>\nstd::pair<T, std::vector<int>>\
+    \ tree_diameter(const std::vector<std::vector<std::pair<int, T>>> &g){\n\tint\
+    \ n = (int)g.size();\n\tstd::vector dis(n, std::numeric_limits<T>::max());\n\t\
+    std::queue<int> q;\n\tdis[0] = 0;\n\tq.push(0);\n\n\twhile(not q.empty()){\n\t\
+    \tint v = q.front();\n\t\tq.pop();\n\t\tfor(auto [to, c] : g[v]){\n\t\t\tif(dis[to]\
+    \ != std::numeric_limits<T>::max())continue;\n\t\t\tdis[to] = dis[v]+c;\n\t\t\t\
+    q.push(to);\n\t\t}\n\t}\n\n\tint r1 = -1;\n\tT mx = 0;\n\tfor(int v = 0;v < n;v++){\n\
+    \t\tif(chmax(mx, dis[v])){\n\t\t\tr1 = v;\n\t\t}\n\t}\n\n\tdis.assign(n, std::numeric_limits<T>::max());\n\
+    \tstd::vector<int> par(n, -1);\n\tdis[r1] = 0;\n\tq.push(r1);\n\n\twhile(not q.empty()){\n\
+    \t\tint v = q.front();\n\t\tq.pop();\n\t\tfor(auto [to, c] : g[v]){\n\t\t\tif(dis[to]\
     \ != std::numeric_limits<T>::max())continue;\n\t\t\tdis[to] = dis[v]+c;\n\t\t\t\
     par[to] = v;\n\t\t\tq.push(to);\n\t\t}\n\t}\n\n\tint r2 = -1;\n\tT diameter =\
     \ 0;\n\tfor(int v = 0;v < n;v++){\n\t\tif(chmax(diameter, dis[v])){\n\t\t\tr2\
@@ -57,8 +57,8 @@ data:
   isVerificationFile: false
   path: graph/tree_diameter.hpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/tree_diameter.test.cpp
 documentation_of: graph/tree_diameter.hpp

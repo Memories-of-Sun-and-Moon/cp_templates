@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/primal_dual.hpp\"\n\n#include<functional>\n#include<limits>\n\
+  bundledCode: "#line 2 \"graph/primal_dual.hpp\"\n\n#include<functional>\n#include<limits>\n\
     #include<utility>\n#include<queue>\n#include<vector>\n\ntemplate<typename T>\n\
     struct primal_dual{\n\tstruct edge {\n\t\tint to;\n\t\tT cap, cost, rev;\n\t\t\
     T max_cap;\n\t};\n\tint V;\n\tT infty;\n\tstd::vector<std::vector<edge>> G;\n\t\
@@ -37,16 +37,16 @@ data:
     \t\t\t}\n\t\t\tf -= d;\n\t\t\tres += d*h[t];\n\t\t\tfor(int v = t;v != s;v = prevv[v]){\n\
     \t\t\t\tedge &e = G[prevv[v]][preve[v]];\n\t\t\t\te.cap -= d;\n\t\t\t\tG[v][e.rev].cap\
     \ += d;\n\t\t\t}\n\t\t}\n\t\treturn make_pair(true, res);\n\t}\n};\n"
-  code: "\n#include<functional>\n#include<limits>\n#include<utility>\n#include<queue>\n\
-    #include<vector>\n\ntemplate<typename T>\nstruct primal_dual{\n\tstruct edge {\n\
-    \t\tint to;\n\t\tT cap, cost, rev;\n\t\tT max_cap;\n\t};\n\tint V;\n\tT infty;\n\
-    \tstd::vector<std::vector<edge>> G;\n\tstd::vector<T> h, dist;\n\tstd::vector<int>\
-    \ prevv, preve;\n\tstd::vector<bool> used_edge;\n\n\tprimal_dual(int _V) : V(_V),\
-    \ infty(std::numeric_limits<T>::max()/2) {\n\t\tG.resize(V);\n\t\th.resize(V);\n\
-    \t\tdist.resize(V);\n\t\tprevv.resize(V);\n\t\tpreve.resize(V);\n\t\tused_edge.resize(V);\n\
-    \t}\n\n\tvoid add_edge(int from, int to, T cap, T cost){\n\t\tG[from].push_back((edge){to,\
-    \ cap, cost, (int)G[to].size(), cap});\n\t\tG[to].push_back((edge){from, 0, -cost,\
-    \ (int)G[from].size()-1, 0});\n\t\tused_edge[from] = true;\n\t\tused_edge[to]\
+  code: "#pragma once\n\n#include<functional>\n#include<limits>\n#include<utility>\n\
+    #include<queue>\n#include<vector>\n\ntemplate<typename T>\nstruct primal_dual{\n\
+    \tstruct edge {\n\t\tint to;\n\t\tT cap, cost, rev;\n\t\tT max_cap;\n\t};\n\t\
+    int V;\n\tT infty;\n\tstd::vector<std::vector<edge>> G;\n\tstd::vector<T> h, dist;\n\
+    \tstd::vector<int> prevv, preve;\n\tstd::vector<bool> used_edge;\n\n\tprimal_dual(int\
+    \ _V) : V(_V), infty(std::numeric_limits<T>::max()/2) {\n\t\tG.resize(V);\n\t\t\
+    h.resize(V);\n\t\tdist.resize(V);\n\t\tprevv.resize(V);\n\t\tpreve.resize(V);\n\
+    \t\tused_edge.resize(V);\n\t}\n\n\tvoid add_edge(int from, int to, T cap, T cost){\n\
+    \t\tG[from].push_back((edge){to, cap, cost, (int)G[to].size(), cap});\n\t\tG[to].push_back((edge){from,\
+    \ 0, -cost, (int)G[from].size()-1, 0});\n\t\tused_edge[from] = true;\n\t\tused_edge[to]\
     \ = true;\n\t}\n\n\tstd::pair<bool, T> min_cost_flow(int s, int t, T f){\n\t\t\
     T res = 0;\n\t\twhile(f > 0){\n\t\t\tstd::priority_queue<std::pair<T, int>, std::vector<std::pair<T,\
     \ int>>, std::greater<std::pair<T, int>>> que;\n\t\t\tdist.assign(V, infty);\n\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: false
   path: graph/primal_dual.hpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/grl/6_B.test.cpp

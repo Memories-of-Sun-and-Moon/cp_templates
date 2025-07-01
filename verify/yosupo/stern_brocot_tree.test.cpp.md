@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/stern_brocot_tree.hpp
     title: stern_brocot_tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/stern_brocot_tree
@@ -45,36 +45,40 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"math/stern_brocot_tree.hpp\"\n\nnamespace sbt{\n\n\ttemplate<class T>\n\t\
-    tuple<T, T, T, T> child(T p, T q, T r, T s, T d, bool is_left){\n\t\tif(is_left){\n\
-    \t\t\tr += d*p;\n\t\t\ts += d*q;\n\t\t}else{\n\t\t\tp += d*r;\n\t\t\tq += d*s;\n\
-    \t\t}\n\t\treturn make_tuple(p, q, r, s);\n\t}\n\n\ttemplate<class T>\n\ttuple<T,\
-    \ T, T, T> parent(T p, T q, T r, T s){\n\t\tif(p == 0 && q == 1 && r == 1 && s\
-    \ == 0){\n\t\t\treturn make_tuple(0, 0, 0, 0);\n\t\t}\n\t\tif(p < r || q < s){\n\
-    \t\t\tr -= p, s -= q;\n\t\t}else{\n\t\t\tp -= r, q -= s;\n\t\t}\n\t\treturn make_tuple(p,\
-    \ q, r, s);\n\t}\n\n\ttemplate<class T>\n\tvector<T> encode_path(T p, T q){\n\t\
-    \tvector<T> a;\n\t\tif(p < q){\n\t\t\ta.emplace_back(0);\n\t\t\tswap(p, q);\n\t\
-    \t}\n\t\twhile(p != 1){\n\t\t\ta.emplace_back(p/q);\n\t\t\tp %= q;\n\t\t\tswap(p,\
-    \ q);\n\t\t}\n\t\tif(not a.empty()){\n\t\t\tif(a.back() == 1){\n\t\t\t\ta.pop_back();\n\
-    \t\t\t}else{\n\t\t\t\ta.back()--;\n\t\t\t}\n\t\t}\n\t\treturn a;\n\t}\n\n\ttemplate<class\
-    \ T>\n\ttuple<T, T, T, T> decode_path(const vector<T> &a){\n\t\tT p = 0, q = 1,\
-    \ r = 1, s = 0;\n\t\tfor(int i = 0;i < ssize(a);i++){\n\t\t\ttie(p, q, r, s) =\
-    \ child(p, q, r, s, a[i], i&1);\n\t\t}\n\t\treturn make_tuple(p, q, r, s);\n\t\
-    }\n\n\ttemplate<class T>\n\ttuple<T, T, T, T> lca(T p, T q, T r, T s){\n\t\tvector<T>\
-    \ a = encode_path(p, q), b = encode_path(r, s);\n\n\t\tint n = min(ssize(a), ssize(b));\n\
-    \n\t\tT P = 0, Q = 1, R = 1, S = 0;\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tT c\
-    \ = min(a[i], b[i]);\n\t\t\ttie(P, Q, R, S) = child(P, Q, R, S, c, i&1);\n\t\t\
-    \tif(a[i] != b[i])break;\n\t\t}\n\t\treturn make_tuple(P, Q, R, S);\n\t}\n\n\t\
-    template<class T>\n\toptional<tuple<T, T, T, T>> ancestor(T p, T q, T d){\n\t\t\
-    vector<T> a = encode_path(p, q);\n\t\tT P = 0, Q = 1, R = 1, S = 0;\n\t\tfor(int\
-    \ i = 0;i < ssize(a);i++){\n\t\t\tT c = min(d, a[i]);\n\t\t\ttie(P, Q, R, S) =\
-    \ child(P, Q, R, S, c, i&1);\n\t\t\td -= c;\n\t\t\tif(d == 0)break;\n\t\t}\n\t\
-    \tif(d == 0){\n\t\t\treturn make_tuple(P, Q, R, S);\n\t\t}\n\t\treturn nullopt;\n\
-    \t}\n\n\ttemplate<class T>\n\ttuple<T, T, T, T> range(T p, T q){\n\t\treturn decode_path(encode_path(p,\
-    \ q));\n\t}\n}\n#line 5 \"verify/yosupo/stern_brocot_tree.test.cpp\"\n\nusing\
-    \ namespace mmrz;\n\nvoid SOLVE(){\n\tstring op;\n\tcin >> op;\n\tif(op == \"\
-    ENCODE_PATH\"){\n\t\tll a, b;\n\t\tcin >> a >> b;\n\t\tvector<ll> path = sbt::encode_path(a,\
-    \ b);\n\t\tif(path.empty())cout << 0;\n\t\telse if(path.front() == 0)cout << ssize(path)\
+    \ 2 \"math/stern_brocot_tree.hpp\"\n\n#line 4 \"math/stern_brocot_tree.hpp\"\n\
+    #include<optional>\n#include<ranges>\n#line 8 \"math/stern_brocot_tree.hpp\"\n\
+    \nnamespace sbt{\n\n\ttemplate<class T>\n\tstd::tuple<T, T, T, T> child(T p, T\
+    \ q, T r, T s, T d, bool is_left){\n\t\tif(is_left){\n\t\t\tr += d*p;\n\t\t\t\
+    s += d*q;\n\t\t}else{\n\t\t\tp += d*r;\n\t\t\tq += d*s;\n\t\t}\n\t\treturn std::make_tuple(p,\
+    \ q, r, s);\n\t}\n\n\ttemplate<class T>\n\tstd::tuple<T, T, T, T> parent(T p,\
+    \ T q, T r, T s){\n\t\tif(p == 0 && q == 1 && r == 1 && s == 0){\n\t\t\treturn\
+    \ std::make_tuple(0, 0, 0, 0);\n\t\t}\n\t\tif(p < r || q < s){\n\t\t\tr -= p,\
+    \ s -= q;\n\t\t}else{\n\t\t\tp -= r, q -= s;\n\t\t}\n\t\treturn std::make_tuple(p,\
+    \ q, r, s);\n\t}\n\n\ttemplate<class T>\n\tstd::vector<T> encode_path(T p, T q){\n\
+    \t\tstd::vector<T> a;\n\t\tif(p < q){\n\t\t\ta.emplace_back(0);\n\t\t\tstd::swap(p,\
+    \ q);\n\t\t}\n\t\twhile(p != 1){\n\t\t\ta.emplace_back(p/q);\n\t\t\tp %= q;\n\t\
+    \t\tstd::swap(p, q);\n\t\t}\n\t\tif(not a.empty()){\n\t\t\tif(a.back() == 1){\n\
+    \t\t\t\ta.pop_back();\n\t\t\t}else{\n\t\t\t\ta.back()--;\n\t\t\t}\n\t\t}\n\t\t\
+    return a;\n\t}\n\n\ttemplate<class T>\n\tstd::tuple<T, T, T, T> decode_path(const\
+    \ std::vector<T> &a){\n\t\tT p = 0, q = 1, r = 1, s = 0;\n\t\tfor(int i = 0;i\
+    \ < std::ssize(a);i++){\n\t\t\tstd::tie(p, q, r, s) = child(p, q, r, s, a[i],\
+    \ i&1);\n\t\t}\n\t\treturn std::make_tuple(p, q, r, s);\n\t}\n\n\ttemplate<class\
+    \ T>\n\tstd::tuple<T, T, T, T> lca(T p, T q, T r, T s){\n\t\tstd::vector<T> a\
+    \ = encode_path(p, q), b = encode_path(r, s);\n\n\t\tint n = std::min(std::ssize(a),\
+    \ std::ssize(b));\n\n\t\tT P = 0, Q = 1, R = 1, S = 0;\n\t\tfor(int i = 0;i <\
+    \ n;i++){\n\t\t\tT c = std::min(a[i], b[i]);\n\t\t\tstd::tie(P, Q, R, S) = child(P,\
+    \ Q, R, S, c, i&1);\n\t\t\tif(a[i] != b[i])break;\n\t\t}\n\t\treturn std::make_tuple(P,\
+    \ Q, R, S);\n\t}\n\n\ttemplate<class T>\n\tstd::optional<std::tuple<T, T, T, T>>\
+    \ ancestor(T p, T q, T d){\n\t\tstd::vector<T> a = encode_path(p, q);\n\t\tT P\
+    \ = 0, Q = 1, R = 1, S = 0;\n\t\tfor(int i = 0;i < std::ssize(a);i++){\n\t\t\t\
+    T c = std::min(d, a[i]);\n\t\t\tstd::tie(P, Q, R, S) = child(P, Q, R, S, c, i&1);\n\
+    \t\t\td -= c;\n\t\t\tif(d == 0)break;\n\t\t}\n\t\tif(d == 0){\n\t\t\treturn std::make_tuple(P,\
+    \ Q, R, S);\n\t\t}\n\t\treturn std::nullopt;\n\t}\n\n\ttemplate<class T>\n\tstd::tuple<T,\
+    \ T, T, T> range(T p, T q){\n\t\treturn decode_path(encode_path(p, q));\n\t}\n\
+    }\n#line 5 \"verify/yosupo/stern_brocot_tree.test.cpp\"\n\nusing namespace mmrz;\n\
+    \nvoid SOLVE(){\n\tstring op;\n\tcin >> op;\n\tif(op == \"ENCODE_PATH\"){\n\t\t\
+    ll a, b;\n\t\tcin >> a >> b;\n\t\tvector<ll> path = sbt::encode_path(a, b);\n\t\
+    \tif(path.empty())cout << 0;\n\t\telse if(path.front() == 0)cout << ssize(path)\
     \ - 1;\n\t\telse cout << ssize(path) << \" R \" << path.front();\n\t\t\n\t\tfor(int\
     \ i = 1; i < ssize(path); i++){\n\t\t\tcout << (i % 2 == 0 ? \" R \" : \" L \"\
     ) << path[i];\n\t\t}\n\t\tcout << \"\\n\";\n\t}else if(op == \"DECODE_PATH\"){\n\
@@ -117,8 +121,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/stern_brocot_tree.test.cpp
   requiredBy: []
-  timestamp: '2025-06-03 05:42:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/stern_brocot_tree.test.cpp
 layout: document

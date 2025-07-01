@@ -8,26 +8,28 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"dp/monotone_minima.hpp\"\n\n// argmin(i,l,r) : argmin_{j\\\
-    in[l,r)} A[i][j]\ntemplate<typename F>\nvector<int> monotone_minima(int n, int\
-    \ m, const F &argmin){\n\tvector<int> ret(n);\n\n\t//submatrix [u, d) * [l, r)\n\
-    \tqueue<tuple<int, int, int, int>> q;\n\tq.push({0, n, 0, m});\n\n\twhile(not\
-    \ q.empty()){\n\t\tauto [u, d, l, r] = q.front();\n\t\tq.pop();\n\n\t\tif(u ==\
-    \ d)continue;\n\t\tint mid = (u+d) >> 1;\n\t\tret[mid] = argmin(mid, l, r);\n\t\
-    \tq.push({u, mid, l, ret[mid]+1});\n\t\tq.push({mid+1, d, ret[mid], r});\n\t}\n\
-    \n\treturn ret;\n}\n"
-  code: "\n// argmin(i,l,r) : argmin_{j\\in[l,r)} A[i][j]\ntemplate<typename F>\n\
-    vector<int> monotone_minima(int n, int m, const F &argmin){\n\tvector<int> ret(n);\n\
-    \n\t//submatrix [u, d) * [l, r)\n\tqueue<tuple<int, int, int, int>> q;\n\tq.push({0,\
-    \ n, 0, m});\n\n\twhile(not q.empty()){\n\t\tauto [u, d, l, r] = q.front();\n\t\
-    \tq.pop();\n\n\t\tif(u == d)continue;\n\t\tint mid = (u+d) >> 1;\n\t\tret[mid]\
-    \ = argmin(mid, l, r);\n\t\tq.push({u, mid, l, ret[mid]+1});\n\t\tq.push({mid+1,\
-    \ d, ret[mid], r});\n\t}\n\n\treturn ret;\n}\n"
+  bundledCode: "#line 2 \"dp/monotone_minima.hpp\"\n\n#include<queue>\n#include<tuple>\n\
+    #include<vector>\n\n// argmin(i,l,r) : argmin_{j\\in[l,r)} A[i][j]\ntemplate<typename\
+    \ F>\nstd::vector<int> monotone_minima(int n, int m, const F &argmin){\n\tstd::vector<int>\
+    \ ret(n);\n\n\t//submatrix [u, d) * [l, r)\n\tstd::queue<std::tuple<int, int,\
+    \ int, int>> q;\n\tq.emplace(0, n, 0, m);\n\n\twhile(not q.empty()){\n\t\tauto\
+    \ [u, d, l, r] = q.front();\n\t\tq.pop();\n\n\t\tif(u == d)continue;\n\t\tint\
+    \ mid = (u+d) >> 1;\n\t\tret[mid] = argmin(mid, l, r);\n\t\tq.emplace(u, mid,\
+    \ l, ret[mid]+1);\n\t\tq.emplace(mid+1, d, ret[mid], r);\n\t}\n\n\treturn ret;\n\
+    }\n"
+  code: "#pragma once\n\n#include<queue>\n#include<tuple>\n#include<vector>\n\n//\
+    \ argmin(i,l,r) : argmin_{j\\in[l,r)} A[i][j]\ntemplate<typename F>\nstd::vector<int>\
+    \ monotone_minima(int n, int m, const F &argmin){\n\tstd::vector<int> ret(n);\n\
+    \n\t//submatrix [u, d) * [l, r)\n\tstd::queue<std::tuple<int, int, int, int>>\
+    \ q;\n\tq.emplace(0, n, 0, m);\n\n\twhile(not q.empty()){\n\t\tauto [u, d, l,\
+    \ r] = q.front();\n\t\tq.pop();\n\n\t\tif(u == d)continue;\n\t\tint mid = (u+d)\
+    \ >> 1;\n\t\tret[mid] = argmin(mid, l, r);\n\t\tq.emplace(u, mid, l, ret[mid]+1);\n\
+    \t\tq.emplace(mid+1, d, ret[mid], r);\n\t}\n\n\treturn ret;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: dp/monotone_minima.hpp
   requiredBy: []
-  timestamp: '2024-06-05 00:58:10+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: dp/monotone_minima.hpp

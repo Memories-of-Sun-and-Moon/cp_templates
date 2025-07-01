@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/dinic.hpp\"\n\n#include<numeric>\n#include<queue>\n\
+  bundledCode: "#line 2 \"graph/dinic.hpp\"\n\n#include<numeric>\n#include<queue>\n\
     #include<vector>\n\ntemplate<typename T>\nstruct dinic {\n\n\tstruct edge{\n\t\
     \tint to;\n\t\tT cap;\n\t\tT rev;\n\t\tT init_cap;\n\t};\n\t\t\n\tint n;\n\tstd::vector<std::vector<edge>>\
     \ G;\n\tstd::vector<int> level;\n\tstd::vector<int> iter;\n\n\tstd::vector<int>\
@@ -35,12 +35,12 @@ data:
     \ > 0) {\n\t\t\t\tflow += f;\n\t\t\t}\n\t\t}\n\t}\n\n\tT get_flow(int idx){\n\t\
     \treturn G[from_idx[idx]][to_idx[idx]].init_cap - G[from_idx[idx]][to_idx[idx]].cap;\n\
     \t}\n};\n"
-  code: "\n#include<numeric>\n#include<queue>\n#include<vector>\n\ntemplate<typename\
-    \ T>\nstruct dinic {\n\n\tstruct edge{\n\t\tint to;\n\t\tT cap;\n\t\tT rev;\n\t\
-    \tT init_cap;\n\t};\n\t\t\n\tint n;\n\tstd::vector<std::vector<edge>> G;\n\tstd::vector<int>\
-    \ level;\n\tstd::vector<int> iter;\n\n\tstd::vector<int> from_idx, to_idx;\n\t\
-    int edge_idx;\n\n\tdinic(int _v) : n(_v), G(n), level(n), iter(n), edge_idx(0)\
-    \ {}\n\n\tint add_edge(int from, int to, T cap){\n\t\tG[from].push_back((edge){to,\
+  code: "#pragma once\n\n#include<numeric>\n#include<queue>\n#include<vector>\n\n\
+    template<typename T>\nstruct dinic {\n\n\tstruct edge{\n\t\tint to;\n\t\tT cap;\n\
+    \t\tT rev;\n\t\tT init_cap;\n\t};\n\t\t\n\tint n;\n\tstd::vector<std::vector<edge>>\
+    \ G;\n\tstd::vector<int> level;\n\tstd::vector<int> iter;\n\n\tstd::vector<int>\
+    \ from_idx, to_idx;\n\tint edge_idx;\n\n\tdinic(int _v) : n(_v), G(n), level(n),\
+    \ iter(n), edge_idx(0) {}\n\n\tint add_edge(int from, int to, T cap){\n\t\tG[from].push_back((edge){to,\
     \ cap, (T)G[to].size(), cap});\n\t\tG[to].push_back((edge){from, 0, (T)(G[from].size()\
     \ - 1), 0});\n\t\tfrom_idx.emplace_back(from);\n\t\tto_idx.emplace_back((int)G[from].size()-1);\n\
     \t\t\n\t\treturn edge_idx++;\n\t}\n\n\tvoid bfs(int s){\n\t\tfor(int i = 0;i <\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: false
   path: graph/dinic.hpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/grl/6_A___dinic.test.cpp

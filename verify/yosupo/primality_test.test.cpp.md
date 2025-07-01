@@ -1,18 +1,18 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/is_prime.hpp
     title: "\u7D20\u6570\u5224\u5B9A\uFF08\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\
       \u7D20\u6570\u5224\u5B9A\u6CD5\uFF09"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/primality_test
@@ -46,18 +46,18 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 2 \"math/is_prime.hpp\"\n__int128_t __power(__int128_t n, __int128_t k, __int128_t\
-    \ m) {\n\tn %= m;\n\t__int128_t ret = 1;\n\twhile(k > 0){\n\t\tif(k & 1)ret =\
-    \ ret * n % m;\n\t\tn = __int128_t(n) * n % m;\n\t\tk >>= 1;\n\t}\n\treturn ret\
-    \ % m;\n}\n\nbool is_prime(long long n){\n\tif(n <= 1)return false;\n\tif(n ==\
-    \ 2 || n == 3 || n == 5)return true;\n\tif(n % 2 == 0)return false;\n\tif(n %\
-    \ 3 == 0)return false;\n\tif(n % 5 == 0)return false;\n\n\tvector<long long> A\
-    \ = {2, 325, 9375, 28178, 450775, 9780504, 1795265022};\n\n\tlong long s = 0,\
-    \ d = n - 1;\n\twhile(d % 2 == 0){\n\t\ts++;\n\t\td >>= 1;\n\t}\n\n\tfor (auto\
-    \ a : A){\n\t\tif(a % n == 0)return true;\n\t\tlong long t, x = __power(a, d,\
-    \ n);\n\t\tif(x != 1){\n\t\t\tfor(t = 0;t < s;t++){\n\t\t\t\tif(x == n - 1)break;\n\
-    \t\t\t\tx = __int128_t(x) * x % n;\n\t\t\t}\n\t\t\tif(t == s)return false;\n\t\
-    \t}\n\t}\n\treturn true;\n}\n#line 5 \"verify/yosupo/primality_test.test.cpp\"\
+    \ 2 \"math/is_prime.hpp\"\n\n#line 4 \"math/is_prime.hpp\"\n\n__int128_t __power(__int128_t\
+    \ n, __int128_t k, __int128_t m) {\n\tn %= m;\n\t__int128_t ret = 1;\n\twhile(k\
+    \ > 0){\n\t\tif(k & 1)ret = ret * n % m;\n\t\tn = __int128_t(n) * n % m;\n\t\t\
+    k >>= 1;\n\t}\n\treturn ret % m;\n}\n\nbool is_prime(long long n){\n\tif(n <=\
+    \ 1)return false;\n\tif(n == 2 || n == 3 || n == 5)return true;\n\tif(n % 2 ==\
+    \ 0)return false;\n\tif(n % 3 == 0)return false;\n\tif(n % 5 == 0)return false;\n\
+    \n\tstd::vector<long long> A = {2, 325, 9375, 28178, 450775, 9780504, 1795265022};\n\
+    \n\tlong long s = 0, d = n - 1;\n\twhile(d % 2 == 0){\n\t\ts++;\n\t\td >>= 1;\n\
+    \t}\n\n\tfor (auto a : A){\n\t\tif(a % n == 0)return true;\n\t\tlong long t, x\
+    \ = __power(a, d, n);\n\t\tif(x != 1){\n\t\t\tfor(t = 0;t < s;t++){\n\t\t\t\t\
+    if(x == n - 1)break;\n\t\t\t\tx = __int128_t(x) * x % n;\n\t\t\t}\n\t\t\tif(t\
+    \ == s)return false;\n\t\t}\n\t}\n\treturn true;\n}\n#line 5 \"verify/yosupo/primality_test.test.cpp\"\
     \n\nusing namespace mmrz;\n\nvoid mmrz::solve(){\n    int t;\n    cin >> t;\n\
     \    while(t--){\n        ll a;\n        cin >> a;\n        cout << (is_prime(a)\
     \ ? \"Yes\" : \"No\") << '\\n';\n    }\n}\n"
@@ -72,8 +72,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/primality_test.test.cpp
   requiredBy: []
-  timestamp: '2025-05-20 23:52:39+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/primality_test.test.cpp
 layout: document

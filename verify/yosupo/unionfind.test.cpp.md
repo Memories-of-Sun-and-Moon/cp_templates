@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data_structure/union_find.hpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
@@ -44,7 +44,7 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"data_structure/union_find.hpp\"\n\n#line 4 \"data_structure/union_find.hpp\"\
+    \ 2 \"data_structure/union_find.hpp\"\n\n#line 5 \"data_structure/union_find.hpp\"\
     \n\nstruct union_find {\n\tstd::vector<int> v;\n\tint g_size;\n\tint n;\n\n\t\
     union_find(size_t size) : v(size, -1), g_size(size), n(size) {}\n\n\tint root(int\
     \ x){\n\t\tassert(x < n);\n\t\treturn (v[x] < 0 ? x : v[x] = root(v[x]));\n\t\
@@ -77,8 +77,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/unionfind.test.cpp
 layout: document

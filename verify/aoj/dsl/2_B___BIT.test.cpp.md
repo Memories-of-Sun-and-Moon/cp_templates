@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/binary_indexed_tree.hpp
     title: BIT(Binary Indexed Tree)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -45,17 +45,18 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"data_structure/binary_indexed_tree.hpp\"\n\ntemplate<typename T>struct binary_indexed_tree\
-    \ {\n\tint n;\n\tstd::vector<T> BIT;\n\tbinary_indexed_tree(int n_) : n(n_ + 1),\
-    \ BIT(n, 0) {}\n\n\tvoid add(int i, T x){\n\t\tassert(1 <= i && i <= n);\n\t\t\
-    for(int idx = i;idx < n;idx += (idx & -idx)){\n\t\t\tBIT[idx] += x;\n\t\t}\n\t\
-    }\n\t\n\tT sum(int i) {\n\t\tassert(1 <= i && i <= n);\n\t\tT ret = 0;\n\t\tfor(int\
-    \ idx = i;idx > 0;idx -= (idx & -idx)){\n\t\t\tret += BIT[idx];\n\t\t}\n\t\treturn\
-    \ ret;\n\t}\n};\n#line 5 \"verify/aoj/dsl/2_B___BIT.test.cpp\"\n\nvoid mmrz::solve(){\n\
-    \tint n, q;\n\tcin >> n >> q;\n\tbinary_indexed_tree<int> BIT(n);\n\twhile(q--){\n\
-    \t\tint com, x, y;\n\t\tcin >> com >> x >> y;\n\t\tif(com == 0){\n\t\t\tBIT.add(x,\
-    \ y);\n\t\t}else{\n\t\t\tcout << BIT.sum(y) - (x != 1 ? BIT.sum(x - 1) : 0) <<\
-    \ '\\n';\n\t\t}\n\t}\n}\n"
+    \ 2 \"data_structure/binary_indexed_tree.hpp\"\n\n#line 5 \"data_structure/binary_indexed_tree.hpp\"\
+    \n\ntemplate<typename T>struct binary_indexed_tree {\n\tint n;\n\tstd::vector<T>\
+    \ BIT;\n\tbinary_indexed_tree(int n_) : n(n_ + 1), BIT(n, 0) {}\n\n\tvoid add(int\
+    \ i, T x){\n\t\tassert(1 <= i && i <= n);\n\t\tfor(int idx = i;idx < n;idx +=\
+    \ (idx & -idx)){\n\t\t\tBIT[idx] += x;\n\t\t}\n\t}\n\t\n\tT sum(int i) {\n\t\t\
+    assert(1 <= i && i <= n);\n\t\tT ret = 0;\n\t\tfor(int idx = i;idx > 0;idx -=\
+    \ (idx & -idx)){\n\t\t\tret += BIT[idx];\n\t\t}\n\t\treturn ret;\n\t}\n};\n#line\
+    \ 5 \"verify/aoj/dsl/2_B___BIT.test.cpp\"\n\nvoid mmrz::solve(){\n\tint n, q;\n\
+    \tcin >> n >> q;\n\tbinary_indexed_tree<int> BIT(n);\n\twhile(q--){\n\t\tint com,\
+    \ x, y;\n\t\tcin >> com >> x >> y;\n\t\tif(com == 0){\n\t\t\tBIT.add(x, y);\n\t\
+    \t}else{\n\t\t\tcout << BIT.sum(y) - (x != 1 ? BIT.sum(x - 1) : 0) << '\\n';\n\
+    \t\t}\n\t}\n}\n"
   code: "# define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B\"\
     \n\n#include \"./../../../template/template.hpp\"\n#include \"./../../../data_structure/binary_indexed_tree.hpp\"\
     \n\nvoid mmrz::solve(){\n\tint n, q;\n\tcin >> n >> q;\n\tbinary_indexed_tree<int>\
@@ -68,7 +69,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/dsl/2_B___BIT.test.cpp
   requiredBy: []
-  timestamp: '2025-06-30 19:47:50+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_B___BIT.test.cpp

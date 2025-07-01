@@ -17,7 +17,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/hungarian.hpp\"\n\n#include<limits>\n#include<numeric>\n\
+  bundledCode: "#line 2 \"graph/hungarian.hpp\"\n\n#include<limits>\n#include<numeric>\n\
     #include<vector>\n\ntemplate<bool is_min, typename T>\nstd::vector<int> hungarian(std::vector<std::vector<T>>\
     \ a) {\n\tT infty = std::numeric_limits<T>::max()/T(2);\n\tint n = (int)a.size();\n\
     \t\n\tif(not is_min){\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tfor(int j = 0; j <\
@@ -34,8 +34,8 @@ data:
     \t\t\t\t\t\tpre[j] = v;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tint cur\
     \ = i;\n\t\twhile(pre[cur] != i){\n\t\t\tstd::swap(p[cur], p[pre[cur]]);\n\t\t\
     \tcur = pre[cur];\n\t\t}\n\t\th = d;\n\t}\n\treturn p;\n}\n"
-  code: "\n#include<limits>\n#include<numeric>\n#include<vector>\n\ntemplate<bool\
-    \ is_min, typename T>\nstd::vector<int> hungarian(std::vector<std::vector<T>>\
+  code: "#pragma once\n\n#include<limits>\n#include<numeric>\n#include<vector>\n\n\
+    template<bool is_min, typename T>\nstd::vector<int> hungarian(std::vector<std::vector<T>>\
     \ a) {\n\tT infty = std::numeric_limits<T>::max()/T(2);\n\tint n = (int)a.size();\n\
     \t\n\tif(not is_min){\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tfor(int j = 0; j <\
     \ n;j++){\n\t\t\t\ta[i][j] = -a[i][j];\n\t\t\t}\n\t\t}\n\t}\n\n\tstd::vector<int>\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: false
   path: graph/hungarian.hpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/assignment.test.cpp

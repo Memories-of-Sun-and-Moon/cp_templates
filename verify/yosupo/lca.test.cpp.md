@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/lowest_common_ancestor.hpp
     title: Lowest Common Ancestor
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/lca
@@ -44,7 +44,7 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"graph/lowest_common_ancestor.hpp\"\n\n#line 3 \"graph/lowest_common_ancestor.hpp\"\
+    \ 2 \"graph/lowest_common_ancestor.hpp\"\n\n#line 4 \"graph/lowest_common_ancestor.hpp\"\
     \n\nstruct lowest_common_ancestor {\nprivate:\n\tint n;\n\tint root;\n\tstd::vector<std::vector<int>>par;\n\
     public:\n\tstd::vector<int>depth;\n\n\tlowest_common_ancestor(std::vector<std::vector<int>>&\
     \ g, int Root) : n((int)g.size()) {\n\t\tdepth.resize(n);\n\t\tpar.resize(n);\n\
@@ -77,8 +77,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/lca.test.cpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/lca.test.cpp
 layout: document

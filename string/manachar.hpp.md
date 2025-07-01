@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/enumerate_palindromes.test.cpp
     title: verify/yosupo/enumerate_palindromes.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"string/manachar.hpp\"\n\n#include<string>\n#include<vector>\n\
+  bundledCode: "#line 2 \"string/manachar.hpp\"\n\n#include<string>\n#include<vector>\n\
     \nstd::vector<int> manachar(std::string _s){\n\tstd::string t = \"\";\n\tint n\
     \ = (int)_s.size();\n\tfor(int i = 0;i < n;i++){\n\t\tif(i)t += '#';\n\t\tt +=\
     \ _s[i];\n\t}\n\tn = (int)t.size();\n\tint i = 0, j = 0;\n\tstd::vector<int> r(n);\n\
@@ -22,7 +22,7 @@ data:
     \ j = 0;\nwhile (i < S.size()) {\n  while (i-j >= 0 && i+j < S.size() && S[i-j]\
     \ == S[i+j]) ++j;\n  R[i] = j;\n  int k = 1;\n  while (i-k >= 0 && k+R[i-k] <\
     \ j) R[i+k] = R[i-k], ++k;\n  i += k; j -= k;\n}\n*/\n"
-  code: "\n#include<string>\n#include<vector>\n\nstd::vector<int> manachar(std::string\
+  code: "#pragma once\n\n#include<string>\n#include<vector>\n\nstd::vector<int> manachar(std::string\
     \ _s){\n\tstd::string t = \"\";\n\tint n = (int)_s.size();\n\tfor(int i = 0;i\
     \ < n;i++){\n\t\tif(i)t += '#';\n\t\tt += _s[i];\n\t}\n\tn = (int)t.size();\n\t\
     int i = 0, j = 0;\n\tstd::vector<int> r(n);\n\twhile(i < n){\n\t\twhile(i-j >=\
@@ -37,8 +37,8 @@ data:
   isVerificationFile: false
   path: string/manachar.hpp
   requiredBy: []
-  timestamp: '2025-07-01 01:55:54+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/enumerate_palindromes.test.cpp
 documentation_of: string/manachar.hpp

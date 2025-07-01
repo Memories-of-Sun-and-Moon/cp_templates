@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/tree_diameter.hpp
     title: "\u6728\u306E\u76F4\u5F84\u8A08\u7B97"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/tree_diameter
@@ -45,7 +45,7 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"graph/tree_diameter.hpp\"\n\n#line 6 \"graph/tree_diameter.hpp\"\n\ntemplate<typename\
+    \ 2 \"graph/tree_diameter.hpp\"\n\n#line 7 \"graph/tree_diameter.hpp\"\n\ntemplate<typename\
     \ T=long long>\nstd::pair<T, std::vector<int>> tree_diameter(const std::vector<std::vector<std::pair<int,\
     \ T>>> &g){\n\tint n = (int)g.size();\n\tstd::vector dis(n, std::numeric_limits<T>::max());\n\
     \tstd::queue<int> q;\n\tdis[0] = 0;\n\tq.push(0);\n\n\twhile(not q.empty()){\n\
@@ -83,8 +83,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/tree_diameter.test.cpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/tree_diameter.test.cpp
 layout: document

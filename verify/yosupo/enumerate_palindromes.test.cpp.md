@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/manachar.hpp
     title: manachar
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_palindromes
@@ -45,7 +45,7 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"string/manachar.hpp\"\n\n#line 4 \"string/manachar.hpp\"\n\nstd::vector<int>\
+    \ 2 \"string/manachar.hpp\"\n\n#line 5 \"string/manachar.hpp\"\n\nstd::vector<int>\
     \ manachar(std::string _s){\n\tstd::string t = \"\";\n\tint n = (int)_s.size();\n\
     \tfor(int i = 0;i < n;i++){\n\t\tif(i)t += '#';\n\t\tt += _s[i];\n\t}\n\tn = (int)t.size();\n\
     \tint i = 0, j = 0;\n\tstd::vector<int> r(n);\n\twhile(i < n){\n\t\twhile(i-j\
@@ -74,8 +74,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2025-07-01 01:55:54+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/enumerate_palindromes.test.cpp
 layout: document

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/lazy_segment_tree.hpp
     title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -45,46 +45,46 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 2 \"data_structure/lazy_segment_tree.hpp\"\n\ntemplate<class S, auto op, auto\
-    \ e, class F, auto mapping, auto composition, auto id>\nstruct lazy_segment_tree\
-    \ {\nprivate:\n\tint n;\n\tint log;\n\tint size;\n\tstd::vector<S> node;\n\tstd::vector<F>\
-    \ lazy;\n\n\tvoid update(int k) { node[k] = op(node[2 * k], node[2 * k + 1]);\
-    \ }\n\tvoid all_apply(int k, F f) {\n\t\tnode[k] = mapping(f, node[k]);\n\t\t\
-    if(k < size) lazy[k] = composition(f, lazy[k]);\n\t}\n\tvoid push(int k) {\n\t\
-    \tall_apply(2*k + 0, lazy[k]);\n\t\tall_apply(2*k + 1, lazy[k]);\n\t\tlazy[k]\
-    \ = id();\n\t}\npublic:\n\tlazy_segment_tree() : lazy_segment_tree(0) {}\n\n\t\
-    lazy_segment_tree(int _n) : lazy_segment_tree(std::vector<S>(_n, e())) {}\n\n\t\
-    lazy_segment_tree(const std::vector<S> &v) : n((int)v.size()) {\n\t\tsize = 1;\n\
-    \t\twhile(size < n) size <<= 1;\n\n\t\tlog = __builtin_ctz(size);\n\n\t\tnode.resize(2*size,\
-    \ e());\n\t\tlazy.resize(size, id());\n\n\t\tfor(int i = 0;i < n;i++)node[i +\
-    \ size] = v[i];\n\t\tfor(int i = size-1;i >= 1;i--)node[i] = op(node[2*i + 0],\
-    \ node[2*i + 1]);\n\t}\n\n\tvoid set(int x, S val) {\n\t\tassert(0 <= x && x <\
-    \ n);\n\t\tx += size;\n\n\t\tfor(int i = log;i >= 1;i--)push(x >> i);\n\t\tnode[x]\
-    \ = val;\n\t\tfor(int i = 1;i <= log;i++)update(x >> i);\n\t}\n\n\tS operator[](int\
-    \ x) {\n\t\tassert(0 <= x && x < n);\n\t\tx += size;\n\n\t\tfor(int i = log;i\
-    \ >= 1;i--)push(x >> i);\n\t\treturn node[x];\n\t}\n\n\tS fold(int l, int r) {\n\
-    \t\tassert(0 <= l && l <= r && r <= n);\n\t\tif(l == r)return e();\n\n\t\tl +=\
-    \ size;\n\t\tr += size;\n\n\t\tfor(int i = log;i >= 1;i--) {\n\t\t\tif(((l >>\
-    \ i) << i) != l)push(l >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\
-    \t\t}\n\n\t\tS L = e(), R = e();\n\t\tfor(;l < r;l >>= 1, r >>= 1){\n\t\t\tif(l&1)L\
-    \ = op(L, node[l++]);\n\t\t\tif(r&1)R = op(node[--r], R);\n\t\t}\n\t\treturn op(L,\
-    \ R);\n\t}\n\n\tS all_fold() { return node[1]; };\n\n\tvoid apply(int x, F f)\
-    \ {\n\t\tassert(0 <= x && x < n);\n\n\t\tx += size;\n\t\tfor(int i = log;i >=\
-    \ 1;i--)push(x >> i);\n\t\tnode[x] = mapping(f, node[x]);\n\t\tfor(int i = 1;i\
-    \ <= log;i++)update(x >> i);\n\t}\n\n\tvoid apply(int l, int r, F f) {\n\t\tassert(0\
-    \ <= l && l <= r && r <= n);\n\t\tif(l == r)return;\n\n\t\tl += size;\n\t\tr +=\
-    \ size;\n\n\t\tfor(int i = log;i >= 1;i--) {\n\t\t\tif(((l >> i) << i) != l)push(l\
-    \ >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\t\t}\n\n\t\t{\n\t\t\
-    \tint l2 = l, r2 = r;\n\t\t\twhile (l < r) {\n\t\t\t\tif (l & 1) all_apply(l++,\
-    \ f);\n\t\t\t\tif (r & 1) all_apply(--r, f);\n\t\t\t\tl >>= 1;\n\t\t\t\tr >>=\
-    \ 1;\n\t\t\t}\n\t\t\tl = l2;\n\t\t\tr = r2;\n\t\t}\n\n\t\tfor (int i = 1; i <=\
-    \ log; i++) {\n\t\t\tif (((l >> i) << i) != l) update(l >> i);\n\t\t\tif (((r\
-    \ >> i) << i) != r) update((r - 1) >> i);\n\t\t}\n\t}\n\n\ttemplate<bool (*g)(S)>\
-    \ int max_right(int l) {\n\t\treturn max_right(l, [](S x){ return g(x); });\n\t\
-    }\n\ttemplate<class G> int max_right(int l, G g) {\n\t\tassert(0 <= l && l <=\
-    \ n);\n\t\tassert(g(e()));\n\n\t\tif(l == n)return n;\n\n\t\tl += size;\n\t\t\
-    for(int i = log;i >= 1;i--)push(l >> i);\n\n\t\tS sum = e();\n\t\tdo {\n\t\t\t\
-    while(l%2 == 0)l >>= 1;\n\t\t\tif(not g(op(sum, node[l]))) {\n\t\t\t\twhile(l\
+    \ 2 \"data_structure/lazy_segment_tree.hpp\"\n\n#line 5 \"data_structure/lazy_segment_tree.hpp\"\
+    \n\ntemplate<class S, auto op, auto e, class F, auto mapping, auto composition,\
+    \ auto id>\nstruct lazy_segment_tree {\nprivate:\n\tint n;\n\tint log;\n\tint\
+    \ size;\n\tstd::vector<S> node;\n\tstd::vector<F> lazy;\n\n\tvoid update(int k)\
+    \ { node[k] = op(node[2 * k], node[2 * k + 1]); }\n\tvoid all_apply(int k, F f)\
+    \ {\n\t\tnode[k] = mapping(f, node[k]);\n\t\tif(k < size) lazy[k] = composition(f,\
+    \ lazy[k]);\n\t}\n\tvoid push(int k) {\n\t\tall_apply(2*k + 0, lazy[k]);\n\t\t\
+    all_apply(2*k + 1, lazy[k]);\n\t\tlazy[k] = id();\n\t}\npublic:\n\tlazy_segment_tree()\
+    \ : lazy_segment_tree(0) {}\n\n\tlazy_segment_tree(int _n) : lazy_segment_tree(std::vector<S>(_n,\
+    \ e())) {}\n\n\tlazy_segment_tree(const std::vector<S> &v) : n((int)v.size())\
+    \ {\n\t\tsize = 1;\n\t\twhile(size < n) size <<= 1;\n\n\t\tlog = __builtin_ctz(size);\n\
+    \n\t\tnode.resize(2*size, e());\n\t\tlazy.resize(size, id());\n\n\t\tfor(int i\
+    \ = 0;i < n;i++)node[i + size] = v[i];\n\t\tfor(int i = size-1;i >= 1;i--)node[i]\
+    \ = op(node[2*i + 0], node[2*i + 1]);\n\t}\n\n\tvoid set(int x, S val) {\n\t\t\
+    assert(0 <= x && x < n);\n\t\tx += size;\n\n\t\tfor(int i = log;i >= 1;i--)push(x\
+    \ >> i);\n\t\tnode[x] = val;\n\t\tfor(int i = 1;i <= log;i++)update(x >> i);\n\
+    \t}\n\n\tS operator[](int x) {\n\t\tassert(0 <= x && x < n);\n\t\tx += size;\n\
+    \n\t\tfor(int i = log;i >= 1;i--)push(x >> i);\n\t\treturn node[x];\n\t}\n\n\t\
+    S fold(int l, int r) {\n\t\tassert(0 <= l && l <= r && r <= n);\n\t\tif(l == r)return\
+    \ e();\n\n\t\tl += size;\n\t\tr += size;\n\n\t\tfor(int i = log;i >= 1;i--) {\n\
+    \t\t\tif(((l >> i) << i) != l)push(l >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1)\
+    \ >> i);\n\t\t}\n\n\t\tS L = e(), R = e();\n\t\tfor(;l < r;l >>= 1, r >>= 1){\n\
+    \t\t\tif(l&1)L = op(L, node[l++]);\n\t\t\tif(r&1)R = op(node[--r], R);\n\t\t}\n\
+    \t\treturn op(L, R);\n\t}\n\n\tS all_fold() { return node[1]; };\n\n\tvoid apply(int\
+    \ x, F f) {\n\t\tassert(0 <= x && x < n);\n\n\t\tx += size;\n\t\tfor(int i = log;i\
+    \ >= 1;i--)push(x >> i);\n\t\tnode[x] = mapping(f, node[x]);\n\t\tfor(int i =\
+    \ 1;i <= log;i++)update(x >> i);\n\t}\n\n\tvoid apply(int l, int r, F f) {\n\t\
+    \tassert(0 <= l && l <= r && r <= n);\n\t\tif(l == r)return;\n\n\t\tl += size;\n\
+    \t\tr += size;\n\n\t\tfor(int i = log;i >= 1;i--) {\n\t\t\tif(((l >> i) << i)\
+    \ != l)push(l >> i);\n\t\t\tif(((r >> i) << i) != r)push((r-1) >> i);\n\t\t}\n\
+    \n\t\t{\n\t\t\tint l2 = l, r2 = r;\n\t\t\twhile (l < r) {\n\t\t\t\tif (l & 1)\
+    \ all_apply(l++, f);\n\t\t\t\tif (r & 1) all_apply(--r, f);\n\t\t\t\tl >>= 1;\n\
+    \t\t\t\tr >>= 1;\n\t\t\t}\n\t\t\tl = l2;\n\t\t\tr = r2;\n\t\t}\n\n\t\tfor (int\
+    \ i = 1; i <= log; i++) {\n\t\t\tif (((l >> i) << i) != l) update(l >> i);\n\t\
+    \t\tif (((r >> i) << i) != r) update((r - 1) >> i);\n\t\t}\n\t}\n\n\ttemplate<bool\
+    \ (*g)(S)> int max_right(int l) {\n\t\treturn max_right(l, [](S x){ return g(x);\
+    \ });\n\t}\n\ttemplate<class G> int max_right(int l, G g) {\n\t\tassert(0 <= l\
+    \ && l <= n);\n\t\tassert(g(e()));\n\n\t\tif(l == n)return n;\n\n\t\tl += size;\n\
+    \t\tfor(int i = log;i >= 1;i--)push(l >> i);\n\n\t\tS sum = e();\n\t\tdo {\n\t\
+    \t\twhile(l%2 == 0)l >>= 1;\n\t\t\tif(not g(op(sum, node[l]))) {\n\t\t\t\twhile(l\
     \ < size) {\n\t\t\t\t\tpush(l);\n\t\t\t\t\tl <<= 1;\n\t\t\t\t\tif(g(op(sum, node[l])))\
     \ {\n\t\t\t\t\t\tsum = op(sum, node[l]);\n\t\t\t\t\t\tl++;\n\t\t\t\t\t}\n\t\t\t\
     \t}\n\t\t\t\treturn l-size;\n\t\t\t}\n\t\t\tsum = op(sum, node[l]);\n\t\t\tl++;\n\
@@ -122,7 +122,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/dsl/2_H_Radd_Rmin.test.cpp
   requiredBy: []
-  timestamp: '2025-06-30 19:47:50+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/dsl/2_H_Radd_Rmin.test.cpp

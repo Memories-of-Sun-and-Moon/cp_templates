@@ -3,29 +3,29 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/generalized_discrete_logarithm.test.cpp
     title: verify/yosupo/generalized_discrete_logarithm.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/generalized_discrete_logarithm.hpp\"\n\ntemplate<typename\
-    \ T>\nT generalized_discrete_logarithm(T x, T y, auto f, int n, auto f_m, int\
-    \ m){\n\tif(x == y){\n\t\treturn 0;\n\t}\n\n\tunordered_set<T> baby_steps;\n\t\
-    T fy = y;\n\tfor(int i = 0;i < m;i++){\n\t\tbaby_steps.insert(fy);\n\t\tfy = f(fy);\n\
-    \t}\n\n\tT fx = x;\n\tbool is_first_loop = true;\n\tfor(int i = 0;i <= n;i +=\
-    \ m){\n\t\tT next_val = f_m(fx);\n\t\tif(baby_steps.contains(next_val)){\n\t\t\
-    \tfor(int j = i+1;j <= i+m;j++){\n\t\t\t\tfx = f(fx);\n\t\t\t\tif(fx == y){\n\t\
-    \t\t\t\treturn (j <= n ? j : -1);\n\t\t\t\t}\n\t\t\t}\n\t\t\tif(is_first_loop){\n\
-    \t\t\t\tis_first_loop = false;\n\t\t\t}else{\n\t\t\t\treturn -1;\n\t\t\t}\n\t\t\
-    }\n\t\tfx = next_val;\n\t}\n\treturn -1;\n}\n"
-  code: "\ntemplate<typename T>\nT generalized_discrete_logarithm(T x, T y, auto f,\
-    \ int n, auto f_m, int m){\n\tif(x == y){\n\t\treturn 0;\n\t}\n\n\tunordered_set<T>\
+  bundledCode: "#line 2 \"math/generalized_discrete_logarithm.hpp\"\n\n#include<unordered_set>\n\
+    \ntemplate<typename T>\nT generalized_discrete_logarithm(T x, T y, auto f, int\
+    \ n, auto f_m, int m){\n\tif(x == y){\n\t\treturn 0;\n\t}\n\n\tstd::unordered_set<T>\
     \ baby_steps;\n\tT fy = y;\n\tfor(int i = 0;i < m;i++){\n\t\tbaby_steps.insert(fy);\n\
     \t\tfy = f(fy);\n\t}\n\n\tT fx = x;\n\tbool is_first_loop = true;\n\tfor(int i\
     \ = 0;i <= n;i += m){\n\t\tT next_val = f_m(fx);\n\t\tif(baby_steps.contains(next_val)){\n\
+    \t\t\tfor(int j = i+1;j <= i+m;j++){\n\t\t\t\tfx = f(fx);\n\t\t\t\tif(fx == y){\n\
+    \t\t\t\t\treturn (j <= n ? j : -1);\n\t\t\t\t}\n\t\t\t}\n\t\t\tif(is_first_loop){\n\
+    \t\t\t\tis_first_loop = false;\n\t\t\t}else{\n\t\t\t\treturn -1;\n\t\t\t}\n\t\t\
+    }\n\t\tfx = next_val;\n\t}\n\treturn -1;\n}\n"
+  code: "#pragma once\n\n#include<unordered_set>\n\ntemplate<typename T>\nT generalized_discrete_logarithm(T\
+    \ x, T y, auto f, int n, auto f_m, int m){\n\tif(x == y){\n\t\treturn 0;\n\t}\n\
+    \n\tstd::unordered_set<T> baby_steps;\n\tT fy = y;\n\tfor(int i = 0;i < m;i++){\n\
+    \t\tbaby_steps.insert(fy);\n\t\tfy = f(fy);\n\t}\n\n\tT fx = x;\n\tbool is_first_loop\
+    \ = true;\n\tfor(int i = 0;i <= n;i += m){\n\t\tT next_val = f_m(fx);\n\t\tif(baby_steps.contains(next_val)){\n\
     \t\t\tfor(int j = i+1;j <= i+m;j++){\n\t\t\t\tfx = f(fx);\n\t\t\t\tif(fx == y){\n\
     \t\t\t\t\treturn (j <= n ? j : -1);\n\t\t\t\t}\n\t\t\t}\n\t\t\tif(is_first_loop){\n\
     \t\t\t\tis_first_loop = false;\n\t\t\t}else{\n\t\t\t\treturn -1;\n\t\t\t}\n\t\t\
@@ -34,8 +34,8 @@ data:
   isVerificationFile: false
   path: math/generalized_discrete_logarithm.hpp
   requiredBy: []
-  timestamp: '2025-02-26 06:10:36+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/generalized_discrete_logarithm.test.cpp
 documentation_of: math/generalized_discrete_logarithm.hpp

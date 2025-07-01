@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data_structure/union_find.hpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/lowlink.hpp
     title: "lowlink\u3092\u7528\u3044\u305F\u6A4B\u30FB\u95A2\u7BC0\u70B9\u306E\u691C\
       \u51FA"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/two_edge_connected_components.test.cpp
     title: verify/yosupo/two_edge_connected_components.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/two_edge_connected_components.hpp\"\n\n#line 1 \"\
+  bundledCode: "#line 2 \"graph/two_edge_connected_components.hpp\"\n\n#line 2 \"\
     data_structure/union_find.hpp\"\n\n#include<cassert>\n#include<vector>\n\nstruct\
     \ union_find {\n\tstd::vector<int> v;\n\tint g_size;\n\tint n;\n\n\tunion_find(size_t\
     \ size) : v(size, -1), g_size(size), n(size) {}\n\n\tint root(int x){\n\t\tassert(x\
@@ -33,8 +33,8 @@ data:
     std::vector<std::vector<int>> groups(){\n\t\tstd::vector<std::vector<int>> member(n);\n\
     \t\tfor(int i = 0;i < n;i++){\n\t\t\tmember[root(i)].push_back(i);\n\t\t}\n\n\t\
     \tstd::vector<std::vector<int>> ret;\n\t\tfor(int i = 0;i < n;i++){\n\t\t\tif(member[i].empty())continue;\n\
-    \t\t\tret.push_back(member[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n#line 1 \"graph/lowlink.hpp\"\
-    \n\n#line 3 \"graph/lowlink.hpp\"\n#include<utility>\n\nclass lowlink{\n\tstd::vector<std::vector<int>>\
+    \t\t\tret.push_back(member[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n#line 2 \"graph/lowlink.hpp\"\
+    \n\n#line 4 \"graph/lowlink.hpp\"\n#include<utility>\n\nclass lowlink{\n\tstd::vector<std::vector<int>>\
     \ g;\n\tstd::vector<int> order, low;\n\tstd::vector<bool> __is_articulation;\n\
     \n\tvoid dfs(int cur, int pre, int &time){\n\t\tint count_child = 0;\n\t\tlow[cur]\
     \ = order[cur] = time++;\n\t\tbool first_parent = true;\n\t\tfor(int to : g[cur]){\n\
@@ -50,8 +50,8 @@ data:
     \ -1){\n\t\t\t\tdfs(v, -1, time);\n\t\t\t}\n\t\t}\n\t}\n\n\tbool is_bridge(int\
     \ u, int v) const {\n\t\tif(order[u] > order[v]){\n\t\t\tstd::swap(u, v);\n\t\t\
     }\n\t\treturn order[u] < low[v];\n\t}\n\n\tbool is_articulation(int v) const {\n\
-    \t\treturn __is_articulation[v];\n\t}\n};\n#line 4 \"graph/two_edge_connected_components.hpp\"\
-    \n\n#line 6 \"graph/two_edge_connected_components.hpp\"\n#include<tuple>\n\nauto\
+    \t\treturn __is_articulation[v];\n\t}\n};\n#line 5 \"graph/two_edge_connected_components.hpp\"\
+    \n\n#line 7 \"graph/two_edge_connected_components.hpp\"\n#include<tuple>\n\nauto\
     \ two_edge_connected_components(std::vector<std::vector<int>> &g){\n\tlowlink\
     \ l(g);\n\tunion_find uf((int)g.size());\n\tfor(int i = 0;i < (int)g.size();i++){\n\
     \t\tfor(int to : g[i]){\n\t\t\tif(not l.is_bridge(i, to)){\n\t\t\t\tuf.unite(i,\
@@ -61,8 +61,8 @@ data:
     \ tree((int)group.size());\n\tfor(int i = 0;i < (int)g.size();i++){\n\t\tfor(int\
     \ to : g[i]){\n\t\t\tif(comp[i] != comp[to]){\n\t\t\t\ttree[comp[i]].push_back(comp[to]);\n\
     \t\t\t}\n\t\t}\n\t}\n\n\treturn make_tuple(group, comp, tree);\n}\n"
-  code: "\n#include \"../data_structure/union_find.hpp\"\n#include \"./lowlink.hpp\"\
-    \n\n#include<cassert>\n#include<tuple>\n\nauto two_edge_connected_components(std::vector<std::vector<int>>\
+  code: "#pragma once\n\n#include \"../data_structure/union_find.hpp\"\n#include \"\
+    ./lowlink.hpp\"\n\n#include<cassert>\n#include<tuple>\n\nauto two_edge_connected_components(std::vector<std::vector<int>>\
     \ &g){\n\tlowlink l(g);\n\tunion_find uf((int)g.size());\n\tfor(int i = 0;i <\
     \ (int)g.size();i++){\n\t\tfor(int to : g[i]){\n\t\t\tif(not l.is_bridge(i, to)){\n\
     \t\t\t\tuf.unite(i, to);\n\t\t\t}\n\t\t}\n\t}\n\n\tstd::vector<std::vector<int>>\
@@ -78,8 +78,8 @@ data:
   isVerificationFile: false
   path: graph/two_edge_connected_components.hpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/two_edge_connected_components.test.cpp
 documentation_of: graph/two_edge_connected_components.hpp

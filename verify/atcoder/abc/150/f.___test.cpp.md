@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/z_algorithm.hpp
     title: Z Algorithm
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -43,7 +43,7 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"string/z_algorithm.hpp\"\n\n#line 3 \"string/z_algorithm.hpp\"\n\ntemplate<typename\
+    \ 2 \"string/z_algorithm.hpp\"\n\n#line 4 \"string/z_algorithm.hpp\"\n\ntemplate<typename\
     \ T>\nstd::vector<int> z_algorithm(const T &s){\n\tstd::vector<int> z(s.size());\n\
     \tz[0] = (int)z.size();\n\tint i = 1, j = 0;\n\twhile(i < (int)z.size()){\n\t\t\
     while(i+j < (int)s.size() && s[j] == s[i+j])j++;\n\t\tz[i] = j;\n\t\t\n\t\tif(j\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: verify/atcoder/abc/150/f.___test.cpp
   requiredBy: []
-  timestamp: '2025-07-01 01:51:51+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: verify/atcoder/abc/150/f.___test.cpp

@@ -3,30 +3,32 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/floor_sum.test.cpp
     title: verify/yosupo/floor_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/floor_sum.hpp\"\n\nll floor_sum(ll n, ll m, ll a, ll\
-    \ b){\n\tll ans = 0;\n\tif(a >= m){\n\t\tans += (n-1) * n * (a/m) / 2;\n\t\ta\
-    \ %= m;\n\t}\n\tif(b >= m){\n\t\tans += n * (b/m);\n\t\tb %= m;\n\t}\n\n\tll x\
-    \ = a * (n-1) + b;\n\tif(x < m) return ans;\n\tll x_div = x/m;\n\tll x_mod = x%m;\n\
-    \tans += x_div + floor_sum(x_div, a, m, x_mod);\n\treturn ans;\n}\n"
-  code: "\nll floor_sum(ll n, ll m, ll a, ll b){\n\tll ans = 0;\n\tif(a >= m){\n\t\
-    \tans += (n-1) * n * (a/m) / 2;\n\t\ta %= m;\n\t}\n\tif(b >= m){\n\t\tans += n\
-    \ * (b/m);\n\t\tb %= m;\n\t}\n\n\tll x = a * (n-1) + b;\n\tif(x < m) return ans;\n\
-    \tll x_div = x/m;\n\tll x_mod = x%m;\n\tans += x_div + floor_sum(x_div, a, m,\
-    \ x_mod);\n\treturn ans;\n}\n"
+  bundledCode: "#line 1 \"math/floor_sum.hpp\"\n\nlong long floor_sum(long long n,\
+    \ long long m, long long a, long long b){\n\tlong long ans = 0;\n\tif(a >= m){\n\
+    \t\tans += (n-1) * n * (a/m) / 2;\n\t\ta %= m;\n\t}\n\tif(b >= m){\n\t\tans +=\
+    \ n * (b/m);\n\t\tb %= m;\n\t}\n\n\tlong long x = a * (n-1) + b;\n\tif(x < m)\
+    \ return ans;\n\tlong long x_div = x/m;\n\tlong long x_mod = x%m;\n\tans += x_div\
+    \ + floor_sum(x_div, a, m, x_mod);\n\treturn ans;\n}\n"
+  code: "\nlong long floor_sum(long long n, long long m, long long a, long long b){\n\
+    \tlong long ans = 0;\n\tif(a >= m){\n\t\tans += (n-1) * n * (a/m) / 2;\n\t\ta\
+    \ %= m;\n\t}\n\tif(b >= m){\n\t\tans += n * (b/m);\n\t\tb %= m;\n\t}\n\n\tlong\
+    \ long x = a * (n-1) + b;\n\tif(x < m) return ans;\n\tlong long x_div = x/m;\n\
+    \tlong long x_mod = x%m;\n\tans += x_div + floor_sum(x_div, a, m, x_mod);\n\t\
+    return ans;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/floor_sum.hpp
   requiredBy: []
-  timestamp: '2025-01-11 18:31:32+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-07-01 02:45:23+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/floor_sum.test.cpp
 documentation_of: math/floor_sum.hpp

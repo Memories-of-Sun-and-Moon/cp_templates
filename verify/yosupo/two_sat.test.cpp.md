@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/strongly_connected_components.hpp
     title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/two_sat.hpp
     title: 2-SAT
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/two_sat
@@ -47,8 +47,8 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"graph/two_sat.hpp\"\n\n#line 1 \"graph/strongly_connected_components.hpp\"\
-    \n\n#line 3 \"graph/strongly_connected_components.hpp\"\n\nstruct scc_graph {\n\
+    \ 2 \"graph/two_sat.hpp\"\n\n#line 2 \"graph/strongly_connected_components.hpp\"\
+    \n\n#line 4 \"graph/strongly_connected_components.hpp\"\n\nstruct scc_graph {\n\
     \tint n;\n\tint k;\n\tstd::vector<std::vector<int>> g;\n\tstd::vector<std::vector<int>>\
     \ rg;\n\tstd::vector<bool> used;\n\tstd::vector<int> cmp;\n\tstd::vector<int>\
     \ vs;\n\n\tscc_graph(int _n) : n(_n), k(0), g(n), rg(n), used(n), cmp(n) {}\n\n\
@@ -61,7 +61,7 @@ data:
     \t\tfor(int i = 0;i < n;i++){\n\t\t\tused[i] = false;\n\t\t}\n\t\tfor(auto i =\
     \ vs.rbegin();i != vs.rend();i++){\n\t\t\tif(not used[*i])rdfs(*i, k++);\n\t\t\
     }\n\t\tstd::vector<std::vector<int>> ret(k);\n\t\tfor(int i = 0;i < n;i++){\n\t\
-    \t\tret[cmp[i]].push_back(i);\n\t\t}\n\t\treturn ret;\n\t}\n};\n#line 3 \"graph/two_sat.hpp\"\
+    \t\tret[cmp[i]].push_back(i);\n\t\t}\n\t\treturn ret;\n\t}\n};\n#line 4 \"graph/two_sat.hpp\"\
     \n\nstruct two_sat {\n\tint n;\n\tscc_graph g;\n\n\ttwo_sat(int _n) : n(_n), g(scc_graph(2*n))\
     \ {}\n\n\t// (i = f1) || (j = f2)\n\tvoid add_clause(int i, bool f1, int j, bool\
     \ f2){\n\t\tg.add_edge((i << 1) ^ !f1, (j << 1) ^ f2);\n\t\tg.add_edge((j << 1)\
@@ -102,8 +102,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/two_sat.test.cpp
   requiredBy: []
-  timestamp: '2025-07-01 01:47:02+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/two_sat.test.cpp
 layout: document

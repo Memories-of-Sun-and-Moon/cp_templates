@@ -11,20 +11,21 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/euler_phi_table.hpp\"\n\nvector<int> euler_phi_table(int\
-    \ n){\n\tvector<int> phi(n + 1);\n\tfor(int i = 0;i <= n;i++){\n\t\tphi[i] = i;\n\
-    \t}\n\tfor(int i = 2;i <= n;i++){\n\t\tif(phi[i] == i){\n\t\t\tfor(int j = i;j\
-    \ <= n;j += i){\n\t\t\t\tphi[j] = phi[j] / i * (i - 1);\n\t\t\t}\n\t\t}\n\t}\n\
-    \treturn phi;\n}\n"
-  code: "\nvector<int> euler_phi_table(int n){\n\tvector<int> phi(n + 1);\n\tfor(int\
-    \ i = 0;i <= n;i++){\n\t\tphi[i] = i;\n\t}\n\tfor(int i = 2;i <= n;i++){\n\t\t\
-    if(phi[i] == i){\n\t\t\tfor(int j = i;j <= n;j += i){\n\t\t\t\tphi[j] = phi[j]\
-    \ / i * (i - 1);\n\t\t\t}\n\t\t}\n\t}\n\treturn phi;\n}\n"
+  bundledCode: "#line 2 \"math/euler_phi_table.hpp\"\n\n#include<vector>\n\nstd::vector<int>\
+    \ euler_phi_table(int n){\n\tstd::vector<int> phi(n + 1);\n\tfor(int i = 0;i <=\
+    \ n;i++){\n\t\tphi[i] = i;\n\t}\n\tfor(int i = 2;i <= n;i++){\n\t\tif(phi[i] ==\
+    \ i){\n\t\t\tfor(int j = i;j <= n;j += i){\n\t\t\t\tphi[j] = phi[j] / i * (i -\
+    \ 1);\n\t\t\t}\n\t\t}\n\t}\n\treturn phi;\n}\n"
+  code: "#pragma once\n\n#include<vector>\n\nstd::vector<int> euler_phi_table(int\
+    \ n){\n\tstd::vector<int> phi(n + 1);\n\tfor(int i = 0;i <= n;i++){\n\t\tphi[i]\
+    \ = i;\n\t}\n\tfor(int i = 2;i <= n;i++){\n\t\tif(phi[i] == i){\n\t\t\tfor(int\
+    \ j = i;j <= n;j += i){\n\t\t\t\tphi[j] = phi[j] / i * (i - 1);\n\t\t\t}\n\t\t\
+    }\n\t}\n\treturn phi;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/euler_phi_table.hpp
   requiredBy: []
-  timestamp: '2024-05-28 06:25:00+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/id/2286.test.cpp

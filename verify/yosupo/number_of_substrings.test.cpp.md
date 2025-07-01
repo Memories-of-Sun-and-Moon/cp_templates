@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/suffix_array.hpp
     title: Suffix Array
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/number_of_substrings
@@ -45,7 +45,7 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"string/suffix_array.hpp\"\n\n#line 4 \"string/suffix_array.hpp\"\n\ntemplate\
+    \ 2 \"string/suffix_array.hpp\"\n\n#line 5 \"string/suffix_array.hpp\"\n\ntemplate\
     \ <typename T> struct suffix_array {\n\tT s;\n\tstd::vector<int> sa;\n\tstd::vector<int>\
     \ rank;\n\tstd::vector<int> lcp;\n\n\tsuffix_array(const T &str, bool gen_lcp\
     \ = true) : s(str) {\n\t\tint n = (int)s.size();\n\t\tsa.resize(n+1);\n\t\tstd::iota(sa.begin(),\
@@ -74,8 +74,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/number_of_substrings.test.cpp
   requiredBy: []
-  timestamp: '2025-07-01 01:51:51+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/number_of_substrings.test.cpp
 layout: document

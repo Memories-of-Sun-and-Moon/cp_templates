@@ -3,22 +3,23 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/set_xor_min.test.cpp
     title: verify/yosupo/set_xor_min.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data_structure/binary_trie.hpp\"\ntemplate<typename T, int\
-    \ MAX_LOG=31, typename D=int>\nstruct binary_trie {\n\tstruct Node {\n\t\tNode\
-    \ *nxt[2];\n\t\tD exist;\n\t\tstd::vector<int> accept;\n\n\t\tNode() : nxt{nullptr,\
-    \ nullptr}, exist(0) {}\n\t};\n\n\tNode *root;\n\n\texplicit binary_trie() : root(new\
-    \ Node()) {}\n\texplicit binary_trie(Node *_root) : root(_root) {}\n\n\t~binary_trie()\
-    \ { clear(root); }\n\n\tvoid add(const T &bit, int idx=-1, D delta=1, T xor_val=0)\
-    \ {\n\t\troot = add(root, bit, idx, MAX_LOG, delta, xor_val);\n\t}\n\n\tvoid erase(const\
-    \ T &bit, T xor_val=0) {\n\t\tadd(bit, -1, -1, xor_val);\n\t}\n\n\tNode *find(const\
+  bundledCode: "#line 2 \"data_structure/binary_trie.hpp\"\n\n#include<cassert>\n\
+    #include<utility>\n#include<vector>\n\ntemplate<typename T, int MAX_LOG=31, typename\
+    \ D=int>\nstruct binary_trie {\n\tstruct Node {\n\t\tNode *nxt[2];\n\t\tD exist;\n\
+    \t\tstd::vector<int> accept;\n\n\t\tNode() : nxt{nullptr, nullptr}, exist(0) {}\n\
+    \t};\n\n\tNode *root;\n\n\texplicit binary_trie() : root(new Node()) {}\n\texplicit\
+    \ binary_trie(Node *_root) : root(_root) {}\n\n\t~binary_trie() { clear(root);\
+    \ }\n\n\tvoid add(const T &bit, int idx=-1, D delta=1, T xor_val=0) {\n\t\troot\
+    \ = add(root, bit, idx, MAX_LOG, delta, xor_val);\n\t}\n\n\tvoid erase(const T\
+    \ &bit, T xor_val=0) {\n\t\tadd(bit, -1, -1, xor_val);\n\t}\n\n\tNode *find(const\
     \ T &bit, T xor_val=0) {\n\t\treturn find(root, bit, MAX_LOG, xor_val);\n\t}\n\
     \n\tD count(const T &bit, T xor_val=0) {\n\t\tauto node = find(bit, xor_val);\n\
     \t\treturn (node ? node->exist : 0);\n\t}\n\n\tstd::pair<T, Node *> min_element(T\
@@ -51,8 +52,9 @@ data:
     \ & 1)], bit, depth-1, xor_val);\n\t\t}\n\t\treturn ret;\n\t}\n\n\tvoid clear(Node\
     \ *t) {\n\t\tif (!t) return;\n\t\tclear(t->nxt[0]);\n\t\tclear(t->nxt[1]);\n\t\
     \tdelete t;\n\t}\n};\n"
-  code: "template<typename T, int MAX_LOG=31, typename D=int>\nstruct binary_trie\
-    \ {\n\tstruct Node {\n\t\tNode *nxt[2];\n\t\tD exist;\n\t\tstd::vector<int> accept;\n\
+  code: "#pragma once\n\n#include<cassert>\n#include<utility>\n#include<vector>\n\n\
+    template<typename T, int MAX_LOG=31, typename D=int>\nstruct binary_trie {\n\t\
+    struct Node {\n\t\tNode *nxt[2];\n\t\tD exist;\n\t\tstd::vector<int> accept;\n\
     \n\t\tNode() : nxt{nullptr, nullptr}, exist(0) {}\n\t};\n\n\tNode *root;\n\n\t\
     explicit binary_trie() : root(new Node()) {}\n\texplicit binary_trie(Node *_root)\
     \ : root(_root) {}\n\n\t~binary_trie() { clear(root); }\n\n\tvoid add(const T\
@@ -94,8 +96,8 @@ data:
   isVerificationFile: false
   path: data_structure/binary_trie.hpp
   requiredBy: []
-  timestamp: '2025-06-30 19:47:50+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/set_xor_min.test.cpp
 documentation_of: data_structure/binary_trie.hpp

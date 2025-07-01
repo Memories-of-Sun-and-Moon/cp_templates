@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data_structure/hash_map.hpp
     title: "\u30CF\u30C3\u30B7\u30E5\u30DE\u30C3\u30D7"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -45,10 +45,11 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"data_structure/hash_map.hpp\"\n\ntemplate<typename Key, typename Val, uint32_t\
-    \ N, typename HashFunc = std::hash<Key>>\nstruct hash_map {\n\tstatic_assert(__builtin_popcount(N)\
-    \ == 1);\n\tKey key[N];\n\tVal val[N];\n\tstd::bitset<N> use;\n\t\n\tstatic constexpr\
-    \ uint32_t shift = 64 - __builtin_ctz(N);\n\tstatic constexpr uint64_t r = 11995408973635179863ULL;\n\
+    \ 2 \"data_structure/hash_map.hpp\"\n\n#line 5 \"data_structure/hash_map.hpp\"\
+    \n\ntemplate<typename Key, typename Val, uint32_t N, typename HashFunc = std::hash<Key>>\n\
+    struct hash_map {\n\tstatic_assert(__builtin_popcount(N) == 1);\n\tKey key[N];\n\
+    \tVal val[N];\n\tstd::bitset<N> use;\n\t\n\tstatic constexpr uint32_t shift =\
+    \ 64 - __builtin_ctz(N);\n\tstatic constexpr uint64_t r = 11995408973635179863ULL;\n\
     \n\tVal& operator[](const Key & k) noexcept {\n\t\tuint64_t h = HashFunc{}(k);\n\
     \t\tuint32_t hash = (h*r) >> shift;\n\t\twhile(true){\n\t\t\tif(!use[hash]){\n\
     \t\t\t\tkey[hash] = k;\n\t\t\t\tuse[hash] = 1;\n\t\t\t\treturn val[hash];\n\t\t\
@@ -70,7 +71,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/associative_array.test.cpp
   requiredBy: []
-  timestamp: '2025-06-30 19:47:50+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/associative_array.test.cpp

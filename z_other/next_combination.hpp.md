@@ -9,33 +9,30 @@ data:
   attributes:
     links:
     - https://qiita.com/mdstoy/items/39104b686540c5f1dc6c
-  bundledCode: "#line 1 \"z_other/next_combination.hpp\"\n\n// https://qiita.com/mdstoy/items/39104b686540c5f1dc6c\n\
+  bundledCode: "#line 2 \"z_other/next_combination.hpp\"\n\n#include<algorithm>\n\
+    #include<iterator>\n\n// https://qiita.com/mdstoy/items/39104b686540c5f1dc6c\n\
     template <typename T> bool next_combination(const T first, const T last, int k)\
-    \ {\n    const T subset = first + k;\n    // empty container | k = 0 | k == n\
-    \ \n    if (first == last || first == subset || last == subset) {\n        return\
-    \ false;\n    }\n    T src = subset;\n    while (first != src) {\n        src--;\n\
-    \        if (*src < *(last - 1)) {\n            T dest = subset;\n           \
-    \ while (*src >= *dest) {\n                dest++;\n            }\n          \
-    \  iter_swap(src, dest);\n            rotate(src + 1, dest + 1, last);\n     \
-    \       rotate(subset, subset + (last - dest) - 1, last);\n            return\
-    \ true;\n        }\n    }\n    // restore\n    rotate(first, subset, last);\n\
-    \    return false;\n}\n\n"
-  code: "\n// https://qiita.com/mdstoy/items/39104b686540c5f1dc6c\ntemplate <typename\
-    \ T> bool next_combination(const T first, const T last, int k) {\n    const T\
-    \ subset = first + k;\n    // empty container | k = 0 | k == n \n    if (first\
-    \ == last || first == subset || last == subset) {\n        return false;\n   \
-    \ }\n    T src = subset;\n    while (first != src) {\n        src--;\n       \
-    \ if (*src < *(last - 1)) {\n            T dest = subset;\n            while (*src\
-    \ >= *dest) {\n                dest++;\n            }\n            iter_swap(src,\
-    \ dest);\n            rotate(src + 1, dest + 1, last);\n            rotate(subset,\
-    \ subset + (last - dest) - 1, last);\n            return true;\n        }\n  \
-    \  }\n    // restore\n    rotate(first, subset, last);\n    return false;\n}\n\
-    \n"
+    \ {\n\tconst T subset = first + k;\n\t// empty container | k = 0 | k == n \n\t\
+    if (first == last || first == subset || last == subset) {\n\t\treturn false;\n\
+    \t}\n\tT src = subset;\n\twhile (first != src) {\n\t\tsrc--;\n\t\tif (*src < *(last\
+    \ - 1)) {\n\t\t\tT dest = subset;\n\t\t\twhile (*src >= *dest) {\n\t\t\t\tdest++;\n\
+    \t\t\t}\n\t\t\titer_swap(src, dest);\n\t\t\trotate(src + 1, dest + 1, last);\n\
+    \t\t\trotate(subset, subset + (last - dest) - 1, last);\n\t\t\treturn true;\n\t\
+    \t}\n\t}\n\t// restore\n\trotate(first, subset, last);\n\treturn false;\n}\n\n"
+  code: "#pragma once\n\n#include<algorithm>\n#include<iterator>\n\n// https://qiita.com/mdstoy/items/39104b686540c5f1dc6c\n\
+    template <typename T> bool next_combination(const T first, const T last, int k)\
+    \ {\n\tconst T subset = first + k;\n\t// empty container | k = 0 | k == n \n\t\
+    if (first == last || first == subset || last == subset) {\n\t\treturn false;\n\
+    \t}\n\tT src = subset;\n\twhile (first != src) {\n\t\tsrc--;\n\t\tif (*src < *(last\
+    \ - 1)) {\n\t\t\tT dest = subset;\n\t\t\twhile (*src >= *dest) {\n\t\t\t\tdest++;\n\
+    \t\t\t}\n\t\t\titer_swap(src, dest);\n\t\t\trotate(src + 1, dest + 1, last);\n\
+    \t\t\trotate(subset, subset + (last - dest) - 1, last);\n\t\t\treturn true;\n\t\
+    \t}\n\t}\n\t// restore\n\trotate(first, subset, last);\n\treturn false;\n}\n\n"
   dependsOn: []
   isVerificationFile: false
   path: z_other/next_combination.hpp
   requiredBy: []
-  timestamp: '2024-10-03 17:27:35+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: z_other/next_combination.hpp

@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/lazy_segment_tree.hpp
     title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -49,8 +49,9 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 2 \"data_structure/lazy_segment_tree.hpp\"\n\ntemplate<class S, auto op, auto\
-    \ e, class F, auto mapping, auto composition, auto id>\nstruct lazy_segment_tree\
+    \ 2 \"data_structure/area_of_union_of_rectangles.hpp\"\n\n#line 2 \"data_structure/lazy_segment_tree.hpp\"\
+    \n\n#line 5 \"data_structure/lazy_segment_tree.hpp\"\n\ntemplate<class S, auto\
+    \ op, auto e, class F, auto mapping, auto composition, auto id>\nstruct lazy_segment_tree\
     \ {\nprivate:\n\tint n;\n\tint log;\n\tint size;\n\tstd::vector<S> node;\n\tstd::vector<F>\
     \ lazy;\n\n\tvoid update(int k) { node[k] = op(node[2 * k], node[2 * k + 1]);\
     \ }\n\tvoid all_apply(int k, F f) {\n\t\tnode[k] = mapping(f, node[k]);\n\t\t\
@@ -101,34 +102,34 @@ data:
     \t\twhile(r < size) {\n\t\t\t\t\tpush(r);\n\t\t\t\t\tr = r*2 + 1;\n\t\t\t\t\t\
     if(g(op(node[r], sum))) {\n\t\t\t\t\t\tsum = op(node[r], sum);\n\t\t\t\t\t\tr--;\n\
     \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn r+1-size;\n\t\t\t}\n\t\t\tsum = op(node[r],\
-    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn 0;\n\t}\n};\n#line 2 \"data_structure/area_of_union_of_rectangles.hpp\"\
-    \n\ntemplate<class T>\nstruct area_of_union_rectangles {\nprivate:\n\tstd::vector<T>\
-    \ ys;\n\tstd::vector<tuple<T, int, int>>xs;\n\tstd::vector<tuple<T, T, T, T>>\
-    \ rectangles;\n\tusing S = pair<int, T>;\n\tusing F = int;\n\tstatic S op(S a,\
-    \ S b){\n\t\tif(a.first < b.first)return a;\n\t\tif(a.first > b.first)return b;\n\
-    \t\treturn make_pair(a.first, a.second+b.second);\n\t}\n\tstatic S e(){ return\
-    \ make_pair(std::numeric_limits<int>::max()/2, 0); }\n\tstatic S mapping(F f,\
-    \ S x){ return make_pair(x.first+f, x.second); }\n\tstatic F composition(F f,\
-    \ F g){ return f+g; }\n\tstatic F id(){ return 0; }\npublic:\n\n\t// l, d, r,\
-    \ u\n\tarea_of_union_rectangles(std::vector<tuple<T, T, T, T>> _rectangles) :\
-    \ rectangles(_rectangles) {\n\t\tys.reserve(rectangles.size()+rectangles.size());\n\
+    \ sum);\n\t\t}while((r&-r) != r);\n\t\treturn 0;\n\t}\n};\n#line 4 \"data_structure/area_of_union_of_rectangles.hpp\"\
+    \n\n#line 11 \"data_structure/area_of_union_of_rectangles.hpp\"\n\ntemplate<class\
+    \ T>\nstruct area_of_union_rectangles {\nprivate:\n\tstd::vector<T> ys;\n\tstd::vector<std::tuple<T,\
+    \ int, int>> xs;\n\tstd::vector<std::tuple<T, T, T, T>> rectangles;\n\tusing S\
+    \ = std::pair<int, T>;\n\tusing F = int;\n\tstatic S op(S a, S b){\n\t\tif(a.first\
+    \ < b.first)return a;\n\t\tif(a.first > b.first)return b;\n\t\treturn std::make_pair(a.first,\
+    \ a.second+b.second);\n\t}\n\tstatic S e(){ return std::make_pair(std::numeric_limits<int>::max()/2,\
+    \ 0); }\n\tstatic S mapping(F f, S x){ return std::make_pair(x.first+f, x.second);\
+    \ }\n\tstatic F composition(F f, F g){ return f+g; }\n\tstatic F id(){ return\
+    \ 0; }\npublic:\n\n\t// l, d, r, u\n\tarea_of_union_rectangles(std::vector<std::tuple<T,\
+    \ T, T, T>> _rectangles) : rectangles(_rectangles) {\n\t\tys.reserve(rectangles.size()+rectangles.size());\n\
     \t\txs.reserve(rectangles.size()+rectangles.size());\n\n\t\tfor(size_t i = 0;i\
     \ < rectangles.size();i++){\n\t\t\tauto &[l, d, r, u] = rectangles[i];\n\t\t\t\
     ys.emplace_back(d);\n\t\t\tys.emplace_back(u);\n\t\t\txs.emplace_back(l, i, 1);\n\
-    \t\t\txs.emplace_back(r, i, -1);\n\t\t}\n\n\t\tsort(ys.begin(), ys.end());\n\t\
-    \tys.erase(unique(ys.begin(), ys.end()), ys.end());\n\t\tsort(xs.begin(), xs.end());\n\
-    \n\t\tmap<T, int> y_compress;\n\t\tfor(size_t i = 0;i < ys.size();i++){\n\t\t\t\
-    y_compress[ys[i]] = i;\n\t\t}\n\t\tfor(size_t i = 0;i < rectangles.size();i++){\n\
+    \t\t\txs.emplace_back(r, i, -1);\n\t\t}\n\n\t\tstd::sort(ys.begin(), ys.end());\n\
+    \t\tys.erase(unique(ys.begin(), ys.end()), ys.end());\n\t\tstd::sort(xs.begin(),\
+    \ xs.end());\n\n\t\tstd::map<T, int> y_compress;\n\t\tfor(size_t i = 0;i < ys.size();i++){\n\
+    \t\t\ty_compress[ys[i]] = i;\n\t\t}\n\t\tfor(size_t i = 0;i < rectangles.size();i++){\n\
     \t\t\tauto &[l, d, r, u] = rectangles[i];\n\t\t\tu = y_compress[u];\n\t\t\td =\
     \ y_compress[d];\n\t\t}\n\t};\n\n\ttemplate<typename U>\n\tU solve(){\n\t\tstd::vector<S>\
     \ vs((int)ys.size()-1);\n\t\tfor(size_t i = 0;i+1 < ys.size();i++){\n\t\t\tvs[i]\
-    \ = make_pair(0, ys[i+1]-ys[i]);\n\t\t}\n\t\tlazy_segment_tree<S, op, e, F, mapping,\
-    \ composition, id> seg(vs);\n\t\t\n\t\tU ret = 0;\n\n\t\tT total = ys.back() -\
-    \ ys.front();\n\t\tfor(size_t i = 0;i+1 < xs.size();i++){\n\t\t\tauto &[X, idx,\
-    \ delta] = xs[i];\n\t\t\tauto &[l, d, r, u] = rectangles[idx];\n\t\t\tseg.apply(d,\
-    \ u, delta);\n\n\t\t\tauto [mn, cnt] = seg.all_fold();\n\n\t\t\tU dy = total -\
-    \ (mn == 0 ? cnt : 0);\n\t\t\tU dx = get<0>(xs[i+1]) - X;\n\n\t\t\tret += dy*dx;\n\
-    \t\t}\n\n\t\treturn ret;\n\t}\n};\n#line 5 \"verify/yosupo/area_of_union_of_rectangles.test.cpp\"\
+    \ = std::make_pair(0, ys[i+1]-ys[i]);\n\t\t}\n\t\tlazy_segment_tree<S, op, e,\
+    \ F, mapping, composition, id> seg(vs);\n\t\t\n\t\tU ret = 0;\n\n\t\tT total =\
+    \ ys.back() - ys.front();\n\t\tfor(size_t i = 0;i+1 < xs.size();i++){\n\t\t\t\
+    auto &[X, idx, delta] = xs[i];\n\t\t\tauto &[l, d, r, u] = rectangles[idx];\n\t\
+    \t\tseg.apply(d, u, delta);\n\n\t\t\tauto [mn, cnt] = seg.all_fold();\n\n\t\t\t\
+    U dy = total - (mn == 0 ? cnt : 0);\n\t\t\tU dx = std::get<0>(xs[i+1]) - X;\n\n\
+    \t\t\tret += dy*dx;\n\t\t}\n\n\t\treturn ret;\n\t}\n};\n#line 5 \"verify/yosupo/area_of_union_of_rectangles.test.cpp\"\
     \n\nvoid mmrz::solve(){\n\tint n;\n\tcin >> n;\n\tvector<tuple<int, int, int,\
     \ int>> rectangles(n);\n\tfor(auto &[l, d, r, u] : rectangles)cin >> l >> d >>\
     \ r >> u;\n\n\tcout << area_of_union_rectangles<int>(rectangles).solve<ll>() <<\
@@ -146,7 +147,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/area_of_union_of_rectangles.test.cpp
   requiredBy: []
-  timestamp: '2025-06-30 19:47:50+09:00'
+  timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/area_of_union_of_rectangles.test.cpp

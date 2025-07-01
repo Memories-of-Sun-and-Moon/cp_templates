@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data_structure/mo.hpp
     title: Mo's Algorithm
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_frequency
@@ -45,20 +45,21 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"data_structure/mo.hpp\"\nclass Mo {\n\tstd::vector<std::pair<int, int>>\
-    \ lr;\npublic:\n\tMo() = default;\n\tMo(const std::vector<std::pair<int, int>>\
-    \ &_lr) : lr(_lr) {}\n\n\ttemplate<typename AL, typename AR, typename EL, typename\
-    \ ER, typename F>\n\tvoid calc(const AL &add_left, const AR &add_right, const\
-    \ EL &erase_left, const ER& erase_right, const F &f, int _n = -1, int _B = -1){\n\
-    \t\tint n = (_n == -1 ? ranges::max(lr, {}, &std::pair<int, int>::second).second\
-    \ : _n);\n\t\tint q = (int)lr.size();\n\t\tint B = (_B == -1 ? max(1, n/int(sqrt(q)))\
-    \ : _B);\n\n\t\tstd::vector<int> index(q);\n\t\tiota(index.begin(), index.end(),\
-    \ 0);\n\t\tsort(index.begin(), index.end(), [&](int i, int j){\n\t\t\tconst auto\
-    \ &[l_i, r_i] = lr[i];\n\t\t\tconst auto &[l_j, r_j] = lr[j];\n\t\t\tconst int\
-    \ B_i = l_i / B, B_j = l_j / B;\n\t\t\tif(B_i != B_j){\n\t\t\t\treturn B_i < B_j;\n\
-    \t\t\t}\n\t\t\tif(B_i & 1){\n\t\t\t\treturn r_j < r_i;\n\t\t\t}else{\n\t\t\t\t\
-    return r_i < r_j;\n\t\t\t}\n\t\t});\n\n\t\tint l = 0, r = 0;\n\t\tfor(int idx\
-    \ : index){\n\t\t\tconst auto &[L, R] = lr[idx];\n\n\t\t\twhile(L < l)add_left(--l);\n\
+    \ 2 \"data_structure/mo.hpp\"\n\n#line 6 \"data_structure/mo.hpp\"\n#include<ranges>\n\
+    #line 9 \"data_structure/mo.hpp\"\n\nclass Mo {\n\tstd::vector<std::pair<int,\
+    \ int>> lr;\npublic:\n\tMo() = default;\n\tMo(const std::vector<std::pair<int,\
+    \ int>> &_lr) : lr(_lr) {}\n\n\ttemplate<typename AL, typename AR, typename EL,\
+    \ typename ER, typename F>\n\tvoid calc(const AL &add_left, const AR &add_right,\
+    \ const EL &erase_left, const ER& erase_right, const F &f, int _n = -1, int _B\
+    \ = -1){\n\t\tint n = (_n == -1 ? std::ranges::max(lr, {}, &std::pair<int, int>::second).second\
+    \ : _n);\n\t\tint q = (int)lr.size();\n\t\tint B = (_B == -1 ? std::max(1, n/int(sqrt(q)))\
+    \ : _B);\n\n\t\tstd::vector<int> index(q);\n\t\tstd::iota(index.begin(), index.end(),\
+    \ 0);\n\t\tstd::sort(index.begin(), index.end(), [&](int i, int j){\n\t\t\tconst\
+    \ auto &[l_i, r_i] = lr[i];\n\t\t\tconst auto &[l_j, r_j] = lr[j];\n\t\t\tconst\
+    \ int B_i = l_i / B, B_j = l_j / B;\n\t\t\tif(B_i != B_j){\n\t\t\t\treturn B_i\
+    \ < B_j;\n\t\t\t}\n\t\t\tif(B_i & 1){\n\t\t\t\treturn r_j < r_i;\n\t\t\t}else{\n\
+    \t\t\t\treturn r_i < r_j;\n\t\t\t}\n\t\t});\n\n\t\tint l = 0, r = 0;\n\t\tfor(int\
+    \ idx : index){\n\t\t\tconst auto &[L, R] = lr[idx];\n\n\t\t\twhile(L < l)add_left(--l);\n\
     \t\t\twhile(r < R)add_right(r++);\n\t\t\t\n\t\t\twhile(l < L)erase_left(l++);\n\
     \t\t\twhile(R < r)erase_right(--r);\n\n\t\t\tf(idx);\n\t\t}\n\t}\n\n\ttemplate<typename\
     \ A, typename E, typename F>\n\tvoid calc(const A &add, const E &erase, const\
@@ -99,8 +100,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/static_range_frequency.test.cpp
   requiredBy: []
-  timestamp: '2025-06-30 19:47:50+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/static_range_frequency.test.cpp
 layout: document

@@ -18,16 +18,25 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/discrete_logarithm.test.cpp
     title: verify/yosupo/discrete_logarithm.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/generalized_discrete_logarithm.test.cpp
     title: verify/yosupo/generalized_discrete_logarithm.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/power.hpp\"\n\ntemplate<typename T>\nconcept NotPrimitiveInt\
-    \ =\n    !(std::is_same_v<T, int> ||\n\t\tstd::is_same_v<T, long> ||\n\t\tstd::is_same_v<T,\
+  bundledCode: "#line 2 \"math/power.hpp\"\n\n#include <type_traits>\n\ntemplate<typename\
+    \ T>\nconcept NotPrimitiveInt =\n\t!(std::is_same_v<T, int> ||\n\t\tstd::is_same_v<T,\
+    \ long> ||\n\t\tstd::is_same_v<T, long long> ||\n\t\tstd::is_same_v<T, unsigned>\
+    \ ||\n\t\tstd::is_same_v<T, unsigned long> ||\n\t\tstd::is_same_v<T, unsigned\
+    \ long long>);\n\ntemplate<NotPrimitiveInt T>\nT power(T n, long long k) {\n\t\
+    T ret = 1;\n\twhile(k > 0) {\n\t\tif(k & 1)ret *= n;\n\t\tn = n*n;\n\t\tk >>=\
+    \ 1;\n\t}\n\treturn ret;\n}\n\nlong long power(long long n, long long k, long\
+    \ long p) {\n\tlong long ret = 1;\n\twhile(k > 0){\n\t\tif(k & 1)ret = ret*n %\
+    \ p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n"
+  code: "#pragma once\n\n#include <type_traits>\n\ntemplate<typename T>\nconcept NotPrimitiveInt\
+    \ =\n\t!(std::is_same_v<T, int> ||\n\t\tstd::is_same_v<T, long> ||\n\t\tstd::is_same_v<T,\
     \ long long> ||\n\t\tstd::is_same_v<T, unsigned> ||\n\t\tstd::is_same_v<T, unsigned\
     \ long> ||\n\t\tstd::is_same_v<T, unsigned long long>);\n\ntemplate<NotPrimitiveInt\
     \ T>\nT power(T n, long long k) {\n\tT ret = 1;\n\twhile(k > 0) {\n\t\tif(k &\
@@ -35,14 +44,6 @@ data:
     \ power(long long n, long long k, long long p) {\n\tlong long ret = 1;\n\twhile(k\
     \ > 0){\n\t\tif(k & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\t\
     return ret;\n}\n"
-  code: "\ntemplate<typename T>\nconcept NotPrimitiveInt =\n    !(std::is_same_v<T,\
-    \ int> ||\n\t\tstd::is_same_v<T, long> ||\n\t\tstd::is_same_v<T, long long> ||\n\
-    \t\tstd::is_same_v<T, unsigned> ||\n\t\tstd::is_same_v<T, unsigned long> ||\n\t\
-    \tstd::is_same_v<T, unsigned long long>);\n\ntemplate<NotPrimitiveInt T>\nT power(T\
-    \ n, long long k) {\n\tT ret = 1;\n\twhile(k > 0) {\n\t\tif(k & 1)ret *= n;\n\t\
-    \tn = n*n;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n\nlong long power(long long n,\
-    \ long long k, long long p) {\n\tlong long ret = 1;\n\twhile(k > 0){\n\t\tif(k\
-    \ & 1)ret = ret*n % p;\n\t\tn = n*n % p;\n\t\tk >>= 1;\n\t}\n\treturn ret;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/power.hpp
@@ -50,8 +51,8 @@ data:
   - math/discrete_logarithm.hpp
   - math/formal_power_series.hpp
   - math/geometric_series_sum.hpp
-  timestamp: '2025-06-28 11:56:03+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-07-01 03:22:56+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/generalized_discrete_logarithm.test.cpp
   - verify/yosupo/convolution_mod.test.cpp
