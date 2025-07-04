@@ -166,6 +166,9 @@ data:
     path: verify/aoj/ntl/1_E.test.cpp
     title: verify/aoj/ntl/1_E.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/handmade/2d_segtree_stress.test.cpp
+    title: verify/handmade/2d_segtree_stress.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/area_of_union_of_rectangles.test.cpp
     title: verify/yosupo/area_of_union_of_rectangles.test.cpp
   - icon: ':heavy_check_mark:'
@@ -382,6 +385,7 @@ data:
   - verify/yosupo/stern_brocot_tree.test.cpp
   - verify/yosupo/discrete_logarithm.test.cpp
   - verify/yosupo/factorize.test.cpp
+  - verify/handmade/2d_segtree_stress.test.cpp
   - verify/aoj/dpl/1_D.test.cpp
   - verify/aoj/cgl/4_C.test.cpp
   - verify/aoj/cgl/2_B.test.cpp

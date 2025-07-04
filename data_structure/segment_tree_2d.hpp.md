@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/dsl/5_B.test.cpp
     title: verify/aoj/dsl/5_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/handmade/2d_segtree_stress.test.cpp
+    title: verify/handmade/2d_segtree_stress.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -81,6 +84,7 @@ data:
   timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/handmade/2d_segtree_stress.test.cpp
   - verify/aoj/dsl/5_B.test.cpp
 documentation_of: data_structure/segment_tree_2d.hpp
 layout: document

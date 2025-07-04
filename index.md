@@ -383,6 +383,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/ntl/1_E.test.cpp
       title: verify/aoj/ntl/1_E.test.cpp
+  - name: verify/handmade
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/handmade/2d_segtree_stress.test.cpp
+      title: verify/handmade/2d_segtree_stress.test.cpp
   - name: verify/yosupo
     pages:
     - icon: ':heavy_check_mark:'
