@@ -1,6 +1,7 @@
 
 #include<istream>
 #include<ostream>
+#include<algorithm>
 
 std::ostream& operator<<(std::ostream& os, __int128_t value) {
 	if (value == 0) return os << '0';
