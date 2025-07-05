@@ -54,21 +54,21 @@ public:
 		return *this;
 	}
 
-	constexpr dynamic_modint& operator++() noexcept {
+	dynamic_modint& operator++() noexcept {
 		if (++a == Modulus) a = 0;
 		return *this;
 	}
-	constexpr dynamic_modint operator++(int) noexcept {
+	dynamic_modint operator++(int) noexcept {
 		dynamic_modint tmp(*this);
 		++(*this);
 		return tmp;
 	}
-	constexpr dynamic_modint& operator--() noexcept {
+	dynamic_modint& operator--() noexcept {
 		if (a == 0) a = Modulus;
 		--a;
 		return *this;
 	}
-	constexpr dynamic_modint operator--(int) noexcept {
+	dynamic_modint operator--(int) noexcept {
 		dynamic_modint tmp(*this);
 		--(*this);
 		return tmp;
