@@ -1,6 +1,5 @@
 #pragma once
 
-#include<cassert>
 #include<functional>
 #include<vector>
 
@@ -15,7 +14,7 @@ struct sparse_table {
 	sparse_table() = default;
 
 	sparse_table(const std::vector<T> &v, const F &_f) : f(_f) {
-		const int n = (int)v.size();
+		const int n = std::ssize(v);
 		const int msb = 32 - __builtin_clz(n);
 		
 		table.assign(msb, std::vector<T>(n));
