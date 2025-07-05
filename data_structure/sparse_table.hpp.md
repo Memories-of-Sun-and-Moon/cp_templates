@@ -11,24 +11,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"data_structure/sparse_table.hpp\"\n\n#include<cassert>\n\
-    #include<functional>\n#include<vector>\n\ntemplate<typename T>\nstruct sparse_table\
-    \ {\n\tusing F = std::function<T(T, T)>;\n\n\tF f;\n\tstd::vector<std::vector<T>>\
-    \ table;\n\tstd::vector<int> lr_length;\n\n\tsparse_table() = default;\n\n\tsparse_table(const\
-    \ std::vector<T> &v, const F &_f) : f(_f) {\n\t\tconst int n = (int)v.size();\n\
-    \t\tconst int msb = 32 - __builtin_clz(n);\n\t\t\n\t\ttable.assign(msb, std::vector<T>(n));\n\
-    \t\tfor(int i = 0;i < std::ssize(v);i++){\n\t\t\ttable[0][i] = v[i];\n\t\t}\n\t\
-    \tfor(int i = 1;i < msb;i++){\n\t\t\tfor(int j = 0;j + (1 << i) <= n;j++){\n\t\
-    \t\t\ttable[i][j] = f(table[i-1][j], table[i-1][j + (1 << (i-1))]);\n\t\t\t}\n\
-    \t\t}\n\n\t\tlr_length.resize(std::ssize(v) + 1);\n\t\tfor(int i = 2;i < std::ssize(lr_length);i++){\n\
-    \t\t\tlr_length[i] = lr_length[i >> 1] + 1;\n\t\t}\n\t}\n\n\tT fold(int l, int\
-    \ r) const {\n\t\treturn f(table[lr_length[r-l]][l], table[lr_length[r-l]][r-(1\
-    \ << lr_length[r-l])]);\n\t}\n};\n"
-  code: "#pragma once\n\n#include<cassert>\n#include<functional>\n#include<vector>\n\
-    \ntemplate<typename T>\nstruct sparse_table {\n\tusing F = std::function<T(T,\
+  bundledCode: "#line 2 \"data_structure/sparse_table.hpp\"\n\n#include<functional>\n\
+    #include<vector>\n\ntemplate<typename T>\nstruct sparse_table {\n\tusing F = std::function<T(T,\
     \ T)>;\n\n\tF f;\n\tstd::vector<std::vector<T>> table;\n\tstd::vector<int> lr_length;\n\
     \n\tsparse_table() = default;\n\n\tsparse_table(const std::vector<T> &v, const\
-    \ F &_f) : f(_f) {\n\t\tconst int n = (int)v.size();\n\t\tconst int msb = 32 -\
+    \ F &_f) : f(_f) {\n\t\tconst int n = std::ssize(v);\n\t\tconst int msb = 32 -\
     \ __builtin_clz(n);\n\t\t\n\t\ttable.assign(msb, std::vector<T>(n));\n\t\tfor(int\
     \ i = 0;i < std::ssize(v);i++){\n\t\t\ttable[0][i] = v[i];\n\t\t}\n\t\tfor(int\
     \ i = 1;i < msb;i++){\n\t\t\tfor(int j = 0;j + (1 << i) <= n;j++){\n\t\t\t\ttable[i][j]\
@@ -37,11 +24,23 @@ data:
     \ = lr_length[i >> 1] + 1;\n\t\t}\n\t}\n\n\tT fold(int l, int r) const {\n\t\t\
     return f(table[lr_length[r-l]][l], table[lr_length[r-l]][r-(1 << lr_length[r-l])]);\n\
     \t}\n};\n"
+  code: "#pragma once\n\n#include<functional>\n#include<vector>\n\ntemplate<typename\
+    \ T>\nstruct sparse_table {\n\tusing F = std::function<T(T, T)>;\n\n\tF f;\n\t\
+    std::vector<std::vector<T>> table;\n\tstd::vector<int> lr_length;\n\n\tsparse_table()\
+    \ = default;\n\n\tsparse_table(const std::vector<T> &v, const F &_f) : f(_f) {\n\
+    \t\tconst int n = std::ssize(v);\n\t\tconst int msb = 32 - __builtin_clz(n);\n\
+    \t\t\n\t\ttable.assign(msb, std::vector<T>(n));\n\t\tfor(int i = 0;i < std::ssize(v);i++){\n\
+    \t\t\ttable[0][i] = v[i];\n\t\t}\n\t\tfor(int i = 1;i < msb;i++){\n\t\t\tfor(int\
+    \ j = 0;j + (1 << i) <= n;j++){\n\t\t\t\ttable[i][j] = f(table[i-1][j], table[i-1][j\
+    \ + (1 << (i-1))]);\n\t\t\t}\n\t\t}\n\n\t\tlr_length.resize(std::ssize(v) + 1);\n\
+    \t\tfor(int i = 2;i < std::ssize(lr_length);i++){\n\t\t\tlr_length[i] = lr_length[i\
+    \ >> 1] + 1;\n\t\t}\n\t}\n\n\tT fold(int l, int r) const {\n\t\treturn f(table[lr_length[r-l]][l],\
+    \ table[lr_length[r-l]][r-(1 << lr_length[r-l])]);\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data_structure/sparse_table.hpp
   requiredBy: []
-  timestamp: '2025-07-01 03:22:56+09:00'
+  timestamp: '2025-07-05 16:39:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/staticrmq.test.cpp
