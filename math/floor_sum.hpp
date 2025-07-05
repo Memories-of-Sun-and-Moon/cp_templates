@@ -1,3 +1,4 @@
+#pragma once
 
 long long floor_sum(long long n, long long m, long long a, long long b){
 	long long ans = 0;
