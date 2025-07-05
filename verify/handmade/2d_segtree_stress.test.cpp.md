@@ -90,41 +90,39 @@ data:
     \ RND(_first, _second)\tuniform_int_distribution<int>(_first, _second)(gen)\n\n\
     void test_sum(int t){\n\tint h = RND(1, 1000), w = RND(1, 1000);\n\tint q = 100;\n\
     \tvector a(h, vector(w, 0));\n\trep(i, h)rep(j, w)a[i][j] = RND(1, 100);\n\tsegment_tree_2d<int>\
-    \ seg(h, w, [](int l, int r){return l+r;}, 0);\n\trep(i, h)rep(j, w)seg.set(i,\
-    \ j, a[i][j]);\n\twhile(q--){\n\t\t// update\n\t\t{\n\t\t\tint y = RND(0, h-1),\
-    \ x = RND(0, w-1);\n\t\t\ta[y][x] = RND(1, 100);\n\t\t\tseg.set(y, x, a[y][x]);\n\
-    \t\t}\n\t\t// query\n\t\t{\n\t\t\tint li = RND(0, h-1), ri = RND(li+1, h);\n\t\
-    \t\tint lj = RND(0, w-1), rj = RND(lj+1, w);\n\t\t\tint ans_seg = seg.fold(li,\
-    \ lj, ri, rj);\n\t\t\tint ans_naive = 0;\n\t\t\tfor(int i = li;i < ri;i++){\n\t\
-    \t\t\tfor(int j = lj;j < rj;j++){\n\t\t\t\t\tans_naive += a[i][j];\n\t\t\t\t}\n\
-    \t\t\t}\n\n\t\t\tassert(ans_seg == ans_naive);\n\t\t}\n\t}\n\tcerr << \"test_sum\
-    \ : case \" << t << \" : passed\" << endl;\n}\n\nvoid test_max(int t){\n\tint\
-    \ h = RND(1, 1000), w = RND(1, 1000);\n\tint q = 100;\n\tvector a(h, vector(w,\
-    \ 0));\n\trep(i, h)rep(j, w)a[i][j] = RND(1, 100);\n\tsegment_tree_2d<int> seg(h,\
-    \ w, [](int l, int r){return max(l, r);}, 0);\n\trep(i, h)rep(j, w)seg.set(i,\
-    \ j, a[i][j]);\n\twhile(q--){\n\t\t// update\n\t\t{\n\t\t\tint y = RND(0, h-1),\
-    \ x = RND(0, w-1);\n\t\t\ta[y][x] = RND(1, 100);\n\t\t\tseg.set(y, x, a[y][x]);\n\
-    \t\t}\n\t\t// query\n\t\t{\n\t\t\tint li = RND(0, h-1), ri = RND(li+1, h);\n\t\
-    \t\tint lj = RND(0, w-1), rj = RND(lj+1, w);\n\t\t\tint ans_seg = seg.fold(li,\
-    \ lj, ri, rj);\n\t\t\tint ans_naive = 0;\n\t\t\tfor(int i = li;i < ri;i++){\n\t\
-    \t\t\tfor(int j = lj;j < rj;j++){\n\t\t\t\t\tchmax(ans_naive, a[i][j]);\n\t\t\t\
-    \t}\n\t\t\t}\n\t\t\t\n\t\t\tassert(ans_seg == ans_naive);\n\t\t}\n\t}\n\tcerr\
-    \ << \"test_max : case \" << t << \" : passed\" << endl;\n}\n\nvoid test_min(int\
-    \ t){\n\tint h = RND(1, 1000), w = RND(1, 1000);\n\tint q = 100;\n\tvector a(h,\
-    \ vector(w, 0));\n\trep(i, h)rep(j, w)a[i][j] = RND(1, 100);\n\tsegment_tree_2d<int>\
-    \ seg(h, w, [](int l, int r){return min(l, r);}, hinf<int>());\n\trep(i, h)rep(j,\
-    \ w)seg.set(i, j, a[i][j]);\n\twhile(q--){\n\t\t// update\n\t\t{\n\t\t\tint y\
-    \ = RND(0, h-1), x = RND(0, w-1);\n\t\t\ta[y][x] = RND(1, 100);\n\t\t\tseg.set(y,\
-    \ x, a[y][x]);\n\t\t}\n\t\t// query\n\t\t{\n\t\t\tint li = RND(0, h-1), ri = RND(li+1,\
-    \ h);\n\t\t\tint lj = RND(0, w-1), rj = RND(lj+1, w);\n\t\t\tint ans_seg = seg.fold(li,\
-    \ lj, ri, rj);\n\t\t\tint ans_naive = hinf<int>();\n\t\t\tfor(int i = li;i < ri;i++){\n\
-    \t\t\t\tfor(int j = lj;j < rj;j++){\n\t\t\t\t\tchmin(ans_naive, a[i][j]);\n\t\t\
-    \t\t}\n\t\t\t}\n\t\t\t\n\t\t\tassert(ans_seg == ans_naive);\n\t\t}\n\t}\n\tcerr\
-    \ << \"test_max : case \" << t << \" : passed\" << endl;\n}\n\nvoid mmrz::solve(){\n\
-    \t// maybe verified with AOJ DSL 5-B\n\trep(t, 100)test_sum(t);\n\tcerr << \"\
-    test_sum : passed\" << endl;\n\trep(t, 100)test_max(t);\n\tcerr << \"test_max\
-    \ : passed\" << endl;\n\trep(t, 100)test_min(t);\n\tcerr << \"test_min : passed\"\
-    \ << endl;\n\n\t// DUMMY PHASE\n\tcout << \"Hello World\\n\";\n}\n"
+    \ seg(a, [](int l, int r){return l+r;}, 0);\n\twhile(q--){\n\t\t// update\n\t\t\
+    {\n\t\t\tint y = RND(0, h-1), x = RND(0, w-1);\n\t\t\ta[y][x] = RND(1, 100);\n\
+    \t\t\tseg.set(y, x, a[y][x]);\n\t\t}\n\t\t// query\n\t\t{\n\t\t\tint li = RND(0,\
+    \ h-1), ri = RND(li+1, h);\n\t\t\tint lj = RND(0, w-1), rj = RND(lj+1, w);\n\t\
+    \t\tint ans_seg = seg.fold(li, lj, ri, rj);\n\t\t\tint ans_naive = 0;\n\t\t\t\
+    for(int i = li;i < ri;i++){\n\t\t\t\tfor(int j = lj;j < rj;j++){\n\t\t\t\t\tans_naive\
+    \ += a[i][j];\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tassert(ans_seg == ans_naive);\n\t\t\
+    }\n\t}\n\tcerr << \"test_sum : case \" << t << \" : passed\" << endl;\n}\n\nvoid\
+    \ test_max(int t){\n\tint h = RND(1, 1000), w = RND(1, 1000);\n\tint q = 100;\n\
+    \tvector a(h, vector(w, 0));\n\trep(i, h)rep(j, w)a[i][j] = RND(1, 100);\n\tsegment_tree_2d<int>\
+    \ seg(a, [](int l, int r){return max(l, r);}, 0);\n\twhile(q--){\n\t\t// update\n\
+    \t\t{\n\t\t\tint y = RND(0, h-1), x = RND(0, w-1);\n\t\t\ta[y][x] = RND(1, 100);\n\
+    \t\t\tseg.set(y, x, a[y][x]);\n\t\t}\n\t\t// query\n\t\t{\n\t\t\tint li = RND(0,\
+    \ h-1), ri = RND(li+1, h);\n\t\t\tint lj = RND(0, w-1), rj = RND(lj+1, w);\n\t\
+    \t\tint ans_seg = seg.fold(li, lj, ri, rj);\n\t\t\tint ans_naive = 0;\n\t\t\t\
+    for(int i = li;i < ri;i++){\n\t\t\t\tfor(int j = lj;j < rj;j++){\n\t\t\t\t\tchmax(ans_naive,\
+    \ a[i][j]);\n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t\tassert(ans_seg == ans_naive);\n\
+    \t\t}\n\t}\n\tcerr << \"test_max : case \" << t << \" : passed\" << endl;\n}\n\
+    \nvoid test_min(int t){\n\tint h = RND(1, 1000), w = RND(1, 1000);\n\tint q =\
+    \ 100;\n\tvector a(h, vector(w, 0));\n\trep(i, h)rep(j, w)a[i][j] = RND(1, 100);\n\
+    \tsegment_tree_2d<int> seg(a, [](int l, int r){return min(l, r);}, hinf<int>());\n\
+    \twhile(q--){\n\t\t// update\n\t\t{\n\t\t\tint y = RND(0, h-1), x = RND(0, w-1);\n\
+    \t\t\ta[y][x] = RND(1, 100);\n\t\t\tseg.set(y, x, a[y][x]);\n\t\t}\n\t\t// query\n\
+    \t\t{\n\t\t\tint li = RND(0, h-1), ri = RND(li+1, h);\n\t\t\tint lj = RND(0, w-1),\
+    \ rj = RND(lj+1, w);\n\t\t\tint ans_seg = seg.fold(li, lj, ri, rj);\n\t\t\tint\
+    \ ans_naive = hinf<int>();\n\t\t\tfor(int i = li;i < ri;i++){\n\t\t\t\tfor(int\
+    \ j = lj;j < rj;j++){\n\t\t\t\t\tchmin(ans_naive, a[i][j]);\n\t\t\t\t}\n\t\t\t\
+    }\n\t\t\t\n\t\t\tassert(ans_seg == ans_naive);\n\t\t}\n\t}\n\tcerr << \"test_max\
+    \ : case \" << t << \" : passed\" << endl;\n}\n\nvoid mmrz::solve(){\n\t// maybe\
+    \ verified with AOJ DSL 5-B\n\trep(t, 100)test_sum(t);\n\tcerr << \"test_sum :\
+    \ passed\" << endl;\n\trep(t, 100)test_max(t);\n\tcerr << \"test_max : passed\"\
+    \ << endl;\n\trep(t, 100)test_min(t);\n\tcerr << \"test_min : passed\" << endl;\n\
+    \n\t// DUMMY PHASE\n\tcout << \"Hello World\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
     \ // DUMMY\n\n#include \"./../../template/template.hpp\"\n#include \"./../../data_structure/segment_tree_2d.hpp\"\
     \n\nclass xor_shift_128 {\npublic:\n\ttypedef uint32_t result_type;\n\txor_shift_128(uint32_t\
@@ -140,19 +138,18 @@ data:
     \u305F\u3076\u3093\uFF09\u4E00\u69D8\u5206\u5E03\n#define RND(_first, _second)\t\
     uniform_int_distribution<int>(_first, _second)(gen)\n\nvoid test_sum(int t){\n\
     \tint h = RND(1, 1000), w = RND(1, 1000);\n\tint q = 100;\n\tvector a(h, vector(w,\
-    \ 0));\n\trep(i, h)rep(j, w)a[i][j] = RND(1, 100);\n\tsegment_tree_2d<int> seg(h,\
-    \ w, [](int l, int r){return l+r;}, 0);\n\trep(i, h)rep(j, w)seg.set(i, j, a[i][j]);\n\
-    \twhile(q--){\n\t\t// update\n\t\t{\n\t\t\tint y = RND(0, h-1), x = RND(0, w-1);\n\
-    \t\t\ta[y][x] = RND(1, 100);\n\t\t\tseg.set(y, x, a[y][x]);\n\t\t}\n\t\t// query\n\
-    \t\t{\n\t\t\tint li = RND(0, h-1), ri = RND(li+1, h);\n\t\t\tint lj = RND(0, w-1),\
-    \ rj = RND(lj+1, w);\n\t\t\tint ans_seg = seg.fold(li, lj, ri, rj);\n\t\t\tint\
-    \ ans_naive = 0;\n\t\t\tfor(int i = li;i < ri;i++){\n\t\t\t\tfor(int j = lj;j\
-    \ < rj;j++){\n\t\t\t\t\tans_naive += a[i][j];\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tassert(ans_seg\
-    \ == ans_naive);\n\t\t}\n\t}\n\tcerr << \"test_sum : case \" << t << \" : passed\"\
-    \ << endl;\n}\n\nvoid test_max(int t){\n\tint h = RND(1, 1000), w = RND(1, 1000);\n\
-    \tint q = 100;\n\tvector a(h, vector(w, 0));\n\trep(i, h)rep(j, w)a[i][j] = RND(1,\
-    \ 100);\n\tsegment_tree_2d<int> seg(h, w, [](int l, int r){return max(l, r);},\
-    \ 0);\n\trep(i, h)rep(j, w)seg.set(i, j, a[i][j]);\n\twhile(q--){\n\t\t// update\n\
+    \ 0));\n\trep(i, h)rep(j, w)a[i][j] = RND(1, 100);\n\tsegment_tree_2d<int> seg(a,\
+    \ [](int l, int r){return l+r;}, 0);\n\twhile(q--){\n\t\t// update\n\t\t{\n\t\t\
+    \tint y = RND(0, h-1), x = RND(0, w-1);\n\t\t\ta[y][x] = RND(1, 100);\n\t\t\t\
+    seg.set(y, x, a[y][x]);\n\t\t}\n\t\t// query\n\t\t{\n\t\t\tint li = RND(0, h-1),\
+    \ ri = RND(li+1, h);\n\t\t\tint lj = RND(0, w-1), rj = RND(lj+1, w);\n\t\t\tint\
+    \ ans_seg = seg.fold(li, lj, ri, rj);\n\t\t\tint ans_naive = 0;\n\t\t\tfor(int\
+    \ i = li;i < ri;i++){\n\t\t\t\tfor(int j = lj;j < rj;j++){\n\t\t\t\t\tans_naive\
+    \ += a[i][j];\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tassert(ans_seg == ans_naive);\n\t\t\
+    }\n\t}\n\tcerr << \"test_sum : case \" << t << \" : passed\" << endl;\n}\n\nvoid\
+    \ test_max(int t){\n\tint h = RND(1, 1000), w = RND(1, 1000);\n\tint q = 100;\n\
+    \tvector a(h, vector(w, 0));\n\trep(i, h)rep(j, w)a[i][j] = RND(1, 100);\n\tsegment_tree_2d<int>\
+    \ seg(a, [](int l, int r){return max(l, r);}, 0);\n\twhile(q--){\n\t\t// update\n\
     \t\t{\n\t\t\tint y = RND(0, h-1), x = RND(0, w-1);\n\t\t\ta[y][x] = RND(1, 100);\n\
     \t\t\tseg.set(y, x, a[y][x]);\n\t\t}\n\t\t// query\n\t\t{\n\t\t\tint li = RND(0,\
     \ h-1), ri = RND(li+1, h);\n\t\t\tint lj = RND(0, w-1), rj = RND(lj+1, w);\n\t\
@@ -162,27 +159,26 @@ data:
     \t\t}\n\t}\n\tcerr << \"test_max : case \" << t << \" : passed\" << endl;\n}\n\
     \nvoid test_min(int t){\n\tint h = RND(1, 1000), w = RND(1, 1000);\n\tint q =\
     \ 100;\n\tvector a(h, vector(w, 0));\n\trep(i, h)rep(j, w)a[i][j] = RND(1, 100);\n\
-    \tsegment_tree_2d<int> seg(h, w, [](int l, int r){return min(l, r);}, hinf<int>());\n\
-    \trep(i, h)rep(j, w)seg.set(i, j, a[i][j]);\n\twhile(q--){\n\t\t// update\n\t\t\
-    {\n\t\t\tint y = RND(0, h-1), x = RND(0, w-1);\n\t\t\ta[y][x] = RND(1, 100);\n\
-    \t\t\tseg.set(y, x, a[y][x]);\n\t\t}\n\t\t// query\n\t\t{\n\t\t\tint li = RND(0,\
-    \ h-1), ri = RND(li+1, h);\n\t\t\tint lj = RND(0, w-1), rj = RND(lj+1, w);\n\t\
-    \t\tint ans_seg = seg.fold(li, lj, ri, rj);\n\t\t\tint ans_naive = hinf<int>();\n\
-    \t\t\tfor(int i = li;i < ri;i++){\n\t\t\t\tfor(int j = lj;j < rj;j++){\n\t\t\t\
-    \t\tchmin(ans_naive, a[i][j]);\n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t\tassert(ans_seg\
-    \ == ans_naive);\n\t\t}\n\t}\n\tcerr << \"test_max : case \" << t << \" : passed\"\
-    \ << endl;\n}\n\nvoid mmrz::solve(){\n\t// maybe verified with AOJ DSL 5-B\n\t\
-    rep(t, 100)test_sum(t);\n\tcerr << \"test_sum : passed\" << endl;\n\trep(t, 100)test_max(t);\n\
-    \tcerr << \"test_max : passed\" << endl;\n\trep(t, 100)test_min(t);\n\tcerr <<\
-    \ \"test_min : passed\" << endl;\n\n\t// DUMMY PHASE\n\tcout << \"Hello World\\\
-    n\";\n}\n"
+    \tsegment_tree_2d<int> seg(a, [](int l, int r){return min(l, r);}, hinf<int>());\n\
+    \twhile(q--){\n\t\t// update\n\t\t{\n\t\t\tint y = RND(0, h-1), x = RND(0, w-1);\n\
+    \t\t\ta[y][x] = RND(1, 100);\n\t\t\tseg.set(y, x, a[y][x]);\n\t\t}\n\t\t// query\n\
+    \t\t{\n\t\t\tint li = RND(0, h-1), ri = RND(li+1, h);\n\t\t\tint lj = RND(0, w-1),\
+    \ rj = RND(lj+1, w);\n\t\t\tint ans_seg = seg.fold(li, lj, ri, rj);\n\t\t\tint\
+    \ ans_naive = hinf<int>();\n\t\t\tfor(int i = li;i < ri;i++){\n\t\t\t\tfor(int\
+    \ j = lj;j < rj;j++){\n\t\t\t\t\tchmin(ans_naive, a[i][j]);\n\t\t\t\t}\n\t\t\t\
+    }\n\t\t\t\n\t\t\tassert(ans_seg == ans_naive);\n\t\t}\n\t}\n\tcerr << \"test_max\
+    \ : case \" << t << \" : passed\" << endl;\n}\n\nvoid mmrz::solve(){\n\t// maybe\
+    \ verified with AOJ DSL 5-B\n\trep(t, 100)test_sum(t);\n\tcerr << \"test_sum :\
+    \ passed\" << endl;\n\trep(t, 100)test_max(t);\n\tcerr << \"test_max : passed\"\
+    \ << endl;\n\trep(t, 100)test_min(t);\n\tcerr << \"test_min : passed\" << endl;\n\
+    \n\t// DUMMY PHASE\n\tcout << \"Hello World\\n\";\n}\n"
   dependsOn:
   - template/template.hpp
   - data_structure/segment_tree_2d.hpp
   isVerificationFile: true
   path: verify/handmade/2d_segtree_stress.test.cpp
   requiredBy: []
-  timestamp: '2025-07-04 00:06:00+09:00'
+  timestamp: '2025-07-05 17:05:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/handmade/2d_segtree_stress.test.cpp
