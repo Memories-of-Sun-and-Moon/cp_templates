@@ -52,6 +52,26 @@ public:
 		return *this;
 	}
 
+	constexpr modint& operator++() noexcept {
+		if (++a == Modulus) a = 0;
+		return *this;
+	}
+	constexpr modint operator++(int) noexcept {
+		modint tmp(*this);
+		++(*this);
+		return tmp;
+	}
+	constexpr modint& operator--() noexcept {
+		if (a == 0) a = Modulus;
+		--a;
+		return *this;
+	}
+	constexpr modint operator--(int) noexcept {
+		modint tmp(*this);
+		--(*this);
+		return tmp;
+	}
+
 	friend std::ostream& operator<<(std::ostream& os, const modint& rhs) {
 		os << rhs.a;
 		return os;
