@@ -370,6 +370,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/id/3362.test.cpp
       title: verify/aoj/id/3362.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/id/3363_segtree.test.cpp
+      title: verify/aoj/id/3363_segtree.test.cpp
   - name: verify/aoj/itp1
     pages:
     - icon: ':heavy_check_mark:'

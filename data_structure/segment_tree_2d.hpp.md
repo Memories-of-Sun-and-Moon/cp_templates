@@ -7,6 +7,9 @@ data:
     path: verify/aoj/dsl/5_B.test.cpp
     title: verify/aoj/dsl/5_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aoj/id/3363_segtree.test.cpp
+    title: verify/aoj/id/3363_segtree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/handmade/2d_segtree_stress.test.cpp
     title: verify/handmade/2d_segtree_stress.test.cpp
   _isVerificationFailed: false
@@ -86,6 +89,7 @@ data:
   verifiedWith:
   - verify/handmade/2d_segtree_stress.test.cpp
   - verify/aoj/dsl/5_B.test.cpp
+  - verify/aoj/id/3363_segtree.test.cpp
 documentation_of: data_structure/segment_tree_2d.hpp
 layout: document
 title: "2D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -105,3 +109,5 @@ title: "2D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
 - ``segment_tree_2d<T>(int H, int W, auto combine, T identify)`` : $H\times W$ の 2Dセグメント木を生成する
 - ``void set(int y, int x, T val)`` : $(y, x)$ の要素を $val$ に変更する  $O(\log(H)\log(W))$
 - ``T fold(int li, int lj, int ri, int rj)`` : $[l_i, r_i), [l_j, r_j)$ を満たす矩形内に対する区間演算クエリの結果を返す $O(\log(H)\log(W))$
+
+※定数倍があまりよくないことに注意
