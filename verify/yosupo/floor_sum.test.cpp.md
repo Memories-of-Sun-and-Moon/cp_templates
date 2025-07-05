@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/floor_sum.hpp
     title: floor_sum
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []

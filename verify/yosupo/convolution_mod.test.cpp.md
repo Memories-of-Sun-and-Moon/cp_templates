@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/power.hpp
     title: math/power.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -68,15 +68,20 @@ data:
     \ rhs) noexcept {\n\t\ta = a * rhs.a % Modulus;\n\t\treturn *this;\n\t}\n\tconstexpr\
     \ modint &operator/=(modint rhs) noexcept {\n\t\tu64 exp = Modulus - 2;\n\t\t\
     while (exp) {\n\t\t\tif (exp % 2) {\n\t\t\t\t*this *= rhs;\n\t\t\t}\n\t\t\trhs\
-    \ *= rhs;\n\t\t\texp /= 2;\n\t\t}\n\t\treturn *this;\n\t}\n\n\tfriend std::ostream&\
-    \ operator<<(std::ostream& os, const modint& rhs) {\n\t\tos << rhs.a;\n\t\treturn\
-    \ os;\n\t}\n};\n#line 5 \"verify/yosupo/convolution_mod.test.cpp\"\nusing mint998\
-    \ = modint<998244353>;\n#line 1 \"math/formal_power_series.hpp\"\n\ntemplate<typename\
-    \ mint998>\nstruct formal_power_series : vector<mint998> {\n\tusing vector<mint998>::vector;\n\
-    \tusing FPS = formal_power_series;\n\n\tFPS &operator+=(const FPS &r){\n\t\tif(r.size()\
-    \ > this->size()){\n\t\t\tthis->resize(r.size());\n\t\t}\n\t\tfor(size_t i = 0;i\
-    \ < r.size();i++){\n\t\t\t(*this)[i] += r[i];\n\t\t}\n\t\treturn *this;\n\t}\n\
-    \n\tFPS &operator+=(const mint998 &v){\n\t\tif(this->empty())this->resize(1);\n\
+    \ *= rhs;\n\t\t\texp /= 2;\n\t\t}\n\t\treturn *this;\n\t}\n\n\tconstexpr modint&\
+    \ operator++() noexcept {\n\t\tif (++a == Modulus) a = 0;\n\t\treturn *this;\n\
+    \t}\n\tconstexpr modint operator++(int) noexcept {\n\t\tmodint tmp(*this);\n\t\
+    \t++(*this);\n\t\treturn tmp;\n\t}\n\tconstexpr modint& operator--() noexcept\
+    \ {\n\t\tif (a == 0) a = Modulus;\n\t\t--a;\n\t\treturn *this;\n\t}\n\tconstexpr\
+    \ modint operator--(int) noexcept {\n\t\tmodint tmp(*this);\n\t\t--(*this);\n\t\
+    \treturn tmp;\n\t}\n\n\tfriend std::ostream& operator<<(std::ostream& os, const\
+    \ modint& rhs) {\n\t\tos << rhs.a;\n\t\treturn os;\n\t}\n};\n#line 5 \"verify/yosupo/convolution_mod.test.cpp\"\
+    \nusing mint998 = modint<998244353>;\n#line 1 \"math/formal_power_series.hpp\"\
+    \n\ntemplate<typename mint998>\nstruct formal_power_series : vector<mint998> {\n\
+    \tusing vector<mint998>::vector;\n\tusing FPS = formal_power_series;\n\n\tFPS\
+    \ &operator+=(const FPS &r){\n\t\tif(r.size() > this->size()){\n\t\t\tthis->resize(r.size());\n\
+    \t\t}\n\t\tfor(size_t i = 0;i < r.size();i++){\n\t\t\t(*this)[i] += r[i];\n\t\t\
+    }\n\t\treturn *this;\n\t}\n\n\tFPS &operator+=(const mint998 &v){\n\t\tif(this->empty())this->resize(1);\n\
     \t\t(*this)[0] += v;\n\t\treturn *this;\n\t}\n\n\tFPS &operator-=(const FPS &r){\n\
     \t\tif(r.size() > this->size()){\n\t\t\tthis->resize(r.size());\n\t\t}\n\t\tfor(size_t\
     \ i = 0;i < r.size();i++){\n\t\t\t(*this)[i] -= r[i];\n\t\t}\n\t\treturn *this;\n\
@@ -147,7 +152,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution_mod.test.cpp
   requiredBy: []
-  timestamp: '2025-07-01 03:22:56+09:00'
+  timestamp: '2025-07-05 17:21:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution_mod.test.cpp

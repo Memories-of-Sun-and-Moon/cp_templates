@@ -113,7 +113,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/discrete_logarithm.hpp
       title: discrete_logarithm
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/dynamic_modint.hpp
       title: "\u4EFB\u610F modint \u578B"
     - icon: ':heavy_check_mark:'
@@ -188,7 +188,7 @@ data:
     - icon: ':warning:'
       path: template/bint.hpp
       title: template/bint.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: verify/atcoder/abc/150
@@ -503,7 +503,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yukicoder/3154.test.cpp
       title: verify/yukicoder/3154.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yukicoder/3187.test.cpp
       title: verify/yukicoder/3187.test.cpp
     - icon: ':heavy_check_mark:'

@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yukicoder/3187.test.cpp
     title: verify/yukicoder/3187.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"math/dynamic_modint.hpp\"\n\n#include<cstdint>\n#include<iostream>\n\
@@ -28,9 +28,15 @@ data:
     return *this;\n\t}\n\tdynamic_modint &operator/=(dynamic_modint rhs) {\n\t\tu64\
     \ exp = Modulus - 2;\n\t\twhile (exp) {\n\t\t\tif (exp % 2) {\n\t\t\t\t*this *=\
     \ rhs;\n\t\t\t}\n\t\t\trhs *= rhs;\n\t\t\texp /= 2;\n\t\t}\n\t\treturn *this;\n\
-    \t}\n\n\tfriend std::ostream& operator<<(std::ostream& os, const dynamic_modint&\
-    \ rhs) {\n\t\tos << rhs.a;\n\t\treturn os;\n\t}\n};\n\ninline dynamic_modint::u64\
-    \ dynamic_modint::Modulus = 1;\n"
+    \t}\n\n\tconstexpr dynamic_modint& operator++() noexcept {\n\t\tif (++a == Modulus)\
+    \ a = 0;\n\t\treturn *this;\n\t}\n\tconstexpr dynamic_modint operator++(int) noexcept\
+    \ {\n\t\tdynamic_modint tmp(*this);\n\t\t++(*this);\n\t\treturn tmp;\n\t}\n\t\
+    constexpr dynamic_modint& operator--() noexcept {\n\t\tif (a == 0) a = Modulus;\n\
+    \t\t--a;\n\t\treturn *this;\n\t}\n\tconstexpr dynamic_modint operator--(int) noexcept\
+    \ {\n\t\tdynamic_modint tmp(*this);\n\t\t--(*this);\n\t\treturn tmp;\n\t}\n\n\t\
+    friend std::ostream& operator<<(std::ostream& os, const dynamic_modint& rhs) {\n\
+    \t\tos << rhs.a;\n\t\treturn os;\n\t}\n};\n\ninline dynamic_modint::u64 dynamic_modint::Modulus\
+    \ = 1;\n"
   code: "#pragma once\n\n#include<cstdint>\n#include<iostream>\n\nclass dynamic_modint\
     \ {\n\tusing u64 = std::uint_fast64_t;\n\tstatic u64 Modulus;\npublic:\n\tu64\
     \ a;\n\tstatic void set_mod(u64 m) { Modulus = m; }\n\n\tu64 &value() { return\
@@ -47,7 +53,13 @@ data:
     \ dynamic_modint rhs) {\n\t\ta = a * rhs.a % Modulus;\n\t\treturn *this;\n\t}\n\
     \tdynamic_modint &operator/=(dynamic_modint rhs) {\n\t\tu64 exp = Modulus - 2;\n\
     \t\twhile (exp) {\n\t\t\tif (exp % 2) {\n\t\t\t\t*this *= rhs;\n\t\t\t}\n\t\t\t\
-    rhs *= rhs;\n\t\t\texp /= 2;\n\t\t}\n\t\treturn *this;\n\t}\n\n\tfriend std::ostream&\
+    rhs *= rhs;\n\t\t\texp /= 2;\n\t\t}\n\t\treturn *this;\n\t}\n\n\tconstexpr dynamic_modint&\
+    \ operator++() noexcept {\n\t\tif (++a == Modulus) a = 0;\n\t\treturn *this;\n\
+    \t}\n\tconstexpr dynamic_modint operator++(int) noexcept {\n\t\tdynamic_modint\
+    \ tmp(*this);\n\t\t++(*this);\n\t\treturn tmp;\n\t}\n\tconstexpr dynamic_modint&\
+    \ operator--() noexcept {\n\t\tif (a == 0) a = Modulus;\n\t\t--a;\n\t\treturn\
+    \ *this;\n\t}\n\tconstexpr dynamic_modint operator--(int) noexcept {\n\t\tdynamic_modint\
+    \ tmp(*this);\n\t\t--(*this);\n\t\treturn tmp;\n\t}\n\n\tfriend std::ostream&\
     \ operator<<(std::ostream& os, const dynamic_modint& rhs) {\n\t\tos << rhs.a;\n\
     \t\treturn os;\n\t}\n};\n\ninline dynamic_modint::u64 dynamic_modint::Modulus\
     \ = 1;\n"
@@ -55,8 +67,8 @@ data:
   isVerificationFile: false
   path: math/dynamic_modint.hpp
   requiredBy: []
-  timestamp: '2025-07-01 03:22:56+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-07-05 17:21:00+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yukicoder/3187.test.cpp
 documentation_of: math/dynamic_modint.hpp
