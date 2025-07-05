@@ -11,23 +11,23 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/floor_sum.hpp\"\n\nlong long floor_sum(long long n,\
+  bundledCode: "#line 2 \"math/floor_sum.hpp\"\n\nlong long floor_sum(long long n,\
     \ long long m, long long a, long long b){\n\tlong long ans = 0;\n\tif(a >= m){\n\
     \t\tans += (n-1) * n * (a/m) / 2;\n\t\ta %= m;\n\t}\n\tif(b >= m){\n\t\tans +=\
     \ n * (b/m);\n\t\tb %= m;\n\t}\n\n\tlong long x = a * (n-1) + b;\n\tif(x < m)\
     \ return ans;\n\tlong long x_div = x/m;\n\tlong long x_mod = x%m;\n\tans += x_div\
     \ + floor_sum(x_div, a, m, x_mod);\n\treturn ans;\n}\n"
-  code: "\nlong long floor_sum(long long n, long long m, long long a, long long b){\n\
-    \tlong long ans = 0;\n\tif(a >= m){\n\t\tans += (n-1) * n * (a/m) / 2;\n\t\ta\
-    \ %= m;\n\t}\n\tif(b >= m){\n\t\tans += n * (b/m);\n\t\tb %= m;\n\t}\n\n\tlong\
-    \ long x = a * (n-1) + b;\n\tif(x < m) return ans;\n\tlong long x_div = x/m;\n\
-    \tlong long x_mod = x%m;\n\tans += x_div + floor_sum(x_div, a, m, x_mod);\n\t\
-    return ans;\n}\n"
+  code: "#pragma once\n\nlong long floor_sum(long long n, long long m, long long a,\
+    \ long long b){\n\tlong long ans = 0;\n\tif(a >= m){\n\t\tans += (n-1) * n * (a/m)\
+    \ / 2;\n\t\ta %= m;\n\t}\n\tif(b >= m){\n\t\tans += n * (b/m);\n\t\tb %= m;\n\t\
+    }\n\n\tlong long x = a * (n-1) + b;\n\tif(x < m) return ans;\n\tlong long x_div\
+    \ = x/m;\n\tlong long x_mod = x%m;\n\tans += x_div + floor_sum(x_div, a, m, x_mod);\n\
+    \treturn ans;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/floor_sum.hpp
   requiredBy: []
-  timestamp: '2025-07-01 02:45:23+09:00'
+  timestamp: '2025-07-05 20:55:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/floor_sum.test.cpp

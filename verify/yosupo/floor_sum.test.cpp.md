@@ -44,7 +44,7 @@ data:
     \  ((c).find(e) != (c).end())\n\nstruct INIT{\n\tINIT(){\n\t\tstd::ios::sync_with_stdio(false);\n\
     \t\tstd::cin.tie(0);\n\t\tcout << fixed << setprecision(20);\n\t}\n}INIT;\n\n\
     namespace mmrz {\n\tvoid solve();\n}\n\nint main(){\n\tmmrz::solve();\n}\n#line\
-    \ 1 \"math/floor_sum.hpp\"\n\nlong long floor_sum(long long n, long long m, long\
+    \ 2 \"math/floor_sum.hpp\"\n\nlong long floor_sum(long long n, long long m, long\
     \ long a, long long b){\n\tlong long ans = 0;\n\tif(a >= m){\n\t\tans += (n-1)\
     \ * n * (a/m) / 2;\n\t\ta %= m;\n\t}\n\tif(b >= m){\n\t\tans += n * (b/m);\n\t\
     \tb %= m;\n\t}\n\n\tlong long x = a * (n-1) + b;\n\tif(x < m) return ans;\n\t\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/floor_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-07-01 02:45:23+09:00'
+  timestamp: '2025-07-05 20:55:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/floor_sum.test.cpp
