@@ -36,8 +36,7 @@ void test_sum(int t){
 	int q = 100;
 	vector a(h, vector(w, 0));
 	rep(i, h)rep(j, w)a[i][j] = RND(1, 100);
-	segment_tree_2d<int> seg(h, w, [](int l, int r){return l+r;}, 0);
-	rep(i, h)rep(j, w)seg.set(i, j, a[i][j]);
+	segment_tree_2d<int> seg(a, [](int l, int r){return l+r;}, 0);
 	while(q--){
 		// update
 		{
@@ -68,8 +67,7 @@ void test_max(int t){
 	int q = 100;
 	vector a(h, vector(w, 0));
 	rep(i, h)rep(j, w)a[i][j] = RND(1, 100);
-	segment_tree_2d<int> seg(h, w, [](int l, int r){return max(l, r);}, 0);
-	rep(i, h)rep(j, w)seg.set(i, j, a[i][j]);
+	segment_tree_2d<int> seg(a, [](int l, int r){return max(l, r);}, 0);
 	while(q--){
 		// update
 		{
@@ -100,8 +98,7 @@ void test_min(int t){
 	int q = 100;
 	vector a(h, vector(w, 0));
 	rep(i, h)rep(j, w)a[i][j] = RND(1, 100);
-	segment_tree_2d<int> seg(h, w, [](int l, int r){return min(l, r);}, hinf<int>());
-	rep(i, h)rep(j, w)seg.set(i, j, a[i][j]);
+	segment_tree_2d<int> seg(a, [](int l, int r){return min(l, r);}, hinf<int>());
 	while(q--){
 		// update
 		{
