@@ -169,6 +169,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/stern_brocot_tree.hpp
       title: stern_brocot_tree
+  - name: random
+    pages:
+    - icon: ':warning:'
+      path: random/util.hpp
+      title: random/util.hpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
