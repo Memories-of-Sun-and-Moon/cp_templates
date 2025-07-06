@@ -13,3 +13,7 @@ documentation_of: ./../../ramdom/util.hpp
 [std::random](https://cpprefjp.github.io/reference/random.html) と組み合わせて使用することができ、そうすると様々な分布が取れる
 
 何をもって verify したとするかは不明。
+
+## 参考
+
+AHC 等、適当に乱数が分布されてればいい場合であれば、あらかじめ 10^6 個程度生成しておいて、それを使いまわすと高速に機能する。
