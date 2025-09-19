@@ -55,8 +55,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/generalized_discrete_logarithm.test.cpp
-  - verify/yosupo/convolution_mod.test.cpp
   - verify/yosupo/discrete_logarithm.test.cpp
+  - verify/yosupo/convolution_mod.test.cpp
 documentation_of: math/power.hpp
 layout: document
 redirect_from:

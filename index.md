@@ -56,6 +56,10 @@ data:
       title: "\u5E7E\u4F55\u30E9\u30A4\u30D6\u30E9\u30EA"
   - name: graph
     pages:
+    - icon: ':warning:'
+      path: graph/bipartite_matching.hpp
+      title: "\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u6700\u5927\u30DE\u30C3\u30C1\u30F3\
+        \u30B0"
     - icon: ':heavy_check_mark:'
       path: graph/dinic.hpp
       title: "\u6700\u5927\u6D41(Dinic)"
@@ -201,6 +205,11 @@ data:
     - icon: ':warning:'
       path: verify/atcoder/abc/150/f.___test.cpp
       title: verify/atcoder/abc/150/f.___test.cpp
+  - name: verify/yosupo
+    pages:
+    - icon: ':warning:'
+      path: verify/yosupo/bipertitematching.cpp
+      title: verify/yosupo/bipertitematching.cpp
   - name: z_other
     pages:
     - icon: ':heavy_check_mark:'

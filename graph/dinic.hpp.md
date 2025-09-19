@@ -1,7 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: graph/bipartite_matching.hpp
+    title: "\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u6700\u5927\u30DE\u30C3\u30C1\u30F3\
+      \u30B0"
+  - icon: ':warning:'
+    path: verify/yosupo/bipertitematching.cpp
+    title: verify/yosupo/bipertitematching.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/grl/6_A___dinic.test.cpp
@@ -62,7 +69,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/dinic.hpp
-  requiredBy: []
+  requiredBy:
+  - verify/yosupo/bipertitematching.cpp
+  - graph/bipartite_matching.hpp
   timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

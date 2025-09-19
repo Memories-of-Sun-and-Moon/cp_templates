@@ -64,8 +64,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/two_edge_connected_components.test.cpp
-  - verify/aoj/grl/3_B.test.cpp
   - verify/aoj/grl/3_A.test.cpp
+  - verify/aoj/grl/3_B.test.cpp
 documentation_of: graph/lowlink.hpp
 layout: document
 title: "lowlink\u3092\u7528\u3044\u305F\u6A4B\u30FB\u95A2\u7BC0\u70B9\u306E\u691C\u51FA"

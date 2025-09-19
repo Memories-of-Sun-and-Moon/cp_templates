@@ -87,9 +87,9 @@ data:
   timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/handmade/2d_segtree_stress.test.cpp
-  - verify/aoj/dsl/5_B.test.cpp
   - verify/aoj/id/3363_segtree.test.cpp
+  - verify/aoj/dsl/5_B.test.cpp
+  - verify/handmade/2d_segtree_stress.test.cpp
 documentation_of: data_structure/segment_tree_2d.hpp
 layout: document
 title: "2D\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
