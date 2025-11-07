@@ -67,14 +67,14 @@ data:
   isVerificationFile: false
   path: math/factor.hpp
   requiredBy:
-  - math/euler_phi.hpp
   - math/enumerate_divisors.hpp
+  - math/euler_phi.hpp
   timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/factorize.test.cpp
   - verify/aoj/ntl/1_D.test.cpp
   - verify/aoj/id/1642.test.cpp
+  - verify/yosupo/factorize.test.cpp
 documentation_of: math/factor.hpp
 layout: document
 title: "\u7D20\u56E0\u6570\u5206\u89E3\uFF08\u30DD\u30E9\u30FC\u30C9\u30FB\u30ED\u30FC\

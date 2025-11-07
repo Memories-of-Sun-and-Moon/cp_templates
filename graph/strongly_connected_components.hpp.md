@@ -65,12 +65,12 @@ data:
   timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/scc.test.cpp
-  - verify/yosupo/two_sat.test.cpp
-  - verify/yukicoder/274.test.cpp
   - verify/yukicoder/2780.test.cpp
+  - verify/yukicoder/274.test.cpp
   - verify/aoj/id/3205.test.cpp
   - verify/aoj/grl/3_C.test.cpp
+  - verify/yosupo/two_sat.test.cpp
+  - verify/yosupo/scc.test.cpp
 documentation_of: graph/strongly_connected_components.hpp
 layout: document
 title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"

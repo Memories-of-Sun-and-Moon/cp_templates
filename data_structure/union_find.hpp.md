@@ -61,10 +61,10 @@ data:
   timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/two_edge_connected_components.test.cpp
-  - verify/yosupo/unionfind.test.cpp
-  - verify/aoj/grl/2_A.test.cpp
   - verify/aoj/dsl/1_A.test.cpp
+  - verify/aoj/grl/2_A.test.cpp
+  - verify/yosupo/unionfind.test.cpp
+  - verify/yosupo/two_edge_connected_components.test.cpp
 documentation_of: data_structure/union_find.hpp
 layout: document
 title: Union-Find

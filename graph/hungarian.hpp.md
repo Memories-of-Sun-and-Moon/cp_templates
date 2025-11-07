@@ -58,9 +58,9 @@ data:
   timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/assignment_negative.test.cpp
-  - verify/yosupo/assignment.test.cpp
   - verify/aoj/id/2828.test.cpp
+  - verify/yosupo/assignment.test.cpp
+  - verify/yosupo/assignment_negative.test.cpp
 documentation_of: graph/hungarian.hpp
 layout: document
 title: "\u5272\u5F53\u554F\u984C\uFF08\u30CF\u30F3\u30AC\u30EA\u30A2\u30F3\u6CD5\uFF09"

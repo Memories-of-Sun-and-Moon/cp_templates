@@ -53,15 +53,15 @@ data:
   isVerificationFile: false
   path: math/iroot.hpp
   requiredBy:
-  - math/discrete_logarithm.hpp
   - math/counting_primes.hpp
+  - math/discrete_logarithm.hpp
   timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/kth_root_integer.test.cpp
-  - verify/yosupo/counting_primes.test.cpp
-  - verify/yosupo/discrete_logarithm.test.cpp
   - verify/yukicoder/1661.test.cpp
+  - verify/yosupo/discrete_logarithm.test.cpp
+  - verify/yosupo/counting_primes.test.cpp
+  - verify/yosupo/kth_root_integer.test.cpp
 documentation_of: math/iroot.hpp
 layout: document
 title: "floor K \u4E57\u6839"

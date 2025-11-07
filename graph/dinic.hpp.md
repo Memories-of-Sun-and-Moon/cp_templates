@@ -70,8 +70,8 @@ data:
   isVerificationFile: false
   path: graph/dinic.hpp
   requiredBy:
-  - verify/yosupo/bipertitematching.cpp
   - graph/bipartite_matching.hpp
+  - verify/yosupo/bipertitematching.cpp
   timestamp: '2025-07-01 03:22:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
